@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Trip Harbour — WhatsApp, phone, email or visit us at First Floor, A24, Sector 63, Noida 201309. Plan your perfect trip today.">
+<title>Contact Us — Trip Harbour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #2BBFB3; --teal-dark: #1a9e93; --teal-light: #e8faf9; --teal-mid: #c2f0ec;
+  --black: #111827; --charcoal: #1f2937; --grey: #6b7280; --grey-light: #f3f4f6;
+  --grey-mid: #e5e7eb; --white: #ffffff; --navy: #0f172a;
+  --font-display: 'Playfair Display', serif; --font-body: 'DM Sans', sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08); --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15); --radius: 16px; --radius-sm: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--black); background: var(--white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.lang-en .hi { display: none; }
+.lang-hi .en { display: none; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--grey-mid); height: 68px; display: flex; align-items: center; padding: 0 4%; gap: 2rem; transition: box-shadow 0.3s; }
+nav.scrolled { box-shadow: var(--shadow-md); }
+.nav-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--black); white-space: nowrap; flex-shrink: 0; }
+.nav-logo span { color: var(--teal); }
+.nav-links { display: flex; align-items: center; gap: 0.2rem; flex: 1; justify-content: center; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--charcoal); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); transition: all 0.2s; white-space: nowrap; }
+.nav-links a:hover, .nav-links a.active { background: var(--teal-light); color: var(--teal-dark); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.lang-btn { background: var(--grey-light); border: none; border-radius: 20px; padding: 0.35rem 0.75rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: var(--charcoal); transition: all 0.2s; font-family: var(--font-body); }
+.lang-btn:hover { background: var(--teal-light); color: var(--teal-dark); }
+.btn-plan { background: var(--teal); color: var(--white); border: none; border-radius: 24px; padding: 0.6rem 1.4rem; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.25s; font-family: var(--font-body); white-space: nowrap; }
+.btn-plan:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(43,191,179,0.4); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 24px; height: 2px; background: var(--black); border-radius: 2px; display: block; }
+.mobile-menu { position: fixed; inset: 0; top: 68px; z-index: 999; background: var(--white); padding: 1.5rem 4%; display: none; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--grey-mid); }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 500; color: var(--charcoal); }
+.mobile-menu a:hover { background: var(--teal-light); color: var(--teal-dark); }
+
+/* BREADCRUMB */
+.breadcrumb { background: var(--grey-light); padding: 0.75rem 4%; font-size: 0.82rem; color: var(--grey); margin-top: 68px; }
+.breadcrumb a { color: var(--teal); }
+.breadcrumb span { margin: 0 0.4rem; }
+
+/* PAGE HERO */
+.page-hero { padding: 60px 4% 0; background: linear-gradient(135deg, var(--teal-light), #fff); }
+.page-hero-inner { max-width: 1280px; margin: 0 auto; text-align: center; padding-bottom: 60px; }
+.page-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+.page-title { font-family: var(--font-display); font-size: clamp(2.4rem, 4vw, 3.5rem); font-weight: 900; margin-bottom: 1rem; line-height: 1.1; }
+.page-title em { color: var(--teal); font-style: normal; }
+.page-sub { font-size: 1.05rem; color: var(--grey); line-height: 1.7; max-width: 560px; margin: 0 auto; }
+
+/* MAIN CONTACT SECTION */
+.contact-section { padding: 0 4% 80px; background: linear-gradient(to bottom, var(--teal-light), var(--white) 40%); }
+.contact-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; align-items: start; }
+
+/* CONTACT METHODS */
+.contact-methods { display: flex; flex-direction: column; gap: 1rem; }
+.contact-card { background: var(--white); border-radius: var(--radius); padding: 1.75rem; border: 1.5px solid var(--grey-mid); transition: all 0.3s; display: flex; gap: 1.25rem; align-items: flex-start; cursor: pointer; text-decoration: none; color: inherit; }
+.contact-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.contact-card.primary { border-color: #25d366; background: #f0fff4; }
+.contact-card.primary:hover { box-shadow: 0 8px 32px rgba(37,211,102,0.2); }
+.contact-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-icon.wa { background: #25d366; }
+.contact-icon.phone { background: var(--teal); }
+.contact-icon.email { background: var(--navy); }
+.contact-icon.addr { background: var(--grey-light); border: 1.5px solid var(--grey-mid); }
+.contact-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--grey); margin-bottom: 0.3rem; }
+.contact-value { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.contact-note { font-size: 0.8rem; color: var(--grey); line-height: 1.5; }
+.contact-arrow { margin-left: auto; color: var(--teal); font-size: 1.2rem; align-self: center; flex-shrink: 0; }
+
+/* HOURS */
+.hours-card { background: var(--white); border-radius: var(--radius); padding: 1.75rem; border: 1.5px solid var(--grey-mid); }
+.hours-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
+.hours-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid var(--grey-light); font-size: 0.85rem; }
+.hours-row:last-child { border-bottom: none; }
+.hours-day { color: var(--charcoal); font-weight: 500; }
+.hours-time { color: var(--teal-dark); font-weight: 600; }
+.hours-time.closed { color: var(--grey); }
+.emergency-note { margin-top: 1rem; background: var(--teal-light); border-radius: var(--radius-sm); padding: 0.75rem 1rem; font-size: 0.8rem; color: var(--teal-dark); line-height: 1.5; border: 1px solid var(--teal-mid); }
+
+/* ENQUIRY FORM */
+.form-card { background: var(--white); border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow-lg); border: 1px solid var(--grey-mid); position: sticky; top: 88px; }
+.form-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 0.4rem; }
+.form-sub { font-size: 0.88rem; color: var(--grey); margin-bottom: 2rem; line-height: 1.5; }
+.form-row { margin-bottom: 1rem; }
+.form-row label { display: block; font-size: 0.75rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.form-row input, .form-row select, .form-row textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--grey-mid); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.88rem; color: var(--black); background: var(--white); transition: border-color 0.2s; outline: none; resize: vertical; }
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--teal); }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.form-section-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--grey); margin: 1.5rem 0 1rem; padding-top: 1rem; border-top: 1px solid var(--grey-light); }
+.btn-submit { width: 100%; padding: 1rem; background: var(--teal); color: var(--white); border: none; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.25s; margin-top: 0.75rem; }
+.btn-submit:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(43,191,179,0.4); }
+.form-trust { display: flex; gap: 1.5rem; margin-top: 1rem; justify-content: center; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; color: var(--grey); }
+.trust-dot { color: var(--teal); font-size: 0.9rem; }
+
+/* MAP SECTION */
+.map-section { padding: 0 4% 80px; }
+.map-inner { max-width: 1280px; margin: 0 auto; }
+.map-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+.map-title { font-family: var(--font-display); font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 700; margin-bottom: 0.5rem; }
+.map-sub { font-size: 0.9rem; color: var(--grey); margin-bottom: 2rem; }
+.map-container { background: var(--grey-light); border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-mid); height: 420px; position: relative; }
+.map-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; background: linear-gradient(135deg, var(--teal-light), #f0fffe); }
+.map-pin { width: 56px; height: 56px; background: var(--teal); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); }
+.map-pin-inner { width: 22px; height: 22px; background: var(--white); border-radius: 50%; transform: rotate(45deg); }
+.map-text { text-align: center; }
+.map-address { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.map-city { font-size: 0.88rem; color: var(--grey); margin-bottom: 1rem; }
+.map-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.5rem; background: var(--teal); color: var(--white); border-radius: 24px; font-size: 0.85rem; font-weight: 700; text-decoration: none; transition: all 0.25s; }
+.map-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.map-embed { width: 100%; height: 100%; border: none; }
+
+/* QUICK CONNECT STRIP */
+.quick-strip { background: var(--navy); padding: 3rem 4%; }
+.quick-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.quick-item { text-align: center; padding: 2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); transition: all 0.3s; }
+.quick-item:hover { border-color: var(--teal); background: rgba(43,191,179,0.05); }
+.quick-icon { width: 56px; height: 56px; margin: 0 auto 1rem; border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+.quick-title { font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: 0.35rem; }
+.quick-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin-bottom: 1rem; }
+.quick-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.25rem; border-radius: 20px; font-size: 0.82rem; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+.quick-btn.wa { background: #25d366; color: var(--white); }
+.quick-btn.wa:hover { background: #1db954; }
+.quick-btn.teal { background: var(--teal); color: var(--white); }
+.quick-btn.teal:hover { background: var(--teal-dark); }
+.quick-btn.outline { background: none; color: rgba(255,255,255,0.7); border: 1.5px solid rgba(255,255,255,0.2); }
+.quick-btn.outline:hover { border-color: var(--teal); color: var(--teal); }
+
+/* SUCCESS MESSAGE */
+.success-msg { display: none; text-align: center; padding: 2rem; }
+.success-msg.show { display: block; }
+.success-icon { width: 64px; height: 64px; background: var(--teal-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.success-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+.success-sub { font-size: 0.88rem; color: var(--grey); line-height: 1.6; }
+
+/* FOOTER */
+footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
+.footer-bottom { max-width: 1280px; margin: 0 auto; padding: 1.5rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-copyright { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; }
+.footer-social { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+.footer-social-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+.social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); transition: all 0.2s; text-decoration: none; }
+.social-icon:hover { border-color: var(--teal); color: var(--teal); }
+.footer-love { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+.footer-love span { color: #e74c3c; }
+.float-wa { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; box-shadow: 0 4px 20px rgba(37,211,102,0.5); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+.float-wa:hover { transform: scale(1.12); }
+
+@media (max-width: 1024px) { .contact-inner { grid-template-columns: 1fr; } .form-card { position: static; } .quick-inner { grid-template-columns: 1fr; gap: 1rem; } }
+@media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } .quick-inner { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .form-grid-2 { grid-template-columns: 1fr; } .form-trust { gap: 0.75rem; } }
+</style>
+</head>
+<body class="lang-en">
+
+<a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Trip%20Harbour" target="_blank" class="float-wa" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Trip<span>Harbour</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="en">Home</a><a href="index.html" class="hi" style="display:none">होम</a></li>
+    <li><a href="index.html#destinations" class="en">Destinations</a><a href="index.html#destinations" class="hi" style="display:none">गंतव्य</a></li>
+    <li><a href="honeymoon.html" class="en">Honeymoon</a><a href="honeymoon.html" class="hi" style="display:none">हनीमून</a></li>
+    <li><a href="family.html" class="en">Family Tours</a><a href="family.html" class="hi" style="display:none">पारिवारिक दौरे</a></li>
+    <li><a href="corporate.html" class="en">Corporate</a><a href="corporate.html" class="hi" style="display:none">कॉर्पोरेट</a></li>
+    <li><a href="about.html" class="en">About Us</a><a href="about.html" class="hi" style="display:none">हमारे बारे में</a></li>
+    <li><a href="contact.html" class="active en">Contact</a><a href="contact.html" class="active hi" style="display:none">संपर्क करें</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">हिन्दी</button>
+    <button class="btn-plan" onclick="document.getElementById('contactForm').scrollIntoView({behavior:'smooth'})">
+      <span class="en">Plan My Trip</span><span class="hi" style="display:none">यात्रा योजना बनाएं</span>
+    </button>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="index.html#destinations">Destinations</a>
+  <a href="honeymoon.html">Honeymoon</a><a href="family.html">Family Tours</a>
+  <a href="corporate.html">Corporate</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Contact Us</span></div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="margin-top:0; padding-top:60px;">
+  <div class="page-hero-inner">
+    <div class="page-label en">Get in Touch</div>
+    <div class="page-label hi" style="display:none">संपर्क करें</div>
+    <h1 class="page-title en">We'd Love to Hear<br><em>From You.</em></h1>
+    <h1 class="page-title hi" style="display:none">हम आपसे<br><em>सुनना चाहेंगे।</em></h1>
+    <p class="page-sub en">Whether it's a question about a package, a custom trip idea, or a corporate enquiry — our team responds within 2 hours. WhatsApp is the fastest way to reach us.</p>
+    <p class="page-sub hi" style="display:none">चाहे पैकेज के बारे में सवाल हो या कस्टम ट्रिप आइडिया — हमारी टीम 2 घंटे में जवाब देती है।</p>
+  </div>
+</div>
+
+<!-- CONTACT MAIN -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <!-- LEFT: Contact methods + hours -->
+    <div>
+      <div class="contact-methods">
+
+        <!-- WhatsApp — primary -->
+        <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Trip%20Harbour" target="_blank" class="contact-card primary">
+          <div class="contact-icon wa">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label en">WhatsApp — Fastest</div><div class="contact-label hi" style="display:none">व्हाट्सएप — सबसे तेज़</div>
+            <div class="contact-value">+91 91408 26298</div>
+            <div class="contact-note en">Click to open WhatsApp chat directly. We typically reply within 15 minutes during business hours.</div>
+            <div class="contact-note hi" style="display:none">व्हाट्सएप चैट खोलने के लिए क्लिक करें। हम आमतौर पर 15 मिनट में जवाब देते हैं।</div>
+          </div>
+          <div class="contact-arrow">&#8594;</div>
+        </a>
+
+        <!-- Phone -->
+        <a href="tel:+919140826298" class="contact-card">
+          <div class="contact-icon phone">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .11h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label en">Call Us</div><div class="contact-label hi" style="display:none">कॉल करें</div>
+            <div class="contact-value">+91 91408 26298</div>
+            <div class="contact-note en">Available Monday to Saturday, 9 AM to 7 PM IST. For urgent trip support, available 24/7.</div>
+            <div class="contact-note hi" style="display:none">सोमवार से शनिवार, सुबह 9 बजे से शाम 7 बजे तक उपलब्ध।</div>
+          </div>
+          <div class="contact-arrow">&#8594;</div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:tripharbour@gmail.com" class="contact-card">
+          <div class="contact-icon email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-label en">Email Us</div><div class="contact-label hi" style="display:none">ईमेल करें</div>
+            <div class="contact-value">tripharbour@gmail.com</div>
+            <div class="contact-note en">For detailed enquiries, corporate proposals, and documentation. We respond within 4 hours on business days.</div>
+            <div class="contact-note hi" style="display:none">विस्तृत पूछताछ के लिए। हम कार्यदिवसों पर 4 घंटे में जवाब देते हैं।</div>
+          </div>
+          <div class="contact-arrow">&#8594;</div>
+        </a>
+
+        <!-- Office Address -->
+        <a href="https://maps.google.com/?q=Sector+63,+Noida+201309" target="_blank" class="contact-card">
+          <div class="contact-icon addr">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-label en">Office Address</div><div class="contact-label hi" style="display:none">कार्यालय पता</div>
+            <div class="contact-value en">First Floor, A24, Sector 63</div>
+            <div class="contact-value hi" style="display:none">प्रथम तल, A24, सेक्टर 63</div>
+            <div class="contact-note">Noida 201309, Uttar Pradesh, India</div>
+          </div>
+          <div class="contact-arrow">&#8594;</div>
+        </a>
+
+      </div>
+
+      <!-- BUSINESS HOURS -->
+      <div class="hours-card" style="margin-top:1.25rem;">
+        <div class="hours-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="en">Business Hours</span><span class="hi" style="display:none">कार्यालय समय</span>
+        </div>
+        <div class="hours-row"><span class="hours-day en">Monday – Friday</span><span class="hours-day hi" style="display:none">सोमवार – शुक्रवार</span><span class="hours-time">9:00 AM – 7:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day en">Saturday</span><span class="hours-day hi" style="display:none">शनिवार</span><span class="hours-time">9:00 AM – 5:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day en">Sunday</span><span class="hours-day hi" style="display:none">रविवार</span><span class="hours-time closed en">Closed (WhatsApp available)</span><span class="hours-time closed hi" style="display:none">बंद (व्हाट्सएप उपलब्ध)</span></div>
+        <div class="emergency-note en">For active trip emergencies — our team is reachable 24 hours a day, 7 days a week via WhatsApp.</div>
+        <div class="emergency-note hi" style="display:none">सक्रिय यात्रा आपात स्थिति के लिए — हमारी टीम व्हाट्सएप पर 24 घंटे उपलब्ध है।</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Enquiry form -->
+    <div class="form-card" id="contactForm">
+      <div class="form-title en">Send Us an Enquiry</div>
+      <div class="form-title hi" style="display:none">पूछताछ भेजें</div>
+      <div class="form-sub en">Fill in your details and we'll call you back within 2 hours. Every enquiry is handled personally — not by a bot.</div>
+      <div class="form-sub hi" style="display:none">अपनी जानकारी भरें और हम 2 घंटे में कॉल करेंगे।</div>
+
+      <div id="formWrapper">
+        <form id="mainForm" action="https://formspree.io/f/tripharbour" method="POST" onsubmit="handleSubmit(event)">
+          <!-- Personal details -->
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label class="en">Your Name *</label><label class="hi" style="display:none">आपका नाम *</label>
+              <input type="text" name="name" placeholder="Full name" required>
+            </div>
+            <div class="form-row">
+              <label class="en">Phone Number *</label><label class="hi" style="display:none">फ़ोन नंबर *</label>
+              <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="en">Email Address</label><label class="hi" style="display:none">ईमेल पता</label>
+            <input type="email" name="email" placeholder="your@email.com">
+          </div>
+
+          <!-- Trip type -->
+          <div class="form-section-title en">About Your Trip</div>
+          <div class="form-section-title hi" style="display:none">आपकी यात्रा के बारे में</div>
+          <div class="form-row">
+            <label class="en">What are you planning?</label><label class="hi" style="display:none">आप क्या योजना बना रहे हैं?</label>
+            <select name="trip_type" onchange="updateFormFields(this.value)">
+              <option value="general" class="en">Select trip type</option>
+              <option value="honeymoon" class="en">Honeymoon</option>
+              <option value="family" class="en">Family Tour</option>
+              <option value="offsite" class="en">Team Offsite</option>
+              <option value="corporate" class="en">Corporate Retreat</option>
+              <option value="other" class="en">Other / Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="en">Destination of Interest</label><label class="hi" style="display:none">रुचि का गंतव्य</label>
+            <select name="destination">
+              <option>Ladakh</option><option>Kashmir</option><option>Bali</option><option>Kerala</option>
+              <option>Spiti Valley</option><option>Thailand</option><option>Goa</option><option>Rajasthan</option>
+              <option>Andaman</option><option>Dubai</option><option>Singapore</option><option>Maldives</option>
+              <option>Himachal Pradesh</option><option>Uttarakhand</option><option>Rishikesh</option>
+              <option>Coorg</option><option>Not decided yet</option>
+            </select>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label class="en">Travel Month</label><label class="hi" style="display:none">यात्रा माह</label>
+              <select name="month">
+                <option>January</option><option>February</option><option>March</option><option>April</option>
+                <option>May</option><option>June</option><option>July</option><option>August</option>
+                <option>September</option><option>October</option><option>November</option><option>December</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label class="en">Group Size</label><label class="hi" style="display:none">समूह का आकार</label>
+              <select name="group_size">
+                <option>2 people</option><option>3–5 people</option><option>6–10 people</option>
+                <option>10–25 people</option><option>25–50 people</option><option>50+ people</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Corporate-specific fields (shown/hidden by JS) -->
+          <div id="corporate-fields" style="display:none;">
+            <div class="form-section-title en">Corporate Details</div>
+            <div class="form-row">
+              <label class="en">Company Name</label>
+              <input type="text" name="company" placeholder="Your company name">
+            </div>
+            <div class="form-grid-2">
+              <div class="form-row">
+                <label class="en">Designation</label>
+                <input type="text" name="designation" placeholder="HR Manager / Founder">
+              </div>
+              <div class="form-row">
+                <label class="en">Budget Per Head</label>
+                <select name="budget">
+                  <option>Under ₹8K</option><option>₹8K–15K</option><option>₹15K–25K</option><option>₹25K+</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row" style="margin-top:0.5rem;">
+            <label class="en">Anything specific you'd like us to know?</label><label class="hi" style="display:none">कोई विशेष जानकारी?</label>
+            <textarea name="message" rows="3" placeholder="Special requirements, preferences, questions..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <span class="en">Send Enquiry — We'll Call You Back</span>
+            <span class="hi" style="display:none">पूछताछ भेजें — हम कॉल करेंगे</span>
+          </button>
+          <div class="form-trust">
+            <div class="trust-item"><span class="trust-dot">&#10003;</span><span class="en">No spam ever</span><span class="hi" style="display:none">कोई स्पैम नहीं</span></div>
+            <div class="trust-item"><span class="trust-dot">&#10003;</span><span class="en">2-hour callback</span><span class="hi" style="display:none">2 घंटे में कॉलबैक</span></div>
+            <div class="trust-item"><span class="trust-dot">&#10003;</span><span class="en">Zero obligation</span><span class="hi" style="display:none">कोई बाध्यता नहीं</span></div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success message (shown after submit) -->
+      <div class="success-msg" id="successMsg">
+        <div class="success-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="var(--teal-light)" stroke="var(--teal)" stroke-width="1.5"/><path d="M10 16 L14 20 L22 12" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div class="success-title en">Enquiry Received!</div>
+        <div class="success-title hi" style="display:none">पूछताछ प्राप्त हुई!</div>
+        <div class="success-sub en">Thank you for reaching out. Our travel expert will call you back within 2 hours. If you need a faster response, WhatsApp us directly.</div>
+        <div class="success-sub hi" style="display:none">हमारा यात्रा विशेषज्ञ 2 घंटे के भीतर कॉल करेगा।</div>
+        <a href="https://wa.me/919140826298" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; margin-top:1.5rem; padding:0.75rem 1.5rem; background:#25d366; color:white; border-radius:24px; font-weight:700; font-size:0.88rem; text-decoration:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span class="en">WhatsApp Us Now</span><span class="hi" style="display:none">अभी व्हाट्सएप करें</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section">
+  <div class="map-inner">
+    <div class="map-label en">Find Us</div><div class="map-label hi" style="display:none">हमें खोजें</div>
+    <div class="map-title en">Our Office in Noida</div><div class="map-title hi" style="display:none">नोएडा में हमारा कार्यालय</div>
+    <div class="map-sub en">First Floor, A24, Sector 63, Noida 201309, Uttar Pradesh</div><div class="map-sub hi" style="display:none">प्रथम तल, A24, सेक्टर 63, नोएडा 201309</div>
+    <div class="map-container">
+      <!-- Google Maps embed — replace with your actual embed code once hosted -->
+      <iframe
+        class="map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.9!2d77.3710!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSector+63+Noida!5e0!3m2!1sen!2sin!4v1234567890"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Trip Harbour Office Location — Sector 63, Noida">
+      </iframe>
+      <!-- Fallback if embed doesn't load -->
+      <noscript>
+        <div class="map-placeholder">
+          <div class="map-pin"><div class="map-pin-inner"></div></div>
+          <div class="map-text">
+            <div class="map-address">First Floor, A24, Sector 63</div>
+            <div class="map-city">Noida 201309, Uttar Pradesh</div>
+            <a href="https://maps.google.com/?q=Sector+63+Noida+201309" target="_blank" class="map-btn">Open in Google Maps &#8594;</a>
+          </div>
+        </div>
+      </noscript>
+    </div>
+    <div style="margin-top:1rem; text-align:right;">
+      <a href="https://maps.google.com/?q=Sector+63+Noida+201309" target="_blank" style="display:inline-flex; align-items:center; gap:0.4rem; color:var(--teal); font-weight:600; font-size:0.88rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="en">Open in Google Maps &#8594;</span><span class="hi" style="display:none">Google Maps में खोलें &#8594;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK CONNECT STRIP -->
+<div class="quick-strip">
+  <div class="quick-inner">
+    <div class="quick-item">
+      <div class="quick-icon" style="background:#25d366; border-radius:14px; margin:0 auto;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div class="quick-title en">WhatsApp — Fastest</div><div class="quick-title hi" style="display:none">व्हाट्सएप — सबसे तेज़</div>
+      <div class="quick-desc en">For quick questions, package details, or to share travel ideas. Replies within 15 minutes during business hours.</div>
+      <div class="quick-desc hi" style="display:none">त्वरित प्रश्नों के लिए। कार्यालय समय में 15 मिनट में जवाब।</div>
+      <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Trip%20Harbour" target="_blank" class="quick-btn wa">
+        <span class="en">Open WhatsApp</span><span class="hi" style="display:none">व्हाट्सएप खोलें</span>
+      </a>
+    </div>
+    <div class="quick-item">
+      <div class="quick-icon" style="background:var(--teal); border-radius:14px; margin:0 auto;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .11h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </div>
+      <div class="quick-title en">Call Us Directly</div><div class="quick-title hi" style="display:none">सीधे कॉल करें</div>
+      <div class="quick-desc en">Prefer talking? Call us and speak directly to a travel expert. Mon–Sat, 9 AM to 7 PM IST.</div>
+      <div class="quick-desc hi" style="display:none">बात करना पसंद है? हमें कॉल करें। सोमवार–शनिवार, सुबह 9 से शाम 7 बजे।</div>
+      <a href="tel:+919140826298" class="quick-btn teal">
+        <span class="en">Call +91 91408 26298</span><span class="hi" style="display:none">+91 91408 26298 पर कॉल करें</span>
+      </a>
+    </div>
+    <div class="quick-item">
+      <div class="quick-icon" style="background:rgba(255,255,255,0.1); border-radius:14px; margin:0 auto; border:1px solid rgba(255,255,255,0.15);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div class="quick-title en">Email Us</div><div class="quick-title hi" style="display:none">ईमेल करें</div>
+      <div class="quick-desc en">For detailed enquiries, corporate proposals, and documentation. Replied within 4 hours on business days.</div>
+      <div class="quick-desc hi" style="display:none">विस्तृत पूछताछ के लिए। कार्यदिवसों पर 4 घंटे में जवाब।</div>
+      <a href="mailto:tripharbour@gmail.com" class="quick-btn outline">
+        <span class="en">tripharbour@gmail.com</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-copyright en">© 2026 Trip Harbour. All rights reserved.</div>
+    <div class="footer-copyright hi" style="display:none">© 2026 ट्रिप हार्बर। सर्वाधिकार सुरक्षित।</div>
+    <div class="footer-social">
+      <span class="footer-social-label en">Connect with us:</span>
+      <a href="#" class="social-icon" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    </div>
+    <div class="footer-love">Made with <span>❤️</span> in India &nbsp;|&nbsp; First Floor, A24, Sector 63, Noida 201309</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+
+let currentLang = 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'hi' : 'en';
+  document.body.className = 'lang-' + currentLang;
+  document.getElementById('langBtn').textContent = currentLang === 'en' ? 'हिन्दी' : 'English';
+  document.querySelectorAll('.en, .hi').forEach(el => { el.style.display = el.classList.contains(currentLang) ? '' : 'none'; });
+}
+
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+
+function updateFormFields(val) {
+  const corp = document.getElementById('corporate-fields');
+  corp.style.display = (val === 'offsite' || val === 'corporate') ? 'block' : 'none';
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('mainForm');
+  const data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(res => {
+    if (res.ok) {
+      document.getElementById('formWrapper').style.display = 'none';
+      document.getElementById('successMsg').classList.add('show');
+    } else {
+      form.submit(); // fallback
+    }
+  }).catch(() => form.submit());
+}
+</script>
+</body>
+</html>
