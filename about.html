@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Trip Harbour — India's most personal travel planning service. Based in Noida, serving families, couples and corporate teams across India and the world.">
+<title>About Us — Trip Harbour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #2BBFB3; --teal-dark: #1a9e93; --teal-light: #e8faf9; --teal-mid: #c2f0ec;
+  --black: #111827; --charcoal: #1f2937; --grey: #6b7280; --grey-light: #f3f4f6;
+  --grey-mid: #e5e7eb; --white: #ffffff; --navy: #0f172a; --navy-mid: #1e293b;
+  --font-display: 'Playfair Display', serif; --font-body: 'DM Sans', sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08); --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15); --radius: 16px; --radius-sm: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--black); background: var(--white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.lang-en .hi { display: none; }
+.lang-hi .en { display: none; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--grey-mid); height: 68px; display: flex; align-items: center; padding: 0 4%; gap: 2rem; transition: box-shadow 0.3s; }
+nav.scrolled { box-shadow: var(--shadow-md); }
+.nav-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--black); white-space: nowrap; flex-shrink: 0; }
+.nav-logo span { color: var(--teal); }
+.nav-links { display: flex; align-items: center; gap: 0.2rem; flex: 1; justify-content: center; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--charcoal); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); transition: all 0.2s; white-space: nowrap; }
+.nav-links a:hover, .nav-links a.active { background: var(--teal-light); color: var(--teal-dark); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.lang-btn { background: var(--grey-light); border: none; border-radius: 20px; padding: 0.35rem 0.75rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: var(--charcoal); transition: all 0.2s; font-family: var(--font-body); }
+.lang-btn:hover { background: var(--teal-light); color: var(--teal-dark); }
+.btn-plan { background: var(--teal); color: var(--white); border: none; border-radius: 24px; padding: 0.6rem 1.4rem; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.25s; font-family: var(--font-body); white-space: nowrap; }
+.btn-plan:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(43,191,179,0.4); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 24px; height: 2px; background: var(--black); border-radius: 2px; display: block; }
+.mobile-menu { position: fixed; inset: 0; top: 68px; z-index: 999; background: var(--white); padding: 1.5rem 4%; display: none; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--grey-mid); }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 500; color: var(--charcoal); }
+.mobile-menu a:hover { background: var(--teal-light); color: var(--teal-dark); }
+
+/* BREADCRUMB */
+.breadcrumb { background: var(--grey-light); padding: 0.75rem 4%; font-size: 0.82rem; color: var(--grey); margin-top: 68px; }
+.breadcrumb a { color: var(--teal); }
+.breadcrumb span { margin: 0 0.4rem; }
+
+/* HERO */
+.hero {
+  padding: 80px 4% 80px;
+  background: linear-gradient(135deg, var(--teal-light) 0%, #f0fffe 50%, #fff 100%);
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -60px; right: -60px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(43,191,179,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
+.hero-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+.hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 4vw, 3.6rem); font-weight: 900; line-height: 1.1; color: var(--black); margin-bottom: 1.5rem; }
+.hero-title em { color: var(--teal); font-style: normal; }
+.hero-body { font-size: 1rem; color: var(--grey); line-height: 1.8; margin-bottom: 1.5rem; }
+.hero-body + .hero-body { margin-top: -0.5rem; }
+.hero-sig { margin-top: 2rem; display: flex; align-items: center; gap: 1rem; }
+.sig-avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--teal-mid), var(--teal)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; color: var(--white); flex-shrink: 0; }
+.sig-name { font-weight: 700; font-size: 0.95rem; }
+.sig-role { font-size: 0.8rem; color: var(--grey); }
+
+/* HERO VISUAL — stats + illustration */
+.hero-visual { display: flex; flex-direction: column; gap: 1.25rem; }
+.stat-card { background: var(--white); border-radius: var(--radius); padding: 1.5rem 1.75rem; box-shadow: var(--shadow-md); border: 1.5px solid var(--grey-mid); display: flex; align-items: center; gap: 1.25rem; transition: all 0.3s; }
+.stat-card:hover { border-color: var(--teal); transform: translateX(4px); }
+.stat-icon { width: 52px; height: 52px; border-radius: 12px; background: var(--teal-light); border: 2px solid var(--teal-mid); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.stat-num { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: var(--teal-dark); line-height: 1; }
+.stat-label { font-size: 0.82rem; color: var(--grey); margin-top: 0.15rem; }
+
+/* MISSION */
+.mission-section { background: var(--navy); padding: 80px 4%; }
+.mission-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.mission-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+.mission-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; color: var(--white); margin-bottom: 1.5rem; line-height: 1.2; }
+.mission-body { font-size: 0.98rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 1.25rem; }
+.mission-values { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+.value-item { display: flex; gap: 1rem; align-items: flex-start; }
+.value-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 6px; }
+.value-title { font-weight: 700; font-size: 0.95rem; color: var(--white); margin-bottom: 0.2rem; }
+.value-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+.mission-quote { background: rgba(43,191,179,0.08); border: 1px solid rgba(43,191,179,0.2); border-left: 4px solid var(--teal); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 2rem; }
+.quote-text { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--white); line-height: 1.5; margin-bottom: 1.25rem; }
+.quote-sub { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+/* WHAT MAKES US DIFFERENT */
+.diff-section { padding: 80px 4%; background: var(--white); }
+.diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.diff-card { background: var(--grey-light); border-radius: var(--radius); padding: 2rem; border: 2px solid transparent; transition: all 0.3s; position: relative; overflow: hidden; }
+.diff-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(to right, var(--teal-mid), var(--teal)); opacity: 0; transition: opacity 0.3s; }
+.diff-card:hover { background: var(--white); border-color: var(--teal-mid); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.diff-card:hover::before { opacity: 1; }
+.diff-num { font-family: var(--font-display); font-size: 3rem; font-weight: 900; color: var(--teal-mid); line-height: 1; margin-bottom: 0.75rem; }
+.diff-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+.diff-desc { font-size: 0.85rem; color: var(--grey); line-height: 1.65; }
+
+/* SEGMENTS */
+.segments-section { background: var(--grey-light); padding: 80px 4%; }
+.seg-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.seg-card { background: var(--white); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; border: 2px solid var(--grey-mid); transition: all 0.3s; cursor: pointer; text-decoration: none; color: inherit; display: block; }
+.seg-card:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.seg-icon { width: 64px; height: 64px; margin: 0 auto 1rem; background: var(--teal-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--teal-mid); }
+.seg-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.seg-desc { font-size: 0.82rem; color: var(--grey); line-height: 1.55; margin-bottom: 1rem; }
+.seg-link { font-size: 0.8rem; font-weight: 700; color: var(--teal); }
+
+/* TEAM */
+.team-section { background: var(--white); padding: 80px 4%; }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.team-card { text-align: center; }
+.team-avatar { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2rem; font-weight: 900; color: var(--white); box-shadow: var(--shadow-md); }
+.team-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.team-role { font-size: 0.82rem; color: var(--teal-dark); font-weight: 600; margin-bottom: 0.4rem; }
+.team-bio { font-size: 0.8rem; color: var(--grey); line-height: 1.6; }
+.team-placeholder { background: var(--grey-light); border-radius: var(--radius); padding: 2.5rem 2rem; border: 2px dashed var(--grey-mid); text-align: center; grid-column: span 4; }
+.team-placeholder-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--charcoal); }
+.team-placeholder-sub { font-size: 0.88rem; color: var(--grey); }
+
+/* JOURNEY TIMELINE */
+.journey-section { background: var(--teal-light); padding: 80px 4%; }
+.timeline { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+.timeline-item { display: grid; grid-template-columns: 80px 1fr; gap: 2rem; position: relative; padding-bottom: 2.5rem; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before { content: ''; position: absolute; left: 39px; top: 42px; bottom: 0; width: 2px; background: var(--teal-mid); }
+.timeline-item:last-child::before { display: none; }
+.timeline-dot { width: 42px; height: 42px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 700; font-size: 0.82rem; flex-shrink: 0; box-shadow: 0 0 0 6px var(--teal-light); z-index: 1; position: relative; margin-top: -2px; }
+.timeline-content { padding-top: 0.5rem; }
+.timeline-year { font-size: 0.75rem; font-weight: 700; color: var(--teal-dark); letter-spacing: 0.08em; margin-bottom: 0.3rem; text-transform: uppercase; }
+.timeline-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.35rem; }
+.timeline-body { font-size: 0.85rem; color: var(--grey); line-height: 1.65; }
+
+/* CTA */
+.cta-section { background: var(--white); padding: 80px 4%; }
+.cta-inner { max-width: 1280px; margin: 0 auto; border: 2.5px solid var(--black); border-radius: var(--radius); padding: 4rem; display: flex; align-items: center; justify-content: space-between; gap: 3rem; position: relative; overflow: hidden; }
+.cta-inner::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 35%; background: var(--teal-light); clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); }
+.cta-text { position: relative; z-index: 1; }
+.cta-title { font-family: var(--font-display); font-size: 2rem; font-weight: 900; margin-bottom: 0.75rem; line-height: 1.2; }
+.cta-sub { font-size: 0.95rem; color: var(--grey); line-height: 1.6; max-width: 460px; }
+.cta-actions { display: flex; gap: 1rem; flex-shrink: 0; position: relative; z-index: 1; flex-wrap: wrap; }
+.btn-wa { display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.75rem; border-radius: 28px; background: #25d366; color: var(--white); border: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; text-decoration: none; white-space: nowrap; }
+.btn-wa:hover { background: #1db954; transform: translateY(-2px); }
+.btn-call { display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.75rem; border-radius: 28px; background: none; color: var(--black); border: 2px solid var(--black); font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; text-decoration: none; white-space: nowrap; }
+.btn-call:hover { background: var(--black); color: var(--white); }
+
+/* FOOTER */
+footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
+.footer-bottom { max-width: 1280px; margin: 0 auto; padding: 1.5rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-copyright { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; }
+.footer-social { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+.footer-social-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+.social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); transition: all 0.2s; text-decoration: none; }
+.social-icon:hover { border-color: var(--teal); color: var(--teal); }
+.footer-love { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+.footer-love span { color: #e74c3c; }
+.float-wa { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; box-shadow: 0 4px 20px rgba(37,211,102,0.5); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+.float-wa:hover { transform: scale(1.12); }
+.popup-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 1rem; }
+.popup-overlay.open { display: flex; }
+.popup-card { background: var(--white); border-radius: var(--radius); width: 100%; max-width: 480px; padding: 2.5rem; position: relative; max-height: 90vh; overflow-y: auto; }
+.popup-close { position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--grey-mid); background: none; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; color: var(--grey); }
+.popup-close:hover { background: var(--grey-light); }
+.popup-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 0.4rem; }
+.popup-sub { font-size: 0.88rem; color: var(--grey); margin-bottom: 1.5rem; }
+.form-row { margin-bottom: 1rem; }
+.form-row label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.35rem; }
+.form-row input, .form-row select { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid var(--grey-mid); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.88rem; color: var(--black); background: var(--white); transition: border-color 0.2s; outline: none; }
+.form-row input:focus, .form-row select:focus { border-color: var(--teal); }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.btn-submit { width: 100%; padding: 0.85rem; background: var(--teal); color: var(--white); border: none; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.25s; margin-top: 0.5rem; }
+.btn-submit:hover { background: var(--teal-dark); }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+
+@media (max-width: 1024px) { .diff-grid { grid-template-columns: repeat(2, 1fr); } .team-grid { grid-template-columns: repeat(2, 1fr); } .seg-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .hero-inner { grid-template-columns: 1fr; } .mission-inner { grid-template-columns: 1fr; gap: 3rem; } .nav-links { display: none; } .hamburger { display: flex; } .cta-inner { flex-direction: column; padding: 2rem; } .cta-inner::after { display: none; } }
+@media (max-width: 480px) { .diff-grid { grid-template-columns: 1fr; } .seg-grid { grid-template-columns: 1fr 1fr; } .team-grid { grid-template-columns: 1fr 1fr; } .form-grid-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="lang-en">
+
+<a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Trip%20Harbour" target="_blank" class="float-wa" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="popup-overlay" id="popup">
+  <div class="popup-card">
+    <button class="popup-close" onclick="closePopup()">&#x2715;</button>
+    <div class="popup-title en">Plan My Trip</div>
+    <div class="popup-title hi" style="display:none">यात्रा योजना बनाएं</div>
+    <div class="popup-sub en">Tell us about your dream trip — we'll call you back within 2 hours.</div>
+    <div class="popup-sub hi" style="display:none">हमें अपनी यात्रा के बारे में बताएं।</div>
+    <form action="https://formspree.io/f/tripharbour" method="POST">
+      <div class="form-row"><label class="en">Your Name</label><label class="hi" style="display:none">आपका नाम</label><input type="text" name="name" placeholder="Full name" required></div>
+      <div class="form-row"><label class="en">Phone Number</label><label class="hi" style="display:none">फ़ोन नंबर</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+      <div class="form-row"><label class="en">Destination</label><label class="hi" style="display:none">गंतव्य</label><select name="destination"><option>Ladakh</option><option>Kashmir</option><option>Bali</option><option>Kerala</option><option>Spiti Valley</option><option>Thailand</option><option>Other</option></select></div>
+      <div class="form-grid-2">
+        <div class="form-row"><label class="en">Travel Month</label><label class="hi" style="display:none">यात्रा माह</label><select name="month"><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></div>
+        <div class="form-row"><label class="en">Trip Type</label><label class="hi" style="display:none">यात्रा प्रकार</label><select name="type"><option>Honeymoon</option><option>Family Tour</option><option>Team Offsite</option><option>Corporate Retreat</option></select></div>
+      </div>
+      <button type="submit" class="btn-submit"><span class="en">Get Free Call Back</span><span class="hi" style="display:none">निःशुल्क कॉल बैक पाएं</span></button>
+    </form>
+  </div>
+</div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Trip<span>Harbour</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="en">Home</a><a href="index.html" class="hi" style="display:none">होम</a></li>
+    <li><a href="index.html#destinations" class="en">Destinations</a><a href="index.html#destinations" class="hi" style="display:none">गंतव्य</a></li>
+    <li><a href="honeymoon.html" class="en">Honeymoon</a><a href="honeymoon.html" class="hi" style="display:none">हनीमून</a></li>
+    <li><a href="family.html" class="en">Family Tours</a><a href="family.html" class="hi" style="display:none">पारिवारिक दौरे</a></li>
+    <li><a href="corporate.html" class="en">Corporate</a><a href="corporate.html" class="hi" style="display:none">कॉर्पोरेट</a></li>
+    <li><a href="about.html" class="active en">About Us</a><a href="about.html" class="active hi" style="display:none">हमारे बारे में</a></li>
+    <li><a href="contact.html" class="en">Contact</a><a href="contact.html" class="hi" style="display:none">संपर्क करें</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">हिन्दी</button>
+    <button class="btn-plan" onclick="openPopup()"><span class="en">Plan My Trip</span><span class="hi" style="display:none">यात्रा योजना बनाएं</span></button>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="index.html#destinations">Destinations</a>
+  <a href="honeymoon.html">Honeymoon</a><a href="family.html">Family Tours</a>
+  <a href="corporate.html">Corporate</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>About Us</span></div>
+
+<!-- HERO -->
+<section class="hero" style="margin-top:0; padding-top:60px;">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label en">Our Story</div>
+      <div class="hero-label hi" style="display:none">हमारी कहानी</div>
+      <h1 class="hero-title en">We Believe Every Trip Should Feel Like <em>It Was Made for You.</em></h1>
+      <h1 class="hero-title hi" style="display:none">हम मानते हैं हर यात्रा ऐसी होनी चाहिए जैसे <em>यह आपके लिए बनी हो।</em></h1>
+      <p class="hero-body en">Trip Harbour was born from a simple frustration — most travel companies give you a fixed package, take your money, and leave you to figure out the rest. Delays, wrong hotels, no one to call when things go wrong.</p>
+      <p class="hero-body hi" style="display:none">ट्रिप हार्बर एक सरल निराशा से पैदा हुआ — अधिकांश ट्रैवल कंपनियां एक तय पैकेज देती हैं, पैसे लेती हैं और बाकी आप पर छोड़ देती हैं।</p>
+      <p class="hero-body en">We set out to do the opposite. Every trip we plan is built from scratch around the specific family, couple, or team booking it. Not a template. Not a copy-paste itinerary. A genuine, personalised plan — with someone responsible for it from the first call to the last drop-off.</p>
+      <p class="hero-body hi" style="display:none">हमने इसका उलटा करने का फैसला किया। हर यात्रा जो हम योजना बनाते हैं वह उस परिवार, जोड़े या टीम के लिए बनाई जाती है।</p>
+      <p class="hero-body en">We're based in Noida, operating pan-India, and growing into international destinations — one perfectly planned trip at a time.</p>
+      <p class="hero-body hi" style="display:none">हम नोएडा में स्थित हैं, पूरे भारत में काम करते हैं और अंतरराष्ट्रीय गंतव्यों में बढ़ रहे हैं।</p>
+      <div class="hero-sig">
+        <div class="sig-avatar">T</div>
+        <div>
+          <div class="sig-name en">The Trip Harbour Team</div>
+          <div class="sig-name hi" style="display:none">ट्रिप हार्बर टीम</div>
+          <div class="sig-role en">Noida, India — Est. 2026</div>
+          <div class="sig-role hi" style="display:none">नोएडा, भारत — स्थापित 2026</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <!-- Illustrated SVG brand mark -->
+      <svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; filter:drop-shadow(0 8px 32px rgba(43,191,179,0.15));">
+        <defs>
+          <linearGradient id="aboutSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8faf9"/><stop offset="100%" stop-color="#f0fffe"/></linearGradient>
+        </defs>
+        <rect width="420" height="220" fill="url(#aboutSky)" rx="20"/>
+        <circle cx="60" cy="60" r="3" fill="var(--teal)" opacity="0.4"/>
+        <circle cx="100" cy="40" r="2" fill="var(--teal)" opacity="0.3"/>
+        <circle cx="160" cy="55" r="3" fill="var(--teal)" opacity="0.4"/>
+        <circle cx="220" cy="35" r="2.5" fill="var(--teal)" opacity="0.35"/>
+        <circle cx="290" cy="50" r="3" fill="var(--teal)" opacity="0.4"/>
+        <circle cx="350" cy="40" r="2" fill="var(--teal)" opacity="0.3"/>
+        <circle cx="390" cy="65" r="2.5" fill="var(--teal)" opacity="0.35"/>
+        <line x1="60" y1="60" x2="100" y2="40" stroke="var(--teal)" stroke-width="1" opacity="0.2"/>
+        <line x1="100" y1="40" x2="160" y2="55" stroke="var(--teal)" stroke-width="1" opacity="0.2"/>
+        <line x1="160" y1="55" x2="220" y2="35" stroke="var(--teal)" stroke-width="1" opacity="0.2"/>
+        <line x1="220" y1="35" x2="290" y2="50" stroke="var(--teal)" stroke-width="1" opacity="0.2"/>
+        <line x1="290" y1="50" x2="350" y2="40" stroke="var(--teal)" stroke-width="1" opacity="0.2"/>
+        <line x1="350" y1="40" x2="390" y2="65" stroke="var(--teal)" stroke-width="1" opacity="0.2"/>
+        <circle cx="210" cy="120" r="70" fill="white" stroke="var(--teal-mid)" stroke-width="2"/>
+        <circle cx="210" cy="120" r="58" fill="var(--teal-light)" stroke="var(--teal-mid)" stroke-width="1"/>
+        <line x1="210" y1="72" x2="210" y2="168" stroke="var(--teal)" stroke-width="1.5" opacity="0.3"/>
+        <line x1="162" y1="120" x2="258" y2="120" stroke="var(--teal)" stroke-width="1.5" opacity="0.3"/>
+        <line x1="176" y1="86" x2="244" y2="154" stroke="var(--teal)" stroke-width="1" opacity="0.2"/>
+        <line x1="244" y1="86" x2="176" y2="154" stroke="var(--teal)" stroke-width="1" opacity="0.2"/>
+        <polygon points="210,78 206,108 210,102 214,108" fill="var(--teal)"/>
+        <polygon points="210,162 206,132 210,138 214,132" fill="var(--grey-mid)"/>
+        <circle cx="210" cy="120" r="8" fill="var(--teal)" stroke="white" stroke-width="2"/>
+        <text x="206" y="74" font-size="10" font-weight="700" fill="var(--teal)" font-family="sans-serif">N</text>
+        <text x="210" y="198" font-size="14" font-weight="700" fill="var(--teal-dark)" font-family="Georgia, serif" text-anchor="middle">Trip Harbour</text>
+        <text x="210" y="212" font-size="10" fill="var(--grey)" font-family="sans-serif" text-anchor="middle">Every Trip, Perfectly Planned</text>
+        <circle cx="75" cy="140" r="5" fill="var(--teal)" opacity="0.6"/>
+        <line x1="75" y1="135" x2="75" y2="120" stroke="var(--teal)" stroke-width="1.5" opacity="0.5"/>
+        <circle cx="345" cy="145" r="5" fill="var(--teal)" opacity="0.6"/>
+        <line x1="345" y1="140" x2="345" y2="125" stroke="var(--teal)" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <!-- Stat cards -->
+      <div class="stat-card">
+        <div class="stat-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="9" r="5" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M5 23 Q5 16 13 16 Q21 16 21 23" fill="var(--teal-mid)"/></svg></div>
+        <div><div class="stat-num">1000+</div><div class="stat-label en">Happy Travelers Served</div><div class="stat-label hi" style="display:none">खुश यात्री</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="11" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M13 6 L13 13 L18 18" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"/><circle cx="13" cy="13" r="2" fill="var(--teal)"/></svg></div>
+        <div><div class="stat-num">20+</div><div class="stat-label en">Destinations Covered</div><div class="stat-label hi" style="display:none">गंतव्य कवर किए</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3 C13 3 4 8 4 15 C4 20 8 24 13 24 C18 24 22 20 22 15 C22 8 13 3 13 3Z" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M9 15 L12 18 L17 12" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div><div class="stat-num">100%</div><div class="stat-label en">Personalised Itineraries</div><div class="stat-label hi" style="display:none">व्यक्तिगत यात्रा योजनाएं</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission-section">
+  <div class="mission-inner">
+    <div>
+      <div class="mission-label en">What We Stand For</div>
+      <div class="mission-label hi" style="display:none">हम किसके लिए खड़े हैं</div>
+      <div class="mission-title en">Our Mission is Simple — Make Travel Truly Personal.</div>
+      <div class="mission-title hi" style="display:none">हमारा मिशन सरल है — यात्रा को सच में व्यक्तिगत बनाना।</div>
+      <p class="mission-body en">The travel industry is full of cookie-cutter packages, hidden costs, and operators who disappear after booking. We built Trip Harbour as the answer to all of that.</p>
+      <p class="mission-body hi" style="display:none">ट्रैवल इंडस्ट्री में एक जैसे पैकेज, छिपी लागतें हैं। हमने ट्रिप हार्बर इन सबके जवाब के रूप में बनाया।</p>
+      <div class="mission-values">
+        <div class="value-item"><div class="value-dot"></div><div><div class="value-title en">People before packages</div><div class="value-title hi" style="display:none">पैकेज से पहले लोग</div><div class="value-desc en">We understand who you are before we plan where you're going.</div><div class="value-desc hi" style="display:none">हम समझते हैं आप कौन हैं, उससे पहले कि हम तय करें आप कहाँ जा रहे हैं।</div></div></div>
+        <div class="value-item"><div class="value-dot"></div><div><div class="value-title en">Accountability at every step</div><div class="value-title hi" style="display:none">हर कदम पर जवाबदेही</div><div class="value-desc en">One person is responsible for your trip — before, during, and after.</div><div class="value-desc hi" style="display:none">एक व्यक्ति आपकी यात्रा के लिए जिम्मेदार है — पहले, दौरान और बाद में।</div></div></div>
+        <div class="value-item"><div class="value-dot"></div><div><div class="value-title en">Honest pricing, always</div><div class="value-title hi" style="display:none">हमेशा ईमानदार मूल्य निर्धारण</div><div class="value-desc en">What's quoted is what's charged. No surprises, no hidden costs.</div><div class="value-desc hi" style="display:none">जो बताया जाए वही लिया जाए। कोई आश्चर्य नहीं।</div></div></div>
+        <div class="value-item"><div class="value-dot"></div><div><div class="value-title en">Small details make big memories</div><div class="value-title hi" style="display:none">छोटी बातें बड़ी यादें बनाती हैं</div><div class="value-desc en">The best trips are remembered for the moments you didn't plan. We create the conditions for those.</div><div class="value-desc hi" style="display:none">सर्वश्रेष्ठ यात्राएं उन पलों के लिए याद की जाती हैं जो आपने नहीं सोचे थे।</div></div></div>
+      </div>
+    </div>
+    <div class="mission-quote">
+      <div class="quote-text en">"A trip isn't just a booking. It's someone's honeymoon. Their family's one vacation together this year. Their team's chance to reconnect. We treat every single trip with that weight."</div>
+      <div class="quote-text hi" style="display:none">"एक यात्रा सिर्फ एक बुकिंग नहीं है। यह किसी का हनीमून है। परिवार की साल भर की एक छुट्टी। हम हर यात्रा को उस महत्व से लेते हैं।"</div>
+      <div class="quote-sub en">This is the commitment behind every enquiry we receive, every itinerary we build, and every tour manager we send with your group.</div>
+      <div class="quote-sub hi" style="display:none">यह प्रतिबद्धता हर पूछताछ, हर यात्रा योजना और हर टूर मैनेजर के पीछे है।</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MAKES US DIFFERENT -->
+<section class="diff-section">
+  <div class="section-inner">
+    <div style="margin-bottom:3rem;">
+      <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-bottom:0.6rem;" class="en">Our Difference</div>
+      <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-bottom:0.6rem;" class="hi" style="display:none">हमारा अंतर</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700; margin-bottom:0.75rem;" class="en">Six Things That Set Us Apart</h2>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700; margin-bottom:0.75rem;" class="hi" style="display:none">छह बातें जो हमें अलग करती हैं</h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card"><div class="diff-num">01</div><div class="diff-title en">Dedicated Tour Manager on Every Trip</div><div class="diff-title hi" style="display:none">हर यात्रा पर समर्पित टूर मैनेजर</div><div class="diff-desc en">Not a call centre. Not a chatbot. A real, trained person who travels with you and handles everything on the ground.</div><div class="diff-desc hi" style="display:none">कॉल सेंटर नहीं। एक वास्तविक, प्रशिक्षित व्यक्ति जो आपके साथ यात्रा करता है।</div></div>
+      <div class="diff-card"><div class="diff-num">02</div><div class="diff-title en">Built From Scratch for You</div><div class="diff-title hi" style="display:none">आपके लिए शुरू से बनाया गया</div><div class="diff-desc en">Every itinerary is written for the specific people booking it — their ages, interests, pace, and budget. No two plans are the same.</div><div class="diff-desc hi" style="display:none">हर यात्रा योजना उन विशिष्ट लोगों के लिए लिखी जाती है जो बुक कर रहे हैं।</div></div>
+      <div class="diff-card"><div class="diff-num">03</div><div class="diff-title en">Pan-India Departures</div><div class="diff-title hi" style="display:none">पूरे भारत से प्रस्थान</div><div class="diff-desc en">Whether you're in Delhi, Mumbai, Bengaluru, or Hyderabad — we handle departures from across India without extra hassle.</div><div class="diff-desc hi" style="display:none">दिल्ली, मुंबई, बेंगलुरु — हम पूरे भारत से प्रस्थान संभालते हैं।</div></div>
+      <div class="diff-card"><div class="diff-num">04</div><div class="diff-title en">Corporate-Ready Billing</div><div class="diff-title hi" style="display:none">कॉर्पोरेट बिलिंग</div><div class="diff-desc en">GST-compliant invoices, post-trip reports, and expense summaries — everything a company needs for accounting and reimbursement.</div><div class="diff-desc hi" style="display:none">जीएसटी-अनुपालन चालान और यात्रा के बाद रिपोर्ट।</div></div>
+      <div class="diff-card"><div class="diff-num">05</div><div class="diff-title en">Transparent, No-Surprise Pricing</div><div class="diff-title hi" style="display:none">पारदर्शी मूल्य निर्धारण</div><div class="diff-desc en">You see every line item before you pay. Inclusions, exclusions, and optional add-ons — all clearly communicated upfront.</div><div class="diff-desc hi" style="display:none">भुगतान करने से पहले आप हर आइटम देखते हैं।</div></div>
+      <div class="diff-card"><div class="diff-num">06</div><div class="diff-title en">24/7 Support, Always Reachable</div><div class="diff-title hi" style="display:none">24/7 सहायता, हमेशा उपलब्ध</div><div class="diff-desc en">Flight delayed? Hotel issue? Something unexpected? We're on WhatsApp and phone 24 hours a day during your trip.</div><div class="diff-desc hi" style="display:none">यात्रा के दौरान हम 24 घंटे व्हाट्सएप और फोन पर उपलब्ध हैं।</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE SERVE -->
+<section class="segments-section">
+  <div class="section-inner">
+    <div style="margin-bottom:3rem; text-align:center;">
+      <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-bottom:0.6rem;" class="en">Who We Serve</div>
+      <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-bottom:0.6rem;" class="hi" style="display:none">हम किसकी सेवा करते हैं</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700;" class="en">A Trip for Every Kind of Traveler</h2>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700;" class="hi" style="display:none">हर तरह के यात्री के लिए यात्रा</h2>
+    </div>
+    <div class="seg-grid">
+      <a href="honeymoon.html" class="seg-card">
+        <div class="seg-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 28C16 28 4 20 4 12C4 8 7 5 10 5C13 5 15 7 16 9C17 7 19 5 22 5C25 5 28 8 28 12C28 20 16 28 16 28Z" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/></svg></div>
+        <div class="seg-name en">Honeymoon</div><div class="seg-name hi" style="display:none">हनीमून</div>
+        <div class="seg-desc en">Romantic getaways with private transfers, candlelit dinners, and honeymoon suite upgrades</div><div class="seg-desc hi" style="display:none">रोमांटिक यात्राएं निजी ट्रांसफर और रोमांटिक डिनर के साथ</div>
+        <div class="seg-link en">Explore Packages &#8594;</div><div class="seg-link hi" style="display:none">पैकेज देखें &#8594;</div>
+      </a>
+      <a href="family.html" class="seg-card">
+        <div class="seg-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="10" cy="11" r="5" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><circle cx="22" cy="11" r="5" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><circle cx="16" cy="20" r="4" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M4 28 Q4 20 10 20" stroke="var(--teal)" stroke-width="1.5" fill="none"/><path d="M28 28 Q28 20 22 20" stroke="var(--teal)" stroke-width="1.5" fill="none"/></svg></div>
+        <div class="seg-name en">Family Tours</div><div class="seg-name hi" style="display:none">पारिवारिक दौरे</div>
+        <div class="seg-desc en">Stress-free holidays for the whole family — toddlers to grandparents, everyone covered</div><div class="seg-desc hi" style="display:none">पूरे परिवार के लिए तनाव मुक्त छुट्टियां</div>
+        <div class="seg-link en">Explore Packages &#8594;</div><div class="seg-link hi" style="display:none">पैकेज देखें &#8594;</div>
+      </a>
+      <a href="corporate.html" class="seg-card">
+        <div class="seg-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="10" cy="12" r="4" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><circle cx="22" cy="12" r="4" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><circle cx="16" cy="10" r="4" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M4 28 Q4 20 10 20 Q13 20 16 22 Q19 20 22 20 Q28 20 28 28" fill="var(--teal-mid)" opacity="0.5"/></svg></div>
+        <div class="seg-name en">Team Offsites</div><div class="seg-name hi" style="display:none">टीम ऑफसाइट</div>
+        <div class="seg-desc en">End-to-end corporate offsites for startups and SMEs — with GST invoicing and CSR add-ons</div><div class="seg-desc hi" style="display:none">स्टार्टअप और SME के लिए पूर्ण कॉर्पोरेट ऑफसाइट</div>
+        <div class="seg-link en">Explore Packages &#8594;</div><div class="seg-link hi" style="display:none">पैकेज देखें &#8594;</div>
+      </a>
+      <a href="corporate.html" class="seg-card">
+        <div class="seg-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="6" y="10" width="20" height="15" rx="3" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><rect x="10" y="6" width="12" height="6" rx="2" fill="var(--teal-light)" stroke="var(--teal)" stroke-width="1.5"/><line x1="6" y1="18" x2="26" y2="18" stroke="var(--teal)" stroke-width="1.5"/></svg></div>
+        <div class="seg-name en">Corporate Retreats</div><div class="seg-name hi" style="display:none">कॉर्पोरेट रिट्रीट</div>
+        <div class="seg-desc en">Premium retreats for leadership teams, incentive trips, and company milestone celebrations</div><div class="seg-desc hi" style="display:none">नेतृत्व टीमों के लिए प्रीमियम रिट्रीट</div>
+        <div class="seg-link en">Explore Packages &#8594;</div><div class="seg-link hi" style="display:none">पैकेज देखें &#8594;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY / TIMELINE -->
+<section class="journey-section">
+  <div class="section-inner">
+    <div style="margin-bottom:3.5rem; text-align:center;">
+      <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal-dark); margin-bottom:0.6rem;" class="en">Our Journey</div>
+      <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal-dark); margin-bottom:0.6rem;" class="hi" style="display:none">हमारी यात्रा</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700; color:var(--black);" class="en">Where We Started, Where We're Going</h2>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700; color:var(--black);" class="hi" style="display:none">हम कहाँ से शुरू हुए, कहाँ जा रहे हैं</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">2026</div>
+        <div class="timeline-content">
+          <div class="timeline-year en">Early 2026 — Founded</div><div class="timeline-year hi" style="display:none">2026 की शुरुआत — स्थापना</div>
+          <div class="timeline-title en">Trip Harbour is born in Noida</div><div class="timeline-title hi" style="display:none">ट्रिप हार्बर नोएडा में जन्मा</div>
+          <div class="timeline-body en">Started with a clear vision: build a travel company where every trip is genuinely personalised and every customer has someone accountable for their experience. Launched with honeymoon, family, and corporate packages across 6 core destinations.</div>
+          <div class="timeline-body hi" style="display:none">एक स्पष्ट दृष्टिकोण के साथ शुरू: एक ट्रैवल कंपनी बनाना जहां हर यात्रा सच में व्यक्तिगत हो।</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:var(--teal-dark);">Q2</div>
+        <div class="timeline-content">
+          <div class="timeline-year en">Q2 2026 — First 50 Customers</div><div class="timeline-year hi" style="display:none">Q2 2026 — पहले 50 ग्राहक</div>
+          <div class="timeline-title en">Building trust, one trip at a time</div><div class="timeline-title hi" style="display:none">एक यात्रा में विश्वास बनाना</div>
+          <div class="timeline-body en">Growing our customer base across honeymoon, family, and corporate segments. Building a network of trusted local partners at every destination. Every review earned, every referral valued.</div>
+          <div class="timeline-body hi" style="display:none">हनीमून, परिवार और कॉर्पोरेट सेगमेंट में ग्राहक आधार बढ़ाना।</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:var(--charcoal);">2027</div>
+        <div class="timeline-content">
+          <div class="timeline-year en">2027 — Expanding the Map</div><div class="timeline-year hi" style="display:none">2027 — विस्तार</div>
+          <div class="timeline-title en">More destinations, more team, more trust</div><div class="timeline-title hi" style="display:none">अधिक गंतव्य, अधिक टीम, अधिक विश्वास</div>
+          <div class="timeline-body en">Adding 30+ new destinations including Europe, Southeast Asia, and East Africa. Growing our team of tour managers. Launching a reviews system so customers can share their experiences.</div>
+          <div class="timeline-body hi" style="display:none">30+ नए गंतव्य जोड़ना। टूर मैनेजरों की टीम बढ़ाना।</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:var(--grey);">&#8594;</div>
+        <div class="timeline-content">
+          <div class="timeline-year en">The Future — India's Most Personal Travel Brand</div><div class="timeline-year hi" style="display:none">भविष्य — भारत का सबसे व्यक्तिगत ट्रैवल ब्रांड</div>
+          <div class="timeline-title en">Known across India for one thing: getting it right</div><div class="timeline-title hi" style="display:none">एक चीज़ के लिए जाना जाता है: इसे सही करना</div>
+          <div class="timeline-body en">Our long-term goal is simple: be the first name that comes to mind when an Indian family, couple, or HR manager thinks about a perfectly planned trip. Not the biggest. The most trusted.</div>
+          <div class="timeline-body hi" style="display:none">हमारा दीर्घकालिक लक्ष्य सरल है: वह पहला नाम बनें जो दिमाग में आए।</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="section-inner">
+    <div style="margin-bottom:3rem; text-align:center;">
+      <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-bottom:0.6rem;" class="en">Our Team</div>
+      <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-bottom:0.6rem;" class="hi" style="display:none">हमारी टीम</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700; margin-bottom:0.5rem;" class="en">The People Behind Your Trip</h2>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700; margin-bottom:0.5rem;" class="hi" style="display:none">आपकी यात्रा के पीछे के लोग</h2>
+      <p style="font-size:0.95rem; color:var(--grey);" class="en">Our team is growing — add your team photos and bios here when ready.</p>
+      <p style="font-size:0.95rem; color:var(--grey);" class="hi" style="display:none">हमारी टीम बढ़ रही है।</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,var(--teal),var(--teal-dark));">F</div>
+        <div class="team-name en">Founder & CEO</div><div class="team-name hi" style="display:none">संस्थापक और CEO</div>
+        <div class="team-role en">Trip Harbour</div>
+        <div class="team-bio en">Passionate about making travel genuinely personalised. Based in Noida, building India's most trusted travel brand from the ground up.</div>
+        <div class="team-bio hi" style="display:none">यात्रा को वास्तव में व्यक्तिगत बनाने के बारे में उत्साही।</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#f97316,#c2410c);">T</div>
+        <div class="team-name en">Head of Travel Planning</div><div class="team-name hi" style="display:none">यात्रा योजना प्रमुख</div>
+        <div class="team-role en">Trip Harbour</div>
+        <div class="team-bio en">Crafting personalised itineraries across 20+ destinations. Expert in family tours and honeymoon packages.</div>
+        <div class="team-bio hi" style="display:none">20+ गंतव्यों में व्यक्तिगत यात्रा योजनाएं बनाना।</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));">C</div>
+        <div class="team-name en">Corporate Travel Manager</div><div class="team-name hi" style="display:none">कॉर्पोरेट ट्रैवल मैनेजर</div>
+        <div class="team-role en">Trip Harbour</div>
+        <div class="team-bio en">Specialising in team offsites and corporate retreats for startups and SMEs across Delhi NCR.</div>
+        <div class="team-bio hi" style="display:none">दिल्ली NCR में स्टार्टअप और SME के लिए टीम ऑफसाइट।</div>
+      </div>
+      <div class="team-placeholder">
+        <div class="team-placeholder-title en">Your Photo Could Be Here</div>
+        <div class="team-placeholder-title hi" style="display:none">आपकी फोटो यहाँ हो सकती है</div>
+        <div class="team-placeholder-sub en">We're building our team. Add real team photos, names, and bios here as your team grows — it builds tremendous trust with customers.</div>
+        <div class="team-placeholder-sub hi" style="display:none">हम अपनी टीम बना रहे हैं। जैसे-जैसे टीम बढ़े, असली फोटो जोड़ें।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2 class="cta-title en">Ready to Experience the Trip Harbour Difference?</h2>
+      <h2 class="cta-title hi" style="display:none">ट्रिप हार्बर का अंतर अनुभव करने के लिए तैयार हैं?</h2>
+      <p class="cta-sub en">Talk to our travel experts today — free consultation, personalised plan, zero pressure. We promise you'll feel the difference from the first call.</p>
+      <p class="cta-sub hi" style="display:none">आज हमारे विशेषज्ञों से बात करें — मुफ्त परामर्श, व्यक्तिगत योजना, कोई दबाव नहीं।</p>
+    </div>
+    <div class="cta-actions">
+      <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Trip%20Harbour" target="_blank" class="btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="en">WhatsApp Us</span><span class="hi" style="display:none">व्हाट्सएप करें</span>
+      </a>
+      <a href="contact.html" class="btn-call">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .11h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span class="en">Contact Us</span><span class="hi" style="display:none">संपर्क करें</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-copyright en">© 2026 Trip Harbour. All rights reserved.</div>
+    <div class="footer-copyright hi" style="display:none">© 2026 ट्रिप हार्बर। सर्वाधिकार सुरक्षित।</div>
+    <div class="footer-social">
+      <span class="footer-social-label en">Connect with us:</span>
+      <a href="#" class="social-icon" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    </div>
+    <div class="footer-love">Made with <span>❤️</span> in India &nbsp;|&nbsp; First Floor, A24, Sector 63, Noida 201309</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+let currentLang = 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'hi' : 'en';
+  document.body.className = 'lang-' + currentLang;
+  document.getElementById('langBtn').textContent = currentLang === 'en' ? 'हिन्दी' : 'English';
+  document.querySelectorAll('.en, .hi').forEach(el => { el.style.display = el.classList.contains(currentLang) ? '' : 'none'; });
+}
+function openPopup() { document.getElementById('popup').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closePopup() { document.getElementById('popup').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('popup').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+</body>
+</html>
