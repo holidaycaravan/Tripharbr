@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Romantic honeymoon packages for couples — Kashmir, Bali, Maldives, Kerala and more. Personalised itineraries with dedicated tour manager. Trip Harbour.">
+<title>Honeymoon Packages — Trip Harbour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #2BBFB3; --teal-dark: #1a9e93; --teal-light: #e8faf9; --teal-mid: #c2f0ec;
+  --black: #111827; --charcoal: #1f2937; --grey: #6b7280; --grey-light: #f3f4f6;
+  --grey-mid: #e5e7eb; --white: #ffffff; --rose: #ff7eb3; --rose-light: #fff0f6;
+  --font-display: 'Playfair Display', serif; --font-body: 'DM Sans', sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08); --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15); --radius: 16px; --radius-sm: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--black); background: var(--white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--grey-mid); height: 68px;
+  display: flex; align-items: center; padding: 0 4%; gap: 2rem;
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: var(--shadow-md); }
+.nav-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--black); white-space: nowrap; flex-shrink: 0; }
+.nav-logo span { color: var(--teal); }
+.nav-links { display: flex; align-items: center; gap: 0.2rem; flex: 1; justify-content: center; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--charcoal); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); transition: all 0.2s; white-space: nowrap; }
+.nav-links a:hover, .nav-links a.active { background: var(--teal-light); color: var(--teal-dark); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.lang-btn { background: var(--grey-light); border: none; border-radius: 20px; padding: 0.35rem 0.75rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: var(--charcoal); transition: all 0.2s; font-family: var(--font-body); }
+.lang-btn:hover { background: var(--teal-light); color: var(--teal-dark); }
+.btn-plan { background: var(--teal); color: var(--white); border: none; border-radius: 24px; padding: 0.6rem 1.4rem; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.25s; font-family: var(--font-body); white-space: nowrap; }
+.btn-plan:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(43,191,179,0.4); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 24px; height: 2px; background: var(--black); border-radius: 2px; display: block; }
+.mobile-menu { position: fixed; inset: 0; top: 68px; z-index: 999; background: var(--white); padding: 1.5rem 4%; display: none; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--grey-mid); }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 500; color: var(--charcoal); }
+.mobile-menu a:hover { background: var(--teal-light); color: var(--teal-dark); }
+
+/* HERO */
+.hero {
+  min-height: 85vh; padding: 100px 4% 60px;
+  background: linear-gradient(135deg, #fff0f6 0%, #fce4f0 40%, #e8faf9 100%);
+  display: flex; align-items: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,126,179,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -60px; left: -60px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(43,191,179,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-inner { max-width: 1280px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; }
+.hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--white); border: 1.5px solid #f9c; border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 600; color: #c0488a; margin-bottom: 1.5rem; }
+.hero-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; line-height: 1.1; color: var(--black); margin-bottom: 1.25rem; }
+.hero-title em { color: var(--rose); font-style: normal; }
+.hero-sub { font-size: 1.05rem; color: var(--grey); line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
+.hero-pills { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.pill { display: flex; align-items: center; gap: 0.4rem; background: var(--white); border: 1.5px solid var(--grey-mid); border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.82rem; font-weight: 500; color: var(--charcoal); }
+.pill-dot { width: 7px; height: 7px; background: var(--rose); border-radius: 50%; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary { padding: 0.85rem 2rem; background: var(--teal); color: var(--white); border: none; border-radius: 28px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.25s; }
+.btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(43,191,179,0.4); }
+.btn-secondary { padding: 0.85rem 2rem; background: none; color: var(--black); border: 2px solid var(--black); border-radius: 28px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.25s; }
+.btn-secondary:hover { background: var(--black); color: var(--white); }
+
+/* ENQUIRY CARD */
+.enquiry-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: 2rem; border: 1px solid var(--grey-mid); }
+.ec-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem; }
+.ec-sub { font-size: 0.85rem; color: var(--grey); margin-bottom: 1.5rem; }
+.form-row { margin-bottom: 1rem; }
+.form-row label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.35rem; }
+.form-row input, .form-row select, .form-row textarea { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid var(--grey-mid); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.88rem; color: var(--black); background: var(--white); transition: border-color 0.2s; outline: none; }
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--teal); }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.btn-submit { width: 100%; padding: 0.85rem; background: var(--teal); color: var(--white); border: none; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.25s; margin-top: 0.5rem; }
+.btn-submit:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(43,191,179,0.4); }
+
+/* BREADCRUMB */
+.breadcrumb { background: var(--grey-light); padding: 0.75rem 4%; font-size: 0.82rem; color: var(--grey); margin-top: 68px; }
+.breadcrumb a { color: var(--teal); }
+.breadcrumb span { margin: 0 0.4rem; }
+
+/* SECTIONS */
+section { padding: 80px 4%; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; color: var(--black); margin-bottom: 0.75rem; }
+.section-sub { font-size: 1rem; color: var(--grey); line-height: 1.7; max-width: 560px; }
+.section-header { margin-bottom: 3rem; }
+
+/* DESTINATION CARDS */
+.dest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.dest-card { border-radius: var(--radius); overflow: hidden; position: relative; aspect-ratio: 3/4; cursor: pointer; transition: transform 0.3s; box-shadow: var(--shadow-sm); }
+.dest-card:hover { transform: scale(1.03); box-shadow: var(--shadow-md); }
+.dest-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.05) 60%); transition: background 0.3s; }
+.dest-card:hover .dest-overlay { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 60%); }
+.dest-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem; color: var(--white); }
+.dest-flag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--rose); border-radius: 12px; padding: 0.2rem 0.6rem; display: inline-block; margin-bottom: 0.4rem; }
+.dest-flag.intl { background: var(--teal); }
+.dest-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+.dest-tagline { font-size: 0.78rem; opacity: 0.85; }
+.dest-explore { display: inline-block; margin-top: 0.5rem; font-size: 0.78rem; font-weight: 600; color: var(--teal-mid); opacity: 0; transform: translateY(4px); transition: all 0.25s; }
+.dest-card:hover .dest-explore { opacity: 1; transform: translateY(0); }
+
+/* PACKAGES */
+.pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.pkg-card { border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-mid); background: var(--white); transition: all 0.3s; }
+.pkg-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.pkg-img { height: 200px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.pkg-badge { position: absolute; top: 12px; left: 12px; background: var(--white); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; color: var(--teal-dark); }
+.pkg-badge.rose { color: #c0488a; }
+.pkg-body { padding: 1.25rem; }
+.pkg-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.4; }
+.pkg-meta { display: flex; gap: 1rem; margin-bottom: 0.75rem; }
+.pkg-meta-item { font-size: 0.78rem; color: var(--grey); }
+.pkg-inclusions { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem; }
+.incl-tag { font-size: 0.72rem; background: var(--teal-light); color: var(--teal-dark); border-radius: 12px; padding: 0.2rem 0.6rem; font-weight: 500; }
+.incl-tag.rose-tag { background: var(--rose-light); color: #c0488a; }
+.pkg-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; border-top: 1px solid var(--grey-mid); }
+.pkg-price { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--teal-dark); }
+.pkg-price span { font-family: var(--font-body); font-size: 0.75rem; color: var(--grey); font-weight: 400; }
+.pkg-btns { display: flex; gap: 0.5rem; }
+.btn-outline { padding: 0.45rem 0.9rem; border-radius: var(--radius-sm); border: 1.5px solid var(--teal); color: var(--teal); background: none; font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-outline:hover { background: var(--teal-light); }
+.btn-solid { padding: 0.45rem 0.9rem; border-radius: var(--radius-sm); border: none; background: var(--teal); color: var(--white); font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-solid:hover { background: var(--teal-dark); }
+
+/* WHY HONEYMOON */
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.why-card { background: var(--white); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; border: 1.5px solid var(--grey-mid); transition: all 0.3s; }
+.why-card:hover { border-color: var(--rose); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.why-icon { width: 64px; height: 64px; margin: 0 auto 1rem; background: var(--rose-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.why-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; }
+.why-desc { font-size: 0.82rem; color: var(--grey); line-height: 1.6; }
+
+/* CTA */
+.cta-section { background: linear-gradient(135deg, #fff0f6, #e8faf9); padding: 80px 4%; }
+.cta-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.cta-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 900; margin-bottom: 1rem; }
+.cta-sub { font-size: 1rem; color: var(--grey); margin-bottom: 2rem; line-height: 1.7; }
+.cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-wa { display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.75rem; border-radius: 28px; background: #25d366; color: var(--white); border: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; text-decoration: none; }
+.btn-wa:hover { background: #1db954; transform: translateY(-2px); }
+.btn-call { display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.75rem; border-radius: 28px; background: none; color: var(--black); border: 2px solid var(--black); font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; text-decoration: none; }
+.btn-call:hover { background: var(--black); color: var(--white); }
+
+/* FOOTER */
+footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
+.footer-bottom { max-width: 1280px; margin: 0 auto; padding: 1.5rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-copyright { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; }
+.footer-social { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+.footer-social-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+.social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); font-size: 0.85rem; transition: all 0.2s; text-decoration: none; }
+.social-icon:hover { border-color: var(--teal); color: var(--teal); }
+.footer-love { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+.footer-love span { color: #e74c3c; }
+
+/* FLOATING WA */
+.float-wa { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; box-shadow: 0 4px 20px rgba(37,211,102,0.5); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+.float-wa:hover { transform: scale(1.12); }
+
+/* POPUP */
+.popup-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 1rem; }
+.popup-overlay.open { display: flex; }
+.popup-card { background: var(--white); border-radius: var(--radius); width: 100%; max-width: 480px; padding: 2.5rem; position: relative; max-height: 90vh; overflow-y: auto; }
+.popup-close { position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--grey-mid); background: none; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; color: var(--grey); }
+.popup-close:hover { background: var(--grey-light); }
+.popup-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 0.4rem; }
+.popup-sub { font-size: 0.88rem; color: var(--grey); margin-bottom: 1.5rem; }
+
+/* LANG */
+.lang-en .hi { display: none; }
+.lang-hi .en { display: none; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) { .dest-grid { grid-template-columns: repeat(2, 1fr); } .why-grid { grid-template-columns: repeat(2, 1fr); } .pkg-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .hero-inner { grid-template-columns: 1fr; } .nav-links { display: none; } .hamburger { display: flex; } .pkg-grid { grid-template-columns: 1fr; } .dest-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .dest-grid { grid-template-columns: 1fr; } .form-grid-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="lang-en">
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20honeymoon%20trip%20with%20Trip%20Harbour" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-card">
+    <button class="popup-close" onclick="closePopup()">&#x2715;</button>
+    <div class="popup-title en">Plan My Honeymoon</div>
+    <div class="popup-title hi" style="display:none">हनीमून योजना बनाएं</div>
+    <div class="popup-sub en">Tell us your dream destination — we'll craft the perfect romantic itinerary.</div>
+    <div class="popup-sub hi" style="display:none">अपना सपनों का गंतव्य बताएं — हम परफेक्ट रोमांटिक यात्रा योजना बनाएंगे।</div>
+    <form action="https://formspree.io/f/tripharbour" method="POST">
+      <input type="hidden" name="trip_type" value="Honeymoon">
+      <div class="form-row"><label class="en">Your Name</label><label class="hi" style="display:none">आपका नाम</label><input type="text" name="name" placeholder="Full name" required></div>
+      <div class="form-row"><label class="en">Phone Number</label><label class="hi" style="display:none">फ़ोन नंबर</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+      <div class="form-row"><label class="en">Destination</label><label class="hi" style="display:none">गंतव्य</label>
+        <select name="destination">
+          <option>Kashmir</option><option>Kerala</option><option>Bali</option><option>Maldives</option>
+          <option>Thailand</option><option>Andaman</option><option>Mauritius</option><option>Dubai</option>
+          <option>Switzerland</option><option>Other</option>
+        </select>
+      </div>
+      <div class="form-grid-2">
+        <div class="form-row"><label class="en">Travel Month</label><label class="hi" style="display:none">यात्रा माह</label>
+          <select name="month"><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select>
+        </div>
+        <div class="form-row"><label class="en">Budget (per person)</label><label class="hi" style="display:none">बजट (प्रति व्यक्ति)</label>
+          <select name="budget"><option>Under ₹25K</option><option>₹25K–50K</option><option>₹50K–1L</option><option>₹1L+</option></select>
+        </div>
+      </div>
+      <div class="form-row"><label class="en">Special requests</label><label class="hi" style="display:none">विशेष अनुरोध</label><input type="text" name="special" placeholder="Romantic dinner, room decoration..."></div>
+      <button type="submit" class="btn-submit"><span class="en">Get Free Call Back</span><span class="hi" style="display:none">निःशुल्क कॉल बैक पाएं</span></button>
+    </form>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Trip<span>Harbour</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="en">Home</a><a href="index.html" class="hi" style="display:none">होम</a></li>
+    <li><a href="index.html#destinations" class="en">Destinations</a><a href="index.html#destinations" class="hi" style="display:none">गंतव्य</a></li>
+    <li><a href="honeymoon.html" class="active en">Honeymoon</a><a href="honeymoon.html" class="active hi" style="display:none">हनीमून</a></li>
+    <li><a href="family.html" class="en">Family Tours</a><a href="family.html" class="hi" style="display:none">पारिवारिक दौरे</a></li>
+    <li><a href="corporate.html" class="en">Corporate</a><a href="corporate.html" class="hi" style="display:none">कॉर्पोरेट</a></li>
+    <li><a href="about.html" class="en">About Us</a><a href="about.html" class="hi" style="display:none">हमारे बारे में</a></li>
+    <li><a href="contact.html" class="en">Contact</a><a href="contact.html" class="hi" style="display:none">संपर्क करें</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">हिन्दी</button>
+    <button class="btn-plan" onclick="openPopup()"><span class="en">Plan My Trip</span><span class="hi" style="display:none">यात्रा योजना बनाएं</span></button>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="index.html#destinations">Destinations</a>
+  <a href="honeymoon.html">Honeymoon</a><a href="family.html">Family Tours</a>
+  <a href="corporate.html">Corporate</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Honeymoon</span></div>
+
+<!-- HERO -->
+<section class="hero" style="margin-top:0; padding-top:40px;">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">&#10084;&#65039; Romance Specialists</div>
+      <h1 class="hero-title en">Your Perfect Honeymoon,<br><em>Crafted for Two.</em></h1>
+      <h1 class="hero-title hi" style="display:none">आपका परफेक्ट हनीमून,<br><em>दो के लिए बनाया गया।</em></h1>
+      <p class="hero-sub en">Every detail planned — from private transfers to candlelit dinners. Because your first trip together deserves to be flawless.</p>
+      <p class="hero-sub hi" style="display:none">हर विवरण नियोजित — निजी ट्रांसफर से लेकर कैंडललाइट डिनर तक। क्योंकि आपकी पहली यात्रा बेदाग होनी चाहिए।</p>
+      <div class="hero-pills">
+        <div class="pill"><span class="pill-dot"></span><span class="en">Private Transfers</span><span class="hi" style="display:none">निजी ट्रांसफर</span></div>
+        <div class="pill"><span class="pill-dot"></span><span class="en">Honeymoon Suite Upgrades</span><span class="hi" style="display:none">हनीमून सूट</span></div>
+        <div class="pill"><span class="pill-dot"></span><span class="en">Romantic Dinners Included</span><span class="hi" style="display:none">रोमांटिक डिनर</span></div>
+      </div>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="openPopup()"><span class="en">Plan My Honeymoon</span><span class="hi" style="display:none">हनीमून योजना बनाएं</span></button>
+        <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20my%20honeymoon%20with%20Trip%20Harbour" target="_blank" class="btn-secondary en">WhatsApp Us</a>
+        <a href="https://wa.me/919140826298" target="_blank" class="btn-secondary hi" style="display:none">व्हाट्सएप करें</a>
+      </div>
+    </div>
+    <div class="enquiry-card">
+      <div class="ec-title en">Get a Free Honeymoon Quote</div>
+      <div class="ec-title hi" style="display:none">मुफ्त हनीमून कोट पाएं</div>
+      <div class="ec-sub en">Our experts call you back within 2 hours</div>
+      <div class="ec-sub hi" style="display:none">हमारे विशेषज्ञ 2 घंटे में कॉल करेंगे</div>
+      <form action="https://formspree.io/f/tripharbour" method="POST">
+        <input type="hidden" name="trip_type" value="Honeymoon">
+        <div class="form-row"><label class="en">Your Name</label><label class="hi" style="display:none">आपका नाम</label><input type="text" name="name" placeholder="Full name" required></div>
+        <div class="form-row"><label class="en">Phone Number</label><label class="hi" style="display:none">फ़ोन नंबर</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+        <div class="form-row"><label class="en">Dream Destination</label><label class="hi" style="display:none">सपनों का गंतव्य</label>
+          <select name="destination"><option>Kashmir</option><option>Kerala</option><option>Bali</option><option>Maldives</option><option>Thailand</option><option>Andaman</option><option>Mauritius</option><option>Dubai</option><option>Switzerland</option><option>Not decided yet</option></select>
+        </div>
+        <div class="form-grid-2">
+          <div class="form-row"><label class="en">Travel Month</label><label class="hi" style="display:none">यात्रा माह</label>
+            <select name="month"><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select>
+          </div>
+          <div class="form-row"><label class="en">Budget/person</label><label class="hi" style="display:none">बजट</label>
+            <select name="budget"><option>Under ₹25K</option><option>₹25K–50K</option><option>₹50K–1L</option><option>₹1L+</option></select>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit"><span class="en">Get Free Quote</span><span class="hi" style="display:none">मुफ्त कोट पाएं</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section style="background:var(--grey-light);">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Top Picks</div><div class="section-label hi" style="display:none">शीर्ष चयन</div>
+      <h2 class="section-title en">Most Loved Honeymoon Destinations</h2>
+      <h2 class="section-title hi" style="display:none">सबसे पसंदीदा हनीमून गंतव्य</h2>
+      <p class="section-sub en">From Himalayan snowscapes to tropical island sunsets — find the backdrop for your forever</p>
+      <p class="section-sub hi" style="display:none">हिमालय की बर्फ से लेकर उष्णकटिबंधीय सूर्यास्त तक</p>
+    </div>
+    <div class="dest-grid">
+      <div class="dest-card" style="background:linear-gradient(160deg,#1a9e93,#0d6b63)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Kashmir</div><div class="dest-tagline en">Heaven on Earth for two</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#2BBFB3,#1a9e93)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Kerala</div><div class="dest-tagline en">Backwaters & bliss</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#4dd4c8,#2BBFB3)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Bali</div><div class="dest-tagline en">Romance, temples & sunsets</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#0d6b63,#1a9e93)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Maldives</div><div class="dest-tagline en">Overwater bungalows & crystal lagoons</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#3dccc0,#1a9e93)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Thailand</div><div class="dest-tagline en">Exotic beaches, affordable luxury</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#2BBFB3,#0d6b63)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Andaman</div><div class="dest-tagline en">Pristine beaches, underwater world</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#1a9e93,#4dd4c8)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Mauritius</div><div class="dest-tagline en">Island paradise, turquoise waters</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#0d6b63,#2BBFB3)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Switzerland</div><div class="dest-tagline en">Snow-capped Alps & fairy-tale towns</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Curated for Couples</div><div class="section-label hi" style="display:none">जोड़ों के लिए</div>
+      <h2 class="section-title en">Honeymoon Packages</h2>
+      <h2 class="section-title hi" style="display:none">हनीमून पैकेज</h2>
+      <p class="section-sub en">Every package includes romantic add-ons — candlelit dinners, honeymoon room decoration, and more</p>
+      <p class="section-sub hi" style="display:none">हर पैकेज में रोमांटिक एड-ऑन शामिल हैं</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a9e93,#4dd4c8)"><div class="pkg-badge rose">Honeymoon</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">7 Days Kashmir Honeymoon</div><div class="pkg-name hi" style="display:none">7 दिन कश्मीर हनीमून</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">7 Days / 6 Nights</div><div class="pkg-meta-item">For Couples</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Hotel</span><span class="incl-tag">Transport</span><span class="incl-tag rose-tag">Candlelit Dinner</span><span class="incl-tag">Tour Manager</span><span class="incl-tag rose-tag">Room Decor</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;28,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#2BBFB3,#0d6b63)"><div class="pkg-badge rose">Honeymoon</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">5 Days Bali Honeymoon</div><div class="pkg-name hi" style="display:none">5 दिन बाली हनीमून</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">5 Days / 4 Nights</div><div class="pkg-meta-item">For Couples</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Resort</span><span class="incl-tag">Transfers</span><span class="incl-tag rose-tag">Sunset Dinner</span><span class="incl-tag">Tour Manager</span><span class="incl-tag">Visa Assist</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;32,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#4dd4c8,#1a9e93)"><div class="pkg-badge rose">Honeymoon</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">6 Days Kerala Honeymoon</div><div class="pkg-name hi" style="display:none">6 दिन केरल हनीमून</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">6 Days / 5 Nights</div><div class="pkg-meta-item">For Couples</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Houseboat</span><span class="incl-tag">Resort</span><span class="incl-tag rose-tag">Couples Spa</span><span class="incl-tag">Tour Manager</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;24,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#0d6b63,#2BBFB3)"><div class="pkg-badge rose">Honeymoon</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">6 Days Thailand Honeymoon</div><div class="pkg-name hi" style="display:none">6 दिन थाईलैंड हनीमून</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">6 Days / 5 Nights</div><div class="pkg-meta-item">For Couples</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Beach Resort</span><span class="incl-tag rose-tag">Infinity Pool</span><span class="incl-tag">Tour Manager</span><span class="incl-tag">Visa Assist</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;34,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#3dccc0,#1a9e93)"><div class="pkg-badge rose">Honeymoon</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">5 Days Andaman Honeymoon</div><div class="pkg-name hi" style="display:none">5 दिन अंडमान हनीमून</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">5 Days / 4 Nights</div><div class="pkg-meta-item">For Couples</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Beach Hotel</span><span class="incl-tag rose-tag">Snorkelling</span><span class="incl-tag">Tour Manager</span><span class="incl-tag">Transfers</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;22,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a9e93,#3dccc0)"><div class="pkg-badge rose">Honeymoon</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">7 Days Maldives Honeymoon</div><div class="pkg-name hi" style="display:none">7 दिन मालदीव हनीमून</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">7 Days / 6 Nights</div><div class="pkg-meta-item">For Couples</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag rose-tag">Water Bungalow</span><span class="incl-tag">All Meals</span><span class="incl-tag">Seaplane</span><span class="incl-tag">Tour Manager</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;84,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY HONEYMOON WITH US -->
+<section style="background:var(--rose-light);">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">Why Choose Us</div><div class="section-label hi" style="display:none">हमें क्यों चुनें</div>
+      <h2 class="section-title en">Why Honeymoon with Trip Harbour?</h2>
+      <h2 class="section-title hi" style="display:none">ट्रिप हार्बर के साथ हनीमून क्यों?</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 28C16 28 4 20 4 12C4 8 7 5 10 5C13 5 15 7 16 9C17 7 19 5 22 5C25 5 28 8 28 12C28 20 16 28 16 28Z" fill="#ffb3d1" stroke="#c0488a" stroke-width="1.5"/></svg></div>
+        <div class="why-title en">Private Transfers Always</div><div class="why-title hi" style="display:none">हमेशा निजी ट्रांसफर</div>
+        <div class="why-desc en">No shared cabs or buses. Every transfer is private — just the two of you.</div><div class="why-desc hi" style="display:none">कोई साझा कैब या बस नहीं। हर ट्रांसफर निजी है।</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="14" r="8" fill="#ffb3d1" stroke="#c0488a" stroke-width="1.5"/><path d="M8 28 Q8 20 16 20 Q24 20 24 28" fill="#c0488a" opacity="0.5"/><path d="M22 12 L24 14 L28 9" stroke="#c0488a" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="why-title en">Dedicated Tour Manager</div><div class="why-title hi" style="display:none">समर्पित टूर मैनेजर</div>
+        <div class="why-desc en">Your personal travel companion handles every detail so you focus on each other.</div><div class="why-desc hi" style="display:none">आपका व्यक्तिगत यात्रा साथी हर विवरण संभालता है।</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="18" rx="3" fill="#ffb3d1" stroke="#c0488a" stroke-width="1.5"/><path d="M10 4 L10 12" stroke="#c0488a" stroke-width="2" stroke-linecap="round"/><path d="M22 4 L22 12" stroke="#c0488a" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="16" x2="28" y2="16" stroke="#c0488a" stroke-width="1.5"/></svg></div>
+        <div class="why-title en">Honeymoon Extras Included</div><div class="why-title hi" style="display:none">हनीमून एक्स्ट्रा शामिल</div>
+        <div class="why-desc en">Candlelit dinners, room decoration, flower beds — romance comes standard.</div><div class="why-desc hi" style="display:none">कैंडललाइट डिनर, कमरे की सजावट — रोमांस मानक रूप से शामिल।</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" fill="#ffb3d1" stroke="#c0488a" stroke-width="1.5"/><path d="M12 16 L15 19 L20 13" stroke="#c0488a" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="why-title en">No Hidden Costs</div><div class="why-title hi" style="display:none">कोई छिपी लागत नहीं</div>
+        <div class="why-desc en">What's quoted is what's paid. We believe in complete pricing transparency.</div><div class="why-desc hi" style="display:none">जो बताया जाए वही भुगतान करें। हम पारदर्शिता में विश्वास करते हैं।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-title en">Start Planning Your Dream Honeymoon</div>
+    <div class="cta-title hi" style="display:none">अपना सपनों का हनीमून योजना शुरू करें</div>
+    <div class="cta-sub en">Talk to our romance travel specialists today — free consultation, zero pressure, completely personalised.</div>
+    <div class="cta-sub hi" style="display:none">आज हमारे विशेषज्ञों से बात करें — मुफ्त परामर्श, कोई दबाव नहीं।</div>
+    <div class="cta-actions">
+      <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20my%20honeymoon" target="_blank" class="btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="en">WhatsApp Us</span><span class="hi" style="display:none">व्हाट्सएप करें</span>
+      </a>
+      <a href="tel:+919140826298" class="btn-call">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .11h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span class="en">Call Now</span><span class="hi" style="display:none">अभी कॉल करें</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-copyright en">© 2026 Trip Harbour. All rights reserved.</div>
+    <div class="footer-copyright hi" style="display:none">© 2026 ट्रिप हार्बर। सर्वाधिकार सुरक्षित।</div>
+    <div class="footer-social">
+      <span class="footer-social-label en">Connect with us:</span>
+      <a href="#" class="social-icon" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    </div>
+    <div class="footer-love">Made with <span>❤️</span> in India &nbsp;|&nbsp; First Floor, A24, Sector 63, Noida 201309</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+let currentLang = 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'hi' : 'en';
+  document.body.className = 'lang-' + currentLang;
+  document.getElementById('langBtn').textContent = currentLang === 'en' ? 'हिन्दी' : 'English';
+  document.querySelectorAll('.en, .hi').forEach(el => { el.style.display = el.classList.contains(currentLang) ? '' : 'none'; });
+}
+function openPopup() { document.getElementById('popup').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closePopup() { document.getElementById('popup').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('popup').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+</body>
+</html>
