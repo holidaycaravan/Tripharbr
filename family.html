@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Family tour packages across India and the world — Kerala, Rajasthan, Singapore, Dubai and more. Stress-free holidays with dedicated tour manager. Trip Harbour.">
+<title>Family Tour Packages — Trip Harbour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #2BBFB3; --teal-dark: #1a9e93; --teal-light: #e8faf9; --teal-mid: #c2f0ec;
+  --black: #111827; --charcoal: #1f2937; --grey: #6b7280; --grey-light: #f3f4f6;
+  --grey-mid: #e5e7eb; --white: #ffffff;
+  --orange: #f97316; --orange-light: #fff7ed; --orange-mid: #fed7aa;
+  --font-display: 'Playfair Display', serif; --font-body: 'DM Sans', sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08); --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15); --radius: 16px; --radius-sm: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--black); background: var(--white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.lang-en .hi { display: none; }
+.lang-hi .en { display: none; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--grey-mid); height: 68px;
+  display: flex; align-items: center; padding: 0 4%; gap: 2rem; transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: var(--shadow-md); }
+.nav-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--black); white-space: nowrap; flex-shrink: 0; }
+.nav-logo span { color: var(--teal); }
+.nav-links { display: flex; align-items: center; gap: 0.2rem; flex: 1; justify-content: center; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--charcoal); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); transition: all 0.2s; white-space: nowrap; }
+.nav-links a:hover, .nav-links a.active { background: var(--teal-light); color: var(--teal-dark); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.lang-btn { background: var(--grey-light); border: none; border-radius: 20px; padding: 0.35rem 0.75rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: var(--charcoal); transition: all 0.2s; font-family: var(--font-body); }
+.lang-btn:hover { background: var(--teal-light); color: var(--teal-dark); }
+.btn-plan { background: var(--teal); color: var(--white); border: none; border-radius: 24px; padding: 0.6rem 1.4rem; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.25s; font-family: var(--font-body); white-space: nowrap; }
+.btn-plan:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(43,191,179,0.4); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 24px; height: 2px; background: var(--black); border-radius: 2px; display: block; }
+.mobile-menu { position: fixed; inset: 0; top: 68px; z-index: 999; background: var(--white); padding: 1.5rem 4%; display: none; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--grey-mid); }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 500; color: var(--charcoal); }
+.mobile-menu a:hover { background: var(--teal-light); color: var(--teal-dark); }
+
+/* BREADCRUMB */
+.breadcrumb { background: var(--grey-light); padding: 0.75rem 4%; font-size: 0.82rem; color: var(--grey); margin-top: 68px; }
+.breadcrumb a { color: var(--teal); }
+.breadcrumb span { margin: 0 0.4rem; }
+
+/* HERO */
+.hero {
+  min-height: 88vh; padding: 60px 4% 60px;
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 30%, #e8faf9 100%);
+  display: flex; align-items: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -100px; right: -100px;
+  width: 550px; height: 550px;
+  background: radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -80px; left: 10%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(43,191,179,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-inner { max-width: 1280px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; }
+
+/* HERO LEFT */
+.hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--white); border: 1.5px solid var(--orange-mid); border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 600; color: #c2410c; margin-bottom: 1.5rem; }
+.hero-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; line-height: 1.1; color: var(--black); margin-bottom: 1.25rem; }
+.hero-title em { color: var(--orange); font-style: normal; }
+.hero-sub { font-size: 1.05rem; color: var(--grey); line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
+.hero-pills { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.pill { display: flex; align-items: center; gap: 0.4rem; background: var(--white); border: 1.5px solid var(--grey-mid); border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.82rem; font-weight: 500; color: var(--charcoal); }
+.pill-dot { width: 7px; height: 7px; background: var(--orange); border-radius: 50%; flex-shrink: 0; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary { padding: 0.85rem 2rem; background: var(--teal); color: var(--white); border: none; border-radius: 28px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.25s; }
+.btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(43,191,179,0.4); }
+.btn-secondary { padding: 0.85rem 2rem; background: none; color: var(--black); border: 2px solid var(--black); border-radius: 28px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.25s; display: inline-flex; align-items: center; gap: 0.5rem; }
+.btn-secondary:hover { background: var(--black); color: var(--white); }
+
+/* HERO ILLUSTRATION */
+.hero-illus { position: relative; display: flex; flex-direction: column; gap: 1.25rem; }
+
+/* ENQUIRY CARD */
+.enquiry-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: 2rem; border: 1px solid var(--grey-mid); }
+.ec-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem; }
+.ec-sub { font-size: 0.85rem; color: var(--grey); margin-bottom: 1.5rem; }
+.form-row { margin-bottom: 1rem; }
+.form-row label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.35rem; }
+.form-row input, .form-row select, .form-row textarea { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid var(--grey-mid); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.88rem; color: var(--black); background: var(--white); transition: border-color 0.2s; outline: none; }
+.form-row input:focus, .form-row select:focus { border-color: var(--teal); }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.btn-submit { width: 100%; padding: 0.85rem; background: var(--teal); color: var(--white); border: none; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.25s; margin-top: 0.5rem; }
+.btn-submit:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(43,191,179,0.4); }
+
+/* SECTIONS */
+section { padding: 80px 4%; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; color: var(--black); margin-bottom: 0.75rem; }
+.section-sub { font-size: 1rem; color: var(--grey); line-height: 1.7; max-width: 600px; }
+.section-header { margin-bottom: 3rem; }
+
+/* STATS STRIP */
+.stats-strip { background: var(--charcoal); padding: 2.5rem 4%; }
+.stats-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.stat { text-align: center; }
+.stat-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 900; color: var(--teal); margin-bottom: 0.25rem; }
+.stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+/* DESTINATIONS */
+.dest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.dest-card { border-radius: var(--radius); overflow: hidden; position: relative; aspect-ratio: 3/4; cursor: pointer; transition: transform 0.3s; box-shadow: var(--shadow-sm); }
+.dest-card:hover { transform: scale(1.03); box-shadow: var(--shadow-md); }
+.dest-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.05) 60%); transition: background 0.3s; }
+.dest-card:hover .dest-overlay { background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.1) 60%); }
+.dest-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem; color: var(--white); }
+.dest-flag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--orange); border-radius: 12px; padding: 0.2rem 0.6rem; display: inline-block; margin-bottom: 0.4rem; }
+.dest-flag.intl { background: var(--teal); }
+.dest-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem; }
+.dest-tagline { font-size: 0.78rem; opacity: 0.85; }
+.dest-explore { display: inline-block; margin-top: 0.5rem; font-size: 0.78rem; font-weight: 600; color: var(--teal-mid); opacity: 0; transform: translateY(4px); transition: all 0.25s; }
+.dest-card:hover .dest-explore { opacity: 1; transform: translateY(0); }
+
+/* AGE GROUPS */
+.age-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.age-card { background: var(--white); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; border: 2px solid var(--grey-mid); transition: all 0.3s; }
+.age-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.age-icon { width: 72px; height: 72px; margin: 0 auto 1rem; background: var(--orange-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--orange-mid); }
+.age-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+.age-desc { font-size: 0.82rem; color: var(--grey); line-height: 1.6; }
+.age-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: center; margin-top: 0.75rem; }
+.age-tag { font-size: 0.72rem; background: var(--orange-light); color: #c2410c; border-radius: 12px; padding: 0.2rem 0.6rem; font-weight: 500; }
+
+/* PACKAGES */
+.pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.pkg-card { border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-mid); background: var(--white); transition: all 0.3s; }
+.pkg-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.pkg-img { height: 210px; position: relative; overflow: hidden; display: flex; align-items: flex-end; }
+.pkg-badge { position: absolute; top: 12px; left: 12px; background: var(--white); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; color: #c2410c; }
+.pkg-age-badge { position: absolute; top: 12px; right: 12px; background: var(--orange); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.72rem; font-weight: 700; color: var(--white); }
+.pkg-body { padding: 1.25rem; }
+.pkg-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.4; }
+.pkg-meta { display: flex; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.pkg-meta-item { font-size: 0.78rem; color: var(--grey); }
+.pkg-inclusions { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem; }
+.incl-tag { font-size: 0.72rem; background: var(--teal-light); color: var(--teal-dark); border-radius: 12px; padding: 0.2rem 0.6rem; font-weight: 500; }
+.incl-tag.orange-tag { background: var(--orange-light); color: #c2410c; }
+.pkg-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; border-top: 1px solid var(--grey-mid); }
+.pkg-price { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--teal-dark); }
+.pkg-price span { font-family: var(--font-body); font-size: 0.75rem; color: var(--grey); font-weight: 400; }
+.pkg-btns { display: flex; gap: 0.5rem; }
+.btn-outline { padding: 0.45rem 0.9rem; border-radius: var(--radius-sm); border: 1.5px solid var(--teal); color: var(--teal); background: none; font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-outline:hover { background: var(--teal-light); }
+.btn-solid { padding: 0.45rem 0.9rem; border-radius: var(--radius-sm); border: none; background: var(--teal); color: var(--white); font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-solid:hover { background: var(--teal-dark); }
+.view-all { text-align: center; margin-top: 2.5rem; }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 2rem; border-radius: 24px; border: 2px solid var(--teal); color: var(--teal); background: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; text-decoration: none; }
+.btn-ghost:hover { background: var(--teal); color: var(--white); }
+
+/* WHY FAMILY */
+.why-section { background: var(--orange-light); }
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.why-card { background: var(--white); border-radius: var(--radius); padding: 2rem; display: flex; gap: 1.5rem; align-items: flex-start; border: 1.5px solid var(--grey-mid); transition: all 0.3s; }
+.why-card:hover { border-color: var(--orange); box-shadow: var(--shadow-md); }
+.why-icon { width: 56px; height: 56px; flex-shrink: 0; background: var(--orange-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; border: 2px solid var(--orange-mid); }
+.why-content {}
+.why-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem; }
+.why-desc { font-size: 0.85rem; color: var(--grey); line-height: 1.65; }
+
+/* FAQ */
+.faq-section { background: var(--grey-light); }
+.faq-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 800px; }
+.faq-item { background: var(--white); border-radius: var(--radius-sm); border: 1.5px solid var(--grey-mid); overflow: hidden; }
+.faq-q { padding: 1.1rem 1.5rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+.faq-q:hover { background: var(--teal-light); }
+.faq-q .arrow { color: var(--teal); font-size: 1.1rem; transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+.faq-a { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; font-size: 0.88rem; color: var(--grey); line-height: 1.7; }
+.faq-item.open .faq-a { max-height: 200px; padding: 0 1.5rem 1.1rem; }
+
+/* CTA */
+.cta-section { background: var(--white); padding: 80px 4%; }
+.cta-inner { max-width: 1280px; margin: 0 auto; background: linear-gradient(135deg, #fff7ed, #e8faf9); border-radius: var(--radius); padding: 4rem; display: flex; align-items: center; gap: 3rem; position: relative; overflow: hidden; border: 2px solid var(--orange-mid); }
+.cta-illus { flex-shrink: 0; }
+.cta-text { flex: 1; }
+.cta-title { font-family: var(--font-display); font-size: 2rem; font-weight: 900; margin-bottom: 0.75rem; line-height: 1.2; }
+.cta-sub { font-size: 0.95rem; color: var(--grey); line-height: 1.6; max-width: 460px; margin-bottom: 2rem; }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-wa { display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.75rem; border-radius: 28px; background: #25d366; color: var(--white); border: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; text-decoration: none; }
+.btn-wa:hover { background: #1db954; transform: translateY(-2px); }
+.btn-call { display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.75rem; border-radius: 28px; background: none; color: var(--black); border: 2px solid var(--black); font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; text-decoration: none; }
+.btn-call:hover { background: var(--black); color: var(--white); }
+
+/* FOOTER */
+footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
+.footer-bottom { max-width: 1280px; margin: 0 auto; padding: 1.5rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-copyright { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; }
+.footer-social { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+.footer-social-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+.social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); transition: all 0.2s; text-decoration: none; }
+.social-icon:hover { border-color: var(--teal); color: var(--teal); }
+.footer-love { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+.footer-love span { color: #e74c3c; }
+
+/* FLOAT WA */
+.float-wa { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; box-shadow: 0 4px 20px rgba(37,211,102,0.5); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+.float-wa:hover { transform: scale(1.12); }
+
+/* POPUP */
+.popup-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 1rem; }
+.popup-overlay.open { display: flex; }
+.popup-card { background: var(--white); border-radius: var(--radius); width: 100%; max-width: 480px; padding: 2.5rem; position: relative; max-height: 90vh; overflow-y: auto; }
+.popup-close { position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--grey-mid); background: none; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; color: var(--grey); }
+.popup-close:hover { background: var(--grey-light); }
+.popup-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 0.4rem; }
+.popup-sub { font-size: 0.88rem; color: var(--grey); margin-bottom: 1.5rem; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) { .dest-grid { grid-template-columns: repeat(2, 1fr); } .age-grid { grid-template-columns: repeat(2, 1fr); } .pkg-grid { grid-template-columns: repeat(2, 1fr); } .stats-inner { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .hero-inner { grid-template-columns: 1fr; } .nav-links { display: none; } .hamburger { display: flex; } .pkg-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: 1fr; } .cta-inner { flex-direction: column; padding: 2rem; } }
+@media (max-width: 480px) { .dest-grid { grid-template-columns: 1fr; } .age-grid { grid-template-columns: 1fr; } .form-grid-2 { grid-template-columns: 1fr; } .stats-inner { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body class="lang-en">
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20family%20trip%20with%20Trip%20Harbour" target="_blank" class="float-wa" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-card">
+    <button class="popup-close" onclick="closePopup()">&#x2715;</button>
+    <div class="popup-title en">Plan My Family Trip</div>
+    <div class="popup-title hi" style="display:none">पारिवारिक यात्रा योजना बनाएं</div>
+    <div class="popup-sub en">Tell us about your family — we'll handle every detail so you just enjoy.</div>
+    <div class="popup-sub hi" style="display:none">अपने परिवार के बारे में बताएं — हम हर विवरण संभालेंगे।</div>
+    <form action="https://formspree.io/f/tripharbour" method="POST">
+      <input type="hidden" name="trip_type" value="Family Tour">
+      <div class="form-row"><label class="en">Your Name</label><label class="hi" style="display:none">आपका नाम</label><input type="text" name="name" placeholder="Full name" required></div>
+      <div class="form-row"><label class="en">Phone Number</label><label class="hi" style="display:none">फ़ोन नंबर</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+      <div class="form-row"><label class="en">Destination</label><label class="hi" style="display:none">गंतव्य</label>
+        <select name="destination">
+          <option>Kerala</option><option>Rajasthan</option><option>Himachal Pradesh</option><option>Goa</option><option>Kashmir</option><option>Andaman</option><option>Sikkim</option><option>Singapore</option><option>Dubai</option><option>Bali</option><option>Thailand</option><option>Not decided yet</option>
+        </select>
+      </div>
+      <div class="form-grid-2">
+        <div class="form-row"><label class="en">No. of Adults</label><label class="hi" style="display:none">वयस्कों की संख्या</label><select name="adults"><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></div>
+        <div class="form-row"><label class="en">No. of Children</label><label class="hi" style="display:none">बच्चों की संख्या</label><select name="children"><option>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
+      </div>
+      <div class="form-grid-2">
+        <div class="form-row"><label class="en">Travel Month</label><label class="hi" style="display:none">यात्रा माह</label><select name="month"><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></div>
+        <div class="form-row"><label class="en">Budget/person</label><label class="hi" style="display:none">बजट</label><select name="budget"><option>Under ₹20K</option><option>₹20K–40K</option><option>₹40K–75K</option><option>₹75K+</option></select></div>
+      </div>
+      <div class="form-row"><label class="en">Children's age group</label><label class="hi" style="display:none">बच्चों की आयु</label><select name="age_group"><option>Toddlers (0-4)</option><option>Kids (5-10)</option><option>Tweens (11-14)</option><option>Teens (15-17)</option><option>Mix of ages</option></select></div>
+      <button type="submit" class="btn-submit"><span class="en">Get Free Call Back</span><span class="hi" style="display:none">निःशुल्क कॉल बैक पाएं</span></button>
+    </form>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Trip<span>Harbour</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="en">Home</a><a href="index.html" class="hi" style="display:none">होम</a></li>
+    <li><a href="index.html#destinations" class="en">Destinations</a><a href="index.html#destinations" class="hi" style="display:none">गंतव्य</a></li>
+    <li><a href="honeymoon.html" class="en">Honeymoon</a><a href="honeymoon.html" class="hi" style="display:none">हनीमून</a></li>
+    <li><a href="family.html" class="active en">Family Tours</a><a href="family.html" class="active hi" style="display:none">पारिवारिक दौरे</a></li>
+    <li><a href="corporate.html" class="en">Corporate</a><a href="corporate.html" class="hi" style="display:none">कॉर्पोरेट</a></li>
+    <li><a href="about.html" class="en">About Us</a><a href="about.html" class="hi" style="display:none">हमारे बारे में</a></li>
+    <li><a href="contact.html" class="en">Contact</a><a href="contact.html" class="hi" style="display:none">संपर्क करें</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">हिन्दी</button>
+    <button class="btn-plan" onclick="openPopup()"><span class="en">Plan My Trip</span><span class="hi" style="display:none">यात्रा योजना बनाएं</span></button>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="index.html#destinations">Destinations</a>
+  <a href="honeymoon.html">Honeymoon</a><a href="family.html">Family Tours</a>
+  <a href="corporate.html">Corporate</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Family Tours</span></div>
+
+<!-- HERO -->
+<section class="hero" style="margin-top:0; padding-top:40px;">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">&#128106; For Families of All Sizes</div>
+      <h1 class="hero-title en">Family Holidays<br><em>Without the Hassle.</em></h1>
+      <h1 class="hero-title hi" style="display:none">पारिवारिक छुट्टियां,<br><em>बिना किसी झंझट के।</em></h1>
+      <p class="hero-sub en">From toddlers to grandparents — we plan every detail so your family can simply show up and make memories. A dedicated tour manager with you from day one.</p>
+      <p class="hero-sub hi" style="display:none">छोटे बच्चों से लेकर दादा-दादी तक — हम हर विवरण नियोजित करते हैं ताकि आपका परिवार बस आए और यादें बनाए।</p>
+      <div class="hero-pills">
+        <div class="pill"><span class="pill-dot"></span><span class="en">Kid-Friendly Itineraries</span><span class="hi" style="display:none">बच्चों के अनुकूल</span></div>
+        <div class="pill"><span class="pill-dot"></span><span class="en">Dedicated Tour Manager</span><span class="hi" style="display:none">समर्पित टूर मैनेजर</span></div>
+        <div class="pill"><span class="pill-dot"></span><span class="en">Safe & Verified Hotels</span><span class="hi" style="display:none">सुरक्षित होटल</span></div>
+        <div class="pill"><span class="pill-dot"></span><span class="en">Pan-India Departures</span><span class="hi" style="display:none">पूरे भारत से</span></div>
+      </div>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="openPopup()"><span class="en">Plan My Family Trip</span><span class="hi" style="display:none">पारिवारिक यात्रा योजना बनाएं</span></button>
+        <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20family%20trip" target="_blank" class="btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span class="en">WhatsApp Us</span><span class="hi" style="display:none">व्हाट्सएप करें</span>
+        </a>
+      </div>
+    </div>
+    <!-- ENQUIRY CARD + ILLUSTRATION -->
+    <div class="hero-illus">
+      <!-- Family SVG Illustration -->
+      <svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:480px; filter:drop-shadow(0 8px 24px rgba(249,115,22,0.15));">
+        <defs>
+          <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff7ed"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient>
+          <linearGradient id="ground2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4f5f2"/><stop offset="100%" stop-color="#a8edea"/></linearGradient>
+        </defs>
+        <rect width="480" height="220" fill="url(#sky2)" rx="16"/>
+        <!-- Hills -->
+        <ellipse cx="80" cy="200" rx="120" ry="60" fill="#2BBFB3" opacity="0.3"/>
+        <ellipse cx="400" cy="200" rx="120" ry="60" fill="#2BBFB3" opacity="0.2"/>
+        <!-- Sun -->
+        <circle cx="420" cy="50" r="36" fill="#ffd700" opacity="0.4"/>
+        <circle cx="420" cy="50" r="24" fill="#ffd700" opacity="0.6"/>
+        <!-- Clouds -->
+        <ellipse cx="80" cy="45" rx="44" ry="16" fill="white" opacity="0.8"/>
+        <ellipse cx="110" cy="38" rx="28" ry="14" fill="white" opacity="0.9"/>
+        <ellipse cx="240" cy="35" rx="36" ry="13" fill="white" opacity="0.7"/>
+        <!-- Ground strip -->
+        <rect x="0" y="175" width="480" height="45" fill="url(#ground2)" rx="0"/>
+        <!-- Path -->
+        <path d="M 140 220 Q 240 185 340 220" stroke="#1a9e93" stroke-width="2.5" fill="none" stroke-dasharray="7,5" opacity="0.5"/>
+        <!-- Tree left -->
+        <rect x="40" y="148" width="7" height="30" fill="#1a9e93" rx="2"/>
+        <polygon points="43,118 24,152 62,152" fill="#2BBFB3"/>
+        <polygon points="43,132 28,158 58,158" fill="#1a9e93"/>
+        <!-- Tree right -->
+        <rect x="428" y="148" width="7" height="30" fill="#1a9e93" rx="2"/>
+        <polygon points="431,118 412,152 450,152" fill="#2BBFB3"/>
+        <!-- GRANDPA -->
+        <circle cx="155" cy="118" r="13" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2"/>
+        <path d="M144 116 Q146 108 155 109 Q164 108 166 116" fill="#888" opacity="0.5"/>
+        <rect x="143" y="131" width="24" height="28" fill="#6b7280" rx="3"/>
+        <path d="M143 159 L139 185 L152 185 L155 168 L158 185 L171 185 L167 159Z" fill="#374151"/>
+        <!-- walking stick grandpa -->
+        <line x1="143" y1="145" x2="134" y2="185" stroke="#8b5e3c" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- DAD -->
+        <circle cx="200" cy="112" r="14" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2"/>
+        <path d="M188 108 Q190 100 200 101 Q210 100 212 108" fill="#2c1a0e"/>
+        <rect x="187" y="126" width="26" height="30" fill="#2BBFB3" rx="3"/>
+        <path d="M187 156 L183 185 L197 185 L200 165 L203 185 L217 185 L213 156Z" fill="#1f2937"/>
+        <!-- Backpack dad -->
+        <rect x="173" y="128" width="15" height="20" fill="#f97316" rx="3"/>
+        <path d="M175 128 Q180 122 186 128" stroke="#c2410c" stroke-width="1.5" fill="none"/>
+        <!-- MOM -->
+        <circle cx="265" cy="112" r="14" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2"/>
+        <path d="M253 108 Q255 99 265 100 Q275 99 277 108" fill="#4a2c2a"/>
+        <path d="M253 108 Q250 118 253 127" fill="#4a2c2a"/>
+        <path d="M255 126 Q250 152 245 180 L285 180 Q280 152 275 126Z" fill="#ff7eb3" stroke="#e05a9a" stroke-width="1"/>
+        <!-- Mom bag -->
+        <rect x="277" y="130" width="13" height="17" fill="#ffd700" rx="3"/>
+        <path d="M279 130 Q283 125 287 130" stroke="#e6be00" stroke-width="1.5" fill="none"/>
+        <!-- CHILD 1 (boy) -->
+        <circle cx="228" cy="132" r="11" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2"/>
+        <path d="M218 129 Q220 121 228 122 Q236 121 238 129" fill="#2c1a0e"/>
+        <rect x="219" y="143" width="18" height="22" fill="#9b59b6" rx="3"/>
+        <path d="M219 165 L216 185 L226 185 L228 172 L230 185 L240 185 L237 165Z" fill="#1f2937"/>
+        <!-- CHILD 2 (girl) -->
+        <circle cx="300" cy="135" r="10" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2"/>
+        <path d="M291 132 Q293 125 300 126 Q307 125 309 132" fill="#4a2c2a"/>
+        <path d="M292 143 Q288 163 286 180 L314 180 Q312 163 308 143Z" fill="#ff6b9d" rx="2"/>
+        <!-- balloon girl -->
+        <circle cx="315" cy="115" r="9" fill="#ff6b6b" opacity="0.9"/>
+        <line x1="315" y1="124" x2="309" y2="136" stroke="#555" stroke-width="1.5"/>
+        <!-- Camera dad -->
+        <rect x="213" y="115" width="16" height="11" fill="#1f2937" rx="2"/>
+        <circle cx="221" cy="120" r="3.5" fill="#4dd4c8" stroke="#2BBFB3" stroke-width="1"/>
+        <!-- Airplane doodle -->
+        <g transform="translate(340,30) rotate(-15)" opacity="0.5">
+          <ellipse cx="0" cy="0" rx="20" ry="6" fill="white" stroke="#2BBFB3" stroke-width="1.5"/>
+          <polygon points="0,-6 -7,-12 7,-12" fill="white" stroke="#2BBFB3" stroke-width="1.5"/>
+          <polygon points="16,0 24,4 24,-4" fill="white" stroke="#2BBFB3" stroke-width="1.5"/>
+        </g>
+        <!-- Stars/sparkles -->
+        <text x="100" y="80" font-size="12" fill="#f97316" opacity="0.5">✦</text>
+        <text x="380" y="100" font-size="10" fill="#2BBFB3" opacity="0.4">✦</text>
+        <text x="350" y="60" font-size="8" fill="#f97316" opacity="0.4">★</text>
+      </svg>
+      <!-- Enquiry Card -->
+      <div class="enquiry-card">
+        <div class="ec-title en">Get a Free Family Holiday Quote</div>
+        <div class="ec-title hi" style="display:none">मुफ्त पारिवारिक छुट्टी कोट पाएं</div>
+        <div class="ec-sub en">Our experts call you back within 2 hours</div>
+        <div class="ec-sub hi" style="display:none">हमारे विशेषज्ञ 2 घंटे में कॉल करेंगे</div>
+        <form action="https://formspree.io/f/tripharbour" method="POST">
+          <input type="hidden" name="trip_type" value="Family Tour">
+          <div class="form-row"><label class="en">Your Name</label><label class="hi" style="display:none">आपका नाम</label><input type="text" name="name" placeholder="Full name" required></div>
+          <div class="form-row"><label class="en">Phone Number</label><label class="hi" style="display:none">फ़ोन नंबर</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+          <div class="form-row"><label class="en">Destination</label><label class="hi" style="display:none">गंतव्य</label>
+            <select name="destination"><option>Kerala</option><option>Rajasthan</option><option>Goa</option><option>Kashmir</option><option>Andaman</option><option>Singapore</option><option>Dubai</option><option>Bali</option><option>Thailand</option><option>Not decided yet</option></select>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-row"><label class="en">Adults</label><label class="hi" style="display:none">वयस्क</label><select name="adults"><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></div>
+            <div class="form-row"><label class="en">Children</label><label class="hi" style="display:none">बच्चे</label><select name="children"><option>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
+          </div>
+          <button type="submit" class="btn-submit"><span class="en">Get Free Quote</span><span class="hi" style="display:none">मुफ्त कोट पाएं</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Family Trips Planned</div></div>
+    <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Destinations Covered</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Personalised Itineraries</div></div>
+    <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">On-Trip Support</div></div>
+  </div>
+</div>
+
+<!-- DESTINATIONS -->
+<section style="background:var(--grey-light);">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Top Picks</div><div class="section-label hi" style="display:none">शीर्ष चयन</div>
+      <h2 class="section-title en">Best Family Holiday Destinations</h2>
+      <h2 class="section-title hi" style="display:none">सर्वश्रेष्ठ पारिवारिक छुट्टी गंतव्य</h2>
+      <p class="section-sub en">Carefully chosen for safety, kid-friendly activities, comfort, and value — so every member of the family has a brilliant time</p>
+      <p class="section-sub hi" style="display:none">सुरक्षा, बच्चों के अनुकूल गतिविधियों और आराम के लिए सावधानी से चुने गए</p>
+    </div>
+    <div class="dest-grid">
+      <div class="dest-card" style="background:linear-gradient(160deg,#1a9e93,#0d6b63)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Kerala</div><div class="dest-tagline en">Houseboats, spices & wildlife</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#c2410c,#f97316)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Rajasthan</div><div class="dest-tagline en">Forts, camels & colour</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#2BBFB3,#1a9e93)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Himachal Pradesh</div><div class="dest-tagline en">Mountains, snow & adventure</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#4dd4c8,#2BBFB3)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Goa</div><div class="dest-tagline en">Beaches, churches & fun</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#0d6b63,#2BBFB3)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Singapore</div><div class="dest-tagline en">Universal Studios & Gardens by the Bay</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#3dccc0,#1a9e93)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Dubai</div><div class="dest-tagline en">Theme parks, desert safari & more</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#1a9e93,#4dd4c8)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Andaman</div><div class="dest-tagline en">Pristine beaches & underwater world</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(160deg,#0d6b63,#3dccc0)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Bali</div><div class="dest-tagline en">Temples, rice terraces & culture</div><div class="dest-explore en">View Packages &#8594;</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGE GROUPS -->
+<section>
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">We Plan for Every Age</div><div class="section-label hi" style="display:none">हर उम्र के लिए</div>
+      <h2 class="section-title en">Holidays Tailored to Your Family</h2>
+      <h2 class="section-title hi" style="display:none">आपके परिवार के लिए अनुकूलित छुट्टियां</h2>
+      <p class="section-sub en" style="margin: 0 auto;">Every itinerary is built around who's coming — toddlers, school kids, teens, or grandparents</p>
+      <p class="section-sub hi" style="display:none; margin: 0 auto;">हर यात्रा योजना परिवार के सदस्यों के अनुसार बनाई जाती है</p>
+    </div>
+    <div class="age-grid">
+      <div class="age-card">
+        <div class="age-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="14" r="8" fill="#FDBCB4" stroke="#f97316" stroke-width="1.5"/><path d="M8 32 Q8 22 18 22 Q28 22 28 32" fill="#f97316" opacity="0.6"/><circle cx="14" cy="12" r="1.5" fill="#555"/><circle cx="22" cy="12" r="1.5" fill="#555"/><path d="M14 17 Q18 20 22 17" stroke="#c2410c" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </div>
+        <div class="age-title en">Toddlers (0–4 yrs)</div><div class="age-title hi" style="display:none">छोटे बच्चे (0–4 वर्ष)</div>
+        <div class="age-desc en">Slow-paced itineraries, baby-friendly rooms, hygienic meal options, and zero rushing</div>
+        <div class="age-desc hi" style="display:none">धीमी गति की यात्रा, शिशु-अनुकूल कमरे और स्वच्छ भोजन</div>
+        <div class="age-tags"><span class="age-tag">Calm Stays</span><span class="age-tag">Baby Cots</span><span class="age-tag">No Rush</span></div>
+      </div>
+      <div class="age-card">
+        <div class="age-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="13" r="8" fill="#FDBCB4" stroke="#f97316" stroke-width="1.5"/><path d="M8 32 Q8 22 18 22 Q28 22 28 32" fill="#f97316" opacity="0.6"/><rect x="14" y="24" width="8" height="6" rx="2" fill="#9b59b6" opacity="0.5"/><path d="M12 8 L18 4 L24 8" stroke="#f97316" stroke-width="1.5" fill="none"/></svg>
+        </div>
+        <div class="age-title en">Kids (5–10 yrs)</div><div class="age-title hi" style="display:none">बच्चे (5–10 वर्ष)</div>
+        <div class="age-desc en">Adventure activities, cultural experiences, nature walks, and hands-on discovery</div>
+        <div class="age-desc hi" style="display:none">साहसिक गतिविधियां, सांस्कृतिक अनुभव और प्रकृति भ्रमण</div>
+        <div class="age-tags"><span class="age-tag">Wildlife Safaris</span><span class="age-tag">Boat Rides</span><span class="age-tag">Beach Play</span></div>
+      </div>
+      <div class="age-card">
+        <div class="age-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="13" r="8" fill="#FDBCB4" stroke="#f97316" stroke-width="1.5"/><path d="M8 32 Q8 22 18 22 Q28 22 28 32" fill="#f97316" opacity="0.6"/><rect x="12" y="22" width="12" height="8" rx="2" fill="#2BBFB3" opacity="0.5"/><circle cx="18" cy="10" r="3" fill="#f97316" opacity="0.4"/></svg>
+        </div>
+        <div class="age-title en">Teens (11–17 yrs)</div><div class="age-title hi" style="display:none">किशोर (11–17 वर्ष)</div>
+        <div class="age-desc en">Thrilling activities, social experiences, and a mix of independence and family time</div>
+        <div class="age-desc hi" style="display:none">रोमांचकारी गतिविधियां और सामाजिक अनुभव</div>
+        <div class="age-tags"><span class="age-tag">Scuba Diving</span><span class="age-tag">Trekking</span><span class="age-tag">Theme Parks</span></div>
+      </div>
+      <div class="age-card">
+        <div class="age-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="13" r="8" fill="#FDBCB4" stroke="#f97316" stroke-width="1.5"/><path d="M8 32 Q8 22 18 22 Q28 22 28 32" fill="#f97316" opacity="0.6"/><line x1="8" y1="28" x2="4" y2="34" stroke="#8b5e3c" stroke-width="2.5" stroke-linecap="round"/><path d="M12 8 Q14 5 18 5 Q22 5 24 8" fill="#888" opacity="0.4"/></svg>
+        </div>
+        <div class="age-title en">Grandparents</div><div class="age-title hi" style="display:none">दादा-दादी / नाना-नानी</div>
+        <div class="age-desc en">Comfortable pacing, accessible accommodation, guided heritage tours, and relaxed dining</div>
+        <div class="age-desc hi" style="display:none">आरामदायक गति, सुलभ आवास और विरासत दौरे</div>
+        <div class="age-tags"><span class="age-tag">Comfortable Stays</span><span class="age-tag">Heritage Tours</span><span class="age-tag">Relaxed Pace</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section style="background:var(--grey-light);">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Curated for Families</div><div class="section-label hi" style="display:none">परिवारों के लिए</div>
+      <h2 class="section-title en">Family Holiday Packages</h2>
+      <h2 class="section-title hi" style="display:none">पारिवारिक छुट्टी पैकेज</h2>
+      <p class="section-sub en">Every package includes dedicated transport, comfortable hotels, age-appropriate activities, and a tour manager</p>
+      <p class="section-sub hi" style="display:none">हर पैकेज में समर्पित परिवहन, आरामदायक होटल और उम्र के अनुरूप गतिविधियां शामिल हैं</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a9e93,#4dd4c8)"><div class="pkg-badge">Family</div><div class="pkg-age-badge">All Ages</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">6 Days Kerala Family Package</div><div class="pkg-name hi" style="display:none">6 दिन केरल पारिवारिक पैकेज</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">6 Days / 5 Nights</div><div class="pkg-meta-item">Family of 4</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Hotel</span><span class="incl-tag">Houseboat</span><span class="incl-tag orange-tag">Elephant Ride</span><span class="incl-tag">Tour Manager</span><span class="incl-tag">Meals</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;22,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#c2410c,#f97316)"><div class="pkg-badge">Family</div><div class="pkg-age-badge">All Ages</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">7 Days Rajasthan Heritage Family Tour</div><div class="pkg-name hi" style="display:none">7 दिन राजस्थान हेरिटेज पारिवारिक दौरा</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">7 Days / 6 Nights</div><div class="pkg-meta-item">Family of 4</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Heritage Hotel</span><span class="incl-tag orange-tag">Camel Safari</span><span class="incl-tag">Tour Manager</span><span class="incl-tag">Transport</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;26,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#0d6b63,#2BBFB3)"><div class="pkg-badge">Family</div><div class="pkg-age-badge">Kids Favourite</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">5 Days Singapore Family Package</div><div class="pkg-name hi" style="display:none">5 दिन सिंगापुर पारिवारिक पैकेज</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">5 Days / 4 Nights</div><div class="pkg-meta-item">Family of 4</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Hotel</span><span class="incl-tag orange-tag">Universal Studios</span><span class="incl-tag">Tour Manager</span><span class="incl-tag">Visa Assist</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;48,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#3dccc0,#1a9e93)"><div class="pkg-badge">Family</div><div class="pkg-age-badge">Adventure</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">8 Days Ladakh Family Adventure</div><div class="pkg-name hi" style="display:none">8 दिन लद्दाख पारिवारिक साहसिक यात्रा</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">8 Days / 7 Nights</div><div class="pkg-meta-item">Family of 4</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Hotel</span><span class="incl-tag orange-tag">Pangong Lake</span><span class="incl-tag">Tour Manager</span><span class="incl-tag">Permits</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;34,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#2BBFB3,#0d6b63)"><div class="pkg-badge">Family</div><div class="pkg-age-badge">Beach Fun</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">5 Days Dubai Family Package</div><div class="pkg-name hi" style="display:none">5 दिन दुबई पारिवारिक पैकेज</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">5 Days / 4 Nights</div><div class="pkg-meta-item">Family of 4</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Hotel</span><span class="incl-tag orange-tag">Desert Safari</span><span class="incl-tag orange-tag">Burj Khalifa</span><span class="incl-tag">Tour Manager</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;44,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a9e93,#3dccc0)"><div class="pkg-badge">Family</div><div class="pkg-age-badge">All Ages</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">5 Days Andaman Family Holiday</div><div class="pkg-name hi" style="display:none">5 दिन अंडमान पारिवारिक छुट्टी</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">5 Days / 4 Nights</div><div class="pkg-meta-item">Family of 4</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Beach Resort</span><span class="incl-tag orange-tag">Glass Boat Ride</span><span class="incl-tag">Tour Manager</span><span class="incl-tag">Meals</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;26,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">View</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="view-all"><a href="#" class="btn-ghost en">View All Family Packages &#8594;</a><a href="#" class="btn-ghost hi" style="display:none">सभी पारिवारिक पैकेज देखें &#8594;</a></div>
+  </div>
+</section>
+
+<!-- WHY FAMILY WITH US -->
+<section class="why-section">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">Why Choose Us</div><div class="section-label hi" style="display:none">हमें क्यों चुनें</div>
+      <h2 class="section-title en">Why Families Trust Trip Harbour</h2>
+      <h2 class="section-title hi" style="display:none">परिवार ट्रिप हार्बर पर क्यों भरोसा करते हैं</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="5" fill="#FDBCB4" stroke="#f97316" stroke-width="1.5"/><path d="M6 24 Q6 17 14 17 Q22 17 22 24" fill="#f97316" opacity="0.6"/><path d="M19 12 L21 14 L25 10" stroke="#f97316" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="why-content">
+          <div class="why-title en">Dedicated Tour Manager, Always</div><div class="why-title hi" style="display:none">हमेशा समर्पित टूर मैनेजर</div>
+          <div class="why-desc en">From airport pickup to hotel check-out, one person handles everything so you never have to figure things out on your own — especially helpful with children in tow.</div>
+          <div class="why-desc hi" style="display:none">एयरपोर्ट पिकअप से होटल चेकआउट तक, एक व्यक्ति सब कुछ संभालता है।</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="5" width="22" height="17" rx="3" fill="#fed7aa" stroke="#f97316" stroke-width="1.5"/><line x1="3" y1="11" x2="25" y2="11" stroke="#f97316" stroke-width="1.5"/><circle cx="9" cy="17" r="2" fill="#f97316"/><circle cx="14" cy="17" r="2" fill="#f97316"/><circle cx="19" cy="17" r="2" fill="#f97316"/></svg></div>
+        <div class="why-content">
+          <div class="why-title en">Age-Appropriate Activities</div><div class="why-title hi" style="display:none">उम्र के अनुरूप गतिविधियां</div>
+          <div class="why-desc en">We build itineraries that work for every age group in your family — so toddlers aren't bored on long drives and teens aren't stuck on slow heritage walks.</div>
+          <div class="why-desc hi" style="display:none">हम हर उम्र के लिए उपयुक्त यात्रा योजना बनाते हैं।</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4 C14 4 4 9 4 16 C4 21 8 25 14 25 C20 25 24 21 24 16 C24 9 14 4 14 4Z" fill="#fed7aa" stroke="#f97316" stroke-width="1.5"/><path d="M10 16 L13 19 L18 13" stroke="#f97316" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="why-content">
+          <div class="why-title en">Verified, Safe Accommodations</div><div class="why-title hi" style="display:none">सत्यापित, सुरक्षित आवास</div>
+          <div class="why-desc en">Every hotel we book is verified for hygiene, safety, and family-friendliness. We only recommend places we'd take our own families to.</div>
+          <div class="why-desc hi" style="display:none">हम केवल वही होटल बुक करते हैं जहां हम अपने परिवार को ले जाएंगे।</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="11" fill="#fed7aa" stroke="#f97316" stroke-width="1.5"/><path d="M14 7 L14 14 L19 19" stroke="#f97316" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="2" fill="#f97316"/></svg></div>
+        <div class="why-content">
+          <div class="why-title en">Flexible Pacing, Zero Rush</div><div class="why-title hi" style="display:none">लचीली गति, कोई जल्दी नहीं</div>
+          <div class="why-desc en">Family trips need room to breathe. We build buffer time into every itinerary — for naps, meal delays, and spontaneous stops — because real family travel never runs on schedule.</div>
+          <div class="why-desc hi" style="display:none">पारिवारिक यात्राओं में सांस लेने की जगह होनी चाहिए।</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Common Questions</div><div class="section-label hi" style="display:none">सामान्य प्रश्न</div>
+      <h2 class="section-title en">Family Travel FAQs</h2>
+      <h2 class="section-title hi" style="display:none">पारिवारिक यात्रा के सामान्य प्रश्न</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="en">What is the best age for children to travel internationally?</span><span class="hi" style="display:none">बच्चों के अंतरराष्ट्रीय यात्रा के लिए सबसे अच्छी उम्र क्या है?</span><span class="arrow">&#9660;</span></div>
+        <div class="faq-a en">Children of all ages can travel internationally. For toddlers (0–3), we recommend shorter flights and destinations like Bali, Sri Lanka, or Maldives. For school kids (5–12), Singapore and Dubai are excellent with theme parks and family attractions. We customise every itinerary based on your children's ages.</div>
+        <div class="faq-a hi" style="display:none">सभी उम्र के बच्चे अंतरराष्ट्रीय यात्रा कर सकते हैं। हम आपके बच्चों की उम्र के आधार पर यात्रा योजना बनाते हैं।</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="en">Is a tour manager really necessary for family trips?</span><span class="hi" style="display:none">पारिवारिक यात्राओं के लिए टूर मैनेजर वास्तव में जरूरी है?</span><span class="arrow">&#9660;</span></div>
+        <div class="faq-a en">Especially with children, yes. A dedicated tour manager handles logistics, resolves issues instantly, manages check-ins, coordinates activities, and is a local expert — so you can focus entirely on enjoying time with your family instead of troubleshooting.</div>
+        <div class="faq-a hi" style="display:none">बच्चों के साथ, हां। एक टूर मैनेजर सभी व्यवस्थाएं संभालता है ताकि आप परिवार के साथ समय का आनंद ले सकें।</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="en">Can you accommodate elderly family members with mobility limitations?</span><span class="hi" style="display:none">क्या आप गतिशीलता सीमाओं वाले बुजुर्ग सदस्यों को समायोजित कर सकते हैं?</span><span class="arrow">&#9660;</span></div>
+        <div class="faq-a en">Absolutely. We select accessible hotels, arrange comfortable transport (SUVs or minibuses), design slow-paced itineraries with rest stops, and ensure sightseeing is manageable. Just let us know and we plan around everyone's comfort.</div>
+        <div class="faq-a hi" style="display:none">बिल्कुल। हम सुलभ होटल, आरामदायक परिवहन और धीमी गति की यात्रा योजना बनाते हैं।</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="en">What if a child falls sick during the trip?</span><span class="hi" style="display:none">यात्रा के दौरान बच्चा बीमार पड़ जाए तो?</span><span class="arrow">&#9660;</span></div>
+        <div class="faq-a en">Our tour manager knows the nearest trusted medical facilities at every destination. We have 24/7 support and our team will assist with doctor appointments, pharmacy runs, and rescheduling activities if needed. Your family's health is our priority.</div>
+        <div class="faq-a hi" style="display:none">हमारा टूर मैनेजर हर गंतव्य पर नजदीकी चिकित्सा सुविधाएं जानता है और 24/7 सहायता उपलब्ध है।</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="en">How far in advance should we book a family holiday?</span><span class="hi" style="display:none">पारिवारिक छुट्टी कितने पहले बुक करनी चाहिए?</span><span class="arrow">&#9660;</span></div>
+        <div class="faq-a en">For peak season (October–March, summer holidays, Diwali, Christmas), we recommend booking 2–3 months in advance. For off-season travel, 3–4 weeks is usually sufficient. International trips with visa requirements need at least 6–8 weeks lead time.</div>
+        <div class="faq-a hi" style="display:none">पीक सीजन के लिए 2-3 महीने पहले बुकिंग करें। अंतरराष्ट्रीय यात्रा के लिए कम से कम 6-8 सप्ताह।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-illus">
+      <svg viewBox="0 0 140 140" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="70" cy="70" r="68" fill="#fff7ed" stroke="#fed7aa" stroke-width="2"/>
+        <circle cx="50" cy="48" r="12" fill="#FDBCB4" stroke="#f97316" stroke-width="1.5"/>
+        <circle cx="90" cy="48" r="12" fill="#FDBCB4" stroke="#f97316" stroke-width="1.5"/>
+        <circle cx="70" cy="58" r="9" fill="#FDBCB4" stroke="#f97316" stroke-width="1.5"/>
+        <path d="M32 95 Q32 72 50 72 Q58 72 62 76 Q66 72 70 72 Q74 72 78 76 Q82 72 90 72 Q108 72 108 95" fill="#f97316" opacity="0.5"/>
+        <path d="M55 42 L70 34 L85 42" stroke="#f97316" stroke-width="2" fill="none"/>
+        <text x="55" y="110" font-size="22" fill="#f97316" opacity="0.8">&#127968;</text>
+      </svg>
+    </div>
+    <div class="cta-text">
+      <div class="cta-title en">Ready to Plan Your Family Adventure?</div>
+      <div class="cta-title hi" style="display:none">पारिवारिक साहसिक यात्रा की योजना बनाने के लिए तैयार हैं?</div>
+      <div class="cta-sub en">Talk to our family travel specialists — free consultation, personalised itinerary, and zero pressure. We'll make every family member happy.</div>
+      <div class="cta-sub hi" style="display:none">हमारे विशेषज्ञों से बात करें — मुफ्त परामर्श और व्यक्तिगत यात्रा योजना।</div>
+      <div class="cta-actions">
+        <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20family%20holiday%20with%20Trip%20Harbour" target="_blank" class="btn-wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span class="en">WhatsApp Us</span><span class="hi" style="display:none">व्हाट्सएप करें</span>
+        </a>
+        <a href="tel:+919140826298" class="btn-call">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .11h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span class="en">Call Now</span><span class="hi" style="display:none">अभी कॉल करें</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-copyright en">© 2026 Trip Harbour. All rights reserved.</div>
+    <div class="footer-copyright hi" style="display:none">© 2026 ट्रिप हार्बर। सर्वाधिकार सुरक्षित।</div>
+    <div class="footer-social">
+      <span class="footer-social-label en">Connect with us:</span>
+      <a href="#" class="social-icon" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    </div>
+    <div class="footer-love">Made with <span>❤️</span> in India &nbsp;|&nbsp; First Floor, A24, Sector 63, Noida 201309</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+let currentLang = 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'hi' : 'en';
+  document.body.className = 'lang-' + currentLang;
+  document.getElementById('langBtn').textContent = currentLang === 'en' ? 'हिन्दी' : 'English';
+  document.querySelectorAll('.en, .hi').forEach(el => { el.style.display = el.classList.contains(currentLang) ? '' : 'none'; });
+}
+function openPopup() { document.getElementById('popup').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closePopup() { document.getElementById('popup').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('popup').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

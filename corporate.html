@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Corporate team offsites & retreats across India and internationally. End-to-end planning, dedicated event manager, GST invoicing, CSR activities. Trip Harbour, Noida.">
+<title>Team Offsites & Corporate Retreats — Trip Harbour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #2BBFB3; --teal-dark: #1a9e93; --teal-light: #e8faf9; --teal-mid: #c2f0ec;
+  --black: #111827; --charcoal: #1f2937; --grey: #6b7280; --grey-light: #f3f4f6;
+  --grey-mid: #e5e7eb; --white: #ffffff;
+  --navy: #0f172a; --navy-mid: #1e293b; --navy-light: #f1f5f9;
+  --gold: #f59e0b; --gold-light: #fffbeb; --gold-mid: #fde68a;
+  --font-display: 'Playfair Display', serif; --font-body: 'DM Sans', sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08); --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.18); --radius: 16px; --radius-sm: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--black); background: var(--white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.lang-en .hi { display: none; }
+.lang-hi .en { display: none; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--grey-mid); height: 68px;
+  display: flex; align-items: center; padding: 0 4%; gap: 2rem; transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: var(--shadow-md); }
+.nav-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--black); white-space: nowrap; flex-shrink: 0; }
+.nav-logo span { color: var(--teal); }
+.nav-links { display: flex; align-items: center; gap: 0.2rem; flex: 1; justify-content: center; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--charcoal); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); transition: all 0.2s; white-space: nowrap; }
+.nav-links a:hover, .nav-links a.active { background: var(--teal-light); color: var(--teal-dark); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.lang-btn { background: var(--grey-light); border: none; border-radius: 20px; padding: 0.35rem 0.75rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: var(--charcoal); transition: all 0.2s; font-family: var(--font-body); }
+.lang-btn:hover { background: var(--teal-light); color: var(--teal-dark); }
+.btn-plan { background: var(--teal); color: var(--white); border: none; border-radius: 24px; padding: 0.6rem 1.4rem; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.25s; font-family: var(--font-body); white-space: nowrap; }
+.btn-plan:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(43,191,179,0.4); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 24px; height: 2px; background: var(--black); border-radius: 2px; display: block; }
+.mobile-menu { position: fixed; inset: 0; top: 68px; z-index: 999; background: var(--white); padding: 1.5rem 4%; display: none; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--grey-mid); }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 500; color: var(--charcoal); }
+.mobile-menu a:hover { background: var(--teal-light); color: var(--teal-dark); }
+
+/* BREADCRUMB */
+.breadcrumb { background: var(--grey-light); padding: 0.75rem 4%; font-size: 0.82rem; color: var(--grey); margin-top: 68px; }
+.breadcrumb a { color: var(--teal); }
+.breadcrumb span { margin: 0 0.4rem; }
+
+/* HERO — dark navy corporate feel */
+.hero {
+  min-height: 90vh; padding: 60px 4% 60px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0d2137 100%);
+  display: flex; align-items: center; position: relative; overflow: hidden;
+}
+/* grid pattern overlay */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(43,191,179,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43,191,179,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.hero::after {
+  content: '';
+  position: absolute; top: -120px; right: -120px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(43,191,179,0.15) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.hero-inner { max-width: 1280px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+
+.hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(43,191,179,0.15); border: 1px solid rgba(43,191,179,0.3); border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 600; color: var(--teal); margin-bottom: 1.5rem; }
+.hero-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 900; line-height: 1.1; color: var(--white); margin-bottom: 1.25rem; }
+.hero-title em { color: var(--teal); font-style: normal; }
+.hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
+.hero-pills { display: flex; gap: 0.65rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.pill { display: flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.8); }
+.pill-dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; flex-shrink: 0; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary { padding: 0.9rem 2rem; background: var(--teal); color: var(--white); border: none; border-radius: 28px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.25s; }
+.btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(43,191,179,0.4); }
+.btn-outline-white { padding: 0.9rem 2rem; background: none; color: var(--white); border: 2px solid rgba(255,255,255,0.3); border-radius: 28px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.25s; display: inline-flex; align-items: center; gap: 0.5rem; }
+.btn-outline-white:hover { border-color: var(--teal); color: var(--teal); }
+
+/* ENQUIRY CARD — on dark hero */
+.enquiry-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: 2rem; border: 1px solid var(--grey-mid); }
+.ec-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem; }
+.ec-sub { font-size: 0.82rem; color: var(--grey); margin-bottom: 1.5rem; line-height: 1.5; }
+.form-row { margin-bottom: 0.9rem; }
+.form-row label { display: block; font-size: 0.75rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.form-row input, .form-row select, .form-row textarea { width: 100%; padding: 0.65rem 1rem; border: 1.5px solid var(--grey-mid); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.88rem; color: var(--black); background: var(--white); transition: border-color 0.2s; outline: none; }
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--teal); }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.btn-submit { width: 100%; padding: 0.85rem; background: var(--navy); color: var(--white); border: none; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.25s; margin-top: 0.5rem; }
+.btn-submit:hover { background: var(--teal); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(43,191,179,0.35); }
+.gst-note { text-align: center; font-size: 0.75rem; color: var(--grey); margin-top: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.3rem; }
+
+/* SECTIONS */
+section { padding: 80px 4%; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; color: var(--black); margin-bottom: 0.75rem; }
+.section-sub { font-size: 1rem; color: var(--grey); line-height: 1.7; max-width: 600px; }
+.section-header { margin-bottom: 3rem; }
+
+/* STATS — teal on dark */
+.stats-strip { background: var(--navy); padding: 3rem 4%; }
+.stats-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.stat { text-align: center; padding: 1.5rem; border: 1px solid rgba(43,191,179,0.2); border-radius: var(--radius); background: rgba(43,191,179,0.04); }
+.stat-num { font-family: var(--font-display); font-size: 2.4rem; font-weight: 900; color: var(--teal); margin-bottom: 0.25rem; }
+.stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+
+/* WHAT WE HANDLE */
+.handle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.handle-card { background: var(--white); border-radius: var(--radius); padding: 1.75rem 1.5rem; border: 1.5px solid var(--grey-mid); transition: all 0.3s; text-align: center; }
+.handle-card:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.handle-icon { width: 60px; height: 60px; margin: 0 auto 1rem; background: var(--teal-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; border: 2px solid var(--teal-mid); }
+.handle-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; }
+.handle-desc { font-size: 0.8rem; color: var(--grey); line-height: 1.55; }
+
+/* DESTINATIONS */
+.dest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.dest-card { border-radius: var(--radius); overflow: hidden; position: relative; height: 240px; cursor: pointer; transition: transform 0.3s; box-shadow: var(--shadow-sm); }
+.dest-card:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
+.dest-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.1) 60%); transition: background 0.3s; }
+.dest-card:hover .dest-overlay { background: linear-gradient(to top, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.2) 60%); }
+.dest-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem; color: var(--white); display: flex; justify-content: space-between; align-items: flex-end; }
+.dest-left {}
+.dest-flag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--teal); border-radius: 12px; padding: 0.2rem 0.6rem; display: inline-block; margin-bottom: 0.35rem; }
+.dest-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; }
+.dest-tagline { font-size: 0.75rem; opacity: 0.75; margin-top: 0.15rem; }
+.dest-pax { font-size: 0.75rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 12px; padding: 0.3rem 0.7rem; color: var(--white); backdrop-filter: blur(4px); white-space: nowrap; }
+
+/* PACKAGES */
+.pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.pkg-card { border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-mid); background: var(--white); transition: all 0.3s; }
+.pkg-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.pkg-img { height: 200px; position: relative; display: flex; align-items: flex-end; }
+.pkg-badge { position: absolute; top: 12px; left: 12px; background: var(--navy); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.72rem; font-weight: 700; color: var(--teal); }
+.pkg-type { position: absolute; top: 12px; right: 12px; background: var(--teal); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.72rem; font-weight: 700; color: var(--white); }
+.pkg-body { padding: 1.25rem; }
+.pkg-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.4; }
+.pkg-meta { display: flex; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.pkg-meta-item { font-size: 0.78rem; color: var(--grey); }
+.pkg-inclusions { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem; }
+.incl-tag { font-size: 0.72rem; background: var(--teal-light); color: var(--teal-dark); border-radius: 12px; padding: 0.2rem 0.6rem; font-weight: 500; }
+.incl-tag.navy-tag { background: var(--navy-light); color: var(--navy); }
+.incl-tag.gold-tag { background: var(--gold-light); color: #92400e; }
+.pkg-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; border-top: 1px solid var(--grey-mid); }
+.pkg-price { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--teal-dark); }
+.pkg-price span { font-family: var(--font-body); font-size: 0.72rem; color: var(--grey); font-weight: 400; }
+.pkg-btns { display: flex; gap: 0.5rem; }
+.btn-outline { padding: 0.45rem 0.9rem; border-radius: var(--radius-sm); border: 1.5px solid var(--teal); color: var(--teal); background: none; font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-outline:hover { background: var(--teal-light); }
+.btn-solid { padding: 0.45rem 0.9rem; border-radius: var(--radius-sm); border: none; background: var(--teal); color: var(--white); font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-solid:hover { background: var(--teal-dark); }
+.view-all { text-align: center; margin-top: 2.5rem; }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 2rem; border-radius: 24px; border: 2px solid var(--teal); color: var(--teal); background: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; text-decoration: none; }
+.btn-ghost:hover { background: var(--teal); color: var(--white); }
+
+/* TIERS */
+.tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.tier-card { border-radius: var(--radius); padding: 2.5rem 2rem; border: 2px solid var(--grey-mid); position: relative; transition: all 0.3s; }
+.tier-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.tier-card.featured { border-color: var(--teal); background: linear-gradient(135deg, #f0fffe, #ffffff); }
+.tier-card.featured::before { content: 'Most Popular'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--teal); color: var(--white); font-size: 0.72rem; font-weight: 700; padding: 0.25rem 1rem; border-radius: 20px; white-space: nowrap; }
+.tier-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.25rem; }
+.tier-price { font-size: 0.85rem; color: var(--grey); margin-bottom: 1.5rem; }
+.tier-price strong { font-size: 1.6rem; font-family: var(--font-display); color: var(--teal-dark); }
+.tier-features { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem; }
+.tier-feat { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.85rem; color: var(--charcoal); line-height: 1.4; }
+.tier-feat-icon { width: 18px; height: 18px; border-radius: 50%; background: var(--teal-light); border: 1.5px solid var(--teal); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.tier-feat-icon svg { width: 10px; height: 10px; }
+.tier-btn { width: 100%; padding: 0.85rem; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; border: 2px solid var(--teal); }
+.tier-btn.filled { background: var(--teal); color: var(--white); }
+.tier-btn.filled:hover { background: var(--teal-dark); }
+.tier-btn.outlined { background: none; color: var(--teal); }
+.tier-btn.outlined:hover { background: var(--teal); color: var(--white); }
+
+/* CSR SECTION */
+.csr-section { background: var(--navy); color: var(--white); }
+.csr-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.csr-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+.csr-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; color: var(--white); margin-bottom: 1rem; line-height: 1.2; }
+.csr-sub { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 2rem; }
+.csr-activities { display: flex; flex-direction: column; gap: 1rem; }
+.csr-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem; background: rgba(43,191,179,0.07); border: 1px solid rgba(43,191,179,0.18); border-radius: var(--radius-sm); transition: all 0.25s; }
+.csr-item:hover { background: rgba(43,191,179,0.12); border-color: rgba(43,191,179,0.35); }
+.csr-item-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(43,191,179,0.15); border: 1px solid rgba(43,191,179,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.csr-item-title { font-weight: 700; font-size: 0.95rem; color: var(--white); margin-bottom: 0.25rem; }
+.csr-item-desc { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+.csr-cta { margin-top: 2rem; }
+.csr-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2rem; background: var(--teal); color: var(--white); border: none; border-radius: 28px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; }
+.csr-btn:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(43,191,179,0.4); }
+.csr-visual { position: relative; }
+.csr-card-stack { position: relative; }
+.csr-main-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); padding: 2rem; }
+.csr-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.csr-stat-box { background: rgba(43,191,179,0.08); border: 1px solid rgba(43,191,179,0.2); border-radius: var(--radius-sm); padding: 1.25rem; text-align: center; }
+.csr-stat-num { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: var(--teal); }
+.csr-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 0.25rem; }
+
+/* PROCESS */
+.process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; }
+.process-grid::before { content: ''; position: absolute; top: 36px; left: 10%; right: 10%; height: 2px; background: linear-gradient(to right, var(--teal-mid), var(--teal), var(--teal-mid)); z-index: 0; }
+.process-step { text-align: center; padding: 0 1rem; position: relative; z-index: 1; }
+.process-num { width: 72px; height: 72px; border-radius: 50%; background: var(--white); border: 3px solid var(--teal); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; color: var(--teal); box-shadow: 0 0 0 6px var(--teal-light); }
+.process-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem; }
+.process-desc { font-size: 0.78rem; color: var(--grey); line-height: 1.55; }
+
+/* WHY CORPORATE */
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.why-card { background: var(--white); border-radius: var(--radius); padding: 2rem; display: flex; gap: 1.5rem; align-items: flex-start; border: 1.5px solid var(--grey-mid); transition: all 0.3s; }
+.why-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); }
+.why-icon { width: 52px; height: 52px; flex-shrink: 0; background: var(--navy); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+.why-content {}
+.why-title { font-weight: 700; font-size: 0.98rem; margin-bottom: 0.4rem; }
+.why-desc { font-size: 0.85rem; color: var(--grey); line-height: 1.65; }
+
+/* TESTIMONIAL */
+.testimonial-section { background: var(--grey-light); }
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.testimonial-card { background: var(--white); border-radius: var(--radius); padding: 2rem; border: 1.5px solid var(--grey-mid); transition: all 0.3s; }
+.testimonial-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); }
+.stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 2px; }
+.testimonial-text { font-size: 0.88rem; color: var(--charcoal); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+.author-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--teal-mid), var(--teal)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; color: var(--white); flex-shrink: 0; }
+.author-name { font-weight: 700; font-size: 0.88rem; }
+.author-role { font-size: 0.78rem; color: var(--grey); }
+
+/* CTA SECTION */
+.cta-section { background: var(--white); padding: 80px 4%; }
+.cta-inner { max-width: 1280px; margin: 0 auto; background: var(--navy); border-radius: var(--radius); padding: 4rem; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; position: relative; overflow: hidden; }
+.cta-inner::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(43,191,179,0.15) 0%, transparent 70%); border-radius: 50%; }
+.cta-inner::after { content: ''; position: absolute; bottom: -80px; left: 20%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(43,191,179,0.08) 0%, transparent 70%); border-radius: 50%; }
+.cta-text { position: relative; z-index: 1; }
+.cta-tag { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(43,191,179,0.15); border: 1px solid rgba(43,191,179,0.25); border-radius: 20px; padding: 0.35rem 0.9rem; font-size: 0.75rem; font-weight: 700; color: var(--teal); margin-bottom: 1rem; }
+.cta-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 900; color: var(--white); margin-bottom: 0.75rem; line-height: 1.2; }
+.cta-sub { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.6; max-width: 480px; }
+.cta-actions { display: flex; flex-direction: column; gap: 1rem; position: relative; z-index: 1; flex-shrink: 0; }
+.btn-wa { display: flex; align-items: center; gap: 0.6rem; padding: 0.9rem 1.75rem; border-radius: 28px; background: #25d366; color: var(--white); border: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; text-decoration: none; white-space: nowrap; }
+.btn-wa:hover { background: #1db954; transform: translateY(-2px); }
+.btn-call { display: flex; align-items: center; gap: 0.6rem; padding: 0.9rem 1.75rem; border-radius: 28px; background: none; color: var(--white); border: 2px solid rgba(255,255,255,0.25); font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; text-decoration: none; white-space: nowrap; }
+.btn-call:hover { border-color: var(--teal); color: var(--teal); }
+
+/* FOOTER */
+footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
+.footer-bottom { max-width: 1280px; margin: 0 auto; padding: 1.5rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-copyright { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; }
+.footer-social { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+.footer-social-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+.social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); transition: all 0.2s; text-decoration: none; }
+.social-icon:hover { border-color: var(--teal); color: var(--teal); }
+.footer-love { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+.footer-love span { color: #e74c3c; }
+
+/* FLOAT WA */
+.float-wa { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; box-shadow: 0 4px 20px rgba(37,211,102,0.5); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+.float-wa:hover { transform: scale(1.12); }
+
+/* POPUP */
+.popup-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 1rem; }
+.popup-overlay.open { display: flex; }
+.popup-card { background: var(--white); border-radius: var(--radius); width: 100%; max-width: 520px; padding: 2.5rem; position: relative; max-height: 90vh; overflow-y: auto; }
+.popup-close { position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--grey-mid); background: none; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; color: var(--grey); }
+.popup-close:hover { background: var(--grey-light); }
+.popup-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 0.4rem; }
+.popup-sub { font-size: 0.88rem; color: var(--grey); margin-bottom: 1.5rem; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .handle-grid { grid-template-columns: repeat(2, 1fr); }
+  .tiers-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .csr-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .process-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .process-grid::before { display: none; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .dest-grid { grid-template-columns: repeat(2, 1fr); }
+  .cta-inner { grid-template-columns: 1fr; }
+  .cta-actions { flex-direction: row; }
+}
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .pkg-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .dest-grid { grid-template-columns: 1fr; }
+  .handle-grid { grid-template-columns: 1fr 1fr; }
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .cta-actions { flex-direction: column; }
+}
+</style>
+</head>
+<body class="lang-en">
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20corporate%20offsite%20with%20Trip%20Harbour" target="_blank" class="float-wa" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- POPUP — Corporate Enquiry Form -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-card">
+    <button class="popup-close" onclick="closePopup()">&#x2715;</button>
+    <div class="popup-title en">Corporate Enquiry</div>
+    <div class="popup-title hi" style="display:none">कॉर्पोरेट पूछताछ</div>
+    <div class="popup-sub en">Share your requirements — our corporate travel specialist will call you within 2 hours with a tailored proposal.</div>
+    <div class="popup-sub hi" style="display:none">अपनी आवश्यकताएं बताएं — हमारा विशेषज्ञ 2 घंटे में कॉल करेगा।</div>
+    <form action="https://formspree.io/f/tripharbour" method="POST">
+      <input type="hidden" name="trip_type" value="Corporate Offsite">
+      <div class="form-grid-2">
+        <div class="form-row"><label class="en">Your Name</label><label class="hi" style="display:none">आपका नाम</label><input type="text" name="name" placeholder="Full name" required></div>
+        <div class="form-row"><label class="en">Designation</label><label class="hi" style="display:none">पद</label><input type="text" name="designation" placeholder="HR Manager / Founder"></div>
+      </div>
+      <div class="form-row"><label class="en">Company Name</label><label class="hi" style="display:none">कंपनी का नाम</label><input type="text" name="company" placeholder="Company name" required></div>
+      <div class="form-row"><label class="en">Phone Number</label><label class="hi" style="display:none">फ़ोन नंबर</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+      <div class="form-grid-2">
+        <div class="form-row"><label class="en">No. of Employees</label><label class="hi" style="display:none">कर्मचारियों की संख्या</label><select name="employees"><option>10–20</option><option>20–50</option><option>50–100</option><option>100–250</option><option>250+</option></select></div>
+        <div class="form-row"><label class="en">Budget Per Head</label><label class="hi" style="display:none">प्रति व्यक्ति बजट</label><select name="budget"><option>Under ₹8K</option><option>₹8K–15K</option><option>₹15K–25K</option><option>₹25K–50K</option><option>₹50K+</option></select></div>
+      </div>
+      <div class="form-row"><label class="en">Preferred Destination</label><label class="hi" style="display:none">पसंदीदा गंतव्य</label>
+        <select name="destination"><option>Goa</option><option>Manali</option><option>Rishikesh</option><option>Coorg</option><option>Jim Corbett</option><option>Kasauli</option><option>Bali</option><option>Thailand</option><option>Dubai</option><option>Not decided yet</option></select>
+      </div>
+      <div class="form-grid-2">
+        <div class="form-row"><label class="en">Tentative Month</label><label class="hi" style="display:none">संभावित माह</label><select name="month"><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></div>
+        <div class="form-row"><label class="en">Trip Type</label><label class="hi" style="display:none">यात्रा प्रकार</label><select name="offsite_type"><option>Team Offsite</option><option>Corporate Retreat</option><option>CSR Activity</option><option>Incentive Trip</option></select></div>
+      </div>
+      <div class="form-row"><label class="en">CSR Activity Required?</label><label class="hi" style="display:none">CSR गतिविधि चाहिए?</label><select name="csr"><option>No</option><option>Yes — plantation drive</option><option>Yes — village visit</option><option>Yes — school activity</option><option>Yes — beach/river clean-up</option><option>Yes — discuss options</option></select></div>
+      <button type="submit" class="btn-submit"><span class="en">Submit Corporate Enquiry</span><span class="hi" style="display:none">कॉर्पोरेट पूछताछ भेजें</span></button>
+      <div class="gst-note">&#10003; GST invoice provided &nbsp;|&nbsp; &#10003; Confidential &nbsp;|&nbsp; &#10003; No spam</div>
+    </form>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Trip<span>Harbour</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="en">Home</a><a href="index.html" class="hi" style="display:none">होम</a></li>
+    <li><a href="index.html#destinations" class="en">Destinations</a><a href="index.html#destinations" class="hi" style="display:none">गंतव्य</a></li>
+    <li><a href="honeymoon.html" class="en">Honeymoon</a><a href="honeymoon.html" class="hi" style="display:none">हनीमून</a></li>
+    <li><a href="family.html" class="en">Family Tours</a><a href="family.html" class="hi" style="display:none">पारिवारिक दौरे</a></li>
+    <li><a href="corporate.html" class="active en">Corporate</a><a href="corporate.html" class="active hi" style="display:none">कॉर्पोरेट</a></li>
+    <li><a href="about.html" class="en">About Us</a><a href="about.html" class="hi" style="display:none">हमारे बारे में</a></li>
+    <li><a href="contact.html" class="en">Contact</a><a href="contact.html" class="hi" style="display:none">संपर्क करें</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">हिन्दी</button>
+    <button class="btn-plan" onclick="openPopup()"><span class="en">Get a Proposal</span><span class="hi" style="display:none">प्रस्ताव पाएं</span></button>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="index.html#destinations">Destinations</a>
+  <a href="honeymoon.html">Honeymoon</a><a href="family.html">Family Tours</a>
+  <a href="corporate.html">Corporate</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Corporate</span></div>
+
+<!-- HERO -->
+<section class="hero" style="margin-top:0; padding-top:40px;">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">&#127970; For Startups & SMEs Across India</div>
+      <h1 class="hero-title en">Team Offsites &<br><em>Corporate Retreats,</em><br>Perfectly Executed.</h1>
+      <h1 class="hero-title hi" style="display:none">टीम ऑफसाइट और<br><em>कॉर्पोरेट रिट्रीट,</em><br>सटीक रूप से संचालित।</h1>
+      <p class="hero-sub en">From 10 to 500 employees — we plan, manage, and deliver every detail. Transport, accommodation, team activities, CSR, GST invoicing — all handled by a dedicated corporate event manager.</p>
+      <p class="hero-sub hi" style="display:none">10 से 500 कर्मचारियों तक — हम हर विवरण नियोजित, प्रबंधित और वितरित करते हैं।</p>
+      <div class="hero-pills">
+        <div class="pill"><span class="pill-dot"></span><span class="en">Dedicated Event Manager</span><span class="hi" style="display:none">समर्पित इवेंट मैनेजर</span></div>
+        <div class="pill"><span class="pill-dot"></span><span class="en">GST Compliant Invoicing</span><span class="hi" style="display:none">जीएसटी अनुपालन</span></div>
+        <div class="pill"><span class="pill-dot"></span><span class="en">CSR Activities Available</span><span class="hi" style="display:none">CSR गतिविधियां</span></div>
+        <div class="pill"><span class="pill-dot"></span><span class="en">10–500 Employees</span><span class="hi" style="display:none">10–500 कर्मचारी</span></div>
+      </div>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="openPopup()"><span class="en">Get a Free Proposal</span><span class="hi" style="display:none">मुफ्त प्रस्ताव पाएं</span></button>
+        <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20corporate%20offsite" target="_blank" class="btn-outline-white">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span class="en">WhatsApp Us</span><span class="hi" style="display:none">व्हाट्सएप करें</span>
+        </a>
+      </div>
+    </div>
+    <!-- CORPORATE ENQUIRY CARD -->
+    <div class="enquiry-card">
+      <div class="ec-title en">Request a Corporate Proposal</div>
+      <div class="ec-title hi" style="display:none">कॉर्पोरेट प्रस्ताव अनुरोध करें</div>
+      <div class="ec-sub en">Fill in your requirements below. Our corporate travel specialist calls you within 2 hours with a detailed, no-obligation proposal.</div>
+      <div class="ec-sub hi" style="display:none">अपनी आवश्यकताएं भरें। हमारा विशेषज्ञ 2 घंटे में विस्तृत प्रस्ताव के साथ कॉल करेगा।</div>
+      <form action="https://formspree.io/f/tripharbour" method="POST">
+        <input type="hidden" name="trip_type" value="Corporate Offsite">
+        <div class="form-grid-2">
+          <div class="form-row"><label class="en">Your Name</label><label class="hi" style="display:none">आपका नाम</label><input type="text" name="name" placeholder="Full name" required></div>
+          <div class="form-row"><label class="en">Designation</label><label class="hi" style="display:none">पद</label><input type="text" name="designation" placeholder="HR Manager"></div>
+        </div>
+        <div class="form-row"><label class="en">Company Name</label><label class="hi" style="display:none">कंपनी का नाम</label><input type="text" name="company" placeholder="Your company" required></div>
+        <div class="form-row"><label class="en">Phone Number</label><label class="hi" style="display:none">फ़ोन नंबर</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+        <div class="form-grid-2">
+          <div class="form-row"><label class="en">No. of Employees</label><label class="hi" style="display:none">कर्मचारी</label><select name="employees"><option>10–20</option><option>20–50</option><option>50–100</option><option>100–250</option><option>250+</option></select></div>
+          <div class="form-row"><label class="en">Budget/Head</label><label class="hi" style="display:none">बजट</label><select name="budget"><option>Under ₹8K</option><option>₹8K–15K</option><option>₹15K–25K</option><option>₹25K–50K</option><option>₹50K+</option></select></div>
+        </div>
+        <div class="form-row"><label class="en">Preferred Destination</label><label class="hi" style="display:none">गंतव्य</label>
+          <select name="destination"><option>Goa</option><option>Manali</option><option>Rishikesh</option><option>Coorg</option><option>Jim Corbett</option><option>Kasauli</option><option>Bali</option><option>Thailand</option><option>Dubai</option><option>Not decided</option></select>
+        </div>
+        <button type="submit" class="btn-submit"><span class="en">Get Free Proposal</span><span class="hi" style="display:none">मुफ्त प्रस्ताव पाएं</span></button>
+        <div class="gst-note">&#10003; GST invoice provided &nbsp;|&nbsp; &#10003; Zero obligation</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Corporate Groups Served</div></div>
+    <div class="stat"><div class="stat-num">10–500</div><div class="stat-label">Employees Per Group</div></div>
+    <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Offsite Destinations</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">GST Compliant Billing</div></div>
+  </div>
+</div>
+
+<!-- WHAT WE HANDLE -->
+<section>
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">End-to-End Execution</div><div class="section-label hi" style="display:none">पूर्ण निष्पादन</div>
+      <h2 class="section-title en">Everything We Handle for You</h2>
+      <h2 class="section-title hi" style="display:none">हम आपके लिए सब कुछ संभालते हैं</h2>
+      <p class="section-sub en" style="margin: 0 auto;">One point of contact. Zero coordination headache. Your HR team focuses on people — we handle everything else.</p>
+      <p class="section-sub hi" style="display:none; margin: 0 auto;">एक संपर्क बिंदु। कोई समन्वय सिरदर्द नहीं।</p>
+    </div>
+    <div class="handle-grid">
+      <div class="handle-card">
+        <div class="handle-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="10" width="22" height="14" rx="3" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M8 10 L8 7 Q8 3 14 3 Q20 3 20 7 L20 10" stroke="var(--teal)" stroke-width="1.5" fill="none"/><circle cx="14" cy="17" r="3" fill="var(--teal)"/></svg></div>
+        <div class="handle-title en">Transport & Logistics</div><div class="handle-title hi" style="display:none">परिवहन और रसद</div>
+        <div class="handle-desc en">Comfortable coaches, SUVs, flights — all booked, coordinated, and on time</div><div class="handle-desc hi" style="display:none">आरामदायक बसें, एसयूवी, उड़ानें — सब बुक और समय पर</div>
+      </div>
+      <div class="handle-card">
+        <div class="handle-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="8" width="22" height="16" rx="3" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><rect x="8" y="4" width="12" height="6" rx="2" fill="var(--teal-light)" stroke="var(--teal)" stroke-width="1.5"/><line x1="3" y1="15" x2="25" y2="15" stroke="var(--teal)" stroke-width="1.5"/><circle cx="10" cy="21" r="1.5" fill="var(--teal)"/><circle cx="14" cy="21" r="1.5" fill="var(--teal)"/><circle cx="18" cy="21" r="1.5" fill="var(--teal)"/></svg></div>
+        <div class="handle-title en">Accommodation</div><div class="handle-title hi" style="display:none">आवास</div>
+        <div class="handle-desc en">Resorts and hotels suited to group sizes — from budget to premium</div><div class="handle-desc hi" style="display:none">समूह आकार के अनुसार रिसॉर्ट और होटल</div>
+      </div>
+      <div class="handle-card">
+        <div class="handle-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="10" cy="10" r="4" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><circle cx="18" cy="10" r="4" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><circle cx="14" cy="18" r="4" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M10 14 L14 18" stroke="var(--teal)" stroke-width="1.5"/><path d="M18 14 L14 18" stroke="var(--teal)" stroke-width="1.5"/><path d="M10 6 L18 6" stroke="var(--teal)" stroke-width="1.5" stroke-dasharray="2,2"/></svg></div>
+        <div class="handle-title en">Team Activities</div><div class="handle-title hi" style="display:none">टीम गतिविधियां</div>
+        <div class="handle-desc en">Bonfires, group games, adventure sports, quiz nights, talent shows</div><div class="handle-desc hi" style="display:none">बोनफायर, ग्रुप गेम्स, एडवेंचर स्पोर्ट्स</div>
+      </div>
+      <div class="handle-card">
+        <div class="handle-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4 C14 4 4 9 4 17 C4 22 8 26 14 26 C20 26 24 22 24 17 C24 9 14 4 14 4Z" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M10 17 L13 20 L18 14" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="handle-title en">CSR Activities</div><div class="handle-title hi" style="display:none">CSR गतिविधियां</div>
+        <div class="handle-desc en">Plantation drives, village visits, school projects, river clean-ups</div><div class="handle-desc hi" style="display:none">वृक्षारोपण, ग्राम भ्रमण, स्कूल परियोजनाएं</div>
+      </div>
+      <div class="handle-card">
+        <div class="handle-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="5" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M6 24 Q6 17 14 17 Q22 17 22 24" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1"/><path d="M20 12 L22 14 L26 10" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="handle-title en">Dedicated Event Manager</div><div class="handle-title hi" style="display:none">समर्पित इवेंट मैनेजर</div>
+        <div class="handle-desc en">One expert on-ground from arrival to departure — your single point of contact</div><div class="handle-desc hi" style="display:none">आगमन से प्रस्थान तक एक विशेषज्ञ आपके साथ</div>
+      </div>
+      <div class="handle-card">
+        <div class="handle-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="5" width="22" height="18" rx="3" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><line x1="8" y1="11" x2="20" y2="11" stroke="var(--teal)" stroke-width="1.5"/><line x1="8" y1="15" x2="16" y2="15" stroke="var(--teal)" stroke-width="1.5"/><path d="M17 18 L20 21 L25 14" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="handle-title en">GST Invoicing</div><div class="handle-title hi" style="display:none">जीएसटी बिलिंग</div>
+        <div class="handle-desc en">Fully compliant GST invoices for easy reimbursement and accounting</div><div class="handle-desc hi" style="display:none">आसान प्रतिपूर्ति के लिए पूरी तरह अनुपालन जीएसटी चालान</div>
+      </div>
+      <div class="handle-card">
+        <div class="handle-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="6" width="20" height="16" rx="3" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><rect x="9" y="2" width="10" height="6" rx="2" fill="var(--teal-light)" stroke="var(--teal)" stroke-width="1.5"/><circle cx="10" cy="14" r="2" fill="var(--teal)"/><circle cx="14" cy="14" r="2" fill="var(--teal)"/><circle cx="18" cy="14" r="2" fill="var(--teal)"/></svg></div>
+        <div class="handle-title en">Meals & Dining</div><div class="handle-title hi" style="display:none">भोजन</div>
+        <div class="handle-desc en">Group meals, dietary requirements, themed dinners, BBQ evenings</div><div class="handle-desc hi" style="display:none">ग्रुप भोजन, आहार संबंधी आवश्यकताएं, थीम्ड डिनर</div>
+      </div>
+      <div class="handle-card">
+        <div class="handle-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="11" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M14 7 L14 14 L19 19" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="2" fill="var(--teal)"/></svg></div>
+        <div class="handle-title en">Post-Trip Report</div><div class="handle-title hi" style="display:none">यात्रा के बाद रिपोर्ट</div>
+        <div class="handle-desc en">Expense summary, attendance report, and photo documentation for your records</div><div class="handle-desc hi" style="display:none">व्यय सारांश, उपस्थिति रिपोर्ट और फोटो दस्तावेज़ीकरण</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section style="background:var(--grey-light);">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Where We Take Teams</div><div class="section-label hi" style="display:none">हम टीमों को कहाँ ले जाते हैं</div>
+      <h2 class="section-title en">Popular Corporate Offsite Destinations</h2>
+      <h2 class="section-title hi" style="display:none">लोकप्रिय कॉर्पोरेट ऑफसाइट गंतव्य</h2>
+      <p class="section-sub en">Handpicked for team bonding, logistics ease, and memorable experiences</p>
+      <p class="section-sub hi" style="display:none">टीम बॉन्डिंग, आसान रसद और यादगार अनुभवों के लिए चुने गए</p>
+    </div>
+    <div class="dest-grid">
+      <div class="dest-card" style="background:linear-gradient(135deg,#1a5c6b,#2BBFB3)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Goa</div><div class="dest-tagline en">Beaches, nightlife & team parties</div></div><div class="dest-pax">10–500 pax</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#1a3a5c,#2d6a8a)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Manali</div><div class="dest-tagline en">Mountain escapes & adventure</div></div><div class="dest-pax">10–200 pax</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#1a6b3a,#2BBF70)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Rishikesh</div><div class="dest-tagline en">Rafting, yoga & river camps</div></div><div class="dest-pax">10–150 pax</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#3d1a6b,#7B2BBF)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Coorg</div><div class="dest-tagline en">Coffee estates & misty hills</div></div><div class="dest-pax">10–100 pax</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#6b3a1a,#BF7B2B)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Jim Corbett</div><div class="dest-tagline en">Wildlife safaris & jungle camps</div></div><div class="dest-pax">10–120 pax</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#1a9e93,#0d6b63)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-left"><div class="dest-flag">International</div><div class="dest-name">Bali</div><div class="dest-tagline en">Temples, villas & team experiences</div></div><div class="dest-pax">10–200 pax</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#1a3a6b,#2B5FBF)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-left"><div class="dest-flag">International</div><div class="dest-name">Thailand</div><div class="dest-tagline en">Bangkok city meets Phuket beaches</div></div><div class="dest-pax">10–300 pax</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#6b5a1a,#BFA82B)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-left"><div class="dest-flag">International</div><div class="dest-name">Dubai</div><div class="dest-tagline en">Luxury, desert safari & skyline</div></div><div class="dest-pax">10–500 pax</div></div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#3a1a6b,#6B2BBF)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Kasauli</div><div class="dest-tagline en">Quiet hills & boutique resorts</div></div><div class="dest-pax">10–80 pax</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Ready-to-Book</div><div class="section-label hi" style="display:none">बुकिंग के लिए तैयार</div>
+      <h2 class="section-title en">Corporate Offsite Packages</h2>
+      <h2 class="section-title hi" style="display:none">कॉर्पोरेट ऑफसाइट पैकेज</h2>
+      <p class="section-sub en">Starting points — every package is customised to your company's headcount, budget, and objectives</p>
+      <p class="section-sub hi" style="display:none">हर पैकेज आपकी कंपनी के अनुसार अनुकूलित किया जाता है</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a5c6b,#2BBFB3)"><div class="pkg-badge">Team Offsite</div><div class="pkg-type">Goa</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">3 Days Goa Team Offsite</div><div class="pkg-name hi" style="display:none">3 दिन गोवा टीम ऑफसाइट</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">3 Days / 2 Nights</div><div class="pkg-meta-item">20–200 employees</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Hotel</span><span class="incl-tag">Transport</span><span class="incl-tag navy-tag">Team Activities</span><span class="incl-tag gold-tag">GST Invoice</span><span class="incl-tag">Event Mgr</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;9,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">Details</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a3a5c,#2d6a8a)"><div class="pkg-badge">Corporate Retreat</div><div class="pkg-type">Manali</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">4 Days Manali Corporate Retreat</div><div class="pkg-name hi" style="display:none">4 दिन मनाली कॉर्पोरेट रिट्रीट</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">4 Days / 3 Nights</div><div class="pkg-meta-item">20–100 employees</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Mountain Resort</span><span class="incl-tag navy-tag">Adventure Sports</span><span class="incl-tag gold-tag">GST Invoice</span><span class="incl-tag">Event Mgr</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;12,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">Details</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a9e93,#0d6b63)"><div class="pkg-badge">Team Offsite</div><div class="pkg-type">Bali</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">4 Days Bali International Offsite</div><div class="pkg-name hi" style="display:none">4 दिन बाली अंतरराष्ट्रीय ऑफसाइट</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">4 Days / 3 Nights</div><div class="pkg-meta-item">20–150 employees</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Villa / Resort</span><span class="incl-tag navy-tag">Team Experiences</span><span class="incl-tag gold-tag">GST Invoice</span><span class="incl-tag">Visa Assist</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;28,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">Details</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a6b3a,#2BBF70)"><div class="pkg-badge">Adventure</div><div class="pkg-type">Rishikesh</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">3 Days Rishikesh Team Building</div><div class="pkg-name hi" style="display:none">3 दिन ऋषिकेश टीम बिल्डिंग</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">3 Days / 2 Nights</div><div class="pkg-meta-item">10–80 employees</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Camp Stay</span><span class="incl-tag navy-tag">River Rafting</span><span class="incl-tag navy-tag">Yoga</span><span class="incl-tag gold-tag">GST Invoice</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;7,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">Details</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a3a6b,#2B5FBF)"><div class="pkg-badge">Corporate Retreat</div><div class="pkg-type">Dubai</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">5 Days Dubai Corporate Retreat</div><div class="pkg-name hi" style="display:none">5 दिन दुबई कॉर्पोरेट रिट्रीट</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">5 Days / 4 Nights</div><div class="pkg-meta-item">20–200 employees</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">5-Star Hotel</span><span class="incl-tag navy-tag">Desert Safari</span><span class="incl-tag gold-tag">GST Invoice</span><span class="incl-tag">Visa Assist</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;42,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">Details</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#3d1a6b,#7B2BBF)"><div class="pkg-badge">CSR + Offsite</div><div class="pkg-type">Coorg</div></div>
+        <div class="pkg-body">
+          <div class="pkg-name en">3 Days Coorg CSR + Team Offsite</div><div class="pkg-name hi" style="display:none">3 दिन कूर्ग CSR + टीम ऑफसाइट</div>
+          <div class="pkg-meta"><div class="pkg-meta-item">3 Days / 2 Nights</div><div class="pkg-meta-item">20–100 employees</div></div>
+          <div class="pkg-inclusions"><span class="incl-tag">Resort</span><span class="incl-tag navy-tag">Plantation Drive</span><span class="incl-tag gold-tag">GST Invoice</span><span class="incl-tag">CSR Report</span></div>
+          <div class="pkg-footer"><div class="pkg-price">&#8377;11,999 <span>/ person</span></div><div class="pkg-btns"><button class="btn-outline">Details</button><button class="btn-solid" onclick="openPopup()">Enquire</button></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="view-all"><a href="#" class="btn-ghost en">View All Corporate Packages &#8594;</a><a href="#" class="btn-ghost hi" style="display:none">सभी कॉर्पोरेट पैकेज देखें &#8594;</a></div>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section style="background:var(--navy-light);">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">Budget Options</div><div class="section-label hi" style="display:none">बजट विकल्प</div>
+      <h2 class="section-title en">Choose Your Offsite Tier</h2>
+      <h2 class="section-title hi" style="display:none">अपना ऑफसाइट टियर चुनें</h2>
+      <p class="section-sub en" style="margin: 0 auto;">Every tier includes a dedicated event manager and GST invoice. Fully customisable — these are starting points.</p>
+      <p class="section-sub hi" style="display:none; margin: 0 auto;">हर टियर में समर्पित इवेंट मैनेजर और जीएसटी चालान शामिल है।</p>
+    </div>
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <div class="tier-name en">Budget Offsite</div><div class="tier-name hi" style="display:none">बजट ऑफसाइट</div>
+        <div class="tier-price en">Starting at <strong>&#8377;6K</strong> per head</div><div class="tier-price hi" style="display:none">शुरुआत <strong>&#8377;6K</strong> प्रति व्यक्ति से</div>
+        <div class="tier-features">
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>3-star hotel or camp stay</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>Comfortable group transport</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>2 team activities included</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>All meals included</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>Dedicated event manager</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>GST invoice provided</span></div>
+        </div>
+        <button class="tier-btn outlined" onclick="openPopup()">Get Quote</button>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-name en">Premium Offsite</div><div class="tier-name hi" style="display:none">प्रीमियम ऑफसाइट</div>
+        <div class="tier-price en">Starting at <strong>&#8377;14K</strong> per head</div><div class="tier-price hi" style="display:none">शुरुआत <strong>&#8377;14K</strong> प्रति व्यक्ति से</div>
+        <div class="tier-features">
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>4-star resort stay</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>Premium coaches or flight booking</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>4 team activities + evening event</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>All meals + themed dinner</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>Senior event manager on-ground</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>GST invoice + post-trip report</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>Optional CSR add-on</span></div>
+        </div>
+        <button class="tier-btn filled" onclick="openPopup()">Get Quote</button>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name en">Luxury Retreat</div><div class="tier-name hi" style="display:none">लक्ज़री रिट्रीट</div>
+        <div class="tier-price en">Starting at <strong>&#8377;28K</strong> per head</div><div class="tier-price hi" style="display:none">शुरुआत <strong>&#8377;28K</strong> प्रति व्यक्ति से</div>
+        <div class="tier-features">
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>5-star resort or luxury villa</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>Business class or chartered options</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>Unlimited curated experiences</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>Gala dinner + entertainment</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>Dedicated senior event team</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>CSR activity included</span></div>
+          <div class="tier-feat"><div class="tier-feat-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5 L4 7 L8 3" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span>Complete expense report + photos</span></div>
+        </div>
+        <button class="tier-btn outlined" onclick="openPopup()">Get Quote</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSR SECTION -->
+<section class="csr-section">
+  <div class="section-inner">
+    <div class="csr-inner">
+      <div>
+        <div class="csr-label en">Something Different</div><div class="csr-label hi" style="display:none">कुछ अलग</div>
+        <div class="csr-title en">Add Purpose to<br>Your Team Offsite</div>
+        <div class="csr-title hi" style="display:none">अपने टीम ऑफसाइट में<br>उद्देश्य जोड़ें</div>
+        <div class="csr-sub en">Corporate Social Responsibility activities are a powerful way to build team spirit while giving back. We integrate meaningful CSR experiences into your offsite — seamlessly, without disrupting your fun activities.</div>
+        <div class="csr-sub hi" style="display:none">CSR गतिविधियां टीम भावना बनाने और समाज को वापस देने का शक्तिशाली तरीका हैं।</div>
+        <div class="csr-activities">
+          <div class="csr-item">
+            <div class="csr-item-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3 C11 3 4 7 4 13 C4 17 7 20 11 20 C15 20 18 17 18 13 C18 7 11 3 11 3Z" fill="var(--teal)" opacity="0.5"/><path d="M8 13 L10 15 L14 11" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
+            <div><div class="csr-item-title en">Tree Plantation Drive</div><div class="csr-item-title hi" style="display:none">वृक्षारोपण अभियान</div><div class="csr-item-desc en">Team plants saplings at a local forest site — certificates provided for each participant</div><div class="csr-item-desc hi" style="display:none">टीम स्थानीय वन स्थल पर पौधे लगाती है — प्रत्येक प्रतिभागी को प्रमाण पत्र</div></div>
+          </div>
+          <div class="csr-item">
+            <div class="csr-item-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="8" width="16" height="11" rx="2" fill="var(--teal)" opacity="0.5"/><path d="M7 8 L7 6 Q7 3 11 3 Q15 3 15 6 L15 8" stroke="var(--teal)" stroke-width="1.5" fill="none"/></svg></div>
+            <div><div class="csr-item-title en">Village Visit & Community Support</div><div class="csr-item-title hi" style="display:none">ग्राम भ्रमण और सामुदायिक सहायता</div><div class="csr-item-desc en">Spend a morning with a local village — distribute supplies, interact with residents, experience real India</div><div class="csr-item-desc hi" style="display:none">एक स्थानीय गांव के साथ सुबह बिताएं</div></div>
+          </div>
+          <div class="csr-item">
+            <div class="csr-item-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="8" r="5" fill="var(--teal)" opacity="0.5"/><path d="M5 20 Q5 14 11 14 Q17 14 17 20" fill="var(--teal)" opacity="0.3"/></svg></div>
+            <div><div class="csr-item-title en">School Activity Session</div><div class="csr-item-title hi" style="display:none">स्कूल गतिविधि सत्र</div><div class="csr-item-desc en">Conduct fun learning sessions, donate stationery, or refurbish a classroom at a local government school</div><div class="csr-item-desc hi" style="display:none">मनोरंजक शिक्षण सत्र आयोजित करें, स्टेशनरी दान करें</div></div>
+          </div>
+          <div class="csr-item">
+            <div class="csr-item-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 19 L11 3 L19 19Z" fill="var(--teal)" opacity="0.3" stroke="var(--teal)" stroke-width="1.5"/><line x1="3" y1="19" x2="19" y2="19" stroke="var(--teal)" stroke-width="1.5"/></svg></div>
+            <div><div class="csr-item-title en">Beach / River Clean-Up</div><div class="csr-item-title hi" style="display:none">समुद्र तट / नदी सफाई</div><div class="csr-item-desc en">Organise a 1-hour clean-up drive with your team at a local beach or riverbank — impactful and photogenic</div><div class="csr-item-desc hi" style="display:none">समुद्र तट या नदी किनारे सफाई अभियान आयोजित करें</div></div>
+          </div>
+        </div>
+        <div class="csr-cta"><button class="csr-btn" onclick="openPopup()"><span class="en">Add CSR to My Offsite</span><span class="hi" style="display:none">अपने ऑफसाइट में CSR जोड़ें</span></button></div>
+      </div>
+      <div class="csr-visual">
+        <div class="csr-main-card">
+          <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); margin-bottom:0.75rem;">CSR Impact Summary</div>
+          <div style="font-size:0.88rem; color:rgba(255,255,255,0.6); line-height:1.7; margin-bottom:1.5rem;">Every CSR activity comes with a written impact report — number of trees planted, families reached, waste collected — shareable with your stakeholders and on LinkedIn.</div>
+          <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-bottom:0.5rem;">What your team gets:</div>
+          <div style="display:flex; flex-direction:column; gap:0.5rem;">
+            <div style="display:flex; gap:0.6rem; align-items:center; font-size:0.82rem; color:rgba(255,255,255,0.7);"><span style="color:var(--teal);">&#10003;</span> Individual participation certificates</div>
+            <div style="display:flex; gap:0.6rem; align-items:center; font-size:0.82rem; color:rgba(255,255,255,0.7);"><span style="color:var(--teal);">&#10003;</span> Professional photography during activity</div>
+            <div style="display:flex; gap:0.6rem; align-items:center; font-size:0.82rem; color:rgba(255,255,255,0.7);"><span style="color:var(--teal);">&#10003;</span> Company CSR impact report (PDF)</div>
+            <div style="display:flex; gap:0.6rem; align-items:center; font-size:0.82rem; color:rgba(255,255,255,0.7);"><span style="color:var(--teal);">&#10003;</span> LinkedIn-ready content pack</div>
+          </div>
+          <div class="csr-stat-row">
+            <div class="csr-stat-box"><div class="csr-stat-num">50+</div><div class="csr-stat-label">CSR Offsites Done</div></div>
+            <div class="csr-stat-box"><div class="csr-stat-num">5K+</div><div class="csr-stat-label">Trees Planted</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROCESS -->
+<section style="background:var(--grey-light);">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">How It Works</div><div class="section-label hi" style="display:none">यह कैसे काम करता है</div>
+      <h2 class="section-title en">From Enquiry to Offsite — Our Process</h2>
+      <h2 class="section-title hi" style="display:none">पूछताछ से ऑफसाइट तक — हमारी प्रक्रिया</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-title en">Submit Enquiry</div><div class="process-title hi" style="display:none">पूछताछ भेजें</div>
+        <div class="process-desc en">Fill the form with your headcount, destination, and budget. Takes 2 minutes.</div><div class="process-desc hi" style="display:none">फॉर्म भरें। 2 मिनट लगते हैं।</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-title en">Expert Call</div><div class="process-title hi" style="display:none">विशेषज्ञ कॉल</div>
+        <div class="process-desc en">Our corporate travel specialist calls within 2 hours to understand your exact needs.</div><div class="process-desc hi" style="display:none">हमारा विशेषज्ञ 2 घंटे में कॉल करता है।</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-title en">Custom Proposal</div><div class="process-title hi" style="display:none">कस्टम प्रस्ताव</div>
+        <div class="process-desc en">You receive a detailed proposal — itinerary, costing, activities — within 24 hours.</div><div class="process-desc hi" style="display:none">24 घंटे में विस्तृत प्रस्ताव प्राप्त करें।</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div class="process-title en">Confirm & Book</div><div class="process-title hi" style="display:none">पुष्टि करें</div>
+        <div class="process-desc en">Approve the proposal, sign a simple agreement, and we handle all bookings.</div><div class="process-desc hi" style="display:none">प्रस्ताव स्वीकृत करें और हम सब संभालते हैं।</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">5</div>
+        <div class="process-title en">Offsite Happens</div><div class="process-title hi" style="display:none">ऑफसाइट होता है</div>
+        <div class="process-desc en">Your event manager is on-ground. GST invoice delivered. Post-trip report shared.</div><div class="process-desc hi" style="display:none">इवेंट मैनेजर मौके पर। जीएसटी चालान। रिपोर्ट साझा।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section>
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">Why Trip Harbour</div><div class="section-label hi" style="display:none">ट्रिप हार्बर क्यों</div>
+      <h2 class="section-title en">Why Companies Choose Us</h2>
+      <h2 class="section-title hi" style="display:none">कंपनियां हमें क्यों चुनती हैं</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="9" r="5" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M5 23 Q5 16 13 16 Q21 16 21 23" fill="var(--teal-mid)"/><path d="M18 11 L20 13 L24 8" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="why-content">
+          <div class="why-title en">Single Point of Contact</div><div class="why-title hi" style="display:none">एकल संपर्क बिंदु</div>
+          <div class="why-desc en">Your HR team deals with one person — our senior corporate travel manager — from first call to post-trip report. No chasing multiple vendors. No confusion.</div><div class="why-desc hi" style="display:none">आपकी HR टीम एक व्यक्ति से काम करती है। कोई पीछा नहीं।</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="4" width="20" height="16" rx="3" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><line x1="7" y1="11" x2="19" y2="11" stroke="var(--teal)" stroke-width="1.5"/><line x1="7" y1="15" x2="15" y2="15" stroke="var(--teal)" stroke-width="1.5"/><path d="M16 18 L19 21 L23 15" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="why-content">
+          <div class="why-title en">Transparent, Zero Hidden Costs</div><div class="why-title hi" style="display:none">पारदर्शी, कोई छिपी लागत नहीं</div>
+          <div class="why-desc en">Every item is line-itemed in your proposal. You approve what you pay for. No surprise invoices. GST-compliant billing makes reimbursement easy.</div><div class="why-desc hi" style="display:none">हर आइटम आपके प्रस्ताव में सूचीबद्ध है। आप जो भुगतान करते हैं उसे मंजूरी दें।</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M13 6 L13 13 L18 18" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"/><circle cx="13" cy="13" r="2" fill="var(--teal)"/></svg></div>
+        <div class="why-content">
+          <div class="why-title en">Execution You Can Rely On</div><div class="why-title hi" style="display:none">विश्वसनीय निष्पादन</div>
+          <div class="why-desc en">We've managed groups ranging from 10-person startup teams to 400-person company events. Our on-ground event managers are trained, experienced, and solution-first.</div><div class="why-desc hi" style="display:none">हमने 10 से 400 व्यक्ति के समूहों का प्रबंधन किया है।</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3 C13 3 4 8 4 15 C4 20 8 24 13 24 C18 24 22 20 22 15 C22 8 13 3 13 3Z" fill="var(--teal-mid)" stroke="var(--teal)" stroke-width="1.5"/><path d="M9 15 L12 18 L17 12" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="why-content">
+          <div class="why-title en">Pan-India & International Coverage</div><div class="why-title hi" style="display:none">पूरे भारत और अंतरराष्ट्रीय कवरेज</div>
+          <div class="why-desc en">Based in Noida but operating across India — Goa, Manali, Rishikesh, Coorg and beyond. Plus international offsite destinations: Bali, Thailand, Dubai, Singapore.</div><div class="why-desc hi" style="display:none">नोएडा स्थित लेकिन पूरे भारत में संचालित। अंतरराष्ट्रीय गंतव्य भी।</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial-section">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">What Companies Say</div><div class="section-label hi" style="display:none">कंपनियां क्या कहती हैं</div>
+      <h2 class="section-title en">Trusted by Teams Across India</h2>
+      <h2 class="section-title hi" style="display:none">पूरे भारत की टीमों द्वारा विश्वसनीय</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testimonial-text en">"Trip Harbour handled our 65-person Goa offsite end-to-end. Not a single hiccup — transport on time, hotel perfect, activities exactly as planned. Our team is still talking about it. Will definitely book again."</div>
+        <div class="testimonial-text hi" style="display:none">"ट्रिप हार्बर ने हमारे 65 व्यक्ति के गोवा ऑफसाइट को संभाला। एक भी समस्या नहीं।"</div>
+        <div class="testimonial-author"><div class="author-avatar">R</div><div><div class="author-name">Rahul Sharma</div><div class="author-role">HR Head, Delhi-based Fintech</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testimonial-text en">"We added a plantation CSR drive to our Rishikesh offsite. It was genuinely the highlight — team was emotional, connected, and the impact report helped us show stakeholders what we did."</div>
+        <div class="testimonial-text hi" style="display:none">"हमने ऋषिकेश ऑफसाइट में वृक्षारोपण CSR जोड़ा। यह वास्तव में हाइलाइट था।"</div>
+        <div class="testimonial-author"><div class="author-avatar">P</div><div><div class="author-name">Priya Nair</div><div class="author-role">Admin Manager, Noida SaaS Company</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testimonial-text en">"For our Bali international trip with 40 people, Trip Harbour was exceptional. Visa assistance, hotel, activities, GST invoice — all sorted. The event manager on ground was brilliant."</div>
+        <div class="testimonial-text hi" style="display:none">"40 लोगों के साथ बाली अंतरराष्ट्रीय यात्रा के लिए ट्रिप हार्बर अपवादजनक था।"</div>
+        <div class="testimonial-author"><div class="author-avatar">A</div><div><div class="author-name">Amit Gupta</div><div class="author-role">Founder, Gurugram Startup</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="cta-tag">&#128197; Free Proposal in 24 Hours</div>
+      <div class="cta-title en">Let's Plan Your Team's Next Big Trip</div>
+      <div class="cta-title hi" style="display:none">आपकी टीम की अगली बड़ी यात्रा योजना बनाएं</div>
+      <div class="cta-sub en">Share your requirements — headcount, destination, budget — and we'll send you a detailed no-obligation proposal within 24 hours. No spam. No pressure.</div>
+      <div class="cta-sub hi" style="display:none">अपनी आवश्यकताएं साझा करें — हम 24 घंटे में विस्तृत प्रस्ताव भेजेंगे।</div>
+    </div>
+    <div class="cta-actions">
+      <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20corporate%20offsite%20with%20Trip%20Harbour" target="_blank" class="btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="en">WhatsApp Us</span><span class="hi" style="display:none">व्हाट्सएप करें</span>
+      </a>
+      <button class="btn-call" onclick="openPopup()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="14" y2="14"/></svg>
+        <span class="en">Get Free Proposal</span><span class="hi" style="display:none">मुफ्त प्रस्ताव पाएं</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-copyright en">© 2026 Trip Harbour. All rights reserved.</div>
+    <div class="footer-copyright hi" style="display:none">© 2026 ट्रिप हार्बर। सर्वाधिकार सुरक्षित।</div>
+    <div class="footer-social">
+      <span class="footer-social-label en">Connect with us:</span>
+      <a href="#" class="social-icon" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    </div>
+    <div class="footer-love">Made with <span>❤️</span> in India &nbsp;|&nbsp; First Floor, A24, Sector 63, Noida 201309</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+let currentLang = 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'hi' : 'en';
+  document.body.className = 'lang-' + currentLang;
+  document.getElementById('langBtn').textContent = currentLang === 'en' ? 'हिन्दी' : 'English';
+  document.querySelectorAll('.en, .hi').forEach(el => { el.style.display = el.classList.contains(currentLang) ? '' : 'none'; });
+}
+function openPopup() { document.getElementById('popup').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closePopup() { document.getElementById('popup').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('popup').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+</body>
+</html>

@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Every Trip, Perfectly Planned. Handcrafted itineraries for families, couples & corporate teams with a dedicated tour manager on every trip.">
+<title>Trip Harbour — Every Trip, Perfectly Planned</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --teal: #2BBFB3;
+  --teal-dark: #1a9e93;
+  --teal-light: #e8faf9;
+  --teal-mid: #c2f0ec;
+  --black: #111827;
+  --charcoal: #1f2937;
+  --grey: #6b7280;
+  --grey-light: #f3f4f6;
+  --grey-mid: #e5e7eb;
+  --white: #ffffff;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--black); background: var(--white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* ===== LANGUAGE TOGGLE ===== */
+.lang-en .hi { display: none; }
+.lang-hi .en { display: none; }
+body { --lang: 'en'; }
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--grey-mid);
+  height: 68px;
+  display: flex; align-items: center;
+  padding: 0 4%;
+  gap: 2rem;
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: var(--shadow-md); }
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--black);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-logo span { color: var(--teal); }
+.nav-links {
+  display: flex; align-items: center; gap: 0.2rem;
+  flex: 1; justify-content: center;
+}
+.nav-links a {
+  font-size: 0.875rem; font-weight: 500;
+  color: var(--charcoal);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover { background: var(--teal-light); color: var(--teal-dark); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.lang-btn {
+  background: var(--grey-light); border: none; border-radius: 20px;
+  padding: 0.35rem 0.75rem; font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; color: var(--charcoal); transition: all 0.2s;
+  font-family: var(--font-body);
+}
+.lang-btn:hover { background: var(--teal-light); color: var(--teal-dark); }
+.btn-plan {
+  background: var(--teal); color: var(--white);
+  border: none; border-radius: 24px;
+  padding: 0.6rem 1.4rem; font-size: 0.875rem; font-weight: 600;
+  cursor: pointer; transition: all 0.25s; font-family: var(--font-body);
+  white-space: nowrap;
+}
+.btn-plan:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(43,191,179,0.4); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 24px; height: 2px; background: var(--black); border-radius: 2px; transition: all 0.3s; display: block; }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 100px 4% 60px;
+  background: linear-gradient(135deg, #f0fffe 0%, #e8faf9 40%, #f8fcfb 100%);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(43,191,179,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-inner {
+  max-width: 1280px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+}
+.hero-left {}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--white); border: 1.5px solid var(--teal-mid);
+  border-radius: 20px; padding: 0.4rem 1rem;
+  font-size: 0.8rem; font-weight: 600; color: var(--teal-dark);
+  margin-bottom: 1.5rem;
+}
+.hero-tag::before { content: '✦'; color: var(--teal); }
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 900; line-height: 1.1;
+  color: var(--black); margin-bottom: 1.25rem;
+}
+.hero-title em { color: var(--teal); font-style: normal; }
+.hero-sub {
+  font-size: 1.05rem; color: var(--grey);
+  line-height: 1.7; margin-bottom: 2rem; max-width: 480px;
+}
+.hero-pills {
+  display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem;
+}
+.pill {
+  display: flex; align-items: center; gap: 0.4rem;
+  background: var(--white); border: 1.5px solid var(--grey-mid);
+  border-radius: 20px; padding: 0.4rem 1rem;
+  font-size: 0.82rem; font-weight: 500; color: var(--charcoal);
+}
+.pill-dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; }
+
+/* ===== HERO ILLUSTRATION ===== */
+.hero-illustration {
+  position: relative; display: flex; align-items: center; justify-content: center;
+}
+.hero-svg-wrap {
+  width: 100%; max-width: 540px;
+  filter: drop-shadow(0 20px 40px rgba(43,191,179,0.15));
+}
+
+/* ===== ENQUIRY FORM ===== */
+.enquiry-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 1.75rem;
+  border: 1px solid var(--grey-mid);
+  position: relative;
+}
+.enquiry-tabs {
+  display: flex; gap: 0; margin-bottom: 1.5rem;
+  background: var(--grey-light); border-radius: 10px; padding: 4px;
+}
+.etab {
+  flex: 1; padding: 0.6rem 0.5rem; border: none; background: none;
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  color: var(--grey); border-radius: 8px; cursor: pointer; transition: all 0.2s;
+}
+.etab.active { background: var(--white); color: var(--teal-dark); box-shadow: var(--shadow-sm); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.form-row { margin-bottom: 1rem; }
+.form-row label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.35rem; letter-spacing: 0.02em; }
+.form-row input, .form-row select {
+  width: 100%; padding: 0.7rem 1rem;
+  border: 1.5px solid var(--grey-mid); border-radius: var(--radius-sm);
+  font-family: var(--font-body); font-size: 0.88rem; color: var(--black);
+  background: var(--white); transition: border-color 0.2s; outline: none;
+}
+.form-row input:focus, .form-row select:focus { border-color: var(--teal); }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.btn-submit {
+  width: 100%; padding: 0.85rem;
+  background: var(--teal); color: var(--white);
+  border: none; border-radius: var(--radius-sm);
+  font-family: var(--font-body); font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; transition: all 0.25s; margin-top: 0.5rem;
+}
+.btn-submit:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(43,191,179,0.4); }
+
+/* ===== SECTIONS COMMON ===== */
+section { padding: 80px 4%; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-label {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700; color: var(--black); margin-bottom: 0.75rem;
+}
+.section-sub { font-size: 1rem; color: var(--grey); line-height: 1.7; max-width: 560px; }
+.section-header { margin-bottom: 3rem; }
+
+/* ===== TRIP TYPE TILES ===== */
+.trip-type-section { background: var(--grey-light); }
+.tiles-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.tile {
+  background: var(--white); border-radius: var(--radius);
+  padding: 2rem 1.5rem; text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s; cursor: pointer; position: relative;
+  overflow: visible;
+}
+.tile:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.tile-icon {
+  width: 80px; height: 80px; margin: 0 auto 1rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.tile-name {
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;
+  margin-bottom: 0.4rem; color: var(--black);
+}
+.tile-desc { font-size: 0.82rem; color: var(--grey); line-height: 1.5; }
+
+/* Dropdown */
+.tile-dropdown {
+  position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+  width: 320px; background: var(--white); border-radius: var(--radius);
+  box-shadow: var(--shadow-lg); border: 1px solid var(--grey-mid);
+  padding: 1.25rem; z-index: 200;
+  opacity: 0; visibility: hidden; transition: all 0.25s;
+  pointer-events: none;
+}
+.tile:hover .tile-dropdown { opacity: 1; visibility: visible; pointer-events: all; }
+.dd-section-title {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem;
+}
+.dd-links {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem; margin-bottom: 1rem;
+}
+.dd-links a {
+  font-size: 0.82rem; color: var(--charcoal); padding: 0.3rem 0.5rem;
+  border-radius: 6px; transition: all 0.15s;
+}
+.dd-links a:hover { background: var(--teal-light); color: var(--teal-dark); }
+.dd-divider { height: 1px; background: var(--grey-mid); margin: 0.75rem 0; }
+
+/* ===== HOW WE WORK ===== */
+.how-section { background: var(--white); }
+.steps-grid {
+  display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 1rem;
+  align-items: start; margin-top: 3rem;
+}
+.step { text-align: center; }
+.step-icon {
+  width: 100px; height: 100px; margin: 0 auto 1.5rem;
+  background: var(--teal-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--teal-mid);
+}
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; background: var(--teal); color: var(--white);
+  border-radius: 50%; font-size: 0.78rem; font-weight: 700; margin-bottom: 0.75rem;
+}
+.step-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; }
+.step-desc { font-size: 0.88rem; color: var(--grey); line-height: 1.6; }
+.step-arrow {
+  display: flex; align-items: center; justify-content: center;
+  padding-top: 50px; color: var(--teal); font-size: 1.5rem;
+}
+
+/* ===== DESTINATIONS ===== */
+.dest-section { background: var(--grey-light); }
+.dest-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+}
+.dest-card {
+  border-radius: var(--radius); overflow: hidden;
+  position: relative; aspect-ratio: 4/3; cursor: pointer;
+  transition: transform 0.3s; box-shadow: var(--shadow-sm);
+}
+.dest-card:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
+.dest-card:hover .dest-overlay { background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%); }
+.dest-img {
+  width: 100%; height: 100%; object-fit: cover;
+  background: linear-gradient(135deg, var(--teal-mid), var(--teal));
+}
+.dest-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.05) 60%);
+  transition: background 0.3s;
+}
+.dest-info {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem;
+  color: var(--white);
+}
+.dest-name { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-bottom: 0.25rem; }
+.dest-tag { font-size: 0.8rem; opacity: 0.85; }
+.dest-explore {
+  display: inline-block; margin-top: 0.5rem;
+  font-size: 0.78rem; font-weight: 600; color: var(--teal);
+  opacity: 0; transform: translateY(4px); transition: all 0.25s;
+}
+.dest-card:hover .dest-explore { opacity: 1; transform: translateY(0); }
+.dest-footer { text-align: right; margin-top: 1.5rem; }
+.link-teal { color: var(--teal); font-weight: 600; font-size: 0.9rem; transition: gap 0.2s; display: inline-flex; align-items: center; gap: 0.4rem; }
+.link-teal:hover { color: var(--teal-dark); gap: 0.7rem; }
+
+/* ===== PACKAGES ===== */
+.pkg-section { background: var(--white); }
+.pkg-filters {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem;
+}
+.pkg-filter {
+  padding: 0.5rem 1.25rem; border-radius: 24px;
+  border: 1.5px solid var(--grey-mid); background: var(--white);
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 500;
+  color: var(--grey); cursor: pointer; transition: all 0.2s;
+}
+.pkg-filter.active, .pkg-filter:hover { background: var(--teal); color: var(--white); border-color: var(--teal); }
+.pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.pkg-card {
+  border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-mid);
+  background: var(--white); transition: all 0.3s;
+}
+.pkg-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.pkg-img {
+  height: 200px;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  position: relative; overflow: hidden;
+}
+.pkg-img-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+}
+.pkg-badge {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--white); border-radius: 20px;
+  padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; color: var(--teal-dark);
+}
+.pkg-body { padding: 1.25rem; }
+.pkg-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.4; }
+.pkg-meta { display: flex; gap: 1rem; margin-bottom: 0.75rem; }
+.pkg-meta-item { font-size: 0.78rem; color: var(--grey); display: flex; align-items: center; gap: 0.3rem; }
+.pkg-inclusions {
+  display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem;
+}
+.incl-tag {
+  font-size: 0.72rem; background: var(--teal-light); color: var(--teal-dark);
+  border-radius: 12px; padding: 0.2rem 0.6rem; font-weight: 500;
+}
+.pkg-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; border-top: 1px solid var(--grey-mid); }
+.pkg-price { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--teal-dark); }
+.pkg-price span { font-family: var(--font-body); font-size: 0.75rem; color: var(--grey); font-weight: 400; }
+.pkg-btns { display: flex; gap: 0.5rem; }
+.btn-outline {
+  padding: 0.45rem 0.9rem; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--teal); color: var(--teal);
+  background: none; font-family: var(--font-body); font-size: 0.78rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--teal-light); }
+.btn-solid {
+  padding: 0.45rem 0.9rem; border-radius: var(--radius-sm);
+  border: none; background: var(--teal); color: var(--white);
+  font-family: var(--font-body); font-size: 0.78rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-solid:hover { background: var(--teal-dark); }
+.pkg-view-all { text-align: center; margin-top: 2.5rem; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 2rem; border-radius: 24px;
+  border: 2px solid var(--teal); color: var(--teal);
+  background: none; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; transition: all 0.25s; text-decoration: none;
+}
+.btn-ghost:hover { background: var(--teal); color: var(--white); }
+
+/* ===== WHY US ===== */
+.why-section { background: var(--teal-light); }
+.why-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+.why-card { text-align: center; padding: 1.5rem 1rem; }
+.why-icon {
+  width: 64px; height: 64px; margin: 0 auto 1rem;
+  background: var(--white); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+.why-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; }
+.why-desc { font-size: 0.8rem; color: var(--grey); line-height: 1.6; }
+
+/* ===== BLOG ===== */
+.blog-section { background: var(--white); }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.blog-card {
+  border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-mid);
+  transition: all 0.3s;
+}
+.blog-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.blog-img { height: 180px; background: linear-gradient(135deg, #a8edea, #2BBFB3); }
+.blog-body { padding: 1.25rem; }
+.blog-cat {
+  display: inline-block; font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--teal-dark); background: var(--teal-light);
+  border-radius: 12px; padding: 0.2rem 0.6rem; margin-bottom: 0.75rem;
+}
+.blog-title { font-weight: 700; font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.5rem; }
+.blog-excerpt { font-size: 0.82rem; color: var(--grey); line-height: 1.6; margin-bottom: 0.75rem; }
+.blog-read { font-size: 0.82rem; font-weight: 700; color: var(--teal); display: flex; align-items: center; gap: 0.3rem; transition: gap 0.2s; }
+.blog-card:hover .blog-read { gap: 0.6rem; }
+
+/* ===== MONTH SECTION ===== */
+.month-section { background: var(--grey-light); }
+.month-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.month-tab {
+  padding: 0.45rem 1rem; border-radius: 20px;
+  border: 1.5px solid var(--grey-mid); background: var(--white);
+  font-family: var(--font-body); font-size: 0.82rem; font-weight: 600;
+  color: var(--charcoal); cursor: pointer; transition: all 0.2s;
+}
+.month-tab.active, .month-tab:hover { background: var(--teal); color: var(--white); border-color: var(--teal); }
+.month-panel { display: none; }
+.month-panel.active { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.month-dest {
+  background: var(--white); border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem; border: 1px solid var(--grey-mid);
+  transition: all 0.2s; cursor: pointer;
+}
+.month-dest:hover { border-color: var(--teal); background: var(--teal-light); }
+.month-dest-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem; }
+.month-dest-note { font-size: 0.78rem; color: var(--grey); }
+.month-sub-title {
+  font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;
+  margin: 2.5rem 0 1.25rem;
+}
+
+/* ===== CTA BANNER ===== */
+.cta-section { background: var(--white); padding: 60px 4%; }
+.cta-inner {
+  max-width: 1280px; margin: 0 auto;
+  border: 2.5px solid var(--black); border-radius: var(--radius);
+  padding: 3rem 4rem;
+  display: flex; align-items: center; gap: 3rem;
+  position: relative; overflow: hidden;
+}
+.cta-inner::before {
+  content: '';
+  position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
+  background: var(--teal-light);
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.cta-text { position: relative; flex: 1; }
+.cta-title {
+  font-family: var(--font-display); font-size: 2rem; font-weight: 900;
+  margin-bottom: 0.75rem; line-height: 1.2;
+}
+.cta-sub { font-size: 0.95rem; color: var(--grey); line-height: 1.6; max-width: 400px; }
+.cta-actions {
+  display: flex; gap: 1rem; flex-shrink: 0; position: relative;
+}
+.btn-wa {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.85rem 1.75rem; border-radius: 28px;
+  background: var(--teal); color: var(--white); border: none;
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; transition: all 0.25s; text-decoration: none;
+}
+.btn-wa:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(43,191,179,0.4); }
+.btn-call {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.85rem 1.75rem; border-radius: 28px;
+  background: none; color: var(--black); border: 2px solid var(--black);
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; transition: all 0.25s; text-decoration: none;
+}
+.btn-call:hover { background: var(--black); color: var(--white); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--charcoal); color: var(--white);
+  padding: 60px 4% 0;
+}
+.footer-grid {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem;
+  padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-col-title {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 1.25rem;
+}
+.footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-links a {
+  font-size: 0.85rem; color: rgba(255,255,255,0.65);
+  transition: color 0.2s; line-height: 1.4;
+}
+.footer-links a:hover { color: var(--teal); }
+.footer-bottom {
+  max-width: 1280px; margin: 0 auto;
+  padding: 2rem 0;
+  text-align: center;
+}
+.footer-copyright { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.footer-social {
+  display: flex; justify-content: center; align-items: center; gap: 1rem;
+  margin-bottom: 1rem;
+}
+.footer-social-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+.social-icon {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.65); font-size: 0.85rem; transition: all 0.2s;
+  text-decoration: none;
+}
+.social-icon:hover { border-color: var(--teal); color: var(--teal); background: rgba(43,191,179,0.1); }
+.footer-love { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+.footer-love span { color: #e74c3c; }
+
+/* ===== FLOATING WHATSAPP ===== */
+.float-wa {
+  position: fixed; bottom: 28px; right: 28px; z-index: 999;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25d366; box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.3s; text-decoration: none;
+}
+.float-wa:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.65); }
+
+/* ===== POPUP ===== */
+.popup-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+  display: none; align-items: center; justify-content: center; padding: 1rem;
+}
+.popup-overlay.open { display: flex; }
+.popup-card {
+  background: var(--white); border-radius: var(--radius);
+  width: 100%; max-width: 480px; padding: 2.5rem;
+  position: relative; max-height: 90vh; overflow-y: auto;
+}
+.popup-close {
+  position: absolute; top: 1rem; right: 1rem;
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1.5px solid var(--grey-mid); background: none;
+  cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center;
+  color: var(--grey); transition: all 0.2s;
+}
+.popup-close:hover { background: var(--grey-light); }
+.popup-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 0.4rem; }
+.popup-sub { font-size: 0.88rem; color: var(--grey); margin-bottom: 1.5rem; }
+
+/* ===== MOBILE NAV ===== */
+.mobile-menu {
+  position: fixed; inset: 0; top: 68px; z-index: 999;
+  background: var(--white); padding: 1.5rem 4%;
+  display: none; flex-direction: column; gap: 0.5rem;
+  border-top: 1px solid var(--grey-mid);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  padding: 0.75rem 1rem; border-radius: var(--radius-sm);
+  font-size: 1rem; font-weight: 500; color: var(--charcoal);
+  transition: background 0.2s;
+}
+.mobile-menu a:hover { background: var(--teal-light); color: var(--teal-dark); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .tiles-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(3, 1fr); }
+  .steps-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .step-arrow { padding-top: 0; transform: rotate(90deg); }
+}
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-illustration { display: none; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .dest-grid { grid-template-columns: repeat(2, 1fr); }
+  .pkg-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .cta-inner { flex-direction: column; padding: 2rem; }
+  .cta-inner::before { display: none; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .tiles-grid { grid-template-columns: 1fr 1fr; }
+  .month-panel.active { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .dest-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .tiles-grid { grid-template-columns: 1fr; }
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .cta-actions { flex-direction: column; width: 100%; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease forwards; }
+.fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.fade-up-delay-3 { animation-delay: 0.35s; opacity: 0; }
+</style>
+</head>
+<body class="lang-en">
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Trip%20Harbour" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-card">
+    <button class="popup-close" onclick="closePopup()">&#x2715;</button>
+    <div class="popup-title en">Plan My Trip</div>
+    <div class="popup-title hi" style="display:none">मेरी यात्रा योजना बनाएं</div>
+    <div class="popup-sub en">Tell us about your dream trip — we'll call you back within 2 hours.</div>
+    <div class="popup-sub hi" style="display:none">हमें अपनी यात्रा के बारे में बताएं — हम 2 घंटे में कॉल करेंगे।</div>
+    <form action="https://formspree.io/f/tripharbour" method="POST">
+      <div class="form-row">
+        <label class="en">Your Name</label>
+        <label class="hi" style="display:none">आपका नाम</label>
+        <input type="text" name="name" placeholder="Full name" required>
+      </div>
+      <div class="form-row">
+        <label class="en">Phone Number</label>
+        <label class="hi" style="display:none">फ़ोन नंबर</label>
+        <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+      </div>
+      <div class="form-row">
+        <label class="en">Destination Interest</label>
+        <label class="hi" style="display:none">गंतव्य</label>
+        <select name="destination">
+          <option>Ladakh</option><option>Kashmir</option><option>Bali</option>
+          <option>Kerala</option><option>Spiti Valley</option><option>Thailand</option>
+          <option>Other / Not decided</option>
+        </select>
+      </div>
+      <div class="form-grid-2">
+        <div class="form-row">
+          <label class="en">Travel Month</label>
+          <label class="hi" style="display:none">यात्रा माह</label>
+          <select name="month">
+            <option>January</option><option>February</option><option>March</option>
+            <option>April</option><option>May</option><option>June</option>
+            <option>July</option><option>August</option><option>September</option>
+            <option>October</option><option>November</option><option>December</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="en">Group Size</label>
+          <label class="hi" style="display:none">समूह का आकार</label>
+          <select name="group">
+            <option>Just me</option><option>2 people</option><option>3-5 people</option>
+            <option>6-10 people</option><option>10+ people</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="en">Trip Type</label>
+        <label class="hi" style="display:none">यात्रा प्रकार</label>
+        <select name="type">
+          <option>Honeymoon</option><option>Family Tour</option>
+          <option>Team Offsite</option><option>Corporate Retreat</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-submit">
+        <span class="en">Get Free Call Back</span>
+        <span class="hi" style="display:none">निःशुल्क कॉल बैक पाएं</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-logo">Trip<span>Harbour</span></div>
+  <ul class="nav-links">
+    <li><a href="#" class="en">Home</a><a href="#" class="hi" style="display:none">होम</a></li>
+    <li><a href="#destinations" class="en">Destinations</a><a href="#destinations" class="hi" style="display:none">गंतव्य</a></li>
+    <li><a href="#" class="en">Honeymoon</a><a href="#" class="hi" style="display:none">हनीमून</a></li>
+    <li><a href="#" class="en">Family Tours</a><a href="#" class="hi" style="display:none">पारिवारिक दौरे</a></li>
+    <li><a href="#" class="en">Corporate</a><a href="#" class="hi" style="display:none">कॉर्पोरेट</a></li>
+    <li><a href="#" class="en">About Us</a><a href="#" class="hi" style="display:none">हमारे बारे में</a></li>
+    <li><a href="#" class="en">Contact</a><a href="#" class="hi" style="display:none">संपर्क करें</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">हिन्दी</button>
+    <button class="btn-plan" onclick="openPopup()">
+      <span class="en">Plan My Trip</span>
+      <span class="hi" style="display:none">यात्रा योजना बनाएं</span>
+    </button>
+    <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">Home</a>
+  <a href="#destinations">Destinations</a>
+  <a href="#">Honeymoon</a>
+  <a href="#">Family Tours</a>
+  <a href="#">Corporate</a>
+  <a href="#">About Us</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag fade-up en">India's Most Personal Travel Experience</div>
+      <div class="hero-tag fade-up hi" style="display:none">भारत का सबसे व्यक्तिगत यात्रा अनुभव</div>
+      <h1 class="hero-title fade-up fade-up-delay-1">
+        <span class="en">Every Trip,<br><em>Perfectly Planned.</em></span>
+        <span class="hi" style="display:none">हर यात्रा,<br><em>सटीक रूप से नियोजित।</em></span>
+      </h1>
+      <p class="hero-sub fade-up fade-up-delay-2 en">Handcrafted itineraries for families, couples & corporate teams — with a dedicated tour manager on every trip.</p>
+      <p class="hero-sub fade-up fade-up-delay-2 hi" style="display:none">परिवारों, जोड़ों और कॉर्पोरेट टीमों के लिए विशेष यात्रा योजनाएं — हर यात्रा पर एक समर्पित टूर मैनेजर के साथ।</p>
+      <div class="hero-pills fade-up fade-up-delay-3">
+        <div class="pill"><span class="pill-dot"></span><span class="en">Pan-India Departures</span><span class="hi" style="display:none">पूरे भारत से प्रस्थान</span></div>
+        <div class="pill"><span class="pill-dot"></span><span class="en">Personalised Itineraries</span><span class="hi" style="display:none">व्यक्तिगत यात्रा योजनाएं</span></div>
+        <div class="pill"><span class="pill-dot"></span><span class="en">Dedicated Tour Manager</span><span class="hi" style="display:none">समर्पित टूर मैनेजर</span></div>
+      </div>
+    </div>
+    <div class="hero-illustration fade-up fade-up-delay-2">
+      <!-- LANDSCAPE ILLUSTRATION -->
+      <div class="hero-svg-wrap">
+        <svg viewBox="0 0 540 420" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <!-- Sky gradient -->
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#e8faf9"/>
+              <stop offset="100%" stop-color="#c2f0ec"/>
+            </linearGradient>
+            <linearGradient id="mtn1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2BBFB3"/>
+              <stop offset="100%" stop-color="#1a9e93"/>
+            </linearGradient>
+            <linearGradient id="mtn2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#4dd4c8"/>
+              <stop offset="100%" stop-color="#2BBFB3"/>
+            </linearGradient>
+            <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#d4f5f2"/>
+              <stop offset="100%" stop-color="#a8edea"/>
+            </linearGradient>
+          </defs>
+          <!-- Sky -->
+          <rect width="540" height="420" fill="url(#sky)" rx="20"/>
+          <!-- Sun -->
+          <circle cx="430" cy="80" r="45" fill="#fff" opacity="0.5"/>
+          <circle cx="430" cy="80" r="32" fill="#fff" opacity="0.7"/>
+          <circle cx="430" cy="80" r="22" fill="#ffd700" opacity="0.6"/>
+          <!-- Clouds -->
+          <ellipse cx="100" cy="70" rx="50" ry="18" fill="white" opacity="0.8"/>
+          <ellipse cx="135" cy="62" rx="32" ry="16" fill="white" opacity="0.9"/>
+          <ellipse cx="70" cy="65" rx="28" ry="14" fill="white" opacity="0.7"/>
+          <ellipse cx="300" cy="50" rx="40" ry="14" fill="white" opacity="0.7"/>
+          <ellipse cx="335" cy="44" rx="25" ry="12" fill="white" opacity="0.8"/>
+          <!-- Far mountains -->
+          <polygon points="0,280 80,160 160,240 240,130 320,220 400,150 480,200 540,170 540,320 0,320" fill="#4dd4c8" opacity="0.4"/>
+          <!-- Mid mountains -->
+          <polygon points="0,320 60,200 130,280 220,180 300,260 390,190 460,250 540,210 540,340 0,340" fill="url(#mtn2)" opacity="0.7"/>
+          <!-- Main mountains -->
+          <polygon points="0,360 70,240 140,300 240,200 320,280 420,220 500,280 540,250 540,370 0,370" fill="url(#mtn1)"/>
+          <!-- Snow caps -->
+          <polygon points="70,240 85,255 55,255" fill="white" opacity="0.9"/>
+          <polygon points="240,200 258,218 222,218" fill="white" opacity="0.9"/>
+          <polygon points="420,220 438,238 402,238" fill="white" opacity="0.9"/>
+          <!-- Ground -->
+          <ellipse cx="270" cy="390" rx="270" ry="40" fill="url(#ground)"/>
+          <!-- Path -->
+          <path d="M 200 420 Q 270 370 340 420" stroke="#1a9e93" stroke-width="3" fill="none" stroke-dasharray="6,4" opacity="0.6"/>
+          <!-- Trees left -->
+          <rect x="60" y="330" width="8" height="40" fill="#1a9e93" rx="2"/>
+          <polygon points="64,290 42,335 86,335" fill="#2BBFB3"/>
+          <polygon points="64,310 46,340 82,340" fill="#1a9e93"/>
+          <rect x="90" y="345" width="6" height="28" fill="#1a9e93" rx="2"/>
+          <polygon points="93,315 76,348 110,348" fill="#2BBFB3"/>
+          <!-- Trees right -->
+          <rect x="455" y="330" width="8" height="40" fill="#1a9e93" rx="2"/>
+          <polygon points="459,290 437,335 481,335" fill="#2BBFB3"/>
+          <polygon points="459,310 441,340 477,340" fill="#1a9e93"/>
+          <!-- COUPLE - woman -->
+          <circle cx="230" cy="305" r="14" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2.5"/>
+          <!-- hair woman -->
+          <path d="M 218 300 Q 220 290 230 291 Q 240 290 242 300" fill="#4a2c2a" stroke="none"/>
+          <path d="M 218 300 Q 215 310 218 318" fill="#4a2c2a"/>
+          <!-- dress -->
+          <path d="M 220 319 Q 215 345 210 370 L 250 370 Q 245 345 240 319 Z" fill="#ff7eb3" stroke="#e05a9a" stroke-width="1"/>
+          <!-- woman bag -->
+          <rect x="247" y="330" width="12" height="16" fill="#2BBFB3" rx="3"/>
+          <path d="M 249 330 Q 253 325 257 330" stroke="#1a9e93" stroke-width="2" fill="none"/>
+          <!-- COUPLE - man -->
+          <circle cx="310" cy="302" r="15" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2.5"/>
+          <!-- hair man -->
+          <path d="M 297 298 Q 300 288 310 289 Q 320 288 323 298" fill="#2c1a0e" stroke="none"/>
+          <!-- shirt -->
+          <rect x="297" y="317" width="26" height="30" fill="#2BBFB3" rx="4"/>
+          <!-- pants -->
+          <path d="M 297 347 L 293 380 L 305 380 L 310 360 L 315 380 L 327 380 L 323 347 Z" fill="#1f2937"/>
+          <!-- man camera -->
+          <rect x="323" y="318" width="18" height="13" fill="#1f2937" rx="3"/>
+          <circle cx="332" cy="324" r="4" fill="#4dd4c8" stroke="#2BBFB3" stroke-width="1"/>
+          <!-- Backpack man -->
+          <rect x="283" y="320" width="16" height="22" fill="#ffd700" rx="4"/>
+          <path d="M 285 320 Q 291 314 297 320" stroke="#e6be00" stroke-width="2" fill="none"/>
+          <!-- CHILD -->
+          <circle cx="270" cy="335" r="10" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2"/>
+          <path d="M 262 340 Q 260 358 260 370 L 280 370 Q 280 358 278 340 Z" fill="#9b59b6" rx="3"/>
+          <!-- child balloon -->
+          <circle cx="265" cy="315" r="8" fill="#ff6b6b" opacity="0.9"/>
+          <line x1="265" y1="323" x2="265" y2="336" stroke="#555" stroke-width="1.5"/>
+          <!-- Decorative dots scatter -->
+          <circle cx="150" cy="150" r="4" fill="#2BBFB3" opacity="0.3"/>
+          <circle cx="390" cy="120" r="6" fill="#2BBFB3" opacity="0.2"/>
+          <circle cx="480" cy="310" r="3" fill="#2BBFB3" opacity="0.3"/>
+          <circle cx="50" cy="200" r="5" fill="#2BBFB3" opacity="0.25"/>
+          <!-- Flag/banner doodle -->
+          <line x1="185" y1="265" x2="185" y2="300" stroke="#1a9e93" stroke-width="2"/>
+          <polygon points="185,265 205,272 185,280" fill="#2BBFB3"/>
+          <!-- Small airplane doodle top right -->
+          <g transform="translate(460,40) rotate(-20)" opacity="0.6">
+            <ellipse cx="0" cy="0" rx="22" ry="7" fill="white" stroke="#2BBFB3" stroke-width="2"/>
+            <polygon points="0,-7 -8,-14 8,-14" fill="white" stroke="#2BBFB3" stroke-width="1.5"/>
+            <polygon points="18,0 28,4 28,-4" fill="white" stroke="#2BBFB3" stroke-width="1.5"/>
+            <line x1="-22" y1="0" x2="-32" y2="0" stroke="#2BBFB3" stroke-width="1.5"/>
+          </g>
+        </svg>
+      </div>
+      <!-- ENQUIRY CARD overlapping -->
+      <div class="enquiry-card" style="margin-top:-40px; position:relative; z-index:10;">
+        <div class="enquiry-tabs">
+          <button class="etab active" onclick="switchTab('explore')">
+            <span class="en">Explore Packages</span>
+            <span class="hi" style="display:none">पैकेज देखें</span>
+          </button>
+          <button class="etab" onclick="switchTab('plan')">
+            <span class="en">Plan My Trip</span>
+            <span class="hi" style="display:none">यात्रा योजना बनाएं</span>
+          </button>
+        </div>
+        <!-- Explore Tab -->
+        <div class="tab-panel active" id="tab-explore">
+          <div class="form-row">
+            <label class="en">Where do you want to go?</label>
+            <label class="hi" style="display:none">आप कहाँ जाना चाहते हैं?</label>
+            <select>
+              <option value="">Select destination</option>
+              <option>Ladakh</option><option>Kashmir</option><option>Bali</option>
+              <option>Kerala</option><option>Spiti Valley</option><option>Thailand</option>
+              <option>Goa</option><option>Rajasthan</option><option>Andaman</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="en">Trip Type</label>
+            <label class="hi" style="display:none">यात्रा प्रकार</label>
+            <select>
+              <option>Honeymoon</option><option>Family Tour</option>
+              <option>Team Offsite</option><option>Corporate Retreat</option>
+            </select>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label class="en">Duration</label>
+              <label class="hi" style="display:none">अवधि</label>
+              <select>
+                <option>3-4 Days</option><option>5-6 Days</option>
+                <option>7-8 Days</option><option>9+ Days</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label class="en">Travel Month</label>
+              <label class="hi" style="display:none">यात्रा माह</label>
+              <select>
+                <option>Jan</option><option>Feb</option><option>Mar</option>
+                <option>Apr</option><option>May</option><option>Jun</option>
+                <option>Jul</option><option>Aug</option><option>Sep</option>
+                <option>Oct</option><option>Nov</option><option>Dec</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn-submit">
+            <span class="en">Find Packages</span>
+            <span class="hi" style="display:none">पैकेज खोजें</span>
+          </button>
+        </div>
+        <!-- Plan Tab -->
+        <div class="tab-panel" id="tab-plan">
+          <form action="https://formspree.io/f/tripharbour" method="POST">
+            <div class="form-row">
+              <label class="en">Your Name</label>
+              <label class="hi" style="display:none">आपका नाम</label>
+              <input type="text" name="name" placeholder="Full name" required>
+            </div>
+            <div class="form-row">
+              <label class="en">Phone Number</label>
+              <label class="hi" style="display:none">फ़ोन नंबर</label>
+              <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-row">
+                <label class="en">Destination</label>
+                <label class="hi" style="display:none">गंतव्य</label>
+                <select name="destination">
+                  <option>Ladakh</option><option>Kashmir</option><option>Bali</option>
+                  <option>Kerala</option><option>Thailand</option><option>Other</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label class="en">Group Size</label>
+                <label class="hi" style="display:none">समूह का आकार</label>
+                <select name="group">
+                  <option>2</option><option>3-5</option><option>6-10</option><option>10+</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn-submit">
+              <span class="en">Get Free Call Back</span>
+              <span class="hi" style="display:none">निःशुल्क कॉल बैक पाएं</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRIP TYPE TILES -->
+<section class="trip-type-section">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">Plan by Category</div>
+      <div class="section-label hi" style="display:none">श्रेणी के अनुसार योजना बनाएं</div>
+      <h2 class="section-title en">What kind of trip are you planning?</h2>
+      <h2 class="section-title hi" style="display:none">आप किस तरह की यात्रा की योजना बना रहे हैं?</h2>
+    </div>
+    <div class="tiles-grid">
+      <!-- HONEYMOON TILE -->
+      <div class="tile">
+        <div class="tile-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" fill="#e8faf9" stroke="#2BBFB3" stroke-width="2"/>
+            <path d="M32 46 C32 46 16 36 16 25 C16 20 20 17 24 17 C27 17 30 19 32 22 C34 19 37 17 40 17 C44 17 48 20 48 25 C48 36 32 46 32 46Z" fill="#2BBFB3" stroke="#1a9e93" stroke-width="1.5"/>
+            <circle cx="24" cy="22" r="3" fill="white" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="tile-name en">Honeymoon</div>
+        <div class="tile-name hi" style="display:none">हनीमून</div>
+        <div class="tile-desc en">Romantic getaways for two</div>
+        <div class="tile-desc hi" style="display:none">दो के लिए रोमांटिक यात्रा</div>
+        <div class="tile-dropdown">
+          <div class="dd-section-title">Indian Destinations</div>
+          <div class="dd-links">
+            <a href="#">Kashmir</a><a href="#">Kerala</a>
+            <a href="#">Andaman</a><a href="#">Himachal</a>
+            <a href="#">Sikkim</a><a href="#">Goa</a>
+            <a href="#">Uttarakhand</a><a href="#">Rajasthan</a>
+          </div>
+          <div class="dd-divider"></div>
+          <div class="dd-section-title">International Destinations</div>
+          <div class="dd-links">
+            <a href="#">Maldives</a><a href="#">Bali</a>
+            <a href="#">Thailand</a><a href="#">Mauritius</a>
+            <a href="#">Sri Lanka</a><a href="#">Dubai</a>
+            <a href="#">Switzerland</a><a href="#">Europe</a>
+          </div>
+        </div>
+      </div>
+      <!-- FAMILY TILE -->
+      <div class="tile">
+        <div class="tile-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" fill="#e8faf9" stroke="#2BBFB3" stroke-width="2"/>
+            <!-- dad -->
+            <circle cx="22" cy="22" r="6" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="1.5"/>
+            <path d="M14 44 Q14 34 22 34 Q30 34 30 44" fill="#2BBFB3"/>
+            <!-- mom -->
+            <circle cx="42" cy="22" r="6" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="1.5"/>
+            <path d="M34 44 Q34 34 42 34 Q50 34 50 44" fill="#ff7eb3"/>
+            <!-- child -->
+            <circle cx="32" cy="28" r="4" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="1.5"/>
+            <path d="M27 44 Q27 36 32 36 Q37 36 37 44" fill="#9b59b6"/>
+          </svg>
+        </div>
+        <div class="tile-name en">Family Tours</div>
+        <div class="tile-name hi" style="display:none">पारिवारिक दौरे</div>
+        <div class="tile-desc en">Memories for the whole family</div>
+        <div class="tile-desc hi" style="display:none">पूरे परिवार के लिए यादें</div>
+        <div class="tile-dropdown">
+          <div class="dd-section-title">Indian Destinations</div>
+          <div class="dd-links">
+            <a href="#">Kerala</a><a href="#">Rajasthan</a>
+            <a href="#">Himachal</a><a href="#">Goa</a>
+            <a href="#">Kashmir</a><a href="#">Andaman</a>
+            <a href="#">Sikkim</a><a href="#">Gujarat</a>
+          </div>
+          <div class="dd-divider"></div>
+          <div class="dd-section-title">International Destinations</div>
+          <div class="dd-links">
+            <a href="#">Singapore</a><a href="#">Dubai</a>
+            <a href="#">Bhutan</a><a href="#">Mauritius</a>
+            <a href="#">Vietnam</a><a href="#">Sri Lanka</a>
+            <a href="#">Bali</a><a href="#">Thailand</a>
+          </div>
+        </div>
+      </div>
+      <!-- TEAM OFFSITE TILE -->
+      <div class="tile">
+        <div class="tile-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" fill="#e8faf9" stroke="#2BBFB3" stroke-width="2"/>
+            <circle cx="20" cy="24" r="5" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="1.5"/>
+            <circle cx="32" cy="21" r="5" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="1.5"/>
+            <circle cx="44" cy="24" r="5" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="1.5"/>
+            <path d="M10 46 Q10 34 20 34 Q26 34 28 38 Q30 34 32 34 Q34 34 36 38 Q38 34 44 34 Q54 34 54 46" fill="#2BBFB3"/>
+            <path d="M25 20 L32 14 L39 20" stroke="#2BBFB3" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div class="tile-name en">Team Offsites</div>
+        <div class="tile-name hi" style="display:none">टीम ऑफसाइट</div>
+        <div class="tile-desc en">Bond, build, celebrate together</div>
+        <div class="tile-desc hi" style="display:none">एक साथ बंधन, निर्माण, उत्सव</div>
+        <div class="tile-dropdown">
+          <div class="dd-section-title">Indian Destinations</div>
+          <div class="dd-links">
+            <a href="#">Manali</a><a href="#">Goa</a>
+            <a href="#">Rishikesh</a><a href="#">Coorg</a>
+            <a href="#">Kasauli</a><a href="#">Jim Corbett</a>
+            <a href="#">Spiti</a><a href="#">Mussoorie</a>
+          </div>
+          <div class="dd-divider"></div>
+          <div class="dd-section-title">International Destinations</div>
+          <div class="dd-links">
+            <a href="#">Bali</a><a href="#">Thailand</a>
+            <a href="#">Dubai</a><a href="#">Sri Lanka</a>
+          </div>
+        </div>
+      </div>
+      <!-- CORPORATE RETREAT TILE -->
+      <div class="tile">
+        <div class="tile-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" fill="#e8faf9" stroke="#2BBFB3" stroke-width="2"/>
+            <rect x="16" y="28" width="32" height="20" rx="3" fill="#2BBFB3" stroke="#1a9e93" stroke-width="1.5"/>
+            <rect x="22" y="22" width="20" height="8" rx="2" fill="#4dd4c8" stroke="#2BBFB3" stroke-width="1.5"/>
+            <line x1="16" y1="36" x2="48" y2="36" stroke="#1a9e93" stroke-width="1.5"/>
+            <circle cx="32" cy="42" r="3" fill="white"/>
+            <rect x="29" y="48" width="6" height="3" rx="1" fill="#1a9e93"/>
+            <line x1="24" y1="51" x2="40" y2="51" stroke="#1a9e93" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="tile-name en">Corporate Retreats</div>
+        <div class="tile-name hi" style="display:none">कॉर्पोरेट रिट्रीट</div>
+        <div class="tile-desc en">Productive escapes for your team</div>
+        <div class="tile-desc hi" style="display:none">आपकी टीम के लिए उत्पादक अवकाश</div>
+        <div class="tile-dropdown">
+          <div class="dd-section-title">Indian Destinations</div>
+          <div class="dd-links">
+            <a href="#">Goa</a><a href="#">Coorg</a>
+            <a href="#">Manali</a><a href="#">Jim Corbett</a>
+            <a href="#">Rishikesh</a><a href="#">Kasauli</a>
+          </div>
+          <div class="dd-divider"></div>
+          <div class="dd-section-title">International Destinations</div>
+          <div class="dd-links">
+            <a href="#">Dubai</a><a href="#">Bali</a>
+            <a href="#">Thailand</a><a href="#">Singapore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how-section" id="how">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">Our Process</div>
+      <div class="section-label hi" style="display:none">हमारी प्रक्रिया</div>
+      <h2 class="section-title en">How We Work</h2>
+      <h2 class="section-title hi" style="display:none">हम कैसे काम करते हैं</h2>
+      <p class="section-sub en" style="margin:0 auto;">From first click to last memory — we handle everything</p>
+      <p class="section-sub hi" style="display:none; margin:0 auto;">पहली क्लिक से आखिरी यादगार पल तक — हम सब कुछ संभालते हैं</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-icon">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+            <circle cx="28" cy="18" r="8" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2"/>
+            <path d="M14 42 Q14 30 28 30 Q42 30 42 42" fill="#2BBFB3"/>
+            <rect x="30" y="24" width="18" height="14" rx="3" fill="white" stroke="#2BBFB3" stroke-width="1.5"/>
+            <line x1="33" y1="28" x2="45" y2="28" stroke="#2BBFB3" stroke-width="1.5"/>
+            <line x1="33" y1="32" x2="45" y2="32" stroke="#2BBFB3" stroke-width="1.5" stroke-dasharray="3,2"/>
+          </svg>
+        </div>
+        <div class="step-num">1</div>
+        <div class="step-title en">Share Your Travel Dream</div>
+        <div class="step-title hi" style="display:none">अपना यात्रा सपना साझा करें</div>
+        <div class="step-desc en">Fill a quick form or pick a package that excites you. Tell us your destination, dates, and group size.</div>
+        <div class="step-desc hi" style="display:none">एक त्वरित फ़ॉर्म भरें या कोई पैकेज चुनें। अपना गंतव्य, तिथियां और समूह का आकार बताएं।</div>
+      </div>
+      <div class="step-arrow">&#8594;</div>
+      <div class="step">
+        <div class="step-icon">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+            <circle cx="22" cy="18" r="8" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2"/>
+            <path d="M8 42 Q8 30 22 30 Q36 30 36 42" fill="#2BBFB3"/>
+            <rect x="34" y="12" width="18" height="22" rx="3" fill="white" stroke="#2BBFB3" stroke-width="1.5"/>
+            <line x1="37" y1="17" x2="49" y2="17" stroke="#2BBFB3" stroke-width="1.5"/>
+            <line x1="37" y1="21" x2="49" y2="21" stroke="#2BBFB3" stroke-width="1.5"/>
+            <line x1="37" y1="25" x2="44" y2="25" stroke="#2BBFB3" stroke-width="1.5"/>
+            <circle cx="43" cy="32" r="4" fill="#ffd700" stroke="#e6be00" stroke-width="1.5"/>
+            <line x1="43" y1="28" x2="43" y2="24" stroke="#e6be00" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="step-num">2</div>
+        <div class="step-title en">Get Your Personalised Itinerary</div>
+        <div class="step-title hi" style="display:none">अपनी व्यक्तिगत यात्रा योजना पाएं</div>
+        <div class="step-desc en">Our travel expert calls you within 2 hours. We craft a custom itinerary around your budget and preferences.</div>
+        <div class="step-desc hi" style="display:none">हमारा यात्रा विशेषज्ञ 2 घंटे के भीतर कॉल करता है और आपके बजट के अनुसार योजना बनाता है।</div>
+      </div>
+      <div class="step-arrow">&#8594;</div>
+      <div class="step">
+        <div class="step-icon">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+            <circle cx="28" cy="16" r="8" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2"/>
+            <path d="M14 40 Q14 28 28 28 Q42 28 42 40" fill="#2BBFB3"/>
+            <polygon points="28,42 20,50 36,50" fill="#1a9e93"/>
+            <line x1="28" y1="38" x2="28" y2="42" stroke="#1a9e93" stroke-width="2"/>
+            <!-- stars -->
+            <text x="10" y="20" font-size="10" fill="#ffd700">★</text>
+            <text x="38" y="18" font-size="8" fill="#ffd700">★</text>
+            <text x="44" y="28" font-size="6" fill="#ffd700">★</text>
+          </svg>
+        </div>
+        <div class="step-num">3</div>
+        <div class="step-title en">Travel Stress-Free</div>
+        <div class="step-title hi" style="display:none">बिना तनाव के यात्रा करें</div>
+        <div class="step-desc en">A dedicated tour manager is with your group from day one. You just show up and enjoy.</div>
+        <div class="step-desc hi" style="display:none">एक समर्पित टूर मैनेजर पहले दिन से आपके साथ है। बस आइए और आनंद लीजिए।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="dest-section" id="destinations">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Explore</div>
+      <div class="section-label hi" style="display:none">अन्वेषण करें</div>
+      <h2 class="section-title en">Our Most Loved Destinations</h2>
+      <h2 class="section-title hi" style="display:none">हमारे सबसे प्रिय गंतव्य</h2>
+      <p class="section-sub en">Handpicked for families, couples and corporate teams</p>
+      <p class="section-sub hi" style="display:none">परिवारों, जोड़ों और कॉर्पोरेट टीमों के लिए</p>
+    </div>
+    <div class="dest-grid">
+      <!-- Each card uses a teal gradient placeholder — swap with real photos via CSS background-image -->
+      <div class="dest-card" style="background:linear-gradient(135deg,#1a9e93,#0d6b63)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-name">Ladakh</div>
+          <div class="dest-tag en">Where Roads End & Adventures Begin</div>
+          <div class="dest-tag hi" style="display:none">जहाँ सड़कें समाप्त होती हैं</div>
+          <div class="dest-explore en">Explore Packages &#8594;</div>
+          <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
+        </div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#2BBFB3,#1a9e93)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-name">Kashmir</div>
+          <div class="dest-tag en">Heaven on Earth, Closer Than You Think</div>
+          <div class="dest-tag hi" style="display:none">धरती का स्वर्ग</div>
+          <div class="dest-explore en">Explore Packages &#8594;</div>
+          <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
+        </div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#4dd4c8,#2BBFB3)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-name">Bali</div>
+          <div class="dest-tag en">Romance, Temples & Sunsets</div>
+          <div class="dest-tag hi" style="display:none">रोमांस, मंदिर और सूर्यास्त</div>
+          <div class="dest-explore en">Explore Packages &#8594;</div>
+          <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
+        </div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#0d6b63,#1a9e93)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-name">Kerala</div>
+          <div class="dest-tag en">God's Own Country, Perfectly Planned</div>
+          <div class="dest-tag hi" style="display:none">भगवान का अपना देश</div>
+          <div class="dest-explore en">Explore Packages &#8594;</div>
+          <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
+        </div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#3dccc0,#1a9e93)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-name">Spiti Valley</div>
+          <div class="dest-tag en">The Last Horizon</div>
+          <div class="dest-tag hi" style="display:none">अंतिम क्षितिज</div>
+          <div class="dest-explore en">Explore Packages &#8594;</div>
+          <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
+        </div>
+      </div>
+      <div class="dest-card" style="background:linear-gradient(135deg,#2BBFB3,#0d6b63)">
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <div class="dest-name">Thailand</div>
+          <div class="dest-tag en">Exotic, Affordable, Unforgettable</div>
+          <div class="dest-tag hi" style="display:none">विदेशी, किफायती, अविस्मरणीय</div>
+          <div class="dest-explore en">Explore Packages &#8594;</div>
+          <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
+        </div>
+      </div>
+    </div>
+    <div class="dest-footer">
+      <a href="#" class="link-teal en">View All Destinations &#8594;</a>
+      <a href="#" class="link-teal hi" style="display:none">सभी गंतव्य देखें &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="pkg-section" id="packages">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Curated For You</div>
+      <div class="section-label hi" style="display:none">आपके लिए चुना गया</div>
+      <h2 class="section-title en">Handpicked Holiday Packages</h2>
+      <h2 class="section-title hi" style="display:none">चुनिंदा छुट्टी पैकेज</h2>
+      <p class="section-sub en">Every package built around your comfort, budget and time</p>
+      <p class="section-sub hi" style="display:none">हर पैकेज आपके आराम, बजट और समय के अनुसार</p>
+    </div>
+    <div class="pkg-filters">
+      <button class="pkg-filter active" onclick="filterPkg(this,'all')"><span class="en">All</span><span class="hi" style="display:none">सभी</span></button>
+      <button class="pkg-filter" onclick="filterPkg(this,'honeymoon')"><span class="en">Honeymoon</span><span class="hi" style="display:none">हनीमून</span></button>
+      <button class="pkg-filter" onclick="filterPkg(this,'family')"><span class="en">Family</span><span class="hi" style="display:none">परिवार</span></button>
+      <button class="pkg-filter" onclick="filterPkg(this,'offsite')"><span class="en">Team Offsites</span><span class="hi" style="display:none">टीम ऑफसाइट</span></button>
+      <button class="pkg-filter" onclick="filterPkg(this,'corporate')"><span class="en">Corporate Retreats</span><span class="hi" style="display:none">कॉर्पोरेट रिट्रीट</span></button>
+    </div>
+    <div class="pkg-grid" id="pkgGrid">
+      <div class="pkg-card" data-type="honeymoon">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a9e93,#4dd4c8)">
+          <div class="pkg-badge">Honeymoon</div>
+          <div class="pkg-img-placeholder">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M30 50C30 50 10 38 10 24C10 18 15 14 20 14C24 14 28 17 30 21C32 17 36 14 40 14C45 14 50 18 50 24C50 38 30 50 30 50Z" fill="white" opacity="0.3"/></svg>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name en">7 Days Kashmir Honeymoon Package</div>
+          <div class="pkg-name hi" style="display:none">7 दिन कश्मीर हनीमून पैकेज</div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-item">&#128197; 7 Days</div>
+            <div class="pkg-meta-item">&#128143; Couple</div>
+          </div>
+          <div class="pkg-inclusions">
+            <span class="incl-tag">Hotel</span>
+            <span class="incl-tag">Transport</span>
+            <span class="incl-tag">Tour Manager</span>
+            <span class="incl-tag">Sightseeing</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-price">&#8377;28,999 <span>/ person</span></div>
+            <div class="pkg-btns">
+              <button class="btn-outline en">View</button>
+              <button class="btn-solid en" onclick="openPopup()">Enquire</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card" data-type="family">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#2BBFB3,#0d6b63)">
+          <div class="pkg-badge">Family</div>
+          <div class="pkg-img-placeholder">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><circle cx="20" cy="20" r="8" fill="white" opacity="0.3"/><circle cx="40" cy="20" r="8" fill="white" opacity="0.3"/><circle cx="30" cy="32" r="6" fill="white" opacity="0.3"/></svg>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name en">6 Days Kerala Family Package</div>
+          <div class="pkg-name hi" style="display:none">6 दिन केरल पारिवारिक पैकेज</div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-item">&#128197; 6 Days</div>
+            <div class="pkg-meta-item">&#128106; Family</div>
+          </div>
+          <div class="pkg-inclusions">
+            <span class="incl-tag">Hotel</span>
+            <span class="incl-tag">Transport</span>
+            <span class="incl-tag">Tour Manager</span>
+            <span class="incl-tag">Meals</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-price">&#8377;22,999 <span>/ person</span></div>
+            <div class="pkg-btns">
+              <button class="btn-outline">View</button>
+              <button class="btn-solid" onclick="openPopup()">Enquire</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card" data-type="honeymoon">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#4dd4c8,#1a9e93)">
+          <div class="pkg-badge">Honeymoon</div>
+          <div class="pkg-img-placeholder">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M30 50C30 50 10 38 10 24C10 18 15 14 20 14C24 14 28 17 30 21C32 17 36 14 40 14C45 14 50 18 50 24C50 38 30 50 30 50Z" fill="white" opacity="0.3"/></svg>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name en">5 Days Bali Honeymoon Package</div>
+          <div class="pkg-name hi" style="display:none">5 दिन बाली हनीमून पैकेज</div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-item">&#128197; 5 Days</div>
+            <div class="pkg-meta-item">&#128143; Couple</div>
+          </div>
+          <div class="pkg-inclusions">
+            <span class="incl-tag">Resort</span>
+            <span class="incl-tag">Transfers</span>
+            <span class="incl-tag">Tour Manager</span>
+            <span class="incl-tag">Visa</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-price">&#8377;32,999 <span>/ person</span></div>
+            <div class="pkg-btns">
+              <button class="btn-outline">View</button>
+              <button class="btn-solid" onclick="openPopup()">Enquire</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card" data-type="offsite">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#0d6b63,#2BBFB3)">
+          <div class="pkg-badge">Team Offsite</div>
+          <div class="pkg-img-placeholder">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><circle cx="18" cy="22" r="6" fill="white" opacity="0.3"/><circle cx="30" cy="18" r="6" fill="white" opacity="0.3"/><circle cx="42" cy="22" r="6" fill="white" opacity="0.3"/></svg>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name en">3 Days Goa Team Offsite Package</div>
+          <div class="pkg-name hi" style="display:none">3 दिन गोवा टीम ऑफसाइट पैकेज</div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-item">&#128197; 3 Days</div>
+            <div class="pkg-meta-item">&#128101; Group</div>
+          </div>
+          <div class="pkg-inclusions">
+            <span class="incl-tag">Hotel</span>
+            <span class="incl-tag">Activities</span>
+            <span class="incl-tag">GST Invoice</span>
+            <span class="incl-tag">Event Mgr</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-price">&#8377;14,999 <span>/ person</span></div>
+            <div class="pkg-btns">
+              <button class="btn-outline">View</button>
+              <button class="btn-solid" onclick="openPopup()">Enquire</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card" data-type="family">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#1a9e93,#3dccc0)">
+          <div class="pkg-badge">Family</div>
+          <div class="pkg-img-placeholder">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><polygon points="30,10 50,45 10,45" fill="white" opacity="0.3"/></svg>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name en">8 Days Ladakh Family Adventure</div>
+          <div class="pkg-name hi" style="display:none">8 दिन लद्दाख पारिवारिक साहसिक यात्रा</div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-item">&#128197; 8 Days</div>
+            <div class="pkg-meta-item">&#128106; Family</div>
+          </div>
+          <div class="pkg-inclusions">
+            <span class="incl-tag">Hotel</span>
+            <span class="incl-tag">Transport</span>
+            <span class="incl-tag">Tour Manager</span>
+            <span class="incl-tag">Permits</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-price">&#8377;38,999 <span>/ person</span></div>
+            <div class="pkg-btns">
+              <button class="btn-outline">View</button>
+              <button class="btn-solid" onclick="openPopup()">Enquire</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card" data-type="corporate">
+        <div class="pkg-img" style="background:linear-gradient(135deg,#2BBFB3,#1a9e93)">
+          <div class="pkg-badge">Corporate</div>
+          <div class="pkg-img-placeholder">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><rect x="15" y="20" width="30" height="20" rx="3" fill="white" opacity="0.3"/><rect x="20" y="14" width="20" height="8" rx="2" fill="white" opacity="0.2"/></svg>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name en">4 Days Bali Corporate Retreat</div>
+          <div class="pkg-name hi" style="display:none">4 दिन बाली कॉर्पोरेट रिट्रीट</div>
+          <div class="pkg-meta">
+            <div class="pkg-meta-item">&#128197; 4 Days</div>
+            <div class="pkg-meta-item">&#128101; Corporate</div>
+          </div>
+          <div class="pkg-inclusions">
+            <span class="incl-tag">Resort</span>
+            <span class="incl-tag">Conf. Room</span>
+            <span class="incl-tag">GST Invoice</span>
+            <span class="incl-tag">Activities</span>
+          </div>
+          <div class="pkg-footer">
+            <div class="pkg-price">&#8377;42,999 <span>/ person</span></div>
+            <div class="pkg-btns">
+              <button class="btn-outline">View</button>
+              <button class="btn-solid" onclick="openPopup()">Enquire</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pkg-view-all">
+      <a href="#" class="btn-ghost en">View All Packages &#8594;</a>
+      <a href="#" class="btn-ghost hi" style="display:none">सभी पैकेज देखें &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:100%;">
+      <div class="section-label en">Why Trip Harbour</div>
+      <div class="section-label hi" style="display:none">ट्रिप हार्बर क्यों चुनें</div>
+      <h2 class="section-title en">Why Travelers Choose Us</h2>
+      <h2 class="section-title hi" style="display:none">यात्री हमें क्यों चुनते हैं</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="1.5"/><path d="M7 28 Q7 20 16 20 Q25 20 25 28" fill="#2BBFB3"/><path d="M22 14 L24 16 L28 11" stroke="#2BBFB3" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="why-title en">Dedicated Tour Manager</div>
+        <div class="why-title hi" style="display:none">समर्पित टूर मैनेजर</div>
+        <div class="why-desc en">Every trip has a dedicated manager with your group from start to finish</div>
+        <div class="why-desc hi" style="display:none">हर यात्रा में शुरू से अंत तक एक समर्पित मैनेजर</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="18" rx="3" fill="#e8faf9" stroke="#2BBFB3" stroke-width="1.5"/><line x1="4" y1="14" x2="28" y2="14" stroke="#2BBFB3" stroke-width="1.5"/><circle cx="10" cy="20" r="2" fill="#2BBFB3"/><line x1="14" y1="20" x2="22" y2="20" stroke="#2BBFB3" stroke-width="1.5"/></svg>
+        </div>
+        <div class="why-title en">Fully Personalised Itineraries</div>
+        <div class="why-title hi" style="display:none">पूरी तरह व्यक्तिगत योजनाएं</div>
+        <div class="why-desc en">No two trips are the same. Every itinerary is built around your preferences</div>
+        <div class="why-desc hi" style="display:none">कोई भी दो यात्राएं एक जैसी नहीं। हर योजना आपकी पसंद के अनुसार</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" fill="#e8faf9" stroke="#2BBFB3" stroke-width="1.5"/><path d="M16 6 L16 16 L22 22" stroke="#2BBFB3" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="16" r="2" fill="#2BBFB3"/></svg>
+        </div>
+        <div class="why-title en">Pan-India Departures</div>
+        <div class="why-title hi" style="display:none">पूरे भारत से प्रस्थान</div>
+        <div class="why-desc en">Join from any city across India — we handle all logistics</div>
+        <div class="why-desc hi" style="display:none">भारत के किसी भी शहर से जुड़ें — हम सारी व्यवस्था करते हैं</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="20" rx="3" fill="#e8faf9" stroke="#2BBFB3" stroke-width="1.5"/><line x1="9" y1="13" x2="23" y2="13" stroke="#2BBFB3" stroke-width="1.5"/><line x1="9" y1="17" x2="19" y2="17" stroke="#2BBFB3" stroke-width="1.5"/><path d="M19 20 L22 23 L28 16" stroke="#2BBFB3" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div class="why-title en">GST Compliant Invoicing</div>
+        <div class="why-title hi" style="display:none">जीएसटी अनुपालन चालान</div>
+        <div class="why-desc en">Transparent billing with GST invoices for all corporate bookings</div>
+        <div class="why-desc hi" style="display:none">सभी कॉर्पोरेट बुकिंग के लिए जीएसटी चालान के साथ पारदर्शी बिलिंग</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 C16 4 6 10 6 18 C6 23 10 27 16 27 C22 27 26 23 26 18 C26 10 16 4 16 4Z" fill="#e8faf9" stroke="#2BBFB3" stroke-width="1.5"/><path d="M12 18 L15 21 L20 15" stroke="#2BBFB3" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div class="why-title en">24/7 Trip Support</div>
+        <div class="why-title hi" style="display:none">24/7 यात्रा सहायता</div>
+        <div class="why-desc en">Round the clock support before, during and after your trip</div>
+        <div class="why-desc hi" style="display:none">यात्रा से पहले, दौरान और बाद में चौबीसों घंटे सहायता</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Travel Inspiration</div>
+      <div class="section-label hi" style="display:none">यात्रा प्रेरणा</div>
+      <h2 class="section-title en">Travel Inspiration & Trip Guides</h2>
+      <h2 class="section-title hi" style="display:none">यात्रा प्रेरणा और यात्रा गाइड</h2>
+      <p class="section-sub en">Real itineraries, honest tips, and destination deep-dives</p>
+      <p class="section-sub hi" style="display:none">वास्तविक यात्रा योजनाएं, ईमानदार सुझाव और गंतव्य की गहरी जानकारी</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,#1a9e93,#4dd4c8)"></div>
+        <div class="blog-body">
+          <span class="blog-cat en">Family</span>
+          <span class="blog-cat hi" style="display:none">परिवार</span>
+          <div class="blog-title en">7 Reasons Kashmir is Perfect for a Family Holiday</div>
+          <div class="blog-title hi" style="display:none">7 कारण कश्मीर पारिवारिक छुट्टी के लिए क्यों परफेक्ट है</div>
+          <div class="blog-excerpt en">From houseboat stays to Gulmarg gondola rides — Kashmir offers something magical for every member of the family.</div>
+          <div class="blog-excerpt hi" style="display:none">हाउसबोट से लेकर गुलमर्ग गोंडोला तक — कश्मीर परिवार के हर सदस्य के लिए जादुई अनुभव प्रदान करता है।</div>
+          <a href="#" class="blog-read en">Read More &#8594;</a>
+          <a href="#" class="blog-read hi" style="display:none">और पढ़ें &#8594;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,#2BBFB3,#0d6b63)"></div>
+        <div class="blog-body">
+          <span class="blog-cat en">Honeymoon</span>
+          <span class="blog-cat hi" style="display:none">हनीमून</span>
+          <div class="blog-title en">Bali vs Thailand: Which is Better for Indian Couples?</div>
+          <div class="blog-title hi" style="display:none">बाली vs थाईलैंड: भारतीय जोड़ों के लिए कौन बेहतर?</div>
+          <div class="blog-excerpt en">We break down costs, visa ease, romance factor, and food for Indian honeymooners choosing between these two iconic destinations.</div>
+          <div class="blog-excerpt hi" style="display:none">हम भारतीय हनीमून जोड़ों के लिए लागत, वीज़ा, रोमांस और भोजन की तुलना करते हैं।</div>
+          <a href="#" class="blog-read en">Read More &#8594;</a>
+          <a href="#" class="blog-read hi" style="display:none">और पढ़ें &#8594;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,#4dd4c8,#2BBFB3)"></div>
+        <div class="blog-body">
+          <span class="blog-cat en">Corporate</span>
+          <span class="blog-cat hi" style="display:none">कॉर्पोरेट</span>
+          <div class="blog-title en">How to Plan a Corporate Team Offsite in Goa: Complete Checklist</div>
+          <div class="blog-title hi" style="display:none">गोवा में कॉर्पोरेट टीम ऑफसाइट कैसे प्लान करें: पूरी चेकलिस्ट</div>
+          <div class="blog-excerpt en">Everything your HR team needs to know — venues, activities, budgeting, and how to make it memorable without blowing the budget.</div>
+          <div class="blog-excerpt hi" style="display:none">आपकी HR टीम को सब कुछ जानना चाहिए — स्थान, गतिविधियां, बजट और यादगार बनाने के तरीके।</div>
+          <a href="#" class="blog-read en">Read More &#8594;</a>
+          <a href="#" class="blog-read hi" style="display:none">और पढ़ें &#8594;</a>
+        </div>
+      </div>
+    </div>
+    <div class="pkg-view-all">
+      <a href="#" class="btn-ghost en">Visit Our Blog &#8594;</a>
+      <a href="#" class="btn-ghost hi" style="display:none">हमारा ब्लॉग देखें &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- BEST PLACES BY MONTH -->
+<section class="month-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label en">Plan by Season</div>
+      <div class="section-label hi" style="display:none">मौसम के अनुसार योजना बनाएं</div>
+      <h2 class="section-title en">Best Places to Visit in India by Month</h2>
+      <h2 class="section-title hi" style="display:none">भारत में महीने के अनुसार सर्वश्रेष्ठ स्थान</h2>
+    </div>
+    <div class="month-tabs" id="indiaTabs">
+      <button class="month-tab active" onclick="switchMonth('india','jan',this)">Jan</button>
+      <button class="month-tab" onclick="switchMonth('india','feb',this)">Feb</button>
+      <button class="month-tab" onclick="switchMonth('india','mar',this)">Mar</button>
+      <button class="month-tab" onclick="switchMonth('india','apr',this)">Apr</button>
+      <button class="month-tab" onclick="switchMonth('india','may',this)">May</button>
+      <button class="month-tab" onclick="switchMonth('india','jun',this)">Jun</button>
+      <button class="month-tab" onclick="switchMonth('india','jul',this)">Jul</button>
+      <button class="month-tab" onclick="switchMonth('india','aug',this)">Aug</button>
+      <button class="month-tab" onclick="switchMonth('india','sep',this)">Sep</button>
+      <button class="month-tab" onclick="switchMonth('india','oct',this)">Oct</button>
+      <button class="month-tab" onclick="switchMonth('india','nov',this)">Nov</button>
+      <button class="month-tab" onclick="switchMonth('india','dec',this)">Dec</button>
+    </div>
+    <div id="india-jan" class="month-panel active">
+      <div class="month-dest"><div class="month-dest-name">Goa</div><div class="month-dest-note">Peak season — perfect weather, vibrant beaches</div></div>
+      <div class="month-dest"><div class="month-dest-name">Rajasthan</div><div class="month-dest-note">Cool, dry weather — ideal for heritage tours</div></div>
+      <div class="month-dest"><div class="month-dest-name">Kerala</div><div class="month-dest-note">Pleasant weather for backwaters and beaches</div></div>
+      <div class="month-dest"><div class="month-dest-name">Andaman</div><div class="month-dest-note">Crystal clear waters, best for diving</div></div>
+    </div>
+    <div id="india-feb" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Kashmir</div><div class="month-dest-note">Snow season — magical winter landscapes</div></div>
+      <div class="month-dest"><div class="month-dest-name">Goa</div><div class="month-dest-note">Carnival season — festive and lively</div></div>
+      <div class="month-dest"><div class="month-dest-name">Rajasthan</div><div class="month-dest-note">Desert Safari season, pleasant evenings</div></div>
+      <div class="month-dest"><div class="month-dest-name">Kerala</div><div class="month-dest-note">Thrissur Pooram festival, great weather</div></div>
+    </div>
+    <div id="india-mar" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Himachal</div><div class="month-dest-note">Snow begins to melt, scenic drives open</div></div>
+      <div class="month-dest"><div class="month-dest-name">Rajasthan</div><div class="month-dest-note">Last chance before heat — Holi in Mathura</div></div>
+      <div class="month-dest"><div class="month-dest-name">Andaman</div><div class="month-dest-note">Perfect beach weather, calm seas</div></div>
+      <div class="month-dest"><div class="month-dest-name">Sikkim</div><div class="month-dest-note">Rhododendrons in bloom, spring magic</div></div>
+    </div>
+    <div id="india-apr" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Ladakh</div><div class="month-dest-note">Roads begin to open, fewer crowds</div></div>
+      <div class="month-dest"><div class="month-dest-name">Himachal</div><div class="month-dest-note">Apple blossoms, Spiti Valley opens</div></div>
+      <div class="month-dest"><div class="month-dest-name">Kerala</div><div class="month-dest-note">Thrissur Pooram — biggest festival</div></div>
+      <div class="month-dest"><div class="month-dest-name">Uttarakhand</div><div class="month-dest-note">Valley of Flowers trek begins</div></div>
+    </div>
+    <div id="india-may" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Ladakh</div><div class="month-dest-note">Ideal start — roads fully open</div></div>
+      <div class="month-dest"><div class="month-dest-name">Spiti Valley</div><div class="month-dest-note">Best window before monsoon</div></div>
+      <div class="month-dest"><div class="month-dest-name">Shimla / Manali</div><div class="month-dest-note">Popular hill escape from the heat</div></div>
+      <div class="month-dest"><div class="month-dest-name">Darjeeling</div><div class="month-dest-note">Cool weather, tea garden walks</div></div>
+    </div>
+    <div id="india-jun" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Ladakh</div><div class="month-dest-note">Peak season begins — best month</div></div>
+      <div class="month-dest"><div class="month-dest-name">Spiti Valley</div><div class="month-dest-note">Remote and stunning before rains arrive</div></div>
+      <div class="month-dest"><div class="month-dest-name">Kashmir</div><div class="month-dest-note">Green meadows, pleasant temperatures</div></div>
+      <div class="month-dest"><div class="month-dest-name">Sikkim</div><div class="month-dest-note">Monasteries, rhododendrons, serenity</div></div>
+    </div>
+    <div id="india-jul" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Ladakh</div><div class="month-dest-note">Peak summer — Sindhu Darshan festival</div></div>
+      <div class="month-dest"><div class="month-dest-name">Meghalaya</div><div class="month-dest-note">Monsoon magic — waterfalls at peak</div></div>
+      <div class="month-dest"><div class="month-dest-name">Kerala</div><div class="month-dest-note">Monsoon ayurveda retreats</div></div>
+      <div class="month-dest"><div class="month-dest-name">Coorg</div><div class="month-dest-note">Lush green, misty coffee plantations</div></div>
+    </div>
+    <div id="india-aug" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Ladakh</div><div class="month-dest-note">Hemis festival, perfect trekking weather</div></div>
+      <div class="month-dest"><div class="month-dest-name">Meghalaya</div><div class="month-dest-note">Living root bridges, dramatic waterfalls</div></div>
+      <div class="month-dest"><div class="month-dest-name">Andaman</div><div class="month-dest-note">Off-season deals, quieter beaches</div></div>
+      <div class="month-dest"><div class="month-dest-name">Uttarakhand</div><div class="month-dest-note">Valley of Flowers in full bloom</div></div>
+    </div>
+    <div id="india-sep" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Kashmir</div><div class="month-dest-note">Autumn colours begin, harvest season</div></div>
+      <div class="month-dest"><div class="month-dest-name">Rajasthan</div><div class="month-dest-note">Monsoon ends, pleasant evenings return</div></div>
+      <div class="month-dest"><div class="month-dest-name">Goa</div><div class="month-dest-note">Ganesh Chaturthi celebrations, fewer tourists</div></div>
+      <div class="month-dest"><div class="month-dest-name">Himachal</div><div class="month-dest-note">Apple picking season, stunning views</div></div>
+    </div>
+    <div id="india-oct" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Kashmir</div><div class="month-dest-note">Chinar trees turn gold — most beautiful month</div></div>
+      <div class="month-dest"><div class="month-dest-name">Rajasthan</div><div class="month-dest-note">Pushkar Camel Fair, perfect weather</div></div>
+      <div class="month-dest"><div class="month-dest-name">Kerala</div><div class="month-dest-note">Onam festivals, backwater cruises</div></div>
+      <div class="month-dest"><div class="month-dest-name">Andaman</div><div class="month-dest-note">Season opens — clear water returns</div></div>
+    </div>
+    <div id="india-nov" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Goa</div><div class="month-dest-note">Season opens — best beach weather begins</div></div>
+      <div class="month-dest"><div class="month-dest-name">Rajasthan</div><div class="month-dest-note">Ideal weather for desert and forts</div></div>
+      <div class="month-dest"><div class="month-dest-name">Kerala</div><div class="month-dest-note">Cool and pleasant, great for houseboats</div></div>
+      <div class="month-dest"><div class="month-dest-name">Andaman</div><div class="month-dest-note">Best diving and snorkelling conditions</div></div>
+    </div>
+    <div id="india-dec" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Goa</div><div class="month-dest-note">Christmas & New Year — most festive time</div></div>
+      <div class="month-dest"><div class="month-dest-name">Kashmir</div><div class="month-dest-note">Snow begins — winter wonderland</div></div>
+      <div class="month-dest"><div class="month-dest-name">Kerala</div><div class="month-dest-note">Christmas in Fort Kochi — magical atmosphere</div></div>
+      <div class="month-dest"><div class="month-dest-name">Rajasthan</div><div class="month-dest-note">Rann of Kutch festival, cool evenings</div></div>
+    </div>
+
+    <!-- INTERNATIONAL BY MONTH -->
+    <div class="month-sub-title en">Best Places to Visit Outside India by Month</div>
+    <div class="month-sub-title hi" style="display:none">भारत के बाहर महीने के अनुसार सर्वश्रेष्ठ स्थान</div>
+    <div class="month-tabs" id="intlTabs">
+      <button class="month-tab active" onclick="switchMonth('intl','jan',this)">Jan</button>
+      <button class="month-tab" onclick="switchMonth('intl','feb',this)">Feb</button>
+      <button class="month-tab" onclick="switchMonth('intl','mar',this)">Mar</button>
+      <button class="month-tab" onclick="switchMonth('intl','apr',this)">Apr</button>
+      <button class="month-tab" onclick="switchMonth('intl','may',this)">May</button>
+      <button class="month-tab" onclick="switchMonth('intl','jun',this)">Jun</button>
+      <button class="month-tab" onclick="switchMonth('intl','jul',this)">Jul</button>
+      <button class="month-tab" onclick="switchMonth('intl','aug',this)">Aug</button>
+      <button class="month-tab" onclick="switchMonth('intl','sep',this)">Sep</button>
+      <button class="month-tab" onclick="switchMonth('intl','oct',this)">Oct</button>
+      <button class="month-tab" onclick="switchMonth('intl','nov',this)">Nov</button>
+      <button class="month-tab" onclick="switchMonth('intl','dec',this)">Dec</button>
+    </div>
+    <div id="intl-jan" class="month-panel active">
+      <div class="month-dest"><div class="month-dest-name">Bali</div><div class="month-dest-note">Dry season — perfect beaches and temples</div></div>
+      <div class="month-dest"><div class="month-dest-name">Thailand</div><div class="month-dest-note">Peak season, festivals, warm weather</div></div>
+      <div class="month-dest"><div class="month-dest-name">Dubai</div><div class="month-dest-note">Cool and pleasant, Dubai Shopping Festival</div></div>
+      <div class="month-dest"><div class="month-dest-name">Sri Lanka</div><div class="month-dest-note">West coast beaches at their finest</div></div>
+    </div>
+    <div id="intl-feb" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Maldives</div><div class="month-dest-note">Dry season — crystal clear lagoons</div></div>
+      <div class="month-dest"><div class="month-dest-name">Singapore</div><div class="month-dest-note">Chinese New Year celebrations</div></div>
+      <div class="month-dest"><div class="month-dest-name">Thailand</div><div class="month-dest-note">Chiang Mai flower festival, cool north</div></div>
+      <div class="month-dest"><div class="month-dest-name">Dubai</div><div class="month-dest-note">Ideal weather, outdoor experiences</div></div>
+    </div>
+    <div id="intl-mar" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Europe</div><div class="month-dest-note">Spring begins, fewer crowds, lower prices</div></div>
+      <div class="month-dest"><div class="month-dest-name">Bali</div><div class="month-dest-note">Nyepi (Day of Silence) — unique experience</div></div>
+      <div class="month-dest"><div class="month-dest-name">Vietnam</div><div class="month-dest-note">Best weather across the country</div></div>
+      <div class="month-dest"><div class="month-dest-name">Japan</div><div class="month-dest-note">Cherry blossom season begins</div></div>
+    </div>
+    <div id="intl-apr" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Japan</div><div class="month-dest-note">Peak cherry blossom — most stunning month</div></div>
+      <div class="month-dest"><div class="month-dest-name">Europe</div><div class="month-dest-note">Spring in full bloom, tulips in Netherlands</div></div>
+      <div class="month-dest"><div class="month-dest-name">Sri Lanka</div><div class="month-dest-note">Sinhala New Year, great weather</div></div>
+      <div class="month-dest"><div class="month-dest-name">Thailand</div><div class="month-dest-note">Songkran Water Festival</div></div>
+    </div>
+    <div id="intl-may" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Europe</div><div class="month-dest-note">Perfect weather, long days, pre-summer prices</div></div>
+      <div class="month-dest"><div class="month-dest-name">Turkey</div><div class="month-dest-note">Ideal for Istanbul and Cappadocia</div></div>
+      <div class="month-dest"><div class="month-dest-name">Maldives</div><div class="month-dest-note">Transition season — great deals</div></div>
+      <div class="month-dest"><div class="month-dest-name">Cambodia</div><div class="month-dest-note">Dry season ending — fewer tourists</div></div>
+    </div>
+    <div id="intl-jun" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Europe</div><div class="month-dest-note">Summer peak — long days, festivals</div></div>
+      <div class="month-dest"><div class="month-dest-name">Australia</div><div class="month-dest-note">Winter Down Under — whale watching</div></div>
+      <div class="month-dest"><div class="month-dest-name">Turkey</div><div class="month-dest-note">Hot and sunny, coast is magnificent</div></div>
+      <div class="month-dest"><div class="month-dest-name">New Zealand</div><div class="month-dest-note">Winter skiing season begins</div></div>
+    </div>
+    <div id="intl-jul" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Europe</div><div class="month-dest-note">Peak summer — beaches, festivals, culture</div></div>
+      <div class="month-dest"><div class="month-dest-name">South Africa</div><div class="month-dest-note">Safari season — Great Migration</div></div>
+      <div class="month-dest"><div class="month-dest-name">Japan</div><div class="month-dest-note">Fireworks festivals, summer matsuri</div></div>
+      <div class="month-dest"><div class="month-dest-name">Bhutan</div><div class="month-dest-note">Himalayan treks, monasteries</div></div>
+    </div>
+    <div id="intl-aug" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Switzerland</div><div class="month-dest-note">Swiss National Day, peak Alpine summer</div></div>
+      <div class="month-dest"><div class="month-dest-name">South Africa</div><div class="month-dest-note">Dry winter — best game viewing</div></div>
+      <div class="month-dest"><div class="month-dest-name">Vietnam</div><div class="month-dest-note">Da Nang beach at its best</div></div>
+      <div class="month-dest"><div class="month-dest-name">Australia</div><div class="month-dest-note">Sydney & Melbourne winter festivals</div></div>
+    </div>
+    <div id="intl-sep" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Europe</div><div class="month-dest-note">Shoulder season — great value, warm</div></div>
+      <div class="month-dest"><div class="month-dest-name">Bali</div><div class="month-dest-note">Dry season peak — best all-round month</div></div>
+      <div class="month-dest"><div class="month-dest-name">Japan</div><div class="month-dest-note">Autumn colours begin, mild weather</div></div>
+      <div class="month-dest"><div class="month-dest-name">Singapore</div><div class="month-dest-note">Grand Prix season, Formula 1</div></div>
+    </div>
+    <div id="intl-oct" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Bali</div><div class="month-dest-note">Dry season — temples, rice fields, beaches</div></div>
+      <div class="month-dest"><div class="month-dest-name">Japan</div><div class="month-dest-note">Autumn foliage — breathtakingly beautiful</div></div>
+      <div class="month-dest"><div class="month-dest-name">Maldives</div><div class="month-dest-note">Dry season returns — perfect honeymoon</div></div>
+      <div class="month-dest"><div class="month-dest-name">Dubai</div><div class="month-dest-note">Season opens — outdoor weather returns</div></div>
+    </div>
+    <div id="intl-nov" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Maldives</div><div class="month-dest-note">Peak season — clearest waters of the year</div></div>
+      <div class="month-dest"><div class="month-dest-name">Thailand</div><div class="month-dest-note">Loy Krathong festival — magical lanterns</div></div>
+      <div class="month-dest"><div class="month-dest-name">Dubai</div><div class="month-dest-note">Dubai Airshow, perfect weather</div></div>
+      <div class="month-dest"><div class="month-dest-name">Vietnam</div><div class="month-dest-note">Hoi An lantern festival</div></div>
+    </div>
+    <div id="intl-dec" class="month-panel">
+      <div class="month-dest"><div class="month-dest-name">Dubai</div><div class="month-dest-note">NYE fireworks, New Year celebrations</div></div>
+      <div class="month-dest"><div class="month-dest-name">Thailand</div><div class="month-dest-note">Christmas on the beach — peak season</div></div>
+      <div class="month-dest"><div class="month-dest-name">Singapore</div><div class="month-dest-note">Christmas light-up, incredible decorations</div></div>
+      <div class="month-dest"><div class="month-dest-name">Maldives</div><div class="month-dest-note">Overwater bungalow for New Year</div></div>
+    </div>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="#" class="btn-ghost en">Explore All Destinations &#8594;</a>
+      <a href="#" class="btn-ghost hi" style="display:none">सभी गंतव्य देखें &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="cta-title en">Ready to Plan Your<br>Perfect Trip?</div>
+      <div class="cta-title hi" style="display:none">अपनी परफेक्ट यात्रा<br>योजना बनाने के लिए तैयार हैं?</div>
+      <div class="cta-sub en">Talk to our travel experts today — it's free, fast and completely personalised</div>
+      <div class="cta-sub hi" style="display:none">आज हमारे यात्रा विशेषज्ञों से बात करें — यह मुफ़्त, तेज़ और पूरी तरह व्यक्तिगत है</div>
+    </div>
+    <div class="cta-actions">
+      <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Trip%20Harbour" target="_blank" class="btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="en">WhatsApp Us</span><span class="hi" style="display:none">व्हाट्सएप करें</span>
+      </a>
+      <a href="tel:+919140826298" class="btn-call">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .11h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span class="en">Call Now</span><span class="hi" style="display:none">अभी कॉल करें</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-col-title en">Indian Destinations</div>
+      <div class="footer-col-title hi" style="display:none">भारतीय गंतव्य</div>
+      <div class="footer-links">
+        <a href="#">Kashmir</a><a href="#">Ladakh</a><a href="#">Himachal Pradesh</a>
+        <a href="#">Uttarakhand</a><a href="#">Rajasthan</a><a href="#">Kerala</a>
+        <a href="#">Goa</a><a href="#">Andaman</a><a href="#">Sikkim</a>
+        <a href="#">Meghalaya</a><a href="#">Coorg</a><a href="#">Spiti Valley</a>
+        <a href="#">Jim Corbett</a><a href="#">Rishikesh</a><a href="#">Varanasi</a>
+        <a href="#">Jaipur</a><a href="#">Munnar</a><a href="#">Ooty</a>
+        <a href="#">Darjeeling</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title en">International Destinations</div>
+      <div class="footer-col-title hi" style="display:none">अंतर्राष्ट्रीय गंतव्य</div>
+      <div class="footer-links">
+        <a href="#">Bali</a><a href="#">Thailand</a><a href="#">Dubai</a>
+        <a href="#">Singapore</a><a href="#">Malaysia</a><a href="#">Sri Lanka</a>
+        <a href="#">Maldives</a><a href="#">Mauritius</a><a href="#">Vietnam</a>
+        <a href="#">Bhutan</a><a href="#">Nepal</a><a href="#">Europe</a>
+        <a href="#">Switzerland</a><a href="#">Turkey</a><a href="#">Australia</a>
+        <a href="#">Japan</a><a href="#">Indonesia</a><a href="#">Cambodia</a>
+        <a href="#">New Zealand</a><a href="#">South Africa</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title en">Tour Packages</div>
+      <div class="footer-col-title hi" style="display:none">टूर पैकेज</div>
+      <div class="footer-links">
+        <a href="#">Honeymoon Packages</a>
+        <a href="#">Family Tour Packages</a>
+        <a href="#">Team Offsites</a>
+        <a href="#">Corporate Retreats</a>
+        <a href="#">Hill Station Packages</a>
+        <a href="#">Beach Packages</a>
+        <a href="#">Heritage Tours</a>
+        <a href="#">Adventure Packages</a>
+        <a href="#">Weekend Getaways</a>
+        <a href="#">Budget Tours</a>
+        <a href="#">Luxury Holidays</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title en">Company</div>
+      <div class="footer-col-title hi" style="display:none">कंपनी</div>
+      <div class="footer-links">
+        <a href="#" class="en">About Us</a>
+        <a href="#" class="hi" style="display:none">हमारे बारे में</a>
+        <a href="#" class="en">Contact Us</a>
+        <a href="#" class="hi" style="display:none">संपर्क करें</a>
+        <a href="#" class="en">Blog</a>
+        <a href="#" class="hi" style="display:none">ब्लॉग</a>
+        <a href="#" class="en">Privacy Policy</a>
+        <a href="#" class="hi" style="display:none">गोपनीयता नीति</a>
+        <a href="#" class="en">Terms & Conditions</a>
+        <a href="#" class="hi" style="display:none">नियम और शर्तें</a>
+        <a href="#" class="en">Cancellation Policy</a>
+        <a href="#" class="hi" style="display:none">रद्दीकरण नीति</a>
+        <a href="#" class="en">Sitemap</a>
+        <a href="#" class="hi" style="display:none">साइटमैप</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copyright en">© 2026 Trip Harbour. All rights reserved.</div>
+    <div class="footer-copyright hi" style="display:none">© 2026 ट्रिप हार्बर। सर्वाधिकार सुरक्षित।</div>
+    <div class="footer-social">
+      <span class="footer-social-label en">Connect with us:</span>
+      <span class="footer-social-label hi" style="display:none">हमसे जुड़ें:</span>
+      <a href="#" class="social-icon" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="YouTube">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+    <div class="footer-love">Made with <span>❤️</span> in India &nbsp;|&nbsp; First Floor, A24, Sector 63, Noida 201309</div>
+  </div>
+</footer>
+
+<script>
+// NAVBAR SCROLL
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// LANGUAGE TOGGLE
+let currentLang = 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'hi' : 'en';
+  document.body.className = 'lang-' + currentLang;
+  document.getElementById('langBtn').textContent = currentLang === 'en' ? 'हिन्दी' : 'English';
+  // show/hide all en/hi elements
+  document.querySelectorAll('.en, .hi').forEach(el => {
+    el.style.display = el.classList.contains(currentLang) ? '' : 'none';
+  });
+}
+
+// POPUP
+function openPopup() {
+  document.getElementById('popup').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePopup() {
+  document.getElementById('popup').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('popup').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
+});
+
+// HERO TABS
+function switchTab(tab) {
+  document.querySelectorAll('.etab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// PACKAGE FILTER
+function filterPkg(btn, type) {
+  document.querySelectorAll('.pkg-filter').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pkg-card').forEach(card => {
+    card.style.display = (type === 'all' || card.dataset.type === type) ? 'block' : 'none';
+  });
+}
+
+// MONTH TABS
+function switchMonth(region, month, btn) {
+  // deactivate all tabs in this region's tab group
+  const tabGroup = region === 'india' ? document.getElementById('indiaTabs') : document.getElementById('intlTabs');
+  tabGroup.querySelectorAll('.month-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  // hide all panels for this region
+  const prefix = region === 'india' ? 'india-' : 'intl-';
+  const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+  months.forEach(m => {
+    const el = document.getElementById(prefix + m);
+    if (el) el.classList.remove('active');
+  });
+  const target = document.getElementById(prefix + month);
+  if (target) target.classList.add('active');
+}
+
+// MOBILE MENU
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+</script>
+</body>
+</html>
