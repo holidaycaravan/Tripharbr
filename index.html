@@ -149,12 +149,9 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 
 /* ===== HERO ILLUSTRATION ===== */
 .hero-illustration {
-  position: relative; display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: center;
 }
-.hero-svg-wrap {
-  width: 100%; max-width: 540px;
-  filter: drop-shadow(0 20px 40px rgba(43,191,179,0.15));
-}
+.hero-svg-wrap { display: none; }
 
 /* ===== ENQUIRY FORM ===== */
 .enquiry-card {
@@ -606,7 +603,7 @@ footer {
 }
 @media (max-width: 768px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-illustration { display: none; }
+  .hero-illustration { display: flex; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .dest-grid { grid-template-columns: repeat(2, 1fr); }
@@ -763,112 +760,6 @@ footer {
       </div>
     </div>
     <div class="hero-illustration fade-up fade-up-delay-2">
-      <!-- LANDSCAPE ILLUSTRATION -->
-      <div class="hero-svg-wrap">
-        <svg viewBox="0 0 540 420" xmlns="http://www.w3.org/2000/svg" style="width:100%">
-          <!-- Sky gradient -->
-          <defs>
-            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#e8faf9"/>
-              <stop offset="100%" stop-color="#c2f0ec"/>
-            </linearGradient>
-            <linearGradient id="mtn1" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#2BBFB3"/>
-              <stop offset="100%" stop-color="#1a9e93"/>
-            </linearGradient>
-            <linearGradient id="mtn2" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#4dd4c8"/>
-              <stop offset="100%" stop-color="#2BBFB3"/>
-            </linearGradient>
-            <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#d4f5f2"/>
-              <stop offset="100%" stop-color="#a8edea"/>
-            </linearGradient>
-          </defs>
-          <!-- Sky -->
-          <rect width="540" height="420" fill="url(#sky)" rx="20"/>
-          <!-- Sun -->
-          <circle cx="430" cy="80" r="45" fill="#fff" opacity="0.5"/>
-          <circle cx="430" cy="80" r="32" fill="#fff" opacity="0.7"/>
-          <circle cx="430" cy="80" r="22" fill="#ffd700" opacity="0.6"/>
-          <!-- Clouds -->
-          <ellipse cx="100" cy="70" rx="50" ry="18" fill="white" opacity="0.8"/>
-          <ellipse cx="135" cy="62" rx="32" ry="16" fill="white" opacity="0.9"/>
-          <ellipse cx="70" cy="65" rx="28" ry="14" fill="white" opacity="0.7"/>
-          <ellipse cx="300" cy="50" rx="40" ry="14" fill="white" opacity="0.7"/>
-          <ellipse cx="335" cy="44" rx="25" ry="12" fill="white" opacity="0.8"/>
-          <!-- Far mountains -->
-          <polygon points="0,280 80,160 160,240 240,130 320,220 400,150 480,200 540,170 540,320 0,320" fill="#4dd4c8" opacity="0.4"/>
-          <!-- Mid mountains -->
-          <polygon points="0,320 60,200 130,280 220,180 300,260 390,190 460,250 540,210 540,340 0,340" fill="url(#mtn2)" opacity="0.7"/>
-          <!-- Main mountains -->
-          <polygon points="0,360 70,240 140,300 240,200 320,280 420,220 500,280 540,250 540,370 0,370" fill="url(#mtn1)"/>
-          <!-- Snow caps -->
-          <polygon points="70,240 85,255 55,255" fill="white" opacity="0.9"/>
-          <polygon points="240,200 258,218 222,218" fill="white" opacity="0.9"/>
-          <polygon points="420,220 438,238 402,238" fill="white" opacity="0.9"/>
-          <!-- Ground -->
-          <ellipse cx="270" cy="390" rx="270" ry="40" fill="url(#ground)"/>
-          <!-- Path -->
-          <path d="M 200 420 Q 270 370 340 420" stroke="#1a9e93" stroke-width="3" fill="none" stroke-dasharray="6,4" opacity="0.6"/>
-          <!-- Trees left -->
-          <rect x="60" y="330" width="8" height="40" fill="#1a9e93" rx="2"/>
-          <polygon points="64,290 42,335 86,335" fill="#2BBFB3"/>
-          <polygon points="64,310 46,340 82,340" fill="#1a9e93"/>
-          <rect x="90" y="345" width="6" height="28" fill="#1a9e93" rx="2"/>
-          <polygon points="93,315 76,348 110,348" fill="#2BBFB3"/>
-          <!-- Trees right -->
-          <rect x="455" y="330" width="8" height="40" fill="#1a9e93" rx="2"/>
-          <polygon points="459,290 437,335 481,335" fill="#2BBFB3"/>
-          <polygon points="459,310 441,340 477,340" fill="#1a9e93"/>
-          <!-- COUPLE - woman -->
-          <circle cx="230" cy="305" r="14" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2.5"/>
-          <!-- hair woman -->
-          <path d="M 218 300 Q 220 290 230 291 Q 240 290 242 300" fill="#4a2c2a" stroke="none"/>
-          <path d="M 218 300 Q 215 310 218 318" fill="#4a2c2a"/>
-          <!-- dress -->
-          <path d="M 220 319 Q 215 345 210 370 L 250 370 Q 245 345 240 319 Z" fill="#ff7eb3" stroke="#e05a9a" stroke-width="1"/>
-          <!-- woman bag -->
-          <rect x="247" y="330" width="12" height="16" fill="#2BBFB3" rx="3"/>
-          <path d="M 249 330 Q 253 325 257 330" stroke="#1a9e93" stroke-width="2" fill="none"/>
-          <!-- COUPLE - man -->
-          <circle cx="310" cy="302" r="15" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2.5"/>
-          <!-- hair man -->
-          <path d="M 297 298 Q 300 288 310 289 Q 320 288 323 298" fill="#2c1a0e" stroke="none"/>
-          <!-- shirt -->
-          <rect x="297" y="317" width="26" height="30" fill="#2BBFB3" rx="4"/>
-          <!-- pants -->
-          <path d="M 297 347 L 293 380 L 305 380 L 310 360 L 315 380 L 327 380 L 323 347 Z" fill="#1f2937"/>
-          <!-- man camera -->
-          <rect x="323" y="318" width="18" height="13" fill="#1f2937" rx="3"/>
-          <circle cx="332" cy="324" r="4" fill="#4dd4c8" stroke="#2BBFB3" stroke-width="1"/>
-          <!-- Backpack man -->
-          <rect x="283" y="320" width="16" height="22" fill="#ffd700" rx="4"/>
-          <path d="M 285 320 Q 291 314 297 320" stroke="#e6be00" stroke-width="2" fill="none"/>
-          <!-- CHILD -->
-          <circle cx="270" cy="335" r="10" fill="#FDBCB4" stroke="#2BBFB3" stroke-width="2"/>
-          <path d="M 262 340 Q 260 358 260 370 L 280 370 Q 280 358 278 340 Z" fill="#9b59b6" rx="3"/>
-          <!-- child balloon -->
-          <circle cx="265" cy="315" r="8" fill="#ff6b6b" opacity="0.9"/>
-          <line x1="265" y1="323" x2="265" y2="336" stroke="#555" stroke-width="1.5"/>
-          <!-- Decorative dots scatter -->
-          <circle cx="150" cy="150" r="4" fill="#2BBFB3" opacity="0.3"/>
-          <circle cx="390" cy="120" r="6" fill="#2BBFB3" opacity="0.2"/>
-          <circle cx="480" cy="310" r="3" fill="#2BBFB3" opacity="0.3"/>
-          <circle cx="50" cy="200" r="5" fill="#2BBFB3" opacity="0.25"/>
-          <!-- Flag/banner doodle -->
-          <line x1="185" y1="265" x2="185" y2="300" stroke="#1a9e93" stroke-width="2"/>
-          <polygon points="185,265 205,272 185,280" fill="#2BBFB3"/>
-          <!-- Small airplane doodle top right -->
-          <g transform="translate(460,40) rotate(-20)" opacity="0.6">
-            <ellipse cx="0" cy="0" rx="22" ry="7" fill="white" stroke="#2BBFB3" stroke-width="2"/>
-            <polygon points="0,-7 -8,-14 8,-14" fill="white" stroke="#2BBFB3" stroke-width="1.5"/>
-            <polygon points="18,0 28,4 28,-4" fill="white" stroke="#2BBFB3" stroke-width="1.5"/>
-            <line x1="-22" y1="0" x2="-32" y2="0" stroke="#2BBFB3" stroke-width="1.5"/>
-          </g>
-        </svg>
-      </div>
-      <!-- ENQUIRY CARD overlapping -->
       <div class="enquiry-card">
         <div class="enquiry-card-header">
           <div class="enquiry-card-header-title en">Plan Your Dream Trip</div>
