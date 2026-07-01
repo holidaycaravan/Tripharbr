@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bali Basic Package for First Timers — 4 Days 3 Nights. Kuta Beach, Tanah Lot, Ubud tour, Kecak dance. Starting ₹22,999/person. Trip Harbour.">
+<title>Bali Basic Package for First Timers 2026 — 4D/3N | Trip Harbour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#2BBFB3;--teal-dark:#1a9e93;--teal-light:#e8faf9;--teal-mid:#c2f0ec;
+  --black:#111827;--charcoal:#1f2937;--grey:#6b7280;--grey-light:#f3f4f6;--grey-mid:#e5e7eb;--white:#ffffff;
+  --navy:#0f172a;--gold:#f59e0b;--gold-light:#fffbeb;
+  --accent:#7a5a1a;--accent-light:#fdf8ec;
+  --font-display:'Playfair Display',serif;--font-body:'DM Sans',sans-serif;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.08);--shadow-md:0 8px 32px rgba(0,0,0,0.12);--shadow-lg:0 24px 64px rgba(0,0,0,0.16);
+  --radius:16px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}body{font-family:var(--font-body);color:var(--black);background:var(--white);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}ul{list-style:none;}
+.lang-en .hi{display:none;}.lang-hi .en{display:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--grey-mid);height:68px;display:flex;align-items:center;padding:0 4%;gap:2rem;transition:box-shadow 0.3s;}
+nav.scrolled{box-shadow:var(--shadow-md);}
+.nav-logo{font-family:var(--font-display);font-size:1.5rem;font-weight:900;color:var(--black);white-space:nowrap;flex-shrink:0;}
+.nav-logo span{color:var(--teal);}
+.nav-links{display:flex;align-items:center;gap:0.2rem;flex:1;justify-content:center;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--charcoal);padding:0.5rem 0.75rem;border-radius:var(--radius-sm);transition:all 0.2s;white-space:nowrap;}
+.nav-links a:hover{background:var(--teal-light);color:var(--teal-dark);}
+.nav-right{display:flex;align-items:center;gap:0.75rem;flex-shrink:0;}
+.lang-btn{background:var(--grey-light);border:none;border-radius:20px;padding:0.35rem 0.75rem;font-size:0.8rem;font-weight:600;cursor:pointer;color:var(--charcoal);font-family:var(--font-body);}
+.btn-plan{background:var(--teal);color:var(--white);border:none;border-radius:24px;padding:0.6rem 1.4rem;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.25s;font-family:var(--font-body);white-space:nowrap;}
+.btn-plan:hover{background:var(--teal-dark);transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:24px;height:2px;background:var(--black);border-radius:2px;display:block;}
+.mobile-menu{position:fixed;inset:0;top:68px;z-index:999;background:var(--white);padding:1.5rem 4%;display:none;flex-direction:column;gap:0.5rem;border-top:1px solid var(--grey-mid);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{padding:0.75rem 1rem;border-radius:var(--radius-sm);font-size:1rem;font-weight:500;color:var(--charcoal);}
+.breadcrumb{background:var(--grey-light);padding:0.75rem 4%;font-size:0.82rem;color:var(--grey);margin-top:68px;}
+.breadcrumb a{color:var(--teal);}
+.breadcrumb span{margin:0 0.4rem;}
+
+/* HERO */
+.pkg-hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
+.pkg-hero-img{
+  /* PHOTO: Replace with url('photos/bali-kuta-beach.jpg') center/cover */
+  background:linear-gradient(135deg,#2a1a05 0%,#7a5a1a 60%,#4a3010 100%);
+  position:relative;overflow:hidden;
+}
+.pkg-hero-img-gallery{position:absolute;bottom:16px;left:16px;right:16px;display:flex;gap:8px;}
+.pkg-thumb{flex:1;height:64px;border-radius:8px;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.7);}
+.pkg-thumb.active{border-color:var(--teal);background:rgba(43,191,179,0.2);}
+.photo-label{position:absolute;top:16px;left:16px;background:rgba(0,0,0,0.5);color:var(--white);font-size:0.72rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:20px;backdrop-filter:blur(4px);}
+.best-seller{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--white);font-size:0.72rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:20px;}
+.pkg-hero-info{background:var(--white);padding:2.5rem;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--grey-mid);}
+.pkg-category{display:inline-flex;align-items:center;gap:0.4rem;background:var(--teal-light);border:1.5px solid var(--teal-mid);border-radius:20px;padding:0.3rem 0.9rem;font-size:0.75rem;font-weight:700;color:var(--teal-dark);margin-bottom:1rem;}
+.pkg-title{font-family:var(--font-display);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:900;line-height:1.15;margin-bottom:0.75rem;color:var(--black);}
+.pkg-subtitle{font-size:0.92rem;color:var(--grey);line-height:1.65;margin-bottom:1.5rem;}
+.quick-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:1.75rem;}
+.qf-item{background:var(--grey-light);border-radius:var(--radius-sm);padding:0.75rem 1rem;}
+.qf-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey);margin-bottom:0.2rem;}
+.qf-value{font-weight:700;font-size:0.9rem;color:var(--black);}
+.pricing-toggle{display:flex;gap:0;background:var(--grey-light);border-radius:10px;padding:4px;margin-bottom:1.25rem;}
+.price-tab{flex:1;padding:0.5rem;text-align:center;border:none;background:none;font-family:var(--font-body);font-size:0.82rem;font-weight:600;color:var(--grey);cursor:pointer;border-radius:8px;transition:all 0.2s;}
+.price-tab.active{background:var(--white);color:var(--teal-dark);box-shadow:var(--shadow-sm);}
+.price-display{display:none;}
+.price-display.active{display:block;}
+.price-amount{font-family:var(--font-display);font-size:2rem;font-weight:900;color:var(--teal-dark);}
+.price-per{font-size:0.8rem;color:var(--grey);margin-left:4px;}
+.price-note{font-size:0.75rem;color:var(--grey);margin-top:0.2rem;}
+.price-actions{display:flex;gap:0.75rem;margin-top:1.25rem;}
+.btn-enquire{flex:1;padding:0.85rem;background:var(--teal);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.25s;}
+.btn-enquire:hover{background:var(--teal-dark);transform:translateY(-1px);}
+.btn-wa-small{padding:0.85rem 1.25rem;background:#25d366;color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;gap:0.4rem;white-space:nowrap;text-decoration:none;}
+.btn-wa-small:hover{background:#1db954;}
+.trust-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;}
+.trust-item{display:flex;align-items:center;gap:0.3rem;font-size:0.75rem;color:var(--grey);}
+.trust-check{color:var(--teal);font-weight:700;}
+
+/* BODY LAYOUT */
+.pkg-body-layout{max-width:1280px;margin:0 auto;padding:3rem 4%;display:grid;grid-template-columns:1fr 340px;gap:3rem;align-items:start;}
+.pkg-section{margin-bottom:3rem;}
+.pkg-section-title{font-family:var(--font-display);font-size:1.35rem;font-weight:700;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:2px solid var(--grey-mid);display:flex;align-items:center;gap:0.75rem;}
+.pkg-section-icon{width:32px;height:32px;background:var(--teal-light);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;}
+.highlight-item{background:var(--teal-light);border:1.5px solid var(--teal-mid);border-radius:var(--radius-sm);padding:0.75rem 1rem;font-size:0.82rem;font-weight:500;color:var(--teal-dark);display:flex;align-items:center;gap:0.5rem;}
+.highlight-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;flex-shrink:0;}
+
+/* ITINERARY */
+.itinerary-list{display:flex;flex-direction:column;gap:0.5rem;}
+.itin-item{border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);overflow:hidden;transition:border-color 0.2s;}
+.itin-item.open{border-color:var(--teal);}
+.itin-header{padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;cursor:pointer;background:var(--white);transition:background 0.2s;}
+.itin-header:hover{background:var(--grey-light);}
+.itin-item.open .itin-header{background:var(--teal-light);}
+.itin-day-badge{width:48px;height:48px;background:var(--teal);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);}
+.itin-day-label{font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;opacity:0.8;}
+.itin-day-num{font-family:var(--font-display);font-size:1.1rem;font-weight:900;line-height:1;}
+.itin-header-text{flex:1;}
+.itin-title{font-weight:700;font-size:0.95rem;margin-bottom:0.15rem;}
+.itin-sub{font-size:0.78rem;color:var(--grey);}
+.itin-arrow{color:var(--teal);font-size:1rem;transition:transform 0.3s;flex-shrink:0;}
+.itin-item.open .itin-arrow{transform:rotate(180deg);}
+.itin-body{padding:0;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;}
+.itin-item.open .itin-body{max-height:500px;padding:1.25rem;}
+.itin-body-inner{border-top:1px solid var(--grey-mid);padding-top:1.25rem;}
+.itin-desc{font-size:0.88rem;color:var(--charcoal);line-height:1.75;margin-bottom:1rem;}
+.itin-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.itin-tag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}
+.itin-tag.meal{background:#fef9c3;color:#713f12;}
+.itin-tag.activity{background:var(--teal-light);color:var(--teal-dark);}
+.itin-tag.hotel{background:#f0fdf4;color:#166534;}
+.itin-tag.transfer{background:#eff6ff;color:#1d4ed8;}
+
+/* INCLUSIONS */
+.inc-exc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.inc-box{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:var(--radius-sm);padding:1.25rem;}
+.exc-box{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--radius-sm);padding:1.25rem;}
+.inc-title{font-weight:700;font-size:0.85rem;color:#166534;margin-bottom:0.75rem;}
+.exc-title{font-weight:700;font-size:0.85rem;color:#991b1b;margin-bottom:0.75rem;}
+.inc-list,.exc-list{display:flex;flex-direction:column;gap:0.5rem;}
+.inc-item{font-size:0.82rem;color:#166534;display:flex;gap:0.5rem;align-items:flex-start;line-height:1.4;}
+.inc-item::before{content:'✓';font-weight:700;flex-shrink:0;}
+.exc-item{font-size:0.82rem;color:#991b1b;display:flex;gap:0.5rem;align-items:flex-start;line-height:1.4;}
+.exc-item::before{content:'✗';font-weight:700;flex-shrink:0;}
+
+/* HOTELS */
+.hotel-card{display:flex;gap:1.25rem;padding:1.25rem;background:var(--grey-light);border-radius:var(--radius-sm);border:1.5px solid var(--grey-mid);margin-bottom:1rem;}
+.hotel-img{width:90px;height:72px;border-radius:var(--radius-sm);flex-shrink:0;background:linear-gradient(135deg,var(--teal-mid),var(--teal));display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:600;color:var(--white);text-align:center;}
+.hotel-name{font-weight:700;font-size:0.92rem;margin-bottom:0.2rem;}
+.hotel-location{font-size:0.78rem;color:var(--grey);margin-bottom:0.35rem;}
+.hotel-stars{color:var(--gold);font-size:0.8rem;letter-spacing:1px;}
+.hotel-amenities{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.5rem;}
+.hotel-amenity{font-size:0.7rem;background:var(--white);border:1px solid var(--grey-mid);border-radius:12px;padding:0.15rem 0.55rem;color:var(--charcoal);}
+
+/* VISA */
+.visa-box{background:var(--gold-light);border:1.5px solid var(--gold);border-radius:var(--radius-sm);padding:1.5rem;}
+.visa-title{font-weight:700;font-size:0.92rem;color:#92400e;margin-bottom:1rem;}
+.visa-list{display:flex;flex-direction:column;gap:0.5rem;}
+.visa-item{font-size:0.82rem;color:#78350f;display:flex;gap:0.5rem;align-items:flex-start;line-height:1.5;}
+.visa-item::before{content:'→';color:var(--gold);font-weight:700;flex-shrink:0;}
+
+/* CANCELLATION */
+.cancel-table{width:100%;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--grey-mid);}
+.cancel-row{display:flex;justify-content:space-between;padding:0.75rem 1rem;border-bottom:1px solid var(--grey-mid);font-size:0.85rem;}
+.cancel-row:last-child{border-bottom:none;}
+.cancel-row:nth-child(even){background:var(--grey-light);}
+
+/* REVIEWS */
+.reviews-placeholder{background:var(--grey-light);border:2px dashed var(--grey-mid);border-radius:var(--radius-sm);padding:2rem;text-align:center;}
+.reviews-title{font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;}
+.reviews-sub{font-size:0.82rem;color:var(--grey);}
+
+/* SIDEBAR */
+.pkg-sidebar{position:sticky;top:88px;}
+.sidebar-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-lg);border:1px solid var(--grey-mid);overflow:hidden;}
+.sidebar-header{background:var(--teal);padding:1.5rem;color:var(--white);}
+.sidebar-pkg-name{font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;opacity:0.85;}
+.sidebar-price{font-family:var(--font-display);font-size:2rem;font-weight:900;}
+.sidebar-price-per{font-size:0.8rem;opacity:0.75;margin-left:4px;}
+.sidebar-price-note{font-size:0.72rem;opacity:0.7;margin-top:0.25rem;}
+.sidebar-body{padding:1.5rem;}
+.sidebar-form-title{font-weight:700;font-size:0.92rem;margin-bottom:1.25rem;}
+.form-row{margin-bottom:0.85rem;}
+.form-row label{display:block;font-size:0.72rem;font-weight:700;color:var(--charcoal);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.04em;}
+.form-row input,.form-row select{width:100%;padding:0.65rem 0.9rem;border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.85rem;color:var(--black);background:var(--white);outline:none;}
+.form-row input:focus,.form-row select:focus{border-color:var(--teal);}
+.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;}
+.btn-sidebar-submit{width:100%;padding:0.9rem;background:var(--teal);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.25s;margin-top:0.25rem;}
+.btn-sidebar-submit:hover{background:var(--teal-dark);transform:translateY(-1px);}
+.sidebar-divider{height:1px;background:var(--grey-mid);margin:1.25rem 0;}
+.sidebar-wa{display:flex;align-items:center;justify-content:center;gap:0.6rem;width:100%;padding:0.85rem;background:#25d366;color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.88rem;font-weight:700;cursor:pointer;text-decoration:none;}
+.sidebar-wa:hover{background:#1db954;}
+.sidebar-trust{padding:1rem 1.5rem;background:var(--grey-light);border-top:1px solid var(--grey-mid);}
+.sidebar-trust-row{display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--grey);padding:0.3rem 0;}
+.sidebar-trust-check{color:var(--teal);font-weight:700;}
+
+/* RELATED */
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.related-card{border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--grey-mid);background:var(--white);transition:all 0.3s;text-decoration:none;display:block;color:inherit;}
+.related-card:hover{border-color:var(--teal);box-shadow:var(--shadow-md);transform:translateY(-3px);}
+.related-img{height:150px;}
+.related-badge{font-size:0.68rem;font-weight:700;}
+.related-body{padding:1rem;}
+.related-name{font-weight:700;font-size:0.88rem;margin-bottom:0.4rem;line-height:1.4;}
+.related-price{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--teal-dark);}
+.related-price span{font-family:var(--font-body);font-size:0.7rem;color:var(--grey);font-weight:400;}
+
+/* POPUP */
+.popup-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:1rem;}
+.popup-overlay.open{display:flex;}
+.popup-card{background:var(--white);border-radius:var(--radius);width:100%;max-width:480px;padding:2.5rem;position:relative;max-height:90vh;overflow-y:auto;}
+.popup-close{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--grey-mid);background:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;color:var(--grey);}
+.popup-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:0.4rem;}
+.popup-sub{font-size:0.88rem;color:var(--grey);margin-bottom:1.5rem;}
+.btn-submit{width:100%;padding:0.9rem;background:var(--teal);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;margin-top:0.5rem;}
+.btn-submit:hover{background:var(--teal-dark);}
+
+.float-wa{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25d366;box-shadow:0 4px 20px rgba(37,211,102,0.5);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.3s;}
+.float-wa:hover{transform:scale(1.12);}
+footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}
+.footer-bottom{max-width:1280px;margin:0 auto;padding:1.5rem 0;text-align:center;border-top:1px solid rgba(255,255,255,0.1);}
+.footer-copyright{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;}
+.footer-social{display:flex;justify-content:center;align-items:center;gap:1rem;margin-bottom:0.75rem;}
+.footer-social-label{font-size:0.82rem;color:rgba(255,255,255,0.5);}
+.social-icon{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.65);transition:all 0.2s;text-decoration:none;}
+.social-icon:hover{border-color:var(--teal);color:var(--teal);}
+.footer-love{font-size:0.85rem;color:rgba(255,255,255,0.5);}
+.footer-love span{color:#e74c3c;}
+
+@media(max-width:1024px){.pkg-body-layout{grid-template-columns:1fr;}.pkg-sidebar{position:static;}.related-grid{grid-template-columns:repeat(2,1fr);}.highlights-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){.pkg-hero{grid-template-columns:1fr;}.pkg-hero-img{min-height:240px;}.nav-links{display:none;}.hamburger{display:flex;}.related-grid{grid-template-columns:1fr;}.inc-exc-grid{grid-template-columns:1fr;}.quick-facts{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.highlights-grid{grid-template-columns:1fr;}.form-grid-2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body class="lang-en">
+
+<a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20Bali%20Basic%20Package%20for%20First%20Timers" target="_blank" class="float-wa" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="popup-overlay" id="popup">
+  <div class="popup-card">
+    <button class="popup-close" onclick="closePopup()">&#x2715;</button>
+    <div class="popup-title">Enquire About This Package</div>
+    <div class="popup-sub">Our Bali specialist calls you within 2 hours with a personalised quote.</div>
+    <form action="https://formspree.io/f/tripharbour" method="POST">
+      <input type="hidden" name="package" value="Bali Basic for First Timers — 4D/3N">
+      <input type="hidden" name="destination" value="Bali">
+      <div class="form-row"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div>
+      <div class="form-row"><label>Phone Number</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+      <div class="form-row"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com"></div>
+      <div class="form-grid-2">
+        <div class="form-row"><label>Travel Month</label><select name="month"><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select></div>
+        <div class="form-row"><label>Group Size</label><select name="group"><option>2 people</option><option>3–4</option><option>5–6</option><option>7–10</option><option>10+</option></select></div>
+      </div>
+      <div class="form-row"><label>Budget Preference</label><select name="budget_tier"><option>Standard</option><option>Premium</option><option>Luxury</option></select></div>
+      <button type="submit" class="btn-submit">Get Free Quote</button>
+    </form>
+  </div>
+</div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Trip<span>Harbour</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="index.html#destinations">Destinations</a></li>
+    <li><a href="honeymoon.html">Honeymoon</a></li><li><a href="family.html">Family Tours</a></li>
+    <li><a href="corporate.html">Corporate</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">हिन्दी</button>
+    <button class="btn-plan" onclick="openPopup()">Enquire Now</button>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="index.html#destinations">Destinations</a>
+  <a href="honeymoon.html">Honeymoon</a><a href="family.html">Family Tours</a>
+  <a href="corporate.html">Corporate</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="breadcrumb" style="margin-top:68px;">
+  <a href="index.html">Home</a><span>›</span><a href="bali.html">Bali</a><span>›</span><span>Bali Basic for First Timers</span>
+</div>
+
+<!-- PACKAGE HERO -->
+<div class="pkg-hero">
+  <div class="pkg-hero-img">
+    <!-- PHOTO: Replace with url('photos/bali-kuta.jpg') center/cover -->
+    <div class="photo-label">&#128247; Photos Coming Soon</div>
+    <div class="best-seller">&#9733; Best Seller</div>
+    <div class="pkg-hero-img-gallery">
+      <div class="pkg-thumb active">Kuta Beach</div>
+      <div class="pkg-thumb">Tanah Lot</div>
+      <div class="pkg-thumb">Ubud</div>
+      <div class="pkg-thumb">Kecak Dance</div>
+    </div>
+  </div>
+  <div class="pkg-hero-info">
+    <div class="pkg-category">&#127965; Bali, Indonesia · First Timers</div>
+    <h1 class="pkg-title">Bali Basic for First Timers — Kuta, Ubud & Tanah Lot</h1>
+    <p class="pkg-subtitle en">The perfect introduction to Bali. Four days that cover the island's greatest hits — iconic Kuta Beach, the cultural heart of Ubud, the spiritual Tanah Lot sunset, Tegalalang rice terraces, and the unforgettable Kecak fire dance at Uluwatu. Ideal for first-time visitors to Bali.</p>
+    <p class="pkg-subtitle hi" style="display:none">बाली का परफेक्ट परिचय। चार दिन जो द्वीप की सबसे बेहतरीन जगहें कवर करते हैं।</p>
+    <div class="quick-facts">
+      <div class="qf-item"><div class="qf-label">Duration</div><div class="qf-value">4 Days / 3 Nights</div></div>
+      <div class="qf-item"><div class="qf-label">Destination</div><div class="qf-value">Bali, Indonesia</div></div>
+      <div class="qf-item"><div class="qf-label">Best For</div><div class="qf-value">Couples & Friends</div></div>
+      <div class="qf-item"><div class="qf-label">Departure</div><div class="qf-value">Pan-India</div></div>
+      <div class="qf-item"><div class="qf-label">Visa</div><div class="qf-value">Free on Arrival</div></div>
+      <div class="qf-item"><div class="qf-label">Tour Manager</div><div class="qf-value">Dedicated</div></div>
+    </div>
+    <div class="pricing-toggle">
+      <button class="price-tab active" onclick="switchPrice('standard',this)">Standard</button>
+      <button class="price-tab" onclick="switchPrice('premium',this)">Premium</button>
+      <button class="price-tab" onclick="switchPrice('luxury',this)">Luxury</button>
+    </div>
+    <div id="price-standard" class="price-display active">
+      <span class="price-amount">&#8377;22,999</span><span class="price-per">/ person</span>
+      <div class="price-note">Twin sharing · 3-star hotel · Based on 2 people</div>
+    </div>
+    <div id="price-premium" class="price-display">
+      <span class="price-amount">&#8377;31,999</span><span class="price-per">/ person</span>
+      <div class="price-note">Twin sharing · 4-star hotel + breakfast · Based on 2 people</div>
+    </div>
+    <div id="price-luxury" class="price-display">
+      <span class="price-amount">&#8377;44,999</span><span class="price-per">/ person</span>
+      <div class="price-note">Twin sharing · Private pool villa · Based on 2 people</div>
+    </div>
+    <div class="price-actions">
+      <button class="btn-enquire" onclick="openPopup()">Enquire Now — Free Quote</button>
+      <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20Bali%20Basic%20Package" target="_blank" class="btn-wa-small">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><span class="trust-check">✓</span> Free cancellation up to 30 days</div>
+      <div class="trust-item"><span class="trust-check">✓</span> No hidden costs</div>
+      <div class="trust-item"><span class="trust-check">✓</span> Customisable itinerary</div>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="pkg-body-layout">
+  <div class="pkg-left">
+
+    <!-- HIGHLIGHTS -->
+    <div class="pkg-section">
+      <div class="pkg-section-title">
+        <div class="pkg-section-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1 L11 7 L17 7 L12 11 L14 17 L9 13 L4 17 L6 11 L1 7 L7 7Z" fill="var(--teal)"/></svg></div>
+        Package Highlights
+      </div>
+      <div class="highlights-grid">
+        <div class="highlight-item"><span class="highlight-dot"></span>Kuta Beach sunset evening</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Tanah Lot temple visit</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Tegalalang rice terrace</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Uluwatu Kecak fire dance</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Ubud Monkey Forest</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Balinese spa session</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Airport transfers both ways</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Dedicated tour manager</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Visa on arrival assistance</div>
+      </div>
+    </div>
+
+    <!-- ITINERARY -->
+    <div class="pkg-section">
+      <div class="pkg-section-title">
+        <div class="pkg-section-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="12" rx="2" stroke="var(--teal)" stroke-width="1.5" fill="none"/><line x1="2" y1="7" x2="16" y2="7" stroke="var(--teal)" stroke-width="1.5"/><line x1="6" y1="3" x2="6" y2="1" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="3" x2="12" y2="1" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        Day-by-Day Itinerary
+      </div>
+      <div class="itinerary-list">
+
+        <div class="itin-item open">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><span class="itin-day-label">Day</span><span class="itin-day-num">1</span></div>
+            <div class="itin-header-text">
+              <div class="itin-title">Arrival in Bali — Kuta Beach & Welcome Dinner</div>
+              <div class="itin-sub">Ngurah Rai Airport → Kuta Hotel</div>
+            </div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body">
+            <div class="itin-body-inner">
+              <div class="itin-desc">Your dedicated tour manager greets you at Ngurah Rai International Airport and transfers you to your Kuta hotel. After a comfortable check-in and rest, head to the iconic Kuta Beach for your first Bali sunset — the long stretch of golden sand with surfers in the water and the sky turning orange is exactly as spectacular as you imagined. Your welcome dinner is at a beachside restaurant in Kuta or Legian.</div>
+              <div class="itin-tags">
+                <span class="itin-tag meal">Welcome Dinner Included</span>
+                <span class="itin-tag transfer">Airport Pickup</span>
+                <span class="itin-tag hotel">Kuta Hotel Check-in</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><span class="itin-day-label">Day</span><span class="itin-day-num">2</span></div>
+            <div class="itin-header-text">
+              <div class="itin-title">Ubud Full Day — Rice Terrace, Monkey Forest & Kecak Dance</div>
+              <div class="itin-sub">Ubud Day Trip · ~1.5 hrs from Kuta</div>
+            </div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body">
+            <div class="itin-body-inner">
+              <div class="itin-desc">An early start takes you up to Ubud — Bali's artistic and cultural capital. First stop is the iconic Tegalalang Rice Terrace, where cascading emerald paddies fall away into a deep valley. Then the Sacred Monkey Forest — a sacred sanctuary of over 700 macaques living among ancient temple ruins and towering fig trees. In the evening, drive south to Uluwatu for the spectacular clifftop Kecak Fire Dance — a dramatic performance at sunset above the crashing Indian Ocean.</div>
+              <div class="itin-tags">
+                <span class="itin-tag meal">Breakfast Included</span>
+                <span class="itin-tag activity">Tegalalang Rice Terrace</span>
+                <span class="itin-tag activity">Monkey Forest</span>
+                <span class="itin-tag activity">Kecak Fire Dance — Uluwatu</span>
+                <span class="itin-tag transfer">AC Vehicle All Day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><span class="itin-day-label">Day</span><span class="itin-day-num">3</span></div>
+            <div class="itin-header-text">
+              <div class="itin-title">Tanah Lot Sunset & Balinese Spa</div>
+              <div class="itin-sub">Seminyak · Tanah Lot · Spa</div>
+            </div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body">
+            <div class="itin-body-inner">
+              <div class="itin-desc">Morning at leisure — explore the boutique shops and cafes of Seminyak or relax at your hotel pool. After lunch, enjoy a 60-minute traditional Balinese massage at one of Kuta or Seminyak's excellent spas. In the late afternoon, drive to Tanah Lot — Bali's most photographed sea temple — to watch the sun set behind the ancient stone temple perched on a rock surrounded by crashing waves. A truly unforgettable sight.</div>
+              <div class="itin-tags">
+                <span class="itin-tag meal">Breakfast Included</span>
+                <span class="itin-tag activity">Balinese Spa (60 min)</span>
+                <span class="itin-tag activity">Tanah Lot Sunset</span>
+                <span class="itin-tag transfer">Private Transfers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><span class="itin-day-label">Day</span><span class="itin-day-num">4</span></div>
+            <div class="itin-header-text">
+              <div class="itin-title">Departure Day — Airport Transfer</div>
+              <div class="itin-sub">Kuta Hotel → Ngurah Rai International Airport</div>
+            </div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body">
+            <div class="itin-body-inner">
+              <div class="itin-desc">After a leisurely Balinese breakfast at your hotel, check out and your tour manager arranges a timely airport transfer to Ngurah Rai International Airport. Most morning flights depart for Delhi, Mumbai, and Bengaluru — your tour manager ensures you reach the airport with comfortable time to spare. Bali goodbye!</div>
+              <div class="itin-tags">
+                <span class="itin-tag meal">Breakfast Included</span>
+                <span class="itin-tag transfer">Airport Drop</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INCLUSIONS & EXCLUSIONS -->
+    <div class="pkg-section">
+      <div class="pkg-section-title">
+        <div class="pkg-section-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9 L7 13 L15 5" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        What's Included & Excluded
+      </div>
+      <div class="inc-exc-grid">
+        <div class="inc-box">
+          <div class="inc-title">✓ Included in this Package</div>
+          <div class="inc-list">
+            <div class="inc-item">3 nights hotel accommodation in Kuta / Seminyak</div>
+            <div class="inc-item">Daily breakfast at hotel</div>
+            <div class="inc-item">Welcome dinner on Day 1</div>
+            <div class="inc-item">Airport pickup and drop in private AC vehicle</div>
+            <div class="inc-item">All sightseeing transfers in private AC vehicle</div>
+            <div class="inc-item">Dedicated tour manager throughout</div>
+            <div class="inc-item">Uluwatu Kecak Dance entrance tickets</div>
+            <div class="inc-item">Tegalalang Rice Terrace entry</div>
+            <div class="inc-item">Sacred Monkey Forest entrance</div>
+            <div class="inc-item">60-minute Balinese spa session</div>
+            <div class="inc-item">Visa on arrival documentation guide</div>
+            <div class="inc-item">24/7 WhatsApp support</div>
+          </div>
+        </div>
+        <div class="exc-box">
+          <div class="exc-title">✗ Not Included</div>
+          <div class="exc-list">
+            <div class="exc-item">International flights to/from Bali</div>
+            <div class="exc-item">Travel insurance (strongly recommended)</div>
+            <div class="exc-item">Lunches and dinners (except welcome dinner)</div>
+            <div class="exc-item">Personal expenses, tips, shopping</div>
+            <div class="exc-item">Optional activities (surfing, cooking class)</div>
+            <div class="exc-item">Alcohol and room service</div>
+            <div class="exc-item">Monument entry fees not listed above</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHERE YOU'LL STAY -->
+    <div class="pkg-section">
+      <div class="pkg-section-title">
+        <div class="pkg-section-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="6" width="14" height="10" rx="2" stroke="var(--teal)" stroke-width="1.5" fill="none"/><path d="M5 6 L5 4 Q5 2 9 2 Q13 2 13 4 L13 6" stroke="var(--teal)" stroke-width="1.5" fill="none"/><circle cx="9" cy="11" r="2" stroke="var(--teal)" stroke-width="1.5" fill="none"/></svg></div>
+        Where You'll Stay
+      </div>
+      <div class="hotel-card">
+        <!-- PHOTO: Replace hotel-img background with actual hotel photo -->
+        <div class="hotel-img">Hotel Photo</div>
+        <div>
+          <div class="hotel-name">Bali Dynasty Resort or Similar (Standard)</div>
+          <div class="hotel-location">Kuta, Bali · 5 min walk to Kuta Beach</div>
+          <div class="hotel-stars">&#9733;&#9733;&#9733;</div>
+          <div class="hotel-amenities">
+            <span class="hotel-amenity">Pool</span><span class="hotel-amenity">Free WiFi</span>
+            <span class="hotel-amenity">Breakfast</span><span class="hotel-amenity">AC</span>
+          </div>
+        </div>
+      </div>
+      <div class="hotel-card">
+        <div class="hotel-img">Hotel Photo</div>
+        <div>
+          <div class="hotel-name">Katamama or Similar (Premium / Luxury)</div>
+          <div class="hotel-location">Seminyak, Bali · Private Pool Option</div>
+          <div class="hotel-stars">&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="hotel-amenities">
+            <span class="hotel-amenity">Pool</span><span class="hotel-amenity">Spa</span>
+            <span class="hotel-amenity">Breakfast</span><span class="hotel-amenity">Butler</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:0.78rem;color:var(--grey);margin-top:0.75rem;">Hotels subject to availability. Equivalent or better alternatives booked at same tier. Final hotel confirmed at booking.</p>
+    </div>
+
+    <!-- VISA INFO -->
+    <div class="pkg-section">
+      <div class="pkg-section-title">
+        <div class="pkg-section-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="12" rx="2" stroke="var(--teal)" stroke-width="1.5" fill="none"/><line x1="5" y1="7" x2="13" y2="7" stroke="var(--teal)" stroke-width="1.5"/><line x1="5" y1="10" x2="10" y2="10" stroke="var(--teal)" stroke-width="1.5"/></svg></div>
+        Visa & Travel Information
+      </div>
+      <div class="visa-box">
+        <div class="visa-title">✅ Visa on Arrival — Free for Indians · Bali, Indonesia</div>
+        <div class="visa-list">
+          <div class="visa-item">Indian passport holders get a free 30-day visa on arrival at Ngurah Rai Airport. No pre-application needed.</div>
+          <div class="visa-item">Passport must be valid for at least 6 months from your date of travel.</div>
+          <div class="visa-item">Carry a printed return flight ticket — immigration may ask for proof of onward journey.</div>
+          <div class="visa-item">Carry proof of funds: approximately USD 1,000 or a credit card (rarely checked).</div>
+          <div class="visa-item">We send all confirmed bookings a complete pre-departure documentation checklist.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CANCELLATION -->
+    <div class="pkg-section">
+      <div class="pkg-section-title">
+        <div class="pkg-section-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="var(--teal)" stroke-width="1.5" fill="none"/><line x1="6" y1="6" x2="12" y2="12" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="6" x2="6" y2="12" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        Cancellation & Refund Policy
+      </div>
+      <div class="cancel-table">
+        <div class="cancel-row"><span>30+ days before travel</span><span style="font-weight:700;color:#166534;">Full refund</span></div>
+        <div class="cancel-row"><span>15–29 days before travel</span><span style="font-weight:700;color:#d97706;">75% refund</span></div>
+        <div class="cancel-row"><span>7–14 days before travel</span><span style="font-weight:700;color:#d97706;">50% refund</span></div>
+        <div class="cancel-row"><span>Less than 7 days</span><span style="font-weight:700;color:#991b1b;">No refund</span></div>
+      </div>
+      <p style="font-size:0.78rem;color:var(--grey);margin-top:0.75rem;">Free rescheduling up to 15 days before travel, subject to availability. Flights follow airline cancellation policy.</p>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="pkg-section">
+      <div class="pkg-section-title">
+        <div class="pkg-section-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1 L11 7 L17 7 L12 11 L14 17 L9 13 L4 17 L6 11 L1 7 L7 7Z" fill="var(--gold)"/></svg></div>
+        Customer Reviews
+      </div>
+      <div class="reviews-placeholder">
+        <div class="reviews-title">Be the First to Review This Package</div>
+        <div class="reviews-sub">Book this trip and your honest review helps the next traveler decide. Real reviews from real travelers will appear here.</div>
+      </div>
+    </div>
+
+  </div><!-- end left -->
+
+  <!-- SIDEBAR -->
+  <div class="pkg-sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-header">
+        <div class="sidebar-pkg-name">Bali Basic for First Timers · 4D/3N</div>
+        <div style="display:flex;align-items:flex-end;gap:0.5rem;">
+          <span class="sidebar-price" id="sidebarPrice">&#8377;22,999</span>
+          <span class="sidebar-price-per">/ person</span>
+        </div>
+        <div class="sidebar-price-note">On twin sharing · Price varies by tier</div>
+      </div>
+      <div class="sidebar-body">
+        <div class="sidebar-form-title">Get a Free Personalised Quote</div>
+        <form action="https://formspree.io/f/tripharbour" method="POST">
+          <input type="hidden" name="package" value="Bali Basic for First Timers — 4D/3N">
+          <div class="form-row"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div>
+          <div class="form-row"><label>Phone Number</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+          <div class="form-grid-2">
+            <div class="form-row"><label>Travel Month</label><select name="month"><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></div>
+            <div class="form-row"><label>Group Size</label><select name="group"><option>2 people</option><option>3–4</option><option>5–6</option><option>7+</option></select></div>
+          </div>
+          <div class="form-row"><label>Budget Tier</label><select name="tier" onchange="updateSidebarPrice(this.value)">
+            <option value="standard">Standard (₹22,999/person)</option>
+            <option value="premium">Premium (₹31,999/person)</option>
+            <option value="luxury">Luxury (₹44,999/person)</option>
+          </select></div>
+          <button type="submit" class="btn-sidebar-submit">Get Free Quote</button>
+        </form>
+        <div class="sidebar-divider"></div>
+        <a href="https://wa.me/919140826298?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20Bali%20Basic%20Package%20for%20First%20Timers" target="_blank" class="sidebar-wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us Directly
+        </a>
+      </div>
+      <div class="sidebar-trust">
+        <div class="sidebar-trust-row"><span class="sidebar-trust-check">✓</span> Free quote within 2 hours</div>
+        <div class="sidebar-trust-row"><span class="sidebar-trust-check">✓</span> No payment until you confirm</div>
+        <div class="sidebar-trust-row"><span class="sidebar-trust-check">✓</span> Fully customisable</div>
+        <div class="sidebar-trust-row"><span class="sidebar-trust-check">✓</span> Dedicated tour manager</div>
+        <div class="sidebar-trust-row"><span class="sidebar-trust-check">✓</span> Free cancellation 30 days prior</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- RELATED PACKAGES -->
+<section style="background:var(--grey-light);padding:80px 4%;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div style="margin-bottom:2.5rem;">
+      <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;">You Might Also Like</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.6rem,2.5vw,2rem);font-weight:700;">Similar Packages</h2>
+    </div>
+    <div class="related-grid">
+      <a href="pkg-bali-honeymoon-5d.html" class="related-card">
+        <div class="related-img" style="background:linear-gradient(135deg,#2a1a05,#7a5a1a);"></div>
+        <div class="related-body">
+          <div class="related-name">5 Days Bali Honeymoon Package</div>
+          <div class="related-price">&#8377;32,999 <span>/ person</span></div>
+        </div>
+      </a>
+      <a href="pkg-bali-family-6d.html" class="related-card">
+        <div class="related-img" style="background:linear-gradient(135deg,#3a2a0a,#5a4a1a);"></div>
+        <div class="related-body">
+          <div class="related-name">6 Days Bali Family Package</div>
+          <div class="related-price">&#8377;28,999 <span>/ person</span></div>
+        </div>
+      </a>
+      <a href="pkg-thailand-6d.html" class="related-card">
+        <div class="related-img" style="background:linear-gradient(135deg,#1a1a6b,#3a3aaa);"></div>
+        <div class="related-body">
+          <div class="related-name">6 Days Thailand — Bangkok + Phuket</div>
+          <div class="related-price">&#8377;34,999 <span>/ person</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-copyright">© 2026 Trip Harbour. All rights reserved.</div>
+    <div class="footer-social">
+      <span class="footer-social-label">Connect with us:</span>
+      <a href="#" class="social-icon" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+      <a href="#" class="social-icon" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    </div>
+    <div class="footer-love">Made with <span>❤️</span> in India &nbsp;|&nbsp; First Floor, A24, Sector 63, Noida 201309</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20);});
+let currentLang='en';
+function toggleLang(){currentLang=currentLang==='en'?'hi':'en';document.body.className='lang-'+currentLang;document.getElementById('langBtn').textContent=currentLang==='en'?'हिन्दी':'English';document.querySelectorAll('.en,.hi').forEach(el=>{el.style.display=el.classList.contains(currentLang)?'':'none';});}
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function openPopup(){document.getElementById('popup').classList.add('open');document.body.style.overflow='hidden';}
+function closePopup(){document.getElementById('popup').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('popup').addEventListener('click',function(e){if(e.target===this)closePopup();});
+const prices={standard:'&#8377;22,999',premium:'&#8377;31,999',luxury:'&#8377;44,999'};
+function switchPrice(tier,btn){document.querySelectorAll('.price-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.price-display').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('price-'+tier).classList.add('active');document.getElementById('sidebarPrice').innerHTML=prices[tier];}
+function updateSidebarPrice(val){document.getElementById('sidebarPrice').innerHTML=prices[val];}
+function toggleItin(header){const item=header.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.itin-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');}
+</script>
+</body>
+</html>
