@@ -185,6 +185,21 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
 @media (max-width: 1024px) { .diff-grid { grid-template-columns: repeat(2, 1fr); } .team-grid { grid-template-columns: repeat(2, 1fr); } .seg-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) { .hero-inner { grid-template-columns: 1fr; } .mission-inner { grid-template-columns: 1fr; gap: 3rem; } .nav-links { display: none; } .hamburger { display: flex; } .cta-inner { flex-direction: column; padding: 2rem; } .cta-inner::after { display: none; } }
 @media (max-width: 480px) { .diff-grid { grid-template-columns: 1fr; } .seg-grid { grid-template-columns: 1fr 1fr; } .team-grid { grid-template-columns: 1fr 1fr; } .form-grid-2 { grid-template-columns: 1fr; } }
+
+/* FOUNDER STORY */
+.founder-section { background: var(--white); padding: 80px 4%; }
+.founder-inner { max-width: 800px; margin: 0 auto; }
+.founder-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+.founder-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; color: var(--black); line-height: 1.2; margin-bottom: 2.5rem; }
+.founder-body { font-size: 1rem; color: var(--grey); line-height: 1.85; margin-bottom: 1.5rem; }
+.founder-pull-quote { margin: 2.5rem 0; padding: 2rem 2.25rem; background: var(--teal-light); border-left: 5px solid var(--teal); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.founder-pull-quote p { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--charcoal); line-height: 1.55; margin-bottom: 0.75rem; font-style: italic; }
+.founder-pull-quote cite { font-size: 0.82rem; font-weight: 600; color: var(--teal-dark); font-style: normal; letter-spacing: 0.04em; }
+.founder-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--grey-mid); border-radius: var(--radius); overflow: hidden; margin-top: 3rem; border: 1px solid var(--grey-mid); }
+.founder-stat { background: var(--white); padding: 1.75rem 1.25rem; text-align: center; }
+.founder-stat-num { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: var(--teal-dark); line-height: 1; margin-bottom: 0.4rem; }
+.founder-stat-label { font-size: 0.78rem; color: var(--grey); line-height: 1.4; }
+@media (max-width: 600px) { .founder-stats { grid-template-columns: repeat(2, 1fr); } }
 </style>
 </head>
 <body class="lang-en">
@@ -445,6 +460,39 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
           <div class="timeline-body en">Our long-term goal is simple: be the first name that comes to mind when an Indian family, couple, or HR manager thinks about a perfectly planned trip. Not the biggest. The most trusted.</div>
           <div class="timeline-body hi" style="display:none">हमारा दीर्घकालिक लक्ष्य सरल है: वह पहला नाम बनें जो दिमाग में आए।</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER STORY -->
+<section class="founder-section">
+  <div class="founder-inner">
+    <div class="founder-label">About the Founder</div>
+    <h2 class="founder-title">A Decade in the Field Before a Day at the Desk</h2>
+    <p class="founder-body">It started on the ground. In 2015, a young tour manager stepped onto his first bus with Delhi Tourism — responsible for a group of strangers, their luggage, their expectations, and their memories. Over the years that followed, he would do this thousands of times. Families on their first hill station trip. Honeymooners nervous about getting it right. Corporate teams who needed more than just logistics — they needed an experience that would actually bring people together. He saw what worked. He saw what didn't. He learned what travelers actually need versus what most travel companies think they need.</p>
+    <p class="founder-body">Then came the university years — not just studying, but building. Working across several travel startups in roles that spanned operations, product, and partnerships. Understanding how the industry worked from the inside. Building relationships with hotels, ground operators, and the kind of people who make or break a trip when something goes wrong at 11 PM in a town with no signal. By the time most people are just getting started in travel, the founder of Trip Harbour had already handled a thousand trips, managed a hundred crises, and built a network that took a decade to earn.</p>
+    <p class="founder-body">In 2026, that experience became a company. Not a marketplace. Not an aggregator. Not another platform where your booking is a ticket number and your tour manager is a WhatsApp group. Trip Harbour is something different — a personal travel service built on the belief that the person planning your trip should know more about travel than you do, not just more about software. Every itinerary is built by someone who has stood where you're going to stand. Every recommendation comes from someone who has eaten at that restaurant, stayed in that hotel, and navigated that mountain road. That's not a marketing line. That's ten years of work.</p>
+    <div class="founder-pull-quote">
+      <p>"I didn't start a travel company because I saw a market opportunity. I started it because I knew exactly what was missing — and I'd spent a decade figuring out how to provide it."</p>
+      <cite>— Founder, Trip Harbour</cite>
+    </div>
+    <div class="founder-stats">
+      <div class="founder-stat">
+        <div class="founder-stat-num">2015</div>
+        <div class="founder-stat-label">Year the journey began</div>
+      </div>
+      <div class="founder-stat">
+        <div class="founder-stat-num">10+</div>
+        <div class="founder-stat-label">Years in travel</div>
+      </div>
+      <div class="founder-stat">
+        <div class="founder-stat-num">1,000+</div>
+        <div class="founder-stat-label">Travelers personally managed</div>
+      </div>
+      <div class="founder-stat">
+        <div class="founder-stat-num">1</div>
+        <div class="founder-stat-label">Company built from it all</div>
       </div>
     </div>
   </div>
