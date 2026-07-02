@@ -276,10 +276,156 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}
 <!-- BODY -->
 <div class="pkg-body-layout">
   <div class="pkg-left">
-
-    <!-- CITY STRIP -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">⭐</div>Package Highlights</div>
+      <div class="highlights-grid">
+        <div class="highlight-item"><div class="highlight-dot"></div>Amber Fort Jaipur</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Camel Safari Jaisalmer</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Mehrangarh Fort Jodhpur</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>City Palace Udaipur</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Desert Camp Overnight</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Stepwell Chand Baori</div>
+      </div>
     </div>
-
+    <!-- CITY STRIP -->
+    <div class="pkg-section">
+      <div class="city-strip">
+        <div class="city-card"><div class="city-name">Jaipur</div><div class="city-tag">Pink City</div><div class="city-nights">2 Nights</div></div>
+        <div class="city-card"><div class="city-name">Jaisalmer</div><div class="city-tag">Golden City</div><div class="city-nights">1N Hotel + 1N Camp</div></div>
+        <div class="city-card"><div class="city-name">Jodhpur</div><div class="city-tag">Blue City</div><div class="city-nights">1 Night</div></div>
+        <div class="city-card"><div class="city-name">Udaipur</div><div class="city-tag">Venice of the East</div><div class="city-nights">1 Night</div></div>
+      </div>
+    </div>
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🗺</div>Day-by-Day Itinerary</div>
+      <div class="itinerary-list">
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">1</div></div>
+            <div class="itin-header-text"><div class="itin-title">Arrive Jaipur</div><div class="itin-sub">City Palace · Jantar Mantar · Hawa Mahal · Rajasthani thali</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Airport/station pickup. City Palace and Jantar Mantar (UNESCO astronomical observatory). Hawa Mahal exterior photo stop — the iconic "Palace of Winds". Johri Bazaar for gems and jewellery. Welcome Rajasthani thali dinner.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Transfer</span><span class="itin-tag activity">City Palace</span><span class="itin-tag meal">Rajasthani Thali</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">2</div></div>
+            <div class="itin-header-text"><div class="itin-title">Jaipur Full Day</div><div class="itin-sub">Amber Fort · Nahargarh sunset · Albert Hall · Chokhi Dhani</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Amber Fort by elephant or jeep up the hill. Nahargarh Fort for the best sunset view of Jaipur. Albert Hall Museum. Jal Mahal (Water Palace) photo stop. Evening at Chokhi Dhani folk village for traditional Rajasthani entertainment.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Amber Fort</span><span class="itin-tag activity">Nahargarh</span><span class="itin-tag royal">Folk Village</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">3</div></div>
+            <div class="itin-header-text"><div class="itin-title">Jaipur &rarr; Jaisalmer</div><div class="itin-sub">7-hour desert drive · Osian dunes · Jaisalmer Fort arrival</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">7-hour road journey through dramatic desert landscape. Osian sand dunes en route (optional stop). Jaisalmer Fort arrival — the only living fort in the world, with shops, hotels, and families still residing within its walls. Fort walk and dinner.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Drive 7hr</span><span class="itin-tag activity">Jaisalmer Fort</span><span class="itin-tag meal">Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">4</div></div>
+            <div class="itin-header-text"><div class="itin-title">Jaisalmer Desert Day</div><div class="itin-sub">Havelis · Sam Dunes camel safari · Desert camp overnight</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Patwon Ki Haveli and Salim Singh Ki Haveli — intricate sandstone mansions. Sam Sand Dunes for sunset camel safari. Overnight desert camp with traditional music, dance under the stars, and stargazing in the clear desert sky.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Camel Safari</span><span class="itin-tag royal">Desert Camp</span><span class="itin-tag meal">Camp Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">5</div></div>
+            <div class="itin-header-text"><div class="itin-title">Jaisalmer &rarr; Jodhpur</div><div class="itin-sub">Bada Bagh · Mehrangarh Fort · Sardar Market</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Bada Bagh cenotaphs with morning desert photography. 3-hour drive to Jodhpur — the Blue City. Mehrangarh Fort, one of the largest forts in India with astonishing views over the blue-painted city below. Evening at Sardar Market.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Drive 3hr</span><span class="itin-tag activity">Mehrangarh Fort</span><span class="itin-tag activity">Sardar Market</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">6</div></div>
+            <div class="itin-header-text"><div class="itin-title">Jodhpur &rarr; Udaipur</div><div class="itin-sub">Umaid Bhawan · Lake Pichola boat ride at sunset</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Morning: Umaid Bhawan Palace exterior and Jaswant Thada marble cenotaph. 5-hour drive to Udaipur. City Palace view at sunset. Lake Pichola boat ride with views of the floating Lake Palace hotel.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Drive 5hr</span><span class="itin-tag activity">Lake Pichola</span><span class="itin-tag royal">City Palace</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">7</div></div>
+            <div class="itin-header-text"><div class="itin-title">Udaipur &amp; Departure</div><div class="itin-sub">Saheliyon Ki Bari · Jagdish Temple · Farewell rooftop lunch</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Saheliyon Ki Bari garden (Garden of the Maidens). Jagdish Temple. Shilpgram craft village with traditional artisans. Farewell rooftop lunch over Lake Pichola. Udaipur airport/station transfer.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Saheliyon Ki Bari</span><span class="itin-tag meal">Farewell Lunch</span><span class="itin-tag transfer">Airport Drop</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">✅</div>What's Included &amp; Excluded</div>
+      <div class="inc-exc-grid">
+        <div class="inc-box"><div class="inc-title">✅ Inclusions</div><div class="inc-list">
+          <div class="inc-item">6 nights (Jaipur 2N, Jaisalmer 1N hotel + 1N desert camp, Jodhpur 1N, Udaipur 1N)</div>
+          <div class="inc-item">Daily breakfast</div>
+          <div class="inc-item">Desert camp dinner + cultural show</div>
+          <div class="inc-item">Camel safari</div>
+          <div class="inc-item">Amber Fort entry</div>
+          <div class="inc-item">Lake Pichola boat ride</div>
+          <div class="inc-item">All transfers in AC vehicle</div>
+          <div class="inc-item">Dedicated tour manager</div>
+        </div></div>
+        <div class="exc-box"><div class="exc-title">❌ Exclusions</div><div class="exc-list">
+          <div class="exc-item">Flights to/from Rajasthan</div>
+          <div class="exc-item">Monument entry fees (~&#8377;1,500 total)</div>
+          <div class="exc-item">Elephant ride (optional)</div>
+          <div class="exc-item">Personal shopping</div>
+          <div class="exc-item">Travel insurance</div>
+        </div></div>
+      </div>
+    </div>
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🏨</div>Hotel Details</div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+        <div style="background:var(--grey-light);border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);padding:1rem;display:flex;justify-content:space-between;align-items:center;">
+          <div><div style="font-weight:700;font-size:0.88rem;">Jaipur Heritage Hotel</div><div style="font-size:0.78rem;color:var(--grey);">Jaipur</div></div><span style="font-size:0.75rem;font-weight:700;background:var(--raj-light);color:var(--raj);padding:0.2rem 0.6rem;border-radius:12px;">2 Nights</span>
+        </div>
+        <div style="background:var(--grey-light);border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);padding:1rem;display:flex;justify-content:space-between;align-items:center;">
+          <div><div style="font-weight:700;font-size:0.88rem;">Jaisalmer Fort-view Hotel + Desert Camp</div><div style="font-size:0.78rem;color:var(--grey);">Jaisalmer</div></div><span style="font-size:0.75rem;font-weight:700;background:var(--raj-light);color:var(--raj);padding:0.2rem 0.6rem;border-radius:12px;">2 Nights</span>
+        </div>
+        <div style="background:var(--grey-light);border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);padding:1rem;display:flex;justify-content:space-between;align-items:center;">
+          <div><div style="font-weight:700;font-size:0.88rem;">Jodhpur Mehrangarh-view Hotel</div><div style="font-size:0.78rem;color:var(--grey);">Jodhpur</div></div><span style="font-size:0.75rem;font-weight:700;background:var(--raj-light);color:var(--raj);padding:0.2rem 0.6rem;border-radius:12px;">1 Night</span>
+        </div>
+        <div style="background:var(--grey-light);border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);padding:1rem;display:flex;justify-content:space-between;align-items:center;">
+          <div><div style="font-weight:700;font-size:0.88rem;">Udaipur Lake-view Boutique</div><div style="font-size:0.78rem;color:var(--grey);">Udaipur</div></div><span style="font-size:0.75rem;font-weight:700;background:var(--raj-light);color:var(--raj);padding:0.2rem 0.6rem;border-radius:12px;">1 Night</span>
+        </div>
+      </div>
+    </div>
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">📋</div>Cancellation Policy</div>
+      <div class="cancel-table">
+        <div class="cancel-row"><span>30+ days before departure</span><span style="color:#166534;font-weight:600;">Full refund</span></div>
+        <div class="cancel-row"><span>15–29 days before</span><span style="color:#92400e;font-weight:600;">50% refund</span></div>
+        <div class="cancel-row"><span>7–14 days before</span><span style="color:#92400e;font-weight:600;">25% refund</span></div>
+        <div class="cancel-row"><span>Under 7 days</span><span style="color:#991b1b;font-weight:600;">No refund</span></div>
+      </div>
+    </div>
   </div><!-- end pkg-left -->
 
   <!-- SIDEBAR -->
