@@ -78,7 +78,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255
 .itin-tag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}
 .itin-tag.meal{background:#fef9c3;color:#713f12;}
 .itin-tag.activity{background:var(--teal-light);color:var(--teal-dark);}
-.itin-tag.transfer{background:#eff6ff;color:#1d4ed8;}
+.itin-tag.transfer{background:#fef3c7;color:#92400e;}.itin-tag.hotel{background:#eff6ff;color:#1d4ed8;}.hotel-card{border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);overflow:hidden;display:grid;grid-template-columns:120px 1fr;margin-bottom:0.75rem;}.hotel-img{height:90px;}.hotel-name{font-weight:700;font-size:0.9rem;padding:0.75rem 1rem 0.2rem;}.hotel-location{font-size:0.78rem;color:var(--grey);padding:0 1rem 0.2rem;}.hotel-stars{font-size:0.85rem;color:var(--gold);padding:0 1rem 0.75rem;}
 .itin-tag.kids{background:#fff7ed;color:#c2410c;}
 .inc-exc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .inc-box{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:var(--radius-sm);padding:1.25rem;}
@@ -225,9 +225,140 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}
 
 <div class="pkg-body-layout">
   <div class="pkg-left">
-    </div>
-  </div>
 
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">⭐</div>Package Highlights</div>
+      <div class="highlights-grid">
+        <div class="highlight-item"><div class="highlight-dot"></div>Dal Lake Houseboat</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Gulmarg Snow &amp; Gondola</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Pahalgam Valley</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Betaab Valley</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Sonmarg Glacier</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Family Shikara Ride</div>
+      </div>
+    </div>
+
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🗓️</div>Day-by-Day Itinerary</div>
+      <div class="itinerary-list">
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">1</div></div>
+            <div class="itin-header-text"><div class="itin-title">Arrive Srinagar — Family Welcome</div><div class="itin-sub">Houseboat check-in · Evening shikara · Wazwan dinner on deck</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Arrive at Srinagar airport and receive a warm Kashmiri welcome. Transfer to your Dal Lake heritage houseboat and settle in. As the golden hour sets over the lake, enjoy a family shikara ride with the children delighting in the floating life. End the evening with a traditional Wazwan dinner served on the houseboat deck.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Transfer</span><span class="itin-tag activity">Shikara</span><span class="itin-tag meal">Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">2</div></div>
+            <div class="itin-header-text"><div class="itin-title">Gulmarg — Gondola &amp; Snow</div><div class="itin-sub">Gondola Phase 1 &amp; 2 · Snow play · Alpine picnic · Return houseboat</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Drive to Gulmarg, one of Asia's finest ski resorts. Board the Gondola Phase 1 and Phase 2 for breathtaking views above the snowline at 4,200m. Kids revel in snow play on the slopes while the family enjoys an alpine meadow picnic. Return to the houseboat for a cozy evening.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Gondola Phase 1 &amp; 2</span><span class="itin-tag activity">Snow Play</span><span class="itin-tag meal">Picnic</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">3</div></div>
+            <div class="itin-header-text"><div class="itin-title">Srinagar City Sightseeing</div><div class="itin-sub">Mughal Gardens · Shankaracharya · Floating market · Old City</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Start the day at the famous floating vegetable market at sunrise — a uniquely Kashmiri experience. Visit the terraced Mughal Gardens (Nishat Bagh, Shalimar Bagh) and the Shankaracharya Temple perched on a hill with panoramic views. Explore Jamia Masjid and the lanes of Old City for local crafts.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Mughal Gardens</span><span class="itin-tag activity">Shankaracharya</span><span class="itin-tag activity">Floating Market</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">4</div></div>
+            <div class="itin-header-text"><div class="itin-title">Pahalgam — Meadows &amp; Valleys</div><div class="itin-sub">Baisaran · Betaab Valley · Aru Valley · Horse rides for kids</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Drive to Pahalgam, the "Valley of Shepherds." Explore the Baisaran meadow (mini Switzerland), the Betaab Valley famous as a Bollywood film location, and the serene Aru Valley ideal for picnics. Children enjoy pony rides through the meadows. Stay the night at a hotel in Pahalgam with mountain views.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Betaab Valley</span><span class="itin-tag activity">Aru Valley</span><span class="itin-tag kids">Horse Rides</span><span class="itin-tag hotel">Pahalgam Hotel</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">5</div></div>
+            <div class="itin-header-text"><div class="itin-title">Sonmarg — Thajiwas Glacier</div><div class="itin-sub">Glacier trek · Snow activities · Sindh River · Wildflowers</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Journey to Sonmarg (Meadow of Gold) and trek up to the famous Thajiwas Glacier where snow activities await the family. The Sindh River and surrounding wildflower meadows make for stunning family photos. Return to Srinagar houseboat for a farewell dinner on the lake.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Thajiwas Glacier</span><span class="itin-tag activity">Snow Activities</span><span class="itin-tag activity">Sindh River</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">6</div></div>
+            <div class="itin-header-text"><div class="itin-title">Departure — Morning Shikara</div><div class="itin-sub">Morning shikara · Souvenir shopping · Airport transfer</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Wake up to a final magical morning on Dal Lake with a peaceful shikara ride. Pick up Kashmiri souvenirs — saffron, dry fruits, papier-mâché crafts, and Pashmina shawls — before your dedicated tour manager transfers you to Srinagar airport. Fly home with memories of a lifetime.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Morning Shikara</span><span class="itin-tag transfer">Airport Transfer</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">✅</div>Inclusions &amp; Exclusions</div>
+      <div class="inc-exc-grid">
+        <div class="inc-box">
+          <div class="inc-title">✅ Inclusions</div>
+          <div class="inc-list">
+            <div class="inc-item">5 nights (4N Dal Lake heritage houseboat + 1N Pahalgam hotel)</div>
+            <div class="inc-item">Daily breakfast + dinner on houseboat</div>
+            <div class="inc-item">Gondola Phase 1 &amp; 2 tickets (Gulmarg)</div>
+            <div class="inc-item">All sightseeing &amp; transfers by AC vehicle</div>
+            <div class="inc-item">Dedicated tour manager throughout</div>
+            <div class="inc-item">24/7 WhatsApp support</div>
+          </div>
+        </div>
+        <div class="exc-box">
+          <div class="exc-title">❌ Exclusions</div>
+          <div class="exc-list">
+            <div class="exc-item">Flights to/from Srinagar</div>
+            <div class="exc-item">Pony rides (optional extra)</div>
+            <div class="exc-item">Personal shopping</div>
+            <div class="exc-item">Travel insurance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🏨</div>Hotels &amp; Stays</div>
+      <div class="hotel-card">
+        <div class="hotel-img" style="background:linear-gradient(135deg,#0a2a14,#1a5c2a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:0.8rem;">Photo Coming Soon</div>
+        <div><div class="hotel-name">Dal Lake Heritage Houseboat</div><div class="hotel-location">📍 Dal Lake, Srinagar · 4 Nights</div><div class="hotel-stars">★★★★</div></div>
+      </div>
+      <div class="hotel-card">
+        <div class="hotel-img" style="background:linear-gradient(135deg,#1a3a0a,#2a5c1a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:0.8rem;">Photo Coming Soon</div>
+        <div><div class="hotel-name">Pahalgam Hotel</div><div class="hotel-location">📍 Pahalgam · 1 Night</div><div class="hotel-stars">★★★</div></div>
+      </div>
+    </div>
+
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">📋</div>Cancellation Policy</div>
+      <div class="cancel-table">
+        <div class="cancel-row"><span>30+ days before</span><span style="color:#166534;font-weight:600;">Full refund</span></div>
+        <div class="cancel-row"><span>15–29 days</span><span style="color:#92400e;font-weight:600;">50% refund</span></div>
+        <div class="cancel-row"><span>7–14 days</span><span style="color:#92400e;font-weight:600;">25% refund</span></div>
+        <div class="cancel-row"><span>Under 7 days</span><span style="color:#991b1b;font-weight:600;">No refund</span></div>
+      </div>
+    </div>
+
+  </div>
   <div class="pkg-sidebar">
     <div class="sidebar-card">
       <div class="sidebar-header">

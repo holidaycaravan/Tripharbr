@@ -55,7 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255
 .iarr{color:var(--teal);font-size:1rem;transition:transform 0.3s;flex-shrink:0;}.iitem.open .iarr{transform:rotate(180deg);}
 .ibody{padding:0;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;}.iitem.open .ibody{max-height:500px;padding:1.25rem;}
 .iinner{border-top:1px solid var(--grey-mid);padding-top:1.25rem;}.idesc{font-size:0.88rem;color:var(--charcoal);line-height:1.75;margin-bottom:1rem;}
-.itags{display:flex;flex-wrap:wrap;gap:0.4rem;}.itag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}.itag.meal{background:#fef9c3;color:#713f12;}.itag.act{background:var(--teal-light);color:var(--teal-dark);}.itag.tx{background:#eff6ff;color:#1d4ed8;}
+.itags{display:flex;flex-wrap:wrap;gap:0.4rem;}.itag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}.itag.meal{background:#f0fdf4;color:#166534;}.itag.act{background:var(--teal-light);color:var(--teal-dark);}.itag.tx{background:#fef3c7;color:#92400e;}.itag.hotel{background:#eff6ff;color:#1d4ed8;}.hotel-card{border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);overflow:hidden;display:grid;grid-template-columns:120px 1fr;margin-bottom:0.75rem;}.hotel-img{height:90px;}.hotel-name{font-weight:700;font-size:0.9rem;padding:0.75rem 1rem 0.2rem;}.hotel-location{font-size:0.78rem;color:var(--grey);padding:0 1rem 0.2rem;}.hotel-stars{font-size:0.85rem;color:var(--gold);padding:0 1rem 0.75rem;}
 .iegrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .inbox{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:var(--radius-sm);padding:1.25rem;}.exbox{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--radius-sm);padding:1.25rem;}
 .intitle{font-weight:700;font-size:0.85rem;color:#166534;margin-bottom:0.75rem;}.extitle{font-weight:700;font-size:0.85rem;color:#991b1b;margin-bottom:0.75rem;}
@@ -152,7 +152,162 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}.fb{max-
 
 <div class="layout">
   <div>
+
+    <div class="psec">
+      <div class="psec-title"><div class="psec-icon">⭐</div>Package Highlights</div>
+      <div class="hgrid">
+        <div class="hi"><div class="hd"></div>Alleppey Family Houseboat</div>
+        <div class="hi"><div class="hd"></div>Munnar Wildlife Safari</div>
+        <div class="hi"><div class="hd"></div>Periyar Elephant Ride</div>
+        <div class="hi"><div class="hd"></div>Kovalam Beach</div>
+        <div class="hi"><div class="hd"></div>Thekkady Boat Ride</div>
+        <div class="hi"><div class="hd"></div>Cochin Fort Walk</div>
+      </div>
     </div>
+
+    <div class="psec">
+      <div class="psec-title"><div class="psec-icon">🗓️</div>Day-by-Day Itinerary</div>
+      <div class="ilist">
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">1</div></div>
+            <div class="ihtxt"><div class="ittl">Arrive Cochin — Fort Kochi Walk</div><div class="isub">Airport pickup · Chinese fishing nets · Dutch Palace · Santa Cruz Cathedral</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Arrive at Cochin airport and transfer to Fort Kochi. Walk along the iconic Chinese fishing nets at sunset, visit the Dutch Palace, Santa Cruz Cathedral and the narrow heritage lanes. Enjoy dinner at a waterfront restaurant as the family settles into the Kerala pace.</div>
+            <div class="itags"><span class="itag act">Chinese Fishing Nets</span><span class="itag act">Dutch Palace</span><span class="itag meal">Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">2</div></div>
+            <div class="ihtxt"><div class="ittl">Cochin → Munnar — Tea Hills</div><div class="isub">Tea gardens · Eravikulam NP · Hill resort check-in · Tea factory visit</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Drive through stunning tea-garden valleys to Munnar. Stop for photo opportunities among the rolling green estates. Visit Eravikulam National Park to spot the rare Nilgiri Tahr. Check in to your hill resort and tour a tea factory to see how the famous Munnar tea is processed.</div>
+            <div class="itags"><span class="itag tx">Transfer to Munnar</span><span class="itag act">Eravikulam NP</span><span class="itag act">Tea Factory</span></div>
+          </div></div>
+        </div>
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">3</div></div>
+            <div class="ihtxt"><div class="ittl">Munnar Sightseeing</div><div class="isub">Mattupetty Dam · Echo Point · Top Station · Children's nature trail</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Explore the best of Munnar — a boat ride at Mattupetty Dam where kids love spotting wildlife, the exciting Echo Point, and Top Station offering a birds-eye view of the Western Ghats. Finish with a gentle children's nature trail through the tea gardens and a stroll through the local spice market.</div>
+            <div class="itags"><span class="itag act">Mattupetty Dam</span><span class="itag act">Echo Point</span><span class="itag act">Top Station</span></div>
+          </div></div>
+        </div>
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">4</div></div>
+            <div class="ihtxt"><div class="ittl">Munnar → Thekkady — Periyar Wildlife</div><div class="isub">Periyar Lake boat safari · Spice plantation · Elephant interaction</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Transfer to Thekkady and embark on the famous Periyar Lake boat safari — spot elephants, bison and exotic birds along the shore. Walk through a working spice plantation and learn about cardamom, pepper and cinnamon. Visit the elephant interaction centre for a memorable family encounter.</div>
+            <div class="itags"><span class="itag tx">Transfer to Thekkady</span><span class="itag act">Periyar Boat Safari</span><span class="itag act">Spice Plantation</span></div>
+          </div></div>
+        </div>
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">5</div></div>
+            <div class="ihtxt"><div class="ittl">Thekkady → Alleppey Houseboat</div><div class="isub">Board family houseboat · Village canoe · Backwater network dinner on board</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Drive to Alleppey and board your family houseboat — a floating paradise on Kerala's legendary backwaters. Glide through village canals, watch local fishermen and spot kingfishers. Children absolutely love the serene backwater network. Enjoy a delicious Kerala meal served on board as you drift into the evening.</div>
+            <div class="itags"><span class="itag tx">Transfer to Alleppey</span><span class="itag act">Houseboat</span><span class="itag meal">Dinner on Board</span></div>
+          </div></div>
+        </div>
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">6</div></div>
+            <div class="ihtxt"><div class="ittl">Alleppey → Kovalam Beach</div><div class="isub">Sunrise on houseboat · Beach resort · Beach volleyball · Kerala seafood</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Wake up to a glorious sunrise on the backwaters before disembarking and driving to the famous Kovalam beach. Check in to your beach resort and spend the afternoon swimming, building sandcastles, and playing beach volleyball. Enjoy a fresh Kerala seafood dinner as the sun sets over the Arabian Sea.</div>
+            <div class="itags"><span class="itag tx">Transfer to Kovalam</span><span class="itag act">Beach</span><span class="itag meal">Seafood Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">7</div></div>
+            <div class="ihtxt"><div class="ittl">Departure — Fly Home</div><div class="isub">Morning beach walk · Trivandrum airport transfer</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Enjoy a final relaxed morning stroll along the beach before your dedicated tour manager transfers you to Trivandrum international airport. Fly home carrying Kerala's warmth, vibrant greens and the sound of backwaters in your hearts.</div>
+            <div class="itags"><span class="itag act">Beach Walk</span><span class="itag tx">Airport Transfer</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="psec">
+      <div class="psec-title"><div class="psec-icon">✅</div>Inclusions &amp; Exclusions</div>
+      <div class="iegrid">
+        <div class="inbox">
+          <div class="intitle">✅ Inclusions</div>
+          <div class="inlist">
+            <div class="initem">6 nights (Fort Kochi 1N, Munnar hill resort 2N, Thekkady 1N, Alleppey houseboat 1N, Kovalam beach resort 1N)</div>
+            <div class="initem">Daily breakfast throughout</div>
+            <div class="initem">Periyar Lake boat safari</div>
+            <div class="initem">Houseboat with all meals included</div>
+            <div class="initem">All transfers by AC vehicle</div>
+            <div class="initem">Dedicated tour manager</div>
+          </div>
+        </div>
+        <div class="exbox">
+          <div class="extitle">❌ Exclusions</div>
+          <div class="exlist">
+            <div class="exitem">Flights to/from Kerala</div>
+            <div class="exitem">Elephant ride (optional ₹800 extra)</div>
+            <div class="exitem">Personal shopping</div>
+            <div class="exitem">Travel insurance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="psec">
+      <div class="psec-title"><div class="psec-icon">🏨</div>Hotels &amp; Stays</div>
+      <div class="hotel-card">
+        <div class="hotel-img" style="background:linear-gradient(135deg,#0a4a1e,#1a7a36);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:0.8rem;">Photo Coming Soon</div>
+        <div><div class="hotel-name">Fort Heritage Kochi</div><div class="hotel-location">📍 Fort Kochi · 1 Night</div><div class="hotel-stars">★★★</div></div>
+      </div>
+      <div class="hotel-card">
+        <div class="hotel-img" style="background:linear-gradient(135deg,#1a3a0a,#2a5c1a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:0.8rem;">Photo Coming Soon</div>
+        <div><div class="hotel-name">Munnar Hill Resort</div><div class="hotel-location">📍 Munnar · 2 Nights</div><div class="hotel-stars">★★★</div></div>
+      </div>
+      <div class="hotel-card">
+        <div class="hotel-img" style="background:linear-gradient(135deg,#0a3a1a,#1a6a2a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:0.8rem;">Photo Coming Soon</div>
+        <div><div class="hotel-name">Thekkady Lake View</div><div class="hotel-location">📍 Thekkady · 1 Night</div><div class="hotel-stars">★★★</div></div>
+      </div>
+      <div class="hotel-card">
+        <div class="hotel-img" style="background:linear-gradient(135deg,#0a2a3a,#1a5a6a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:0.8rem;">Photo Coming Soon</div>
+        <div><div class="hotel-name">Alleppey Family Houseboat</div><div class="hotel-location">📍 Alleppey Backwaters · 1 Night</div><div class="hotel-stars">★★★★</div></div>
+      </div>
+      <div class="hotel-card">
+        <div class="hotel-img" style="background:linear-gradient(135deg,#1a2a0a,#3a5a1a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:0.8rem;">Photo Coming Soon</div>
+        <div><div class="hotel-name">Kovalam Beach Resort</div><div class="hotel-location">📍 Kovalam, Trivandrum · 1 Night</div><div class="hotel-stars">★★★</div></div>
+      </div>
+    </div>
+
+    <div class="psec">
+      <div class="psec-title"><div class="psec-icon">📋</div>Cancellation Policy</div>
+      <div class="ctable">
+        <div class="crow"><span>30+ days before</span><span style="color:#166534;font-weight:600;">Full refund</span></div>
+        <div class="crow"><span>15–29 days</span><span style="color:#92400e;font-weight:600;">50% refund</span></div>
+        <div class="crow"><span>7–14 days</span><span style="color:#92400e;font-weight:600;">25% refund</span></div>
+        <div class="crow"><span>Under 7 days</span><span style="color:#991b1b;font-weight:600;">No refund</span></div>
+      </div>
+    </div>
+
   </div>
   <div class="sidebar">
     <div class="scard">

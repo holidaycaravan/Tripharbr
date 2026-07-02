@@ -56,7 +56,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255
 .itin-arrow{color:var(--teal);font-size:1rem;transition:transform 0.3s;flex-shrink:0;}.itin-item.open .itin-arrow{transform:rotate(180deg);}
 .itin-body{padding:0;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;}.itin-item.open .itin-body{max-height:500px;padding:1.25rem;}
 .itin-body-inner{border-top:1px solid var(--grey-mid);padding-top:1.25rem;}.itin-desc{font-size:0.88rem;color:var(--charcoal);line-height:1.75;margin-bottom:1rem;}
-.itin-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}.itin-tag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}.itin-tag.activity{background:var(--teal-light);color:var(--teal-dark);}
+.itin-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}.itin-tag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}.itin-tag.activity{background:var(--teal-light);color:var(--teal-dark);}.itin-tag.transfer{background:#fef3c7;color:#92400e;}.itin-tag.meal{background:#f0fdf4;color:#166534;}.itin-tag.hotel{background:#eff6ff;color:#1d4ed8;}
 .inc-exc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .inc-box{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:var(--radius-sm);padding:1.25rem;}.exc-box{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--radius-sm);padding:1.25rem;}
 .inc-title{font-weight:700;font-size:0.85rem;color:#166534;margin-bottom:0.75rem;}.exc-title{font-weight:700;font-size:0.85rem;color:#991b1b;margin-bottom:0.75rem;}
@@ -151,6 +151,117 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}.footer-
 
 <div class="pkg-body-layout">
   <div class="pkg-left">
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">⭐</div>Package Highlights</div>
+      <div class="highlights-grid">
+        <div class="highlight-item"><div class="highlight-dot"></div>Burj Khalifa At the Top</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Desert Safari with BBQ</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Gold Souk &amp; Spice Souk</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Dubai Frame</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Dubai Mall &amp; Fountain Show</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Dhow Cruise Dinner</div>
+      </div>
+    </div>
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🗺</div>Day-by-Day Itinerary</div>
+      <div class="itinerary-list">
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">1</div></div>
+            <div class="itin-header-text"><div class="itin-title">Arrive Dubai</div><div class="itin-sub">Airport pickup · Dubai Mall · Burj Khalifa night view</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Airport pickup and hotel check-in. Evening at Dubai Mall — the world's largest shopping mall — finishing with the Dubai Fountain show (the world's largest dancing fountain). Burj Khalifa external view at night. Arabic dinner.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Transfer</span><span class="itin-tag activity">Dubai Mall</span><span class="itin-tag meal">Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">2</div></div>
+            <div class="itin-header-text"><div class="itin-title">Dubai Sightseeing</div><div class="itin-sub">Burj Khalifa 124th floor · Dubai Frame · Dhow Cruise dinner</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Burj Khalifa 'At The Top' observatory on the 124th floor. Dubai Frame — the giant picture frame straddling old and new Dubai. Dubai Museum in the Al Fahidi Historic District and the historic creek area. Evening: Creek Dhow Cruise dinner with live music.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Burj Khalifa</span><span class="itin-tag activity">Dubai Frame</span><span class="itin-tag meal">Dhow Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">3</div></div>
+            <div class="itin-header-text"><div class="itin-title">Desert Safari</div><div class="itin-sub">Dune bashing · Camel ride · BBQ dinner under stars</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Morning at leisure. Afternoon pickup for the desert camp — thrilling dune bashing in a 4×4, optional quad biking, camel ride, and sunset photography. Arabic BBQ dinner under the stars with belly dance and Tanoura show.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Dune Bashing</span><span class="itin-tag activity">Camel Ride</span><span class="itin-tag meal">BBQ Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">4</div></div>
+            <div class="itin-header-text"><div class="itin-title">Gold &amp; Spice Souk + Marina</div><div class="itin-sub">Souks · Abra ride · JBR Walk · Palm Jumeirah</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Gold Souk with authentic gold jewellery, Spice Souk, and an Abra boat ride across the Creek. JBR Walk beach promenade, Palm Jumeirah Monorail, and Atlantis Hotel view from the palm.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Gold Souk</span><span class="itin-tag activity">Palm Jumeirah</span><span class="itin-tag transfer">Abra Ride</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">5</div></div>
+            <div class="itin-header-text"><div class="itin-title">Departure</div><div class="itin-sub">Duty-free shopping · International terminal drop-off</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Morning at leisure. Duty-free shopping at Dubai International Airport. International terminal drop-off. Fly home with memories of the world's most spectacular city.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Airport Drop</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">✅</div>What's Included &amp; Excluded</div>
+      <div class="inc-exc-grid">
+        <div class="inc-box"><div class="inc-title">✅ Inclusions</div><div class="inc-list">
+          <div class="inc-item">4 nights 4★ hotel near Business Bay/DIFC</div>
+          <div class="inc-item">Daily breakfast</div>
+          <div class="inc-item">Desert safari with BBQ dinner</div>
+          <div class="inc-item">Dhow cruise dinner</div>
+          <div class="inc-item">Burj Khalifa At the Top tickets</div>
+          <div class="inc-item">Dubai Frame entry</div>
+          <div class="inc-item">All airport &amp; sightseeing transfers</div>
+          <div class="inc-item">Dedicated tour manager</div>
+          <div class="inc-item">Visa assistance</div>
+        </div></div>
+        <div class="exc-box"><div class="exc-title">❌ Exclusions</div><div class="exc-list">
+          <div class="exc-item">International flights</div>
+          <div class="exc-item">UAE visa fee (~&#8377;6,000)</div>
+          <div class="exc-item">Personal shopping</div>
+          <div class="exc-item">Quad bike (optional add-on)</div>
+          <div class="exc-item">Travel insurance</div>
+        </div></div>
+      </div>
+    </div>
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🏨</div>Hotel Details</div>
+      <div style="background:var(--grey-light);border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);padding:1.25rem;">
+        <div style="font-weight:700;font-size:0.92rem;margin-bottom:0.3rem;">Dubai 4★ Hotel &mdash; Business Bay / DIFC</div>
+        <div style="font-size:0.8rem;color:var(--grey);margin-bottom:0.5rem;">4 Nights</div>
+        <div style="font-size:0.85rem;color:var(--charcoal);">Modern 4-star hotel in the heart of Dubai, close to the Burj Khalifa and major attractions. Exact hotel confirmed at time of booking based on availability and tier selected.</div>
+      </div>
+    </div>
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">📋</div>Cancellation Policy</div>
+      <div class="cancel-table">
+        <div class="cancel-row"><span>30+ days before departure</span><span style="color:#166534;font-weight:600;">Full refund</span></div>
+        <div class="cancel-row"><span>15–29 days before</span><span style="color:#92400e;font-weight:600;">50% refund</span></div>
+        <div class="cancel-row"><span>7–14 days before</span><span style="color:#92400e;font-weight:600;">25% refund</span></div>
+        <div class="cancel-row"><span>Under 7 days</span><span style="color:#991b1b;font-weight:600;">No refund</span></div>
+      </div>
+    </div>
   </div>
   <div class="pkg-sidebar">
     <div class="sidebar-card">

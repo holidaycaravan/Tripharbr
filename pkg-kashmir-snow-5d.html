@@ -55,7 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255
 .iarr{color:var(--teal);font-size:1rem;transition:transform 0.3s;flex-shrink:0;}.iitem.open .iarr{transform:rotate(180deg);}
 .ibody{padding:0;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;}.iitem.open .ibody{max-height:500px;padding:1.25rem;}
 .iinner{border-top:1px solid var(--grey-mid);padding-top:1.25rem;}.idesc{font-size:0.88rem;color:var(--charcoal);line-height:1.75;margin-bottom:1rem;}
-.itags{display:flex;flex-wrap:wrap;gap:0.4rem;}.itag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}.itag.meal{background:#fef9c3;color:#713f12;}.itag.act{background:var(--teal-light);color:var(--teal-dark);}.itag.tx{background:#eff6ff;color:#1d4ed8;}
+.itags{display:flex;flex-wrap:wrap;gap:0.4rem;}.itag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}.itag.meal{background:#f0fdf4;color:#166534;}.itag.act{background:var(--teal-light);color:var(--teal-dark);}.itag.tx{background:#fef3c7;color:#92400e;}.itag.hotel{background:#eff6ff;color:#1d4ed8;}.hotel-card{border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);overflow:hidden;display:grid;grid-template-columns:120px 1fr;margin-bottom:0.75rem;}.hotel-img{height:90px;}.hotel-name{font-weight:700;font-size:0.9rem;padding:0.75rem 1rem 0.2rem;}.hotel-location{font-size:0.78rem;color:var(--grey);padding:0 1rem 0.2rem;}.hotel-stars{font-size:0.85rem;color:var(--gold);padding:0 1rem 0.75rem;}
 .iegrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .inbox{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:var(--radius-sm);padding:1.25rem;}.exbox{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--radius-sm);padding:1.25rem;}
 .intitle{font-weight:700;font-size:0.85rem;color:#166534;margin-bottom:0.75rem;}.extitle{font-weight:700;font-size:0.85rem;color:#991b1b;margin-bottom:0.75rem;}
@@ -152,7 +152,128 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}.fb{max-
 
 <div class="layout">
   <div>
+
+    <div class="psec">
+      <div class="psec-title"><div class="psec-icon">⭐</div>Package Highlights</div>
+      <div class="hgrid">
+        <div class="hi"><div class="hd"></div>Gulmarg Skiing</div>
+        <div class="hi"><div class="hd"></div>Gondola Phase 2 (4,200m)</div>
+        <div class="hi"><div class="hd"></div>Frozen Dal Lake Walk</div>
+        <div class="hi"><div class="hd"></div>Snow Scooter Ride</div>
+        <div class="hi"><div class="hd"></div>Houseboat Winter Stay</div>
+        <div class="hi"><div class="hd"></div>Pahalgam Snow Drive</div>
+      </div>
     </div>
+
+    <div class="psec">
+      <div class="psec-title"><div class="psec-icon">🗓️</div>Day-by-Day Itinerary</div>
+      <div class="ilist">
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">1</div></div>
+            <div class="ihtxt"><div class="ittl">Arrive Srinagar — Winter Welcome</div><div class="isub">Houseboat check-in · Warm kahwa · Evening Dal Lake walk</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Arrive at Srinagar airport and be welcomed with traditional Kashmiri kahwa (spiced tea). Transfer to your heated houseboat on Dal Lake and settle in. If visiting in January or February, experience the magical sight of Dal Lake partially frozen. Evening walk along the snowy ghats.</div>
+            <div class="itags"><span class="itag tx">Transfer</span><span class="itag act">Dal Lake Walk</span><span class="itag meal">Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">2</div></div>
+            <div class="ihtxt"><div class="ittl">Gulmarg Ski Day 1</div><div class="isub">Gondola Phase 1 · Ski school · Snow trekking · Mountain café</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Drive to Gulmarg, Asia's premier ski resort. Board the Gondola Phase 1 for panoramic winter views. Beginners can opt for ski school, while others enjoy snow trekking on the slopes. Warm up over lunch at a mountain café before returning to the houseboat for a cozy kangri evening.</div>
+            <div class="itags"><span class="itag act">Gondola Phase 1</span><span class="itag act">Skiing</span><span class="itag act">Snow Trekking</span></div>
+          </div></div>
+        </div>
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">3</div></div>
+            <div class="ihtxt"><div class="ittl">Gulmarg Ski Day 2 — Phase 2 Summit</div><div class="isub">Gondola Phase 2 · Expert slopes · Snow scooter · Bonfire evening</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Take the Gondola Phase 2 all the way to 4,200m for expert ski slopes and snowboarding. A snow scooter ride adds an extra thrill before heading back to the village. End the day around a local kangri bonfire, warming up with the Gulmarg village atmosphere.</div>
+            <div class="itags"><span class="itag act">Gondola Phase 2 (4,200m)</span><span class="itag act">Snowboarding</span><span class="itag act">Snow Scooter</span></div>
+          </div></div>
+        </div>
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">4</div></div>
+            <div class="ihtxt"><div class="ittl">Pahalgam Snow Drive</div><div class="isub">Snow-covered Baisaran · Betaab Valley · Local market · Return Srinagar</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Drive to Pahalgam through snow-draped Himalayan landscapes. Visit the Baisaran meadow blanketed in white and Betaab Valley — unrecognisably beautiful in snow. Browse the Pahalgam local market for Kashmiri crafts before returning to Srinagar houseboat for your final night.</div>
+            <div class="itags"><span class="itag act">Baisaran Snow</span><span class="itag act">Betaab Valley</span><span class="itag tx">Return Srinagar</span></div>
+          </div></div>
+        </div>
+        <div class="iitem">
+          <div class="ihdr" onclick="ti(this)">
+            <div class="ibadge"><div class="idlbl">Day</div><div class="idnum">5</div></div>
+            <div class="ihtxt"><div class="ittl">Departure — Frozen Garden Walk</div><div class="isub">Morning walk · Shopping (pashmina, saffron, walnuts) · Airport transfer</div></div>
+            <div class="iarr">&#9660;</div>
+          </div>
+          <div class="ibody"><div class="iinner">
+            <div class="idesc">Take a final morning walk through the frozen Shalimar Bagh gardens before heading to the markets for Kashmiri specialties — pashmina shawls, saffron strands, and dry walnuts. Your tour manager transfers you to Srinagar airport for your flight home.</div>
+            <div class="itags"><span class="itag act">Garden Walk</span><span class="itag act">Shopping</span><span class="itag tx">Airport Transfer</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="psec">
+      <div class="psec-title"><div class="psec-icon">✅</div>Inclusions &amp; Exclusions</div>
+      <div class="iegrid">
+        <div class="inbox">
+          <div class="intitle">✅ Inclusions</div>
+          <div class="inlist">
+            <div class="initem">4 nights (3N heated houseboat + 1N Pahalgam winter hotel)</div>
+            <div class="initem">Daily breakfast + dinner</div>
+            <div class="initem">Gondola Phase 1 &amp; 2 tickets</div>
+            <div class="initem">Snow scooter ride (Day 3)</div>
+            <div class="initem">All transfers by AC vehicle (with snow chains)</div>
+            <div class="initem">Dedicated tour manager</div>
+          </div>
+        </div>
+        <div class="exbox">
+          <div class="extitle">❌ Exclusions</div>
+          <div class="exlist">
+            <div class="exitem">Flights to/from Srinagar</div>
+            <div class="exitem">Ski equipment rental (available at Gulmarg)</div>
+            <div class="exitem">Ski lessons (optional extra)</div>
+            <div class="exitem">Travel insurance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="psec">
+      <div class="psec-title"><div class="psec-icon">🏨</div>Hotels &amp; Stays</div>
+      <div class="hotel-card">
+        <div class="hotel-img" style="background:linear-gradient(135deg,#0a1a1a,#1a3a4a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:0.8rem;">Photo Coming Soon</div>
+        <div><div class="hotel-name">Dal Lake Heated Houseboat</div><div class="hotel-location">📍 Dal Lake, Srinagar · 3 Nights</div><div class="hotel-stars">★★★★</div></div>
+      </div>
+      <div class="hotel-card">
+        <div class="hotel-img" style="background:linear-gradient(135deg,#1a2a3a,#2a4a6a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:0.8rem;">Photo Coming Soon</div>
+        <div><div class="hotel-name">Pahalgam Winter Hotel</div><div class="hotel-location">📍 Pahalgam · 1 Night</div><div class="hotel-stars">★★★</div></div>
+      </div>
+    </div>
+
+    <div class="psec">
+      <div class="psec-title"><div class="psec-icon">📋</div>Cancellation Policy</div>
+      <div class="ctable">
+        <div class="crow"><span>30+ days before</span><span style="color:#166534;font-weight:600;">Full refund</span></div>
+        <div class="crow"><span>15–29 days</span><span style="color:#92400e;font-weight:600;">50% refund</span></div>
+        <div class="crow"><span>7–14 days</span><span style="color:#92400e;font-weight:600;">25% refund</span></div>
+        <div class="crow"><span>Under 7 days</span><span style="color:#991b1b;font-weight:600;">No refund</span></div>
+      </div>
+    </div>
+
   </div>
   <div class="sidebar">
     <div class="scard">
