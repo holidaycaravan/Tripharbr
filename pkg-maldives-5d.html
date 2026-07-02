@@ -56,7 +56,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255
 .itin-arrow{color:var(--teal);font-size:1rem;transition:transform 0.3s;flex-shrink:0;}.itin-item.open .itin-arrow{transform:rotate(180deg);}
 .itin-body{padding:0;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;}.itin-item.open .itin-body{max-height:500px;padding:1.25rem;}
 .itin-body-inner{border-top:1px solid var(--grey-mid);padding-top:1.25rem;}.itin-desc{font-size:0.88rem;color:var(--charcoal);line-height:1.75;margin-bottom:1rem;}
-.itin-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}.itin-tag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}.itin-tag.activity{background:var(--teal-light);color:var(--teal-dark);}
+.itin-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}.itin-tag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}.itin-tag.activity{background:var(--teal-light);color:var(--teal-dark);}.itin-tag.transfer{background:#fef3c7;color:#92400e;}.itin-tag.meal{background:#f0fdf4;color:#166534;}.itin-tag.hotel{background:#eff6ff;color:#1d4ed8;}
 .inc-exc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .inc-box{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:var(--radius-sm);padding:1.25rem;}.exc-box{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--radius-sm);padding:1.25rem;}
 .inc-title{font-weight:700;font-size:0.85rem;color:#166534;margin-bottom:0.75rem;}.exc-title{font-weight:700;font-size:0.85rem;color:#991b1b;margin-bottom:0.75rem;}
@@ -151,6 +151,122 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}.footer-
 
 <div class="pkg-body-layout">
   <div class="pkg-left">
+
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">⭐</div>Package Highlights</div>
+      <div class="highlights-grid">
+        <div class="highlight-item"><div class="highlight-dot"></div>Overwater Water Villa</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Private Beach Snorkelling</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Seaplane Transfer to Resort</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Sunset Dolphin Cruise</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Bioluminescent Night Swim</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Underwater Restaurant Dinner</div>
+      </div>
+    </div>
+
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🗓️</div>5-Day Itinerary</div>
+      <div class="itinerary-list">
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">1</div></div>
+            <div class="itin-header-text"><div class="itin-title">Arrive Malé &rarr; Resort Transfer</div><div class="itin-sub">Seaplane or speedboat · Water villa check-in · Sunset over Indian Ocean</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Fly into Velana International Airport, Malé. Your resort representative greets you at the airport and escorts you to the seaplane terminal or speedboat jetty for a breathtaking transfer to your island resort. Check in to your overwater water villa — step off your deck directly into the turquoise lagoon. A welcome fresh fruit platter awaits, and you settle in just in time for an unforgettable sunset over the Indian Ocean.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Seaplane / Speedboat Transfer</span><span class="itin-tag hotel">Water Villa Check-In</span><span class="itin-tag activity">Sunset View</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">2</div></div>
+            <div class="itin-header-text"><div class="itin-title">Water Sports Day</div><div class="itin-sub">House reef snorkelling · Glass-bottom kayak · SUP · Dolphin cruise</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Morning snorkelling directly from your villa deck on the house reef — spot parrotfish, sea turtles, and rays in the crystal clear water. Try the glass-bottom kayak and stand-up paddleboard available from the resort. Afternoon spa treatment with ocean views. As the sun dips low, board a private sunset dolphin cruise — spinner dolphins are frequently spotted in the Maldivian waters.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Snorkelling</span><span class="itin-tag activity">Glass-Bottom Kayak</span><span class="itin-tag activity">Stand-Up Paddleboard</span><span class="itin-tag activity">Dolphin Cruise</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">3</div></div>
+            <div class="itin-header-text"><div class="itin-title">Dive or Full Relaxation</div><div class="itin-sub">Scuba diving option · Outer reef snorkel · Beach picnic lunch · Stargazing</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Choose your adventure: Option A — a guided Discover Scuba Diving session with certified PADI instructors (no experience needed). Option B — a guided snorkelling trip to the outer reef for bigger marine life encounters. Mid-day fish feeding from the resort pontoon brings reef fish up close. Private beach picnic lunch served on a secluded stretch of sand. After dark, the villa deck becomes the perfect star-gazing platform — no light pollution here.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Scuba Diving (Optional)</span><span class="itin-tag activity">Outer Reef Snorkelling</span><span class="itin-tag meal">Beach Picnic Lunch</span><span class="itin-tag activity">Stargazing</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">4</div></div>
+            <div class="itin-header-text"><div class="itin-title">Island Exploration &amp; Bioluminescence</div><div class="itin-sub">Sandbank picnic · Bioluminescent beach walk · Beachside dinner</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">A 30-minute speedboat ride to a nearby uninhabited sandbank — a tiny strip of pure white sand rising barely above the Indian Ocean. Your resort sets up a private picnic here. Return to the island in the afternoon. As night falls, walk along the bioluminescent beach — phytoplankton light up the sand and waves with a ghostly blue glow (seasonal, best Nov–Feb). Romantic beachside dinner under the stars.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Sandbank Speedboat</span><span class="itin-tag activity">Sandbank Picnic</span><span class="itin-tag activity">Bioluminescent Walk</span><span class="itin-tag meal">Beachside Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">5</div></div>
+            <div class="itin-header-text"><div class="itin-title">Departure</div><div class="itin-sub">Last breakfast over lagoon · Checkout · Transfer to Malé airport</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Savour a final breakfast looking out over your private lagoon. Late checkout if possible. Your resort transfers you back to Malé airport for your onward flight home. Four nights in paradise that will stay with you forever.</div>
+            <div class="itin-tags"><span class="itin-tag meal">Breakfast</span><span class="itin-tag transfer">Airport Transfer</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">✅</div>What's Included &amp; Excluded</div>
+      <div class="inc-exc-grid">
+        <div class="inc-box"><div class="inc-title">✅ Inclusions</div><div class="inc-list">
+          <div class="inc-item">4 nights overwater water villa (all-inclusive)</div>
+          <div class="inc-item">All meals — breakfast, lunch &amp; dinner</div>
+          <div class="inc-item">Seaplane / speedboat transfer to resort</div>
+          <div class="inc-item">Snorkelling gear</div>
+          <div class="inc-item">Sunset dolphin cruise</div>
+          <div class="inc-item">Glass-bottom kayak &amp; paddleboard</div>
+          <div class="inc-item">Sandbank excursion</div>
+          <div class="inc-item">Dedicated specialist</div>
+          <div class="inc-item">24/7 WhatsApp support</div>
+        </div></div>
+        <div class="exc-box"><div class="exc-title">❌ Exclusions</div><div class="exc-list">
+          <div class="exc-item">International flights to Malé</div>
+          <div class="exc-item">Scuba diving (optional add-on)</div>
+          <div class="exc-item">Personal shopping</div>
+          <div class="exc-item">Premium spa treatments</div>
+          <div class="exc-item">Travel insurance</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🏨</div>Your Hotels</div>
+      <div class="hotel-card">
+        <div class="hotel-img" style="background:linear-gradient(135deg,#1a3a6b,#2BBFB3);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:0.8rem;">Photo Coming Soon</div>
+        <div><div class="hotel-name">Overwater Villa at Premium Maldives Resort</div><div class="hotel-location">📍 Maldives · 4 Nights (All-Inclusive)</div><div class="hotel-stars">★★★★★</div></div>
+      </div>
+    </div>
+
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">📋</div>Cancellation Policy</div>
+      <div class="cancel-table">
+        <div class="cancel-row"><span>30+ days before departure</span><span style="color:#166534;font-weight:600;">Full refund</span></div>
+        <div class="cancel-row"><span>15–29 days before</span><span style="color:#92400e;font-weight:600;">50% refund</span></div>
+        <div class="cancel-row"><span>7–14 days before</span><span style="color:#92400e;font-weight:600;">25% refund</span></div>
+        <div class="cancel-row"><span>Under 7 days</span><span style="color:#991b1b;font-weight:600;">No refund</span></div>
+      </div>
+    </div>
+
   </div>
   <div class="pkg-sidebar">
     <div class="sidebar-card">
