@@ -56,7 +56,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255
 .itin-arrow{color:var(--teal);font-size:1rem;transition:transform 0.3s;flex-shrink:0;}.itin-item.open .itin-arrow{transform:rotate(180deg);}
 .itin-body{padding:0;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;}.itin-item.open .itin-body{max-height:500px;padding:1.25rem;}
 .itin-body-inner{border-top:1px solid var(--grey-mid);padding-top:1.25rem;}.itin-desc{font-size:0.88rem;color:var(--charcoal);line-height:1.75;margin-bottom:1rem;}
-.itin-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}.itin-tag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}.itin-tag.activity{background:var(--teal-light);color:var(--teal-dark);}
+.itin-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}.itin-tag{font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:12px;font-weight:600;}.itin-tag.activity{background:var(--teal-light);color:var(--teal-dark);}.itin-tag.transfer{background:#fef3c7;color:#92400e;}.itin-tag.meal{background:#f0fdf4;color:#166534;}.itin-tag.hotel{background:#eff6ff;color:#1d4ed8;}
 .inc-exc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .inc-box{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:var(--radius-sm);padding:1.25rem;}.exc-box{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--radius-sm);padding:1.25rem;}
 .inc-title{font-weight:700;font-size:0.85rem;color:#166534;margin-bottom:0.75rem;}.exc-title{font-weight:700;font-size:0.85rem;color:#991b1b;margin-bottom:0.75rem;}
@@ -151,6 +151,151 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}.footer-
 
 <div class="pkg-body-layout">
   <div class="pkg-left">
+    <!-- Highlights -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">⭐</div>Package Highlights</div>
+      <div class="highlights-grid">
+        <div class="highlight-item"><div class="highlight-dot"></div>Rishikesh White-Water Rafting</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Haridwar Ganga Aarti</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Mussoorie Mall Road</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Corbett Wildlife Safari</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Valley of Flowers (season)</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Nainital Lake Boat Ride</div>
+      </div>
+    </div>
+
+    <!-- Itinerary -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🗓</div>Day-by-Day Itinerary</div>
+      <div class="itinerary-list">
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">1</div></div>
+            <div class="itin-header-text"><div class="itin-title">Arrive Haridwar</div><div class="itin-sub">Ganga Aarti at Har Ki Pauri · Mansa Devi ropeway · Hotel</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Arrive Haridwar by train or flight. Check in and head straight to Har Ki Pauri for the legendary Ganga Aarti at sunset — priests swing large fire lamps over the river as thousands gather in devotion. VIP ghat-side viewing arranged. Also take the ropeway up to Mansa Devi Temple for panoramic city views.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Transfer</span><span class="itin-tag activity">Ganga Aarti</span><span class="itin-tag hotel">Hotel</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">2</div></div>
+            <div class="itin-header-text"><div class="itin-title">Haridwar → Rishikesh</div><div class="itin-sub">Lakshman Jhula · Beatles Ashram · Intro Rafting · Sunset Yoga</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Drive 1 hour to Rishikesh — the Yoga Capital of the World. Cross Lakshman Jhula and Ram Jhula suspension bridges. Visit the abandoned Beatles Ashram (Maharishi Mahesh Yogi's hermitage), now covered in colourful murals. Introductory white-water rafting on Grade 2–3 rapids. Wind down with a riverside sunset yoga class.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Lakshman Jhula</span><span class="itin-tag activity">Beatles Ashram</span><span class="itin-tag activity">Rafting</span><span class="itin-tag activity">Yoga</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">3</div></div>
+            <div class="itin-header-text"><div class="itin-title">Rishikesh Rafting &amp; Camp</div><div class="itin-sub">Full-day rafting 16 km · Ganga camp · Bonfire · Stargazing</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Full-day white-water rafting on 16 km of Grade 3–4 rapids — one of North India's top adventure experiences. Camp on the sandy bank of the Ganga. Evening bonfire with local music and stories. Fall asleep to the sound of the river with a sky full of stars above.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Grade 3-4 Rafting</span><span class="itin-tag activity">River Camp</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">4</div></div>
+            <div class="itin-header-text"><div class="itin-title">Rishikesh → Mussoorie</div><div class="itin-sub">Kempty Falls · Mall Road · Camel's Back Road</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Mountain drive (4 hrs) from Rishikesh up to Mussoorie — the Queen of Hills. En route, stop at Kempty Falls, a popular cascade surrounded by rocky hills. Arrive Mussoorie and stroll the famous Mall Road. Sunset walk along Camel's Back Road — named for its hump-shaped ridge — with sweeping Doon Valley views.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Rishikesh → Mussoorie</span><span class="itin-tag activity">Kempty Falls</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">5</div></div>
+            <div class="itin-header-text"><div class="itin-title">Mussoorie Sightseeing</div><div class="itin-sub">Lal Tibba · Gun Hill ropeway · Mossy Falls · Mall Road shopping</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Drive to Lal Tibba — Mussoorie's highest point — for binocular views of Badrinath and Kedarnath peaks. Ride the Gun Hill ropeway for aerial valley panoramas. Visit the serene Mossy Falls and Bhatta Falls hidden in deodar forests. Afternoon at leisure on Mall Road for Kumaoni woolens and local sweets.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Lal Tibba</span><span class="itin-tag activity">Gun Hill Ropeway</span><span class="itin-tag activity">Waterfalls</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">6</div></div>
+            <div class="itin-header-text"><div class="itin-title">Mussoorie → Nainital</div><div class="itin-sub">Robber's Cave · Forest Research Institute · Arrive Nainital</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Drive down through the verdant Doon Valley. Stop at Robber's Cave (Gucha Pani) — a natural cave through which a stream flows. Visit the magnificent Forest Research Institute campus with its colonial architecture. Continue to Nainital, arriving by evening for a lakeside walk.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Mussoorie → Nainital</span><span class="itin-tag activity">Robber's Cave</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">7</div></div>
+            <div class="itin-header-text"><div class="itin-title">Nainital &amp; Departure</div><div class="itin-sub">Naini Lake boat ride · Snow View Point · Kathgodam drop</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Morning boat ride on the emerald Naini Lake — paddle past willows and the forested hillsides. Visit the Naina Devi Temple on the north shore. Take the ropeway to Snow View Point for Himalayan panoramas on clear days. Browse souvenir shops for candles and woollens. Transfer to Kathgodam station for your onward journey.</div>
+            <div class="itin-tags"><span class="itin-tag activity">Boat Ride</span><span class="itin-tag activity">Snow View Point</span><span class="itin-tag transfer">Departure Transfer</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inclusions & Exclusions -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">✅</div>What's Included &amp; Excluded</div>
+      <div class="inc-exc-grid">
+        <div class="inc-box">
+          <div class="inc-title">✅ Inclusions</div>
+          <div class="inc-list">
+            <div class="inc-item">6 nights (Haridwar 1N, Rishikesh 2N, Mussoorie 2N, Nainital 1N)</div>
+            <div class="inc-item">Daily breakfast</div>
+            <div class="inc-item">Ganga Aarti VIP viewing</div>
+            <div class="inc-item">Both rafting sessions (intro + full-day)</div>
+            <div class="inc-item">All transfers by AC vehicle</div>
+            <div class="inc-item">Dedicated tour manager</div>
+          </div>
+        </div>
+        <div class="exc-box">
+          <div class="exc-title">❌ Exclusions</div>
+          <div class="exc-list">
+            <div class="exc-item">Train/flight to Haridwar</div>
+            <div class="exc-item">Wildlife safari (optional add-on)</div>
+            <div class="exc-item">Personal shopping</div>
+            <div class="exc-item">Travel insurance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotels -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🏨</div>Hotels</div>
+      <div class="cancel-table">
+        <div class="cancel-row"><span>Haridwar (1N)</span><span style="font-weight:600;">Ganga-view Hotel</span></div>
+        <div class="cancel-row"><span>Rishikesh (2N)</span><span style="font-weight:600;">River Camp (1N) + Yoga Resort (1N)</span></div>
+        <div class="cancel-row"><span>Mussoorie (2N)</span><span style="font-weight:600;">Heritage Hotel</span></div>
+        <div class="cancel-row"><span>Nainital (1N)</span><span style="font-weight:600;">Lake View Hotel</span></div>
+      </div>
+    </div>
+
+    <!-- Cancellation -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">📋</div>Cancellation Policy</div>
+      <div class="cancel-table">
+        <div class="cancel-row"><span>30+ days before departure</span><span style="color:#166534;font-weight:600;">Full refund</span></div>
+        <div class="cancel-row"><span>15–29 days before</span><span style="color:#92400e;font-weight:600;">50% refund</span></div>
+        <div class="cancel-row"><span>7–14 days before</span><span style="color:#92400e;font-weight:600;">25% refund</span></div>
+        <div class="cancel-row"><span>Under 7 days</span><span style="color:#991b1b;font-weight:600;">No refund</span></div>
+      </div>
+    </div>
   </div>
   <div class="pkg-sidebar">
     <div class="sidebar-card">

@@ -84,7 +84,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255
 .itin-tag.meal{background:#fef9c3;color:#713f12;}
 .itin-tag.activity{background:var(--teal-light);color:var(--teal-dark);}
 .itin-tag.transfer{background:#eff6ff;color:#1d4ed8;}
-.itin-tag.ocean{background:var(--accent-light);color:var(--accent);}
+.itin-tag.ocean{background:var(--accent-light);color:var(--accent);}.itin-tag.hotel{background:#eff6ff;color:#1d4ed8;}
 .inc-exc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .inc-box{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:var(--radius-sm);padding:1.25rem;}
 .exc-box{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--radius-sm);padding:1.25rem;}
@@ -232,6 +232,140 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}
 
 <div class="pkg-body-layout">
   <div class="pkg-left">
+    <!-- Highlights -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">⭐</div>Package Highlights</div>
+      <div class="highlights-grid">
+        <div class="highlight-item"><div class="highlight-dot"></div>Radhanagar Beach (Asia's Best)</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Havelock Snorkelling</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Cellular Jail Light Show</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Neil Island Bicycle Ride</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Glass-bottom Boat</div>
+        <div class="highlight-item"><div class="highlight-dot"></div>Elephant Beach</div>
+      </div>
+    </div>
+
+    <!-- Itinerary -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🗓</div>Day-by-Day Itinerary</div>
+      <div class="itinerary-list">
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">1</div></div>
+            <div class="itin-header-text"><div class="itin-title">Arrive Port Blair</div><div class="itin-sub">Cellular Jail · Sound &amp; Light show · Fresh seafood dinner</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Pick-up from Port Blair airport. Check in to hotel. Visit the iconic Cellular Jail — a colonial-era prison where India's freedom fighters were held. Attend the dramatic Sound &amp; Light show that narrates their stories. Evening fresh seafood dinner at a waterfront restaurant.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Airport Pick-up</span><span class="itin-tag activity">Cellular Jail</span><span class="itin-tag meal">Seafood Dinner</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">2</div></div>
+            <div class="itin-header-text"><div class="itin-title">Port Blair → Havelock</div><div class="itin-sub">Ferry · Beach cottage · Radhanagar sunset · Fresh coconut</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Take the government ferry or speedboat to Havelock Island (1.5–2.5 hrs). Check in to your beach cottage steps from the sea. Afternoon at Radhanagar Beach — Asia's #7 beach — for a legendary sunset. Walk the powdery white sand and enjoy fresh coconut water from beach vendors.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Port Blair → Havelock</span><span class="itin-tag activity">Radhanagar Beach</span><span class="itin-tag hotel">Beach Cottage</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">3</div></div>
+            <div class="itin-header-text"><div class="itin-title">Havelock Activities</div><div class="itin-sub">Elephant Beach snorkelling · Sea walk · Kalapathar sunrise</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Boat trip to Elephant Beach — the best snorkelling spot in the Andamans, with vibrant coral reefs and tropical fish. Optional sea walk — walk on the ocean floor with a helmet (₹3,500 extra). Early evening walk to Kalapathar Beach for a black-rock and blue-sea spectacle. Explore the local fish market.</div>
+            <div class="itin-tags"><span class="itin-tag ocean">Snorkelling</span><span class="itin-tag activity">Elephant Beach</span><span class="itin-tag activity">Kalapathar</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">4</div></div>
+            <div class="itin-header-text"><div class="itin-title">Havelock → Neil Island</div><div class="itin-sub">Bicycle ride · Natural Bridge · Laxmanpur sunset</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Small ferry to Neil Island (45 min) — quieter, more serene, and less touristy. Rent bicycles, the best way to explore the island's paddy fields, fishing villages, and hidden coves. Visit the Natural Bridge (Howrah Bridge) — a rock arch carved by the sea. Watch the sunset at Laxmanpur Beach, famous for its shallow, clear water.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Havelock → Neil</span><span class="itin-tag activity">Bicycle Ride</span><span class="itin-tag activity">Natural Bridge</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">5</div></div>
+            <div class="itin-header-text"><div class="itin-title">Neil → Port Blair</div><div class="itin-sub">Corbyn's Cove · Water sports · Anthropological Museum</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Return ferry to Port Blair. Afternoon at Corbyn's Cove — a crescent beach with calm water, just 7 km from the city. Try jet ski and banana boat rides. Visit the Anthropological Museum to learn about the islands' indigenous Andamanese tribes and their fascinating culture.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Neil → Port Blair</span><span class="itin-tag activity">Water Sports</span><span class="itin-tag activity">Museum</span></div>
+          </div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">6</div></div>
+            <div class="itin-header-text"><div class="itin-title">Departure</div><div class="itin-sub">Local market · Bamboo &amp; shell crafts · Airport transfer</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner">
+            <div class="itin-desc">Morning visit to the local market for last-minute shopping: bamboo crafts, shell jewellery, and Andaman spices. Transfer to Port Blair airport for your flight home, carrying memories of turquoise water and white sand.</div>
+            <div class="itin-tags"><span class="itin-tag transfer">Airport Drop</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inclusions & Exclusions -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">✅</div>What's Included &amp; Excluded</div>
+      <div class="inc-exc-grid">
+        <div class="inc-box">
+          <div class="inc-title">✅ Inclusions</div>
+          <div class="inc-list">
+            <div class="inc-item">5 nights (Port Blair 1N, Havelock 3N beach cottage, Neil 1N)</div>
+            <div class="inc-item">Daily breakfast</div>
+            <div class="inc-item">Cellular Jail entry + Light Show</div>
+            <div class="inc-item">Elephant Beach snorkelling trip</div>
+            <div class="inc-item">All ferry transfers between islands</div>
+            <div class="inc-item">All airport/hotel transfers</div>
+            <div class="inc-item">Dedicated tour manager</div>
+          </div>
+        </div>
+        <div class="exc-box">
+          <div class="exc-title">❌ Exclusions</div>
+          <div class="exc-list">
+            <div class="exc-item">Flights to/from Port Blair</div>
+            <div class="exc-item">Sea walk (optional ₹3,500)</div>
+            <div class="exc-item">Personal water sports beyond included</div>
+            <div class="exc-item">Travel insurance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotels -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">🏨</div>Hotels</div>
+      <div class="cancel-table">
+        <div class="cancel-row"><span>Port Blair (1N)</span><span style="font-weight:600;">Bay View Hotel</span></div>
+        <div class="cancel-row"><span>Havelock Island (3N)</span><span style="font-weight:600;">Havelock Beach Cottage</span></div>
+        <div class="cancel-row"><span>Neil Island (1N)</span><span style="font-weight:600;">Neil Island Guesthouse</span></div>
+      </div>
+    </div>
+
+    <!-- Cancellation -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">📋</div>Cancellation Policy</div>
+      <div class="cancel-table">
+        <div class="cancel-row"><span>30+ days before departure</span><span style="color:#166534;font-weight:600;">Full refund</span></div>
+        <div class="cancel-row"><span>15–29 days before</span><span style="color:#92400e;font-weight:600;">50% refund</span></div>
+        <div class="cancel-row"><span>7–14 days before</span><span style="color:#92400e;font-weight:600;">25% refund</span></div>
+        <div class="cancel-row"><span>Under 7 days</span><span style="color:#991b1b;font-weight:600;">No refund</span></div>
+      </div>
+    </div>
   </div>
 
   <div class="pkg-sidebar">
