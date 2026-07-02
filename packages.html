@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Browse all Trip Harbour holiday packages — honeymoon, family, adventure, corporate & international tours. 29+ curated packages starting ₹14,999/person.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trip Harbour">
+<meta property="og:url" content="https://holidaycaravan.github.io/Tripharbr/packages.html">
+<meta property="og:title" content="All Holiday Packages 2026 — Trip Harbour">
+<meta property="og:description" content="Browse 29+ curated holiday packages — honeymoon, family, adventure, corporate & international tours. Dedicated tour manager on every trip.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="All Holiday Packages 2026 — Trip Harbour">
+<meta name="twitter:description" content="Browse 29+ curated holiday packages — honeymoon, family, adventure, corporate & international tours.">
+<link rel="canonical" href="https://holidaycaravan.github.io/Tripharbr/packages.html">
+<title>All Holiday Packages 2026 | Trip Harbour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2BBFB3;--teal-dark:#1a9e93;--teal-light:#e8faf9;--teal-mid:#c2f0ec;--black:#111827;--charcoal:#1f2937;--grey:#6b7280;--grey-light:#f3f4f6;--grey-mid:#e5e7eb;--white:#ffffff;--gold:#f59e0b;--font-display:'Playfair Display',serif;--font-body:'DM Sans',sans-serif;--shadow-sm:0 2px 8px rgba(0,0,0,0.08);--shadow-md:0 8px 32px rgba(0,0,0,0.12);--radius:16px;--radius-sm:8px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:var(--font-body);color:var(--black);background:var(--white);overflow-x:hidden;}a{text-decoration:none;color:inherit;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--grey-mid);height:68px;display:flex;align-items:center;padding:0 4%;gap:2rem;}
+.nav-logo{font-family:var(--font-display);font-size:1.5rem;font-weight:900;color:var(--black);white-space:nowrap;flex-shrink:0;}.nav-logo span{color:var(--teal);}
+.nav-links{display:flex;align-items:center;gap:0.2rem;flex:1;justify-content:center;}.nav-links a{font-size:0.875rem;font-weight:500;color:var(--charcoal);padding:0.5rem 0.75rem;border-radius:var(--radius-sm);}.nav-links a:hover{background:var(--teal-light);color:var(--teal-dark);}
+.nav-right{display:flex;align-items:center;gap:0.75rem;flex-shrink:0;}.btn-plan{background:var(--teal);color:var(--white);border:none;border-radius:24px;padding:0.6rem 1.4rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-body);white-space:nowrap;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}.hamburger span{width:24px;height:2px;background:var(--black);border-radius:2px;display:block;}
+.mobile-menu{position:fixed;inset:0;top:68px;z-index:999;background:var(--white);padding:1.5rem 4%;display:none;flex-direction:column;gap:0.5rem;border-top:1px solid var(--grey-mid);}.mobile-menu.open{display:flex;}.mobile-menu a{padding:0.75rem 1rem;border-radius:var(--radius-sm);font-size:1rem;font-weight:500;color:var(--charcoal);}
+
+/* PAGE HERO */
+.page-hero{margin-top:68px;background:linear-gradient(135deg,#0d2b28 0%,#1a9e93 60%,#2BBFB3 100%);padding:3.5rem 4% 3rem;color:var(--white);}
+.page-hero-inner{max-width:1200px;margin:0 auto;}
+.page-hero-label{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:0.75rem;}
+.page-hero-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.15;margin-bottom:0.75rem;}
+.page-hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.82);max-width:520px;}
+.hero-stats{display:flex;gap:2.5rem;margin-top:2rem;flex-wrap:wrap;}
+.hero-stat-num{font-family:var(--font-display);font-size:1.8rem;font-weight:900;}.hero-stat-label{font-size:0.78rem;color:rgba(255,255,255,0.7);margin-top:0.15rem;}
+
+/* FILTERS */
+.filters-bar{background:var(--white);border-bottom:1px solid var(--grey-mid);padding:1.25rem 4%;position:sticky;top:68px;z-index:100;}
+.filters-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.filter-group{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.filter-chip{background:var(--white);border:1.5px solid var(--grey-mid);border-radius:24px;padding:0.4rem 1rem;font-size:0.82rem;font-weight:600;cursor:pointer;color:var(--charcoal);transition:all 0.2s;font-family:var(--font-body);}
+.filter-chip:hover,.filter-chip.active{background:var(--teal);color:var(--white);border-color:var(--teal);}
+.filter-sep{width:1px;height:24px;background:var(--grey-mid);}
+.search-wrap{margin-left:auto;position:relative;}
+.search-wrap input{border:1.5px solid var(--grey-mid);border-radius:24px;padding:0.4rem 1rem 0.4rem 2.2rem;font-size:0.82rem;font-family:var(--font-body);outline:none;width:200px;}
+.search-wrap input:focus{border-color:var(--teal);}
+.search-icon{position:absolute;left:0.7rem;top:50%;transform:translateY(-50%);color:var(--grey);font-size:0.9rem;}
+
+/* GRID */
+.pkg-main{max-width:1200px;margin:0 auto;padding:2.5rem 4%;}
+.pkg-count{font-size:0.85rem;color:var(--grey);margin-bottom:1.5rem;}
+.pkg-count strong{color:var(--black);}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+
+/* CARD */
+.pc{background:var(--white);border:1.5px solid var(--grey-mid);border-radius:var(--radius);overflow:hidden;transition:all 0.25s;display:flex;flex-direction:column;}
+.pc:hover{border-color:var(--teal);box-shadow:var(--shadow-md);transform:translateY(-4px);}
+.pc.hidden{display:none;}
+.pc-img{height:170px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.pc-badge{position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);color:var(--white);font-size:0.7rem;font-weight:700;padding:0.25rem 0.7rem;border-radius:20px;backdrop-filter:blur(4px);}
+.pc-cat-badge{position:absolute;top:12px;right:12px;font-size:0.68rem;font-weight:700;padding:0.25rem 0.7rem;border-radius:20px;}
+.cat-honeymoon{background:#e91e8c;color:#fff;}
+.cat-family{background:#2196f3;color:#fff;}
+.cat-adventure{background:#ff6b35;color:#fff;}
+.cat-international{background:#7c3aed;color:#fff;}
+.cat-offsite{background:#059669;color:#fff;}
+.cat-corporate{background:#1f2937;color:#fff;}
+.cat-beach{background:#0ea5e9;color:#fff;}
+.pc-body{padding:1.1rem;flex:1;display:flex;flex-direction:column;}
+.pc-name{font-weight:700;font-size:0.95rem;line-height:1.35;margin-bottom:0.5rem;}
+.pc-meta{display:flex;gap:0.75rem;margin-bottom:0.75rem;flex-wrap:wrap;}
+.pc-meta-item{font-size:0.75rem;color:var(--grey);display:flex;align-items:center;gap:0.3rem;}
+.pc-tags{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.9rem;}
+.pc-tag{background:var(--teal-light);color:var(--teal-dark);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.7rem;font-weight:600;}
+.pc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--grey-mid);}
+.pc-price{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--teal-dark);}
+.pc-price span{font-family:var(--font-body);font-size:0.72rem;color:var(--grey);font-weight:400;}
+.pc-btns{display:flex;gap:0.4rem;}
+.btn-view{background:transparent;border:1.5px solid var(--teal);color:var(--teal);border-radius:20px;padding:0.35rem 0.9rem;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all 0.2s;}
+.btn-view:hover{background:var(--teal);color:var(--white);}
+.btn-enq{background:var(--teal);color:var(--white);border:1.5px solid var(--teal);border-radius:20px;padding:0.35rem 0.9rem;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all 0.2s;}
+.btn-enq:hover{background:var(--teal-dark);}
+.no-results{text-align:center;padding:4rem 1rem;color:var(--grey);}
+.no-results h3{font-size:1.2rem;margin-bottom:0.5rem;color:var(--black);}
+
+/* POPUP */
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem;}
+.popup-overlay.open{display:flex;}
+.popup-box{background:var(--white);border-radius:var(--radius);padding:2rem;max-width:480px;width:100%;position:relative;}
+.popup-close{position:absolute;top:1rem;right:1rem;background:var(--grey-light);border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;}
+.popup-title{font-family:var(--font-display);font-size:1.4rem;font-weight:900;margin-bottom:0.4rem;}
+.popup-sub{font-size:0.85rem;color:var(--grey);margin-bottom:1.25rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem;}
+.form-group{display:flex;flex-direction:column;gap:0.3rem;margin-bottom:0.75rem;}
+.form-group label{font-size:0.78rem;font-weight:600;color:var(--charcoal);}
+.form-group input,.form-group select,.form-group textarea{border:1.5px solid var(--grey-mid);border-radius:var(--radius-sm);padding:0.6rem 0.8rem;font-size:0.85rem;font-family:var(--font-body);outline:none;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--teal);}
+.btn-submit{background:var(--teal);color:var(--white);border:none;border-radius:24px;padding:0.75rem 2rem;font-size:0.9rem;font-weight:700;cursor:pointer;font-family:var(--font-body);width:100%;margin-top:0.5rem;}
+
+/* FOOTER */
+footer{background:var(--charcoal);color:rgba(255,255,255,0.7);padding:2rem 4%;text-align:center;font-size:0.82rem;margin-top:4rem;}
+footer a{color:var(--teal);}
+
+@media(max-width:900px){.packages-grid{grid-template-columns:repeat(2,1fr);}.nav-links{display:none;}.hamburger{display:flex;}.filters-inner{gap:0.5rem;}.search-wrap{margin-left:0;width:100%;}.search-wrap input{width:100%;}}
+@media(max-width:600px){.packages-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.hero-stats{gap:1.5rem;}.filters-bar{overflow-x:auto;}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">Trip<span>Harbour</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#destinations">Destinations</a>
+    <a href="honeymoon.html">Honeymoon</a>
+    <a href="family.html">Family Tours</a>
+    <a href="corporate.html">Corporate</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-plan" onclick="openPopup()">Plan My Trip</button>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html#destinations">Destinations</a>
+  <a href="honeymoon.html">Honeymoon</a>
+  <a href="family.html">Family Tours</a>
+  <a href="corporate.html">Corporate</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">Curated for you</div>
+    <h1 class="page-hero-title">All Holiday Packages</h1>
+    <p class="page-hero-sub">Every package is built around your comfort, budget and time — with a dedicated tour manager on every trip.</p>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num">29+</div><div class="hero-stat-label">Packages</div></div>
+      <div><div class="hero-stat-num">15+</div><div class="hero-stat-label">Destinations</div></div>
+      <div><div class="hero-stat-num">₹14,999</div><div class="hero-stat-label">Starting from</div></div>
+      <div><div class="hero-stat-num">2 hrs</div><div class="hero-stat-label">Quote turnaround</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<div class="filters-bar">
+  <div class="filters-inner">
+    <div class="filter-group">
+      <button class="filter-chip active" onclick="filter(this,'all')">All</button>
+      <button class="filter-chip" onclick="filter(this,'honeymoon')">Honeymoon</button>
+      <button class="filter-chip" onclick="filter(this,'family')">Family</button>
+      <button class="filter-chip" onclick="filter(this,'adventure')">Adventure</button>
+      <button class="filter-chip" onclick="filter(this,'international')">International</button>
+      <button class="filter-chip" onclick="filter(this,'beach')">Beach</button>
+      <button class="filter-chip" onclick="filter(this,'offsite')">Team Offsites</button>
+      <button class="filter-chip" onclick="filter(this,'corporate')">Corporate</button>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon">&#128269;</span>
+      <input type="text" id="searchInput" placeholder="Search packages…" oninput="searchPkg()">
+    </div>
+  </div>
+</div>
+
+<!-- PACKAGES GRID -->
+<div class="pkg-main">
+  <div class="pkg-count" id="pkgCount">Showing <strong>29</strong> packages</div>
+  <div class="packages-grid" id="pkgGrid">
+
+    <!-- HONEYMOON -->
+    <div class="pc" data-cat="honeymoon" data-name="7 days kashmir honeymoon package dal lake gulmarg pahalgam">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0a2a14,#1a5c2a,#2d8a44)">
+        <div class="pc-badge">&#127968; Kashmir</div>
+        <div class="pc-cat-badge cat-honeymoon">Honeymoon</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><path d="M32 54C32 54 10 40 10 24C10 17 16 12 22 12C27 12 31 16 32 20C33 16 37 12 42 12C48 12 54 17 54 24C54 40 32 54 32 54Z" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">7 Days Kashmir Honeymoon Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 7 Days</span><span class="pc-meta-item">&#128143; Couple</span></div>
+        <div class="pc-tags"><span class="pc-tag">Houseboat</span><span class="pc-tag">Gulmarg</span><span class="pc-tag">Shikara Ride</span><span class="pc-tag">Tour Manager</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;28,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-kashmir-honeymoon-7d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('7 Days Kashmir Honeymoon')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="honeymoon" data-name="6 days kerala honeymoon backwaters munnar alleppey houseboat">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0d3b1a,#1a7a35,#26a84a)">
+        <div class="pc-badge">&#127881; Kerala</div>
+        <div class="pc-cat-badge cat-honeymoon">Honeymoon</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><path d="M32 54C32 54 10 40 10 24C10 17 16 12 22 12C27 12 31 16 32 20C33 16 37 12 42 12C48 12 54 17 54 24C54 40 32 54 32 54Z" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Kerala Honeymoon Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128143; Couple</span></div>
+        <div class="pc-tags"><span class="pc-tag">Backwaters</span><span class="pc-tag">Munnar</span><span class="pc-tag">Houseboat</span><span class="pc-tag">Meals</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;24,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-kerala-honeymoon-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Kerala Honeymoon')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="honeymoon beach" data-name="5 days bali honeymoon ubud seminyak rice terrace villa">
+      <div class="pc-img" style="background:linear-gradient(135deg,#4a1a0a,#9e5c1a,#c8832a)">
+        <div class="pc-badge">&#127754; Bali</div>
+        <div class="pc-cat-badge cat-honeymoon">Honeymoon</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><path d="M32 54C32 54 10 40 10 24C10 17 16 12 22 12C27 12 31 16 32 20C33 16 37 12 42 12C48 12 54 17 54 24C54 40 32 54 32 54Z" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">5 Days Bali Honeymoon Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 5 Days</span><span class="pc-meta-item">&#128143; Couple</span></div>
+        <div class="pc-tags"><span class="pc-tag">Villa Resort</span><span class="pc-tag">Ubud</span><span class="pc-tag">Seminyak</span><span class="pc-tag">Visa</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;32,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-bali-honeymoon-5d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('5 Days Bali Honeymoon')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="honeymoon beach" data-name="5 days andaman honeymoon havelock radhanagar beach cottage neil island">
+      <div class="pc-img" style="background:linear-gradient(135deg,#003a5c,#0066a0,#0099cc)">
+        <div class="pc-badge">&#127754; Andaman</div>
+        <div class="pc-cat-badge cat-honeymoon">Honeymoon</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><path d="M32 54C32 54 10 40 10 24C10 17 16 12 22 12C27 12 31 16 32 20C33 16 37 12 42 12C48 12 54 17 54 24C54 40 32 54 32 54Z" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">5 Days Andaman Honeymoon Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 5 Days</span><span class="pc-meta-item">&#128143; Couple</span></div>
+        <div class="pc-tags"><span class="pc-tag">Havelock</span><span class="pc-tag">Radhanagar</span><span class="pc-tag">Beach Cottage</span><span class="pc-tag">Snorkelling</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;29,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-andaman-honeymoon-5d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('5 Days Andaman Honeymoon')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="honeymoon beach" data-name="5 days goa honeymoon beach resort sunset water sports calangute candolim">
+      <div class="pc-img" style="background:linear-gradient(135deg,#1a5c1a,#2a8c2a,#3ac03a)">
+        <div class="pc-badge">&#127754; Goa</div>
+        <div class="pc-cat-badge cat-honeymoon">Honeymoon</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><path d="M32 54C32 54 10 40 10 24C10 17 16 12 22 12C27 12 31 16 32 20C33 16 37 12 42 12C48 12 54 17 54 24C54 40 32 54 32 54Z" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">5 Days Goa Honeymoon Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 5 Days</span><span class="pc-meta-item">&#128143; Couple</span></div>
+        <div class="pc-tags"><span class="pc-tag">Beach Resort</span><span class="pc-tag">Water Sports</span><span class="pc-tag">Sunset Cruise</span><span class="pc-tag">Candlelit Dinner</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;20,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-goa-honeymoon-5d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('5 Days Goa Honeymoon')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="honeymoon" data-name="6 days rajasthan honeymoon jaipur jaisalmer udaipur palace fort camel safari">
+      <div class="pc-img" style="background:linear-gradient(135deg,#5c1a00,#a03000,#c84a10)">
+        <div class="pc-badge">&#127963; Rajasthan</div>
+        <div class="pc-cat-badge cat-honeymoon">Honeymoon</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><path d="M32 54C32 54 10 40 10 24C10 17 16 12 22 12C27 12 31 16 32 20C33 16 37 12 42 12C48 12 54 17 54 24C54 40 32 54 32 54Z" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Rajasthan Honeymoon Tour</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128143; Couple</span></div>
+        <div class="pc-tags"><span class="pc-tag">Jaipur</span><span class="pc-tag">Jaisalmer</span><span class="pc-tag">Udaipur</span><span class="pc-tag">Palace Stay</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;28,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-rajasthan-honeymoon-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Rajasthan Honeymoon')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="honeymoon adventure" data-name="6 days ladakh couple pangong tso nubra valley leh motorcycle">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0a1a3a,#1a3a6b,#2a5a9e)">
+        <div class="pc-badge">&#127956; Ladakh</div>
+        <div class="pc-cat-badge cat-honeymoon">Honeymoon</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><polygon points="32,8 56,48 8,48" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Ladakh Couple Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128143; Couple</span></div>
+        <div class="pc-tags"><span class="pc-tag">Pangong Tso</span><span class="pc-tag">Nubra Valley</span><span class="pc-tag">Permits</span><span class="pc-tag">Oxygen</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;26,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-ladakh-couple-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Ladakh Couple')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAMILY -->
+    <div class="pc" data-cat="family" data-name="7 days kerala family holiday munnar backwaters alleppey kids">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0d3b1a,#1a7a35,#26a84a)">
+        <div class="pc-badge">&#127881; Kerala</div>
+        <div class="pc-cat-badge cat-family">Family</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="22" cy="22" r="9" fill="white"/><circle cx="42" cy="22" r="9" fill="white"/><circle cx="32" cy="38" r="7" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">7 Days Kerala Family Holiday</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 7 Days</span><span class="pc-meta-item">&#128106; Family</span></div>
+        <div class="pc-tags"><span class="pc-tag">Munnar</span><span class="pc-tag">Backwaters</span><span class="pc-tag">Meals</span><span class="pc-tag">Tour Manager</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;22,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-kerala-family-7d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('7 Days Kerala Family')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="family" data-name="6 days kashmir family holidays dal lake gulmarg snow children">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0a2a14,#1a5c2a,#2d8a44)">
+        <div class="pc-badge">&#10052; Kashmir</div>
+        <div class="pc-cat-badge cat-family">Family</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="22" cy="22" r="9" fill="white"/><circle cx="42" cy="22" r="9" fill="white"/><circle cx="32" cy="38" r="7" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Kashmir Family Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128106; Family</span></div>
+        <div class="pc-tags"><span class="pc-tag">Dal Lake</span><span class="pc-tag">Gulmarg</span><span class="pc-tag">Pahalgam</span><span class="pc-tag">Hotel</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;22,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-kashmir-family-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Kashmir Family')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="family adventure" data-name="7 days ladakh family adventure pangong kids high altitude mountains">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0a1a3a,#1a3a6b,#2a5a9e)">
+        <div class="pc-badge">&#127956; Ladakh</div>
+        <div class="pc-cat-badge cat-family">Family</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="22" cy="22" r="9" fill="white"/><circle cx="42" cy="22" r="9" fill="white"/><circle cx="32" cy="38" r="7" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">7 Days Ladakh Family Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 7 Days</span><span class="pc-meta-item">&#128106; Family</span></div>
+        <div class="pc-tags"><span class="pc-tag">Pangong</span><span class="pc-tag">Nubra</span><span class="pc-tag">Permits</span><span class="pc-tag">Oxygen</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;32,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-ladakh-family-7d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('7 Days Ladakh Family')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="family" data-name="7 days himachal family shimla manali kullu kufri snow rohtang">
+      <div class="pc-img" style="background:linear-gradient(135deg,#3a1a5c,#5c2d91,#7a4ab0)">
+        <div class="pc-badge">&#10052; Himachal</div>
+        <div class="pc-cat-badge cat-family">Family</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="22" cy="22" r="9" fill="white"/><circle cx="42" cy="22" r="9" fill="white"/><circle cx="32" cy="38" r="7" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">7 Days Himachal Family Tour</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 7 Days</span><span class="pc-meta-item">&#128106; Family</span></div>
+        <div class="pc-tags"><span class="pc-tag">Shimla</span><span class="pc-tag">Manali</span><span class="pc-tag">Kullu</span><span class="pc-tag">Kufri</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;22,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-himachal-family-7d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('7 Days Himachal Family')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="family beach" data-name="6 days andaman family port blair havelock ross island kids beach">
+      <div class="pc-img" style="background:linear-gradient(135deg,#003a5c,#0066a0,#0099cc)">
+        <div class="pc-badge">&#127754; Andaman</div>
+        <div class="pc-cat-badge cat-family">Family</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="22" cy="22" r="9" fill="white"/><circle cx="42" cy="22" r="9" fill="white"/><circle cx="32" cy="38" r="7" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Andaman Family Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128106; Family</span></div>
+        <div class="pc-tags"><span class="pc-tag">Havelock</span><span class="pc-tag">Neil Island</span><span class="pc-tag">Glass Boat</span><span class="pc-tag">Beach</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;26,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-andaman-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Andaman Family')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="family" data-name="6 days bali family ubud temple kids activities waterbom">
+      <div class="pc-img" style="background:linear-gradient(135deg,#4a1a0a,#9e5c1a,#c8832a)">
+        <div class="pc-badge">&#127754; Bali</div>
+        <div class="pc-cat-badge cat-family">Family</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="22" cy="22" r="9" fill="white"/><circle cx="42" cy="22" r="9" fill="white"/><circle cx="32" cy="38" r="7" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Bali Family Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128106; Family</span></div>
+        <div class="pc-tags"><span class="pc-tag">Ubud</span><span class="pc-tag">Waterbom Park</span><span class="pc-tag">Temple Tour</span><span class="pc-tag">Visa</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;28,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-bali-family-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Bali Family')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADVENTURE -->
+    <div class="pc" data-cat="adventure" data-name="9 days ladakh grand tour pangong tso moriri nubra khardung la">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0a1a3a,#1a3a6b,#2a5a9e)">
+        <div class="pc-badge">&#127956; Ladakh</div>
+        <div class="pc-cat-badge cat-adventure">Adventure</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><polygon points="32,8 56,48 8,48" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">9 Days Ladakh Grand Tour</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 9 Days</span><span class="pc-meta-item">&#128101; Group / Solo</span></div>
+        <div class="pc-tags"><span class="pc-tag">Pangong + Tso Moriri</span><span class="pc-tag">Nubra</span><span class="pc-tag">Khardung La</span><span class="pc-tag">Permits</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;42,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-ladakh-grand-9d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('9 Days Ladakh Grand Tour')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="adventure" data-name="8 days spiti valley key monastery chandrataal kaza nako himalayan">
+      <div class="pc-img" style="background:linear-gradient(135deg,#2a1a0a,#5c3a1a,#8c5a2a)">
+        <div class="pc-badge">&#127956; Spiti Valley</div>
+        <div class="pc-cat-badge cat-adventure">Adventure</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><polygon points="32,8 56,48 8,48" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">8 Days Spiti Valley Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 8 Days</span><span class="pc-meta-item">&#128101; Small Group</span></div>
+        <div class="pc-tags"><span class="pc-tag">Key Monastery</span><span class="pc-tag">Chandratal</span><span class="pc-tag">Kaza</span><span class="pc-tag">Offbeat</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;24,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-spiti-8d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('8 Days Spiti Valley')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="adventure" data-name="6 days manali rohtang solang snow bike adventure kullu valley">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0a1a2a,#1a3a5c,#2a5c8c)">
+        <div class="pc-badge">&#10052; Manali</div>
+        <div class="pc-cat-badge cat-adventure">Adventure</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><polygon points="32,8 56,48 8,48" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Manali & Rohtang Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Rohtang Pass</span><span class="pc-tag">Solang Valley</span><span class="pc-tag">Snow Activities</span><span class="pc-tag">Bike Rental</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;18,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-manali-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Manali')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="adventure" data-name="5 days kashmir snow winter skiing gulmarg snowboard frozen dal lake">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0a1a2a,#1a3a5c,#2a5c8c)">
+        <div class="pc-badge">&#10052; Kashmir Snow</div>
+        <div class="pc-cat-badge cat-adventure">Adventure</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><polygon points="32,8 56,48 8,48" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">5 Days Kashmir Snow Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 5 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Gulmarg Ski</span><span class="pc-tag">Gondola</span><span class="pc-tag">Frozen Dal</span><span class="pc-tag">Snowboard</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;24,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-kashmir-snow-5d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('5 Days Kashmir Snow')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="adventure" data-name="7 days uttarakhand rishikesh haridwar mussoorie rafting yoga spiritual">
+      <div class="pc-img" style="background:linear-gradient(135deg,#1a0a3a,#3a1a6b,#5c2d9e)">
+        <div class="pc-badge">&#127774; Uttarakhand</div>
+        <div class="pc-cat-badge cat-adventure">Adventure</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><polygon points="32,8 56,48 8,48" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">7 Days Uttarakhand — Rishikesh & Mussoorie</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 7 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Rishikesh Rafting</span><span class="pc-tag">Haridwar</span><span class="pc-tag">Mussoorie</span><span class="pc-tag">Yoga</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;18,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-uttarakhand-7d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('7 Days Uttarakhand')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="adventure" data-name="4 days coorg coffee trail waterfall abbey falls estate plantation">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0a2a0a,#1a5c1a,#2d8a2d)">
+        <div class="pc-badge">&#9749; Coorg</div>
+        <div class="pc-cat-badge cat-adventure">Nature</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><polygon points="32,8 56,48 8,48" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">4 Days Coorg — Coffee Trails & Waterfalls</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 4 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Abbey Falls</span><span class="pc-tag">Coffee Estate</span><span class="pc-tag">Trekking</span><span class="pc-tag">Bird Watching</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;14,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-coorg-4d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('4 Days Coorg')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="adventure" data-name="7 days rajasthan royal tour jaipur jaisalmer udaipur jodhpur camel safari fort palace">
+      <div class="pc-img" style="background:linear-gradient(135deg,#5c1a00,#a03000,#c84a10)">
+        <div class="pc-badge">&#127963; Rajasthan</div>
+        <div class="pc-cat-badge cat-adventure">Heritage</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><polygon points="32,8 56,48 8,48" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">7 Days Rajasthan Royal Tour</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 7 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Jaipur</span><span class="pc-tag">Jaisalmer</span><span class="pc-tag">Udaipur</span><span class="pc-tag">Camel Safari</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;26,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-rajasthan-7d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('7 Days Rajasthan')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WELLNESS -->
+    <div class="pc" data-cat="family" data-name="6 days kerala ayurveda retreat wellness panchakarma spa backwaters munnar">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0d3b1a,#1a7a35,#26a84a)">
+        <div class="pc-badge">&#127807; Kerala Ayurveda</div>
+        <div class="pc-cat-badge cat-family" style="background:#059669">Wellness</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="32" cy="32" r="20" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Kerala Ayurveda Retreat</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Panchakarma</span><span class="pc-tag">Spa</span><span class="pc-tag">Backwaters</span><span class="pc-tag">Yoga</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;32,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-kerala-ayurveda-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Kerala Ayurveda')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEACH -->
+    <div class="pc" data-cat="beach" data-name="5 days goa beach holiday calangute baga shacks water sports north south goa">
+      <div class="pc-img" style="background:linear-gradient(135deg,#1a5c1a,#2a8c2a,#3ac03a)">
+        <div class="pc-badge">&#127754; Goa</div>
+        <div class="pc-cat-badge cat-beach">Beach</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="32" cy="32" r="20" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">5 Days Goa Beach Holiday</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 5 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">North + South Goa</span><span class="pc-tag">Water Sports</span><span class="pc-tag">Beach Shacks</span><span class="pc-tag">Hotel</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;18,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-goa-5d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('5 Days Goa Beach')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="beach international" data-name="4 days bali basic first timer kuta seminyak tanah lot temple popular beaches visa">
+      <div class="pc-img" style="background:linear-gradient(135deg,#4a1a0a,#9e5c1a,#c8832a)">
+        <div class="pc-badge">&#127754; Bali</div>
+        <div class="pc-cat-badge cat-beach">Beach</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="32" cy="32" r="20" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">4 Days Bali — First Timer Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 4 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Kuta</span><span class="pc-tag">Seminyak</span><span class="pc-tag">Tanah Lot</span><span class="pc-tag">Visa on Arrival</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;22,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-bali-basic-4d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('4 Days Bali Basic')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERNATIONAL -->
+    <div class="pc" data-cat="international" data-name="5 days dubai burj khalifa desert safari gold souk mall of emirates">
+      <div class="pc-img" style="background:linear-gradient(135deg,#2a1a0a,#5c3a0a,#9e6b1a)">
+        <div class="pc-badge">&#127963; Dubai</div>
+        <div class="pc-cat-badge cat-international">International</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><rect x="20" y="16" width="8" height="32" fill="white"/><rect x="32" y="8" width="8" height="40" fill="white"/><rect x="44" y="20" width="8" height="28" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">5 Days Dubai Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 5 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Burj Khalifa</span><span class="pc-tag">Desert Safari</span><span class="pc-tag">Gold Souk</span><span class="pc-tag">Visa Assist</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;44,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-dubai-5d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('5 Days Dubai')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="international" data-name="5 days singapore gardens by the bay marina sentosa universal studios">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0a1a3a,#1a3a6b,#2a5a9e)">
+        <div class="pc-badge">&#127968; Singapore</div>
+        <div class="pc-cat-badge cat-international">International</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><rect x="20" y="16" width="8" height="32" fill="white"/><rect x="32" y="8" width="8" height="40" fill="white"/><rect x="44" y="20" width="8" height="28" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">5 Days Singapore Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 5 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Gardens by Bay</span><span class="pc-tag">Marina Bay</span><span class="pc-tag">Sentosa</span><span class="pc-tag">Visa Assist</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;42,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-singapore-5d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('5 Days Singapore')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="international" data-name="5 days maldives overwater villa snorkelling sunset cruise seaplane honeymoon">
+      <div class="pc-img" style="background:linear-gradient(135deg,#003a5c,#0066a0,#0099cc)">
+        <div class="pc-badge">&#127754; Maldives</div>
+        <div class="pc-cat-badge cat-international">International</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="32" cy="32" r="20" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">5 Days Maldives Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 5 Days</span><span class="pc-meta-item">&#128143; Couple / Family</span></div>
+        <div class="pc-tags"><span class="pc-tag">Overwater Villa</span><span class="pc-tag">Snorkelling</span><span class="pc-tag">Seaplane</span><span class="pc-tag">All Meals</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;64,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-maldives-5d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('5 Days Maldives')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="international" data-name="6 days thailand bangkok pattaya phuket phi phi island temples street food">
+      <div class="pc-img" style="background:linear-gradient(135deg,#3a0a0a,#6b1a1a,#a02a2a)">
+        <div class="pc-badge">&#127963; Thailand</div>
+        <div class="pc-cat-badge cat-international">International</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><rect x="20" y="16" width="8" height="32" fill="white"/><rect x="32" y="8" width="8" height="40" fill="white"/><rect x="44" y="20" width="8" height="28" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Thailand Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Bangkok</span><span class="pc-tag">Pattaya</span><span class="pc-tag">Phuket</span><span class="pc-tag">Visa Assist</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;34,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-thailand-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Thailand')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="international" data-name="6 days sri lanka colombo kandy sigiriya galle cultural heritage beach">
+      <div class="pc-img" style="background:linear-gradient(135deg,#3a0a0a,#6b1a1a,#a02a2a)">
+        <div class="pc-badge">&#127968; Sri Lanka</div>
+        <div class="pc-cat-badge cat-international">International</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><polygon points="32,8 56,48 8,48" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Sri Lanka Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Colombo</span><span class="pc-tag">Kandy</span><span class="pc-tag">Sigiriya</span><span class="pc-tag">Galle</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;32,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-srilanka-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Sri Lanka')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="international" data-name="6 days vietnam hanoi ha long bay hoi an ho chi minh city cruise">
+      <div class="pc-img" style="background:linear-gradient(135deg,#2a0a0a,#5c1a1a,#8c2a2a)">
+        <div class="pc-badge">&#127963; Vietnam</div>
+        <div class="pc-cat-badge cat-international">International</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><polygon points="32,8 56,48 8,48" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">6 Days Vietnam Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 6 Days</span><span class="pc-meta-item">&#128101; All Groups</span></div>
+        <div class="pc-tags"><span class="pc-tag">Hanoi</span><span class="pc-tag">Ha Long Bay</span><span class="pc-tag">Hoi An</span><span class="pc-tag">Cruise</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;38,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-vietnam-6d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('6 Days Vietnam')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFFSITE / CORPORATE -->
+    <div class="pc" data-cat="offsite" data-name="3 days goa team offsite corporate group activities team building gst invoice">
+      <div class="pc-img" style="background:linear-gradient(135deg,#0d2b28,#1a9e93,#2BBFB3)">
+        <div class="pc-badge">&#127754; Goa Offsite</div>
+        <div class="pc-cat-badge cat-offsite">Team Offsite</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><circle cx="16" cy="24" r="7" fill="white"/><circle cx="32" cy="18" r="7" fill="white"/><circle cx="48" cy="24" r="7" fill="white"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">3 Days Goa Team Offsite Package</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 3 Days</span><span class="pc-meta-item">&#128101; Corporate Group</span></div>
+        <div class="pc-tags"><span class="pc-tag">Team Activities</span><span class="pc-tag">Beach Resort</span><span class="pc-tag">GST Invoice</span><span class="pc-tag">Event Manager</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;14,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-goa-5d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('Goa Team Offsite')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc" data-cat="corporate" data-name="4 days bali corporate retreat conference room team building resort activities">
+      <div class="pc-img" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a,#3a3a6a)">
+        <div class="pc-badge">&#127963; Bali Corporate</div>
+        <div class="pc-cat-badge cat-corporate">Corporate</div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.25"><rect x="16" y="24" width="32" height="20" rx="3" fill="white"/><rect x="22" y="16" width="20" height="10" rx="2" fill="white" opacity="0.7"/></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">4 Days Bali Corporate Retreat</div>
+        <div class="pc-meta"><span class="pc-meta-item">&#128197; 4 Days</span><span class="pc-meta-item">&#128101; Corporate</span></div>
+        <div class="pc-tags"><span class="pc-tag">Resort</span><span class="pc-tag">Conf. Room</span><span class="pc-tag">GST Invoice</span><span class="pc-tag">Team Activities</span></div>
+        <div class="pc-footer">
+          <div class="pc-price">&#8377;42,999 <span>/ person</span></div>
+          <div class="pc-btns">
+            <a href="pkg-bali-basic-4d.html" class="btn-view">View</a>
+            <button class="btn-enq" onclick="openPopup('Bali Corporate Retreat')">Enquire</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="no-results" id="noResults" style="display:none">
+    <h3>No packages found</h3>
+    <p>Try a different filter or search term.</p>
+  </div>
+</div>
+
+<!-- ENQUIRY POPUP -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">&#10005;</button>
+    <div class="popup-title">Plan My Trip</div>
+    <div class="popup-sub" id="popupSub">Tell us what you have in mind — we'll send a custom quote in 2 hours.</div>
+    <form action="https://formspree.io/f/tripharbour" method="POST">
+      <input type="hidden" name="package" id="popupPkg" value="">
+      <div class="form-row">
+        <div class="form-group"><label>Your Name *</label><input type="text" name="name" required></div>
+        <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Travel Month</label>
+          <select name="month"><option value="">Select month</option><option>July 2026</option><option>August 2026</option><option>September 2026</option><option>October 2026</option><option>November 2026</option><option>December 2026</option><option>January 2027</option><option>February 2027</option><option>March 2027</option></select>
+        </div>
+        <div class="form-group"><label>No. of Travellers</label>
+          <select name="pax"><option>1</option><option>2</option><option>3-5</option><option>6-10</option><option>10+</option></select>
+        </div>
+      </div>
+      <div class="form-group"><label>Budget per person (approx.)</label>
+        <select name="budget"><option value="">Flexible</option><option>Under ₹15,000</option><option>₹15,000 – ₹25,000</option><option>₹25,000 – ₹40,000</option><option>₹40,000 – ₹60,000</option><option>₹60,000+</option></select>
+      </div>
+      <button type="submit" class="btn-submit">Send My Enquiry &#8594;</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>&#169; 2026 Trip Harbour &mdash; Handcrafted travel, not templates. &nbsp;|&nbsp; <a href="https://wa.me/919140826298">WhatsApp Us</a> &nbsp;|&nbsp; <a href="contact.html">Contact</a></p>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);});
+
+let currentCat='all';
+function filter(btn,cat){
+  currentCat=cat;
+  document.querySelectorAll('.filter-chip').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+function searchPkg(){applyFilters();}
+function applyFilters(){
+  const q=document.getElementById('searchInput').value.toLowerCase();
+  const cards=document.querySelectorAll('.pc');
+  let visible=0;
+  cards.forEach(c=>{
+    const cats=c.dataset.cat||'';
+    const name=c.dataset.name||'';
+    const catMatch=currentCat==='all'||cats.includes(currentCat);
+    const qMatch=!q||name.includes(q)||c.querySelector('.pc-name').textContent.toLowerCase().includes(q);
+    if(catMatch&&qMatch){c.classList.remove('hidden');visible++;}
+    else{c.classList.add('hidden');}
+  });
+  document.getElementById('pkgCount').innerHTML='Showing <strong>'+visible+'</strong> packages';
+  document.getElementById('noResults').style.display=visible===0?'block':'none';
+}
+
+function openPopup(pkgName){
+  document.getElementById('popup').classList.add('open');
+  if(pkgName){
+    document.getElementById('popupPkg').value=pkgName;
+    document.getElementById('popupSub').textContent='Enquiring about: '+pkgName+'. We\'ll send a custom quote in 2 hours.';
+  }else{
+    document.getElementById('popupPkg').value='';
+    document.getElementById('popupSub').textContent='Tell us what you have in mind — we\'ll send a custom quote in 2 hours.';
+  }
+}
+function closePopup(){document.getElementById('popup').classList.remove('open');}
+document.getElementById('popup').addEventListener('click',function(e){if(e.target===this)closePopup();});
+</script>
+</body>
+</html>
