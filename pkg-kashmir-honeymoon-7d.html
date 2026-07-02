@@ -239,7 +239,139 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}
 
 <div class="pkg-body-layout">
   <div class="pkg-left">
+
+    <!-- Highlights -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">&#9733;</div> Trip Highlights</div>
+      <div class="highlights-grid">
+        <div class="highlight-item"><span class="highlight-dot"></span>Dal Lake Houseboat Stay</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Gulmarg Gondola Ride</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Pahalgam Valley Walk</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Shikara Ride at Sunrise</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Betaab Valley Excursion</div>
+        <div class="highlight-item"><span class="highlight-dot"></span>Sonmarg Day Trip</div>
+      </div>
     </div>
+
+    <!-- Itinerary -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">&#128197;</div> 7-Day Itinerary</div>
+      <div class="itinerary-list">
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">1</div></div>
+            <div class="itin-header-text"><div class="itin-title">Arrive Srinagar</div><div class="itin-sub">Airport pickup · Dal Lake houseboat check-in · Shikara at dusk</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner"><div class="itin-desc">Airport pickup · Dal Lake check-in on houseboat · Shikara ride at dusk · Welcome Wazwan dinner</div><div class="itin-tags"><span class="itin-tag transfer">Transfer</span><span class="itin-tag activity">Shikara</span><span class="itin-tag meal">Dinner</span><span class="itin-tag hotel">Houseboat</span></div></div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">2</div></div>
+            <div class="itin-header-text"><div class="itin-title">Srinagar Sightseeing</div><div class="itin-sub">Mughal Gardens · Shankaracharya Temple · Old City · Sunset shikara</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner"><div class="itin-desc">Mughal Gardens (Nishat, Shalimar, Chashme Shahi) · Shankaracharya Temple · Old City spice market · Sunset shikara</div><div class="itin-tags"><span class="itin-tag activity">Sightseeing</span><span class="itin-tag activity">Shikara</span></div></div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">3</div></div>
+            <div class="itin-header-text"><div class="itin-title">Gulmarg Day Trip</div><div class="itin-sub">Gondola Phase 1 &amp; 2 · Snow point · Alpine meadows</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner"><div class="itin-desc">Gondola Phase 1 &amp; 2 · Snow point · Alpine meadows · Optional skiing · Return Srinagar houseboat</div><div class="itin-tags"><span class="itin-tag activity">Gondola</span><span class="itin-tag activity">Snow</span><span class="itin-tag hotel">Houseboat</span></div></div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">4</div></div>
+            <div class="itin-header-text"><div class="itin-title">Pahalgam</div><div class="itin-sub">Baisaran meadow · Aru Valley walk · Betaab Valley picnic</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner"><div class="itin-desc">Drive through Baisaran meadow · Aru Valley walk · Betaab Valley picnic · Evening in Pahalgam market</div><div class="itin-tags"><span class="itin-tag transfer">Drive</span><span class="itin-tag activity">Valley Walk</span><span class="itin-tag hotel">Pahalgam Hotel</span></div></div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">5</div></div>
+            <div class="itin-header-text"><div class="itin-title">Sonmarg Excursion</div><div class="itin-sub">Thajiwas Glacier walk · Pony ride · Alpine wildflowers</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner"><div class="itin-desc">Thajiwas Glacier walk · Pony ride option · Alpine wildflowers · Return Srinagar houseboat</div><div class="itin-tags"><span class="itin-tag activity">Glacier Walk</span><span class="itin-tag transfer">Return Drive</span><span class="itin-tag hotel">Houseboat</span></div></div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">6</div></div>
+            <div class="itin-header-text"><div class="itin-title">Leisure &amp; Shopping</div><div class="itin-sub">Floating market · Cashmere shopping · Farewell Wazwan dinner</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner"><div class="itin-desc">Floating vegetable market at sunrise · Cashmere shawl shopping · Papier-m&acirc;ch&eacute; crafts · Farewell Wazwan dinner on houseboat</div><div class="itin-tags"><span class="itin-tag activity">Market</span><span class="itin-tag activity">Shopping</span><span class="itin-tag meal">Dinner</span></div></div></div>
+        </div>
+        <div class="itin-item">
+          <div class="itin-header" onclick="toggleItin(this)">
+            <div class="itin-day-badge"><div class="itin-day-label">Day</div><div class="itin-day-num">7</div></div>
+            <div class="itin-header-text"><div class="itin-title">Departure</div><div class="itin-sub">Morning shikara · Airport transfer · Fly home</div></div>
+            <div class="itin-arrow">&#9660;</div>
+          </div>
+          <div class="itin-body"><div class="itin-body-inner"><div class="itin-desc">Early morning shikara · Airport transfer · Fly home</div><div class="itin-tags"><span class="itin-tag activity">Shikara</span><span class="itin-tag transfer">Airport Transfer</span></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inclusions & Exclusions -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">&#10003;</div> What's Included</div>
+      <div class="inc-exc-grid">
+        <div class="inc-box">
+          <div class="inc-title">&#10003; Inclusions</div>
+          <div class="inc-list">
+            <div class="inc-item">6 nights (4N houseboat Dal Lake + 2N Pahalgam hotel)</div>
+            <div class="inc-item">Daily breakfast + dinner</div>
+            <div class="inc-item">Shikara rides (3 sessions)</div>
+            <div class="inc-item">Gondola Phase 1 &amp; 2 tickets</div>
+            <div class="inc-item">Airport/station transfers</div>
+            <div class="inc-item">Dedicated tour manager</div>
+            <div class="inc-item">24/7 WhatsApp support</div>
+            <div class="inc-item">AC vehicle throughout</div>
+            <div class="inc-item">All sightseeing as per itinerary</div>
+          </div>
+        </div>
+        <div class="exc-box">
+          <div class="exc-title">&#10007; Exclusions</div>
+          <div class="exc-list">
+            <div class="exc-item">Flights to/from Srinagar</div>
+            <div class="exc-item">Pony rides (optional)</div>
+            <div class="exc-item">Personal shopping</div>
+            <div class="exc-item">Optional adventure activities</div>
+            <div class="exc-item">Travel insurance</div>
+            <div class="exc-item">Tips</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotels -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">&#127968;</div> Hotels &amp; Stays</div>
+      <div class="hotel-card">
+        <div class="hotel-img">Dal Lake<br>Houseboat</div>
+        <div><div class="hotel-name">Dal Lake Houseboat</div><div class="hotel-location">Dal Lake, Srinagar &middot; 4 nights</div><div class="hotel-amenities"><span class="hotel-amenity">Heritage wooden houseboat</span><span class="hotel-amenity">Sitting deck</span><span class="hotel-amenity">In-room heating</span></div></div>
+      </div>
+      <div class="hotel-card">
+        <div class="hotel-img">Pahalgam<br>Resort</div>
+        <div><div class="hotel-name">Pahalgam Riverside Resort</div><div class="hotel-location">Pahalgam &middot; 2 nights</div><div class="hotel-amenities"><span class="hotel-amenity">Mountain views</span><span class="hotel-amenity">In-room fireplace</span></div></div>
+      </div>
+    </div>
+
+    <!-- Cancellation -->
+    <div class="pkg-section">
+      <div class="pkg-section-title"><div class="pkg-section-icon">&#8635;</div> Cancellation Policy</div>
+      <div class="cancel-table">
+        <div class="cancel-row"><span>30+ days before travel</span><span style="color:#166534;font-weight:600;">Full refund</span></div>
+        <div class="cancel-row"><span>15&ndash;29 days before travel</span><span style="color:#92400e;font-weight:600;">50% refund</span></div>
+        <div class="cancel-row"><span>7&ndash;14 days before travel</span><span style="color:#92400e;font-weight:600;">25% refund</span></div>
+        <div class="cancel-row"><span>Under 7 days</span><span style="color:#991b1b;font-weight:600;">No refund</span></div>
+      </div>
+    </div>
+
   </div>
 
   <div class="pkg-sidebar">
