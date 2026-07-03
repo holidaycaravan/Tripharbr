@@ -1454,6 +1454,13 @@ function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('op
 window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);});
 
 let currentCat='all';
+document.addEventListener('DOMContentLoaded',function(){
+  const cat=new URLSearchParams(location.search).get('cat');
+  if(cat){
+    const chip=document.querySelector('.filter-chip[onclick*="\''+cat+'\'"]');
+    if(chip){filter(chip,cat);}
+  }
+});
 function filter(btn,cat){
   currentCat=cat;
   document.querySelectorAll('.filter-chip').forEach(b=>b.classList.remove('active'));
