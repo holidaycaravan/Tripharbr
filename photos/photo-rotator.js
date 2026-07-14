@@ -4,38 +4,39 @@
  * Randomly selects photos on every page load and applies them
  * as background images, honouring per-photo focal points.
  *
- * Usage in HTML:
- *   <div data-photo="kashmir"></div>              hero-style single image
- *   <div data-photo="kashmir" data-photo-role="card"></div>
- *   <div data-photo="homepage" data-photo-role="hero"></div>
+ * Public API:
+ *   PhotoRotator.applyHero(dest, gradient)          hero background
+ *   PhotoRotator.applyCards(dest, selector, count)  up to `count` matched els
+ *   PhotoRotator.applyHomepage()                    index.html wiring
  *
- * Each folder photos/<destination>/manifest.json provides:
- *   { "destination": "...", "photos": [ { "file": "x.avif", "focal": "center" }, ... ] }
+ * Data sources: photos/<dest>/manifest.json, shape:
+ *   { "destination": "...", "photos": [ { "file": "x.avif", "focal": "center" } ] }
  *
- * Elements sharing a destination on the same page are given
- * distinct random photos where possible (no immediate repeats
- * until the pool is exhausted).
+ * Elements sharing a destination on one page get distinct random
+ * photos where the pool allows (no repeat until pool exhausted).
+ * A real photo is only swapped in after it successfully preloads,
+ * so any pre-existing gradient stays as a graceful fallback.
  */
 (function () {
   'use strict';
 
   var BASE = 'photos/';
-  var manifestCache = {};   // destination -> Promise<photos[]>
-  var usedByDest = {};      // destination -> [files already assigned this load]
+  var manifestCache = {};   // dest -> Promise<photos[]>
+  var usedByDest = {};      // dest -> [files assigned this load]
 
   function loadManifest(dest) {
     if (manifestCache[dest]) return manifestCache[dest];
     var url = BASE + dest + '/manifest.json';
     manifestCache[dest] = fetch(url)
       .then(function (r) {
-        if (!r.ok) throw new Error('manifest ' + r.status + ' for ' + dest);
+        if (!r.ok) throw new Error('manifest ' + r.status);
         return r.json();
       })
       .then(function (data) {
         return (data && Array.isArray(data.photos)) ? data.photos : [];
       })
       .catch(function (err) {
-        console.warn('[photo-rotator] could not load', url, err);
+        console.warn('[photo-rotator] cannot load', url, err);
         return [];
       });
     return manifestCache[dest];
@@ -44,7 +45,6 @@
   function pickPhoto(dest, photos) {
     if (!photos.length) return null;
     var used = usedByDest[dest] || (usedByDest[dest] = []);
-    // reset the pool once every photo has been shown
     if (used.length >= photos.length) used.length = 0;
     var available = photos.filter(function (p) { return used.indexOf(p.file) === -1; });
     var pool = available.length ? available : photos;
@@ -53,39 +53,72 @@
     return chosen;
   }
 
-  function applyPhoto(el, dest, photo) {
-    if (!photo) return;
-    var url = BASE + dest + '/' + encodeURIComponent(photo.file);
-    el.style.backgroundImage = "url('" + url + "')";
-    el.style.backgroundSize = el.style.backgroundSize || 'cover';
-    el.style.backgroundPosition = photo.focal || 'center';
-    el.style.backgroundRepeat = 'no-repeat';
-    el.setAttribute('data-photo-applied', photo.file);
-  }
-
-  function rotate(el) {
-    var dest = el.getAttribute('data-photo');
-    if (!dest) return;
+  // Preload, then swap the image in only on success (keeps fallback on error)
+  function applyToElement(el, dest) {
+    if (!el) return;
     loadManifest(dest).then(function (photos) {
-      applyPhoto(el, dest, pickPhoto(dest, photos));
+      var photo = pickPhoto(dest, photos);
+      if (!photo) return;
+      var url = BASE + dest + '/' + encodeURIComponent(photo.file);
+      var pre = new Image();
+      pre.onload = function () {
+        el.style.backgroundImage = "url('" + url + "')";
+        el.style.backgroundSize = 'cover';
+        el.style.backgroundPosition = photo.focal || 'center';
+        el.style.backgroundRepeat = 'no-repeat';
+        el.classList.add('photo-loaded');
+        // hide any "Photos Coming Soon" placeholder label inside the element
+        if (el.querySelector) {
+          var label = el.querySelector('.photo-label');
+          if (label) label.style.display = 'none';
+        }
+        el.setAttribute('data-photo-applied', photo.file);
+      };
+      pre.onerror = function () { /* keep existing gradient fallback */ };
+      pre.src = url;
     });
   }
 
-  function init() {
-    var els = document.querySelectorAll('[data-photo]');
-    Array.prototype.forEach.call(els, rotate);
+  function heroElement() {
+    return document.querySelector('.hero')
+        || document.querySelector('.pkg-hero-img')
+        || document.querySelector('.pkg-hero');
   }
 
-  // Public API for manual / dynamic re-rotation
+  function applyHero(dest, gradient) {
+    var el = heroElement();
+    if (!el) return;
+    if (gradient) el.style.background = gradient; // fallback until photo loads
+    applyToElement(el, dest);
+  }
+
+  function applyCards(dest, selector, count) {
+    var all = document.querySelectorAll(selector);
+    var els = Array.prototype.slice.call(all, 0, (count > 0 ? count : all.length));
+    els.forEach(function (el) { applyToElement(el, dest); });
+  }
+
+  function applyHomepage() {
+    // Hero uses the dedicated homepage photo set
+    applyHero('homepage', null);
+    // Destination cards: destination named directly on data-dest
+    Array.prototype.forEach.call(document.querySelectorAll('[data-dest]'), function (el) {
+      applyToElement(el, el.getAttribute('data-dest'));
+    });
+    // Package cards: destination is the prefix of data-pkg (e.g. "kashmir-honeymoon")
+    Array.prototype.forEach.call(document.querySelectorAll('[data-pkg]'), function (el) {
+      var dest = (el.getAttribute('data-pkg') || '').split('-')[0];
+      if (!dest) return;
+      var target = el.querySelector('.pkg-img') || el;
+      applyToElement(target, dest);
+    });
+  }
+
   window.PhotoRotator = {
-    rotateAll: init,
-    rotate: rotate,
-    rotateElement: rotate
+    applyHero: applyHero,
+    applyCards: applyCards,
+    applyHomepage: applyHomepage,
+    // low-level helpers, exposed for reuse
+    applyToElement: applyToElement
   };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
 })();

@@ -173,6 +173,32 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}
 .footer-links a:hover{color:var(--teal);}
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr);gap:2rem;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+/* Photo Rotation System */
+.hero {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: background-image 0.5s ease-in-out;
+}
+.dest-img,
+.pkg-img,
+.pkg-thumb,
+.dest-card-img,
+.related-card,
+.blog-cover {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden;
+}
+.hero.photo-loaded::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.5) 60%,
+    rgba(0,0,0,0.88) 100%
+  ) !important;
+}
 </style>
 </head>
 <body>
@@ -231,7 +257,7 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}
 <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="index.html#destinations">Destinations</a><span>›</span>Goa</div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" data-photo="goa">
   <svg style="position:absolute;bottom:0;left:0;right:0;width:100%;height:40%;z-index:0;" viewBox="0 0 1440 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <!-- Ocean waves -->
     <path d="M0 200 Q180 160 360 200 Q540 240 720 200 Q900 160 1080 200 Q1260 240 1440 200 L1440 280 L0 280Z" fill="rgba(13,90,138,0.4)"/>
@@ -664,6 +690,14 @@ function openPopup(){document.getElementById('popup').classList.add('open');docu
 function closePopup(){document.getElementById('popup').classList.remove('open');document.body.style.overflow='';}
 document.getElementById('popup').addEventListener('click',function(e){if(e.target===this)closePopup();});
 function filterPkg(btn,type){document.querySelectorAll('.pkg-filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.pkg-card').forEach(card=>{card.style.display=(type==='all'||card.dataset.type===type)?'block':'none';});}
+</script>
+<script src="photos/photo-rotator.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    PhotoRotator.applyHero('goa', 'linear-gradient(135deg,#001a35,#0d4a7a)');
+    PhotoRotator.applyCards('goa', '.pkg-card .pkg-img', 6);
+    PhotoRotator.applyCards('goa', '.related-card', 3);
+  });
 </script>
 </body>
 </html>

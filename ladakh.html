@@ -281,6 +281,32 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
 .footer-links a:hover{color:var(--teal);}
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr);gap:2rem;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+/* Photo Rotation System */
+.hero {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: background-image 0.5s ease-in-out;
+}
+.dest-img,
+.pkg-img,
+.pkg-thumb,
+.dest-card-img,
+.related-card,
+.blog-cover {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden;
+}
+.hero.photo-loaded::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.5) 60%,
+    rgba(0,0,0,0.88) 100%
+  ) !important;
+}
 </style>
 </head>
 <body class="lang-en">
@@ -346,7 +372,7 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
 <!-- PHOTO: To add a real hero photo, change the .hero CSS background to:
      background: url('photos/ladakh-hero.jpg') center/cover no-repeat;
      Recommended photo: landscape shot of Pangong Lake or Nubra Valley. Size: under 500KB. -->
-<section class="hero">
+<section class="hero" data-photo="ladakh">
   <!-- Mountain SVG silhouette -->
   <svg class="hero-mountains" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <polygon points="0,400 0,280 120,180 240,250 360,140 480,220 600,100 720,180 840,80 960,160 1080,60 1200,140 1320,100 1440,160 1440,400" fill="rgba(13,27,62,0.7)"/>
@@ -994,6 +1020,14 @@ function filterPkg(btn, type) {
     card.style.display = (type === 'all' || card.dataset.type === type) ? 'block' : 'none';
   });
 }
+</script>
+<script src="photos/photo-rotator.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    PhotoRotator.applyHero('ladakh', 'linear-gradient(135deg,#1a3060,#2d4a7a)');
+    PhotoRotator.applyCards('ladakh', '.pkg-card .pkg-img', 6);
+    PhotoRotator.applyCards('ladakh', '.related-card', 3);
+  });
 </script>
 </body>
 </html>

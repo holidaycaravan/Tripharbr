@@ -230,6 +230,32 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
 .footer-links a:hover{color:var(--teal);}
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr);gap:2rem;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+/* Photo Rotation System */
+.hero {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: background-image 0.5s ease-in-out;
+}
+.dest-img,
+.pkg-img,
+.pkg-thumb,
+.dest-card-img,
+.related-card,
+.blog-cover {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden;
+}
+.hero.photo-loaded::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.5) 60%,
+    rgba(0,0,0,0.88) 100%
+  ) !important;
+}
 </style>
 </head>
 <body class="lang-en">
@@ -293,7 +319,7 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
 
 <!-- HERO -->
 <!-- PHOTO: Overwater villas on a turquoise Maldives lagoon from above -->
-<section class="hero" style="background:linear-gradient(160deg, #001020 0%, #002a4a 40%, #004a7a 70%, #003a6a 100%);">
+<section class="hero" data-photo="maldives" style="background:linear-gradient(160deg, #001020 0%, #002a4a 40%, #004a7a 70%, #003a6a 100%);">
   <div class="hero-content">
     <div>
       <div class="dest-breadcrumb"><a href="index.html">Home</a> &#8250; <a href="index.html#destinations">Destinations</a> &#8250; Maldives</div>
@@ -662,6 +688,14 @@ function filterPkg(btn, type) {
     card.style.display = (type === 'all' || card.dataset.type === type) ? 'block' : 'none';
   });
 }
+</script>
+<script src="photos/photo-rotator.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    PhotoRotator.applyHero('maldives', 'linear-gradient(135deg,#001020,#002a4a)');
+    PhotoRotator.applyCards('maldives', '.pkg-card .pkg-img', 6);
+    PhotoRotator.applyCards('maldives', '.related-card', 3);
+  });
 </script>
 </body>
 </html>

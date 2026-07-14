@@ -642,6 +642,32 @@ footer {
 .fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
 .fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
 .fade-up-delay-3 { animation-delay: 0.35s; opacity: 0; }
+/* Photo Rotation System */
+.hero {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: background-image 0.5s ease-in-out;
+}
+.dest-img,
+.pkg-img,
+.pkg-thumb,
+.dest-card-img,
+.related-card,
+.blog-cover {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden;
+}
+.hero.photo-loaded::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.5) 60%,
+    rgba(0,0,0,0.88) 100%
+  ) !important;
+}
 </style>
 </head>
 <body class="lang-en">
@@ -753,7 +779,7 @@ footer {
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" data-photo="homepage">
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-tag fade-up en">India's Most Personal Travel Experience</div>
@@ -1108,7 +1134,7 @@ footer {
     </div>
     <div class="dest-grid">
       <!-- Each card uses a teal gradient placeholder — swap with real photos via CSS background-image -->
-      <a href="ladakh.html" class="dest-card" style="background:linear-gradient(135deg,#1a9e93,#0d6b63)">
+      <a href="ladakh.html" class="dest-card" data-dest="ladakh" style="background:linear-gradient(135deg,#1a9e93,#0d6b63)">
         <div class="dest-overlay"></div>
         <div class="dest-info">
           <div class="dest-name">Ladakh</div>
@@ -1118,7 +1144,7 @@ footer {
           <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
         </div>
       </a>
-      <a href="kashmir.html" class="dest-card" style="background:linear-gradient(135deg,#2BBFB3,#1a9e93)">
+      <a href="kashmir.html" class="dest-card" data-dest="kashmir" style="background:linear-gradient(135deg,#2BBFB3,#1a9e93)">
         <div class="dest-overlay"></div>
         <div class="dest-info">
           <div class="dest-name">Kashmir</div>
@@ -1128,7 +1154,7 @@ footer {
           <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
         </div>
       </a>
-      <a href="bali.html" class="dest-card" style="background:linear-gradient(135deg,#4dd4c8,#2BBFB3)">
+      <a href="bali.html" class="dest-card" data-dest="bali" style="background:linear-gradient(135deg,#4dd4c8,#2BBFB3)">
         <div class="dest-overlay"></div>
         <div class="dest-info">
           <div class="dest-name">Bali</div>
@@ -1138,7 +1164,7 @@ footer {
           <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
         </div>
       </a>
-      <a href="kerala.html" class="dest-card" style="background:linear-gradient(135deg,#0d6b63,#1a9e93)">
+      <a href="kerala.html" class="dest-card" data-dest="kerala" style="background:linear-gradient(135deg,#0d6b63,#1a9e93)">
         <div class="dest-overlay"></div>
         <div class="dest-info">
           <div class="dest-name">Kerala</div>
@@ -1148,7 +1174,7 @@ footer {
           <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
         </div>
       </a>
-      <a href="spiti.html" class="dest-card" style="background:linear-gradient(135deg,#3dccc0,#1a9e93)">
+      <a href="spiti.html" class="dest-card" data-dest="spiti" style="background:linear-gradient(135deg,#3dccc0,#1a9e93)">
         <div class="dest-overlay"></div>
         <div class="dest-info">
           <div class="dest-name">Spiti Valley</div>
@@ -1158,7 +1184,7 @@ footer {
           <div class="dest-explore hi" style="display:none">पैकेज देखें &#8594;</div>
         </div>
       </a>
-      <a href="thailand.html" class="dest-card" style="background:linear-gradient(135deg,#2BBFB3,#0d6b63)">
+      <a href="thailand.html" class="dest-card" data-dest="thailand" style="background:linear-gradient(135deg,#2BBFB3,#0d6b63)">
         <div class="dest-overlay"></div>
         <div class="dest-info">
           <div class="dest-name">Thailand</div>
@@ -1195,7 +1221,7 @@ footer {
       <button class="pkg-filter" onclick="filterPkg(this,'corporate')"><span class="en">Corporate Retreats</span><span class="hi" style="display:none">कॉर्पोरेट रिट्रीट</span></button>
     </div>
     <div class="pkg-grid" id="pkgGrid">
-      <div class="pkg-card" data-type="honeymoon">
+      <div class="pkg-card" data-pkg="kashmir-honeymoon" data-type="honeymoon">
         <div class="pkg-img" style="background:linear-gradient(135deg,#1a9e93,#4dd4c8)">
           <div class="pkg-badge">Honeymoon</div>
           <div class="pkg-img-placeholder">
@@ -1224,7 +1250,7 @@ footer {
           </div>
         </div>
       </div>
-      <div class="pkg-card" data-type="family">
+      <div class="pkg-card" data-pkg="kerala-family" data-type="family">
         <div class="pkg-img" style="background:linear-gradient(135deg,#2BBFB3,#0d6b63)">
           <div class="pkg-badge">Family</div>
           <div class="pkg-img-placeholder">
@@ -1253,7 +1279,7 @@ footer {
           </div>
         </div>
       </div>
-      <div class="pkg-card" data-type="honeymoon">
+      <div class="pkg-card" data-pkg="bali-honeymoon" data-type="honeymoon">
         <div class="pkg-img" style="background:linear-gradient(135deg,#4dd4c8,#1a9e93)">
           <div class="pkg-badge">Honeymoon</div>
           <div class="pkg-img-placeholder">
@@ -1282,7 +1308,7 @@ footer {
           </div>
         </div>
       </div>
-      <div class="pkg-card" data-type="offsite">
+      <div class="pkg-card" data-pkg="goa-offsite" data-type="offsite">
         <div class="pkg-img" style="background:linear-gradient(135deg,#0d6b63,#2BBFB3)">
           <div class="pkg-badge">Team Offsite</div>
           <div class="pkg-img-placeholder">
@@ -1311,7 +1337,7 @@ footer {
           </div>
         </div>
       </div>
-      <div class="pkg-card" data-type="family">
+      <div class="pkg-card" data-pkg="ladakh-family" data-type="family">
         <div class="pkg-img" style="background:linear-gradient(135deg,#1a9e93,#3dccc0)">
           <div class="pkg-badge">Family</div>
           <div class="pkg-img-placeholder">
@@ -1340,7 +1366,7 @@ footer {
           </div>
         </div>
       </div>
-      <div class="pkg-card" data-type="corporate">
+      <div class="pkg-card" data-pkg="bali-corporate" data-type="corporate">
         <div class="pkg-img" style="background:linear-gradient(135deg,#2BBFB3,#1a9e93)">
           <div class="pkg-badge">Corporate</div>
           <div class="pkg-img-placeholder">
@@ -1903,6 +1929,12 @@ function switchMonth(region, month, btn) {
 function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
+</script>
+<script src="photos/photo-rotator.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    PhotoRotator.applyHomepage();
+  });
 </script>
 </body>
 </html>

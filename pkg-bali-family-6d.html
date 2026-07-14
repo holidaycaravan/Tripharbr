@@ -167,6 +167,32 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}
 .footer-links a:hover{color:var(--teal);}
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr);gap:2rem;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+/* Photo Rotation System */
+.hero {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: background-image 0.5s ease-in-out;
+}
+.dest-img,
+.pkg-img,
+.pkg-thumb,
+.dest-card-img,
+.related-card,
+.blog-cover {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden;
+}
+.hero.photo-loaded::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.5) 60%,
+    rgba(0,0,0,0.88) 100%
+  ) !important;
+}
 </style>
 </head>
 <body>
@@ -219,7 +245,7 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}
 <div class="breadcrumb" style="margin-top:68px;"><a href="index.html">Home</a><span>›</span><a href="family.html">Family Tours</a><span>›</span><a href="bali.html">Bali</a><span>›</span><span>6 Days Bali Family</span></div>
 
 <div class="pkg-hero">
-  <div class="pkg-hero-img">
+  <div class="pkg-hero-img" data-photo="bali">
     <!-- PHOTO: Replace with url('photos/bali-family-pool.jpg') center/cover -->
     <div class="photo-label">&#128247; Photos Coming Soon</div>
     <div class="family-badge">&#128106; Family Favourite</div>
@@ -529,6 +555,12 @@ const prices={standard:'&#8377;28,999',premium:'&#8377;38,999',luxury:'&#8377;54
 function switchPrice(tier,btn){document.querySelectorAll('.price-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.price-display').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('price-'+tier).classList.add('active');document.getElementById('sidebarPrice').innerHTML=prices[tier];}
 function updateSidebarPrice(val){document.getElementById('sidebarPrice').innerHTML=prices[val];}
 function toggleItin(header){const item=header.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.itin-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');}
+</script>
+<script src="photos/photo-rotator.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    PhotoRotator.applyHero('bali', 'linear-gradient(135deg,#2a1a05,#7a5a1a)');
+  });
 </script>
 </body>
 </html>

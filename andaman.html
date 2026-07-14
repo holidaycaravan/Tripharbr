@@ -53,6 +53,32 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}.footer-
 .footer-links a:hover{color:var(--teal);}
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr);gap:2rem;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+/* Photo Rotation System */
+.hero {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: background-image 0.5s ease-in-out;
+}
+.dest-img,
+.pkg-img,
+.pkg-thumb,
+.dest-card-img,
+.related-card,
+.blog-cover {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden;
+}
+.hero.photo-loaded::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.5) 60%,
+    rgba(0,0,0,0.88) 100%
+  ) !important;
+}
 </style>
 </head>
 <body>
@@ -80,7 +106,7 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}.footer-
 </div>
 <div class="breadcrumb"><a href="index.html">Home</a><span>&#8250;</span><a href="index.html#destinations">Destinations</a><span>&#8250;</span>Andaman Islands</div>
 
-<section class="hero">
+<section class="hero" data-photo="andaman">
   <div class="hero-content">
     <div>
       <div class="hero-eyebrow">&#127758; Island Paradise · India · No Passport</div>
@@ -276,6 +302,14 @@ function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('op
 function openPopup(){document.getElementById('popup').classList.add('open');document.body.style.overflow='hidden';}
 function closePopup(){document.getElementById('popup').classList.remove('open');document.body.style.overflow='';}
 document.getElementById('popup').addEventListener('click',function(e){if(e.target===this)closePopup();});
+</script>
+<script src="photos/photo-rotator.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    PhotoRotator.applyHero('andaman', 'linear-gradient(135deg,#001020,#003a5a)');
+    PhotoRotator.applyCards('andaman', '.pkg-card .pkg-img', 6);
+    PhotoRotator.applyCards('andaman', '.related-card', 3);
+  });
 </script>
 </body>
 </html>

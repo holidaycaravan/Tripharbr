@@ -243,6 +243,32 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
 .footer-links a:hover{color:var(--teal);}
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr);gap:2rem;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+/* Photo Rotation System */
+.hero {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: background-image 0.5s ease-in-out;
+}
+.dest-img,
+.pkg-img,
+.pkg-thumb,
+.dest-card-img,
+.related-card,
+.blog-cover {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden;
+}
+.hero.photo-loaded::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.5) 60%,
+    rgba(0,0,0,0.88) 100%
+  ) !important;
+}
 </style>
 </head>
 <body class="lang-en">
@@ -308,7 +334,7 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
 
 <!-- HERO -->
 <!-- PHOTO: Replace .hero background with url('photos/kashmir-hero.jpg') center/cover -->
-<section class="hero">
+<section class="hero" data-photo="kashmir">
   <!-- Kashmir shikara/mountains SVG -->
   <svg style="position:absolute;bottom:0;left:0;right:0;width:100%;height:45%;z-index:0;" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <polygon points="0,300 0,200 100,140 220,190 340,100 460,170 580,80 700,150 820,60 940,140 1060,50 1180,130 1300,90 1440,150 1440,300" fill="rgba(10,42,20,0.6)"/>
@@ -773,6 +799,14 @@ function filterPkg(btn, type) {
     card.style.display = (type === 'all' || card.dataset.type === type) ? 'block' : 'none';
   });
 }
+</script>
+<script src="photos/photo-rotator.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    PhotoRotator.applyHero('kashmir', 'linear-gradient(135deg,#0a2a14,#1a5c2a)');
+    PhotoRotator.applyCards('kashmir', '.pkg-card .pkg-img', 6);
+    PhotoRotator.applyCards('kashmir', '.related-card', 3);
+  });
 </script>
 </body>
 </html>
