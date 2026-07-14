@@ -5,17 +5,18 @@
  * as background images, honouring per-photo focal points.
  *
  * Public API:
- *   PhotoRotator.applyHero(dest, gradient)          hero background
- *   PhotoRotator.applyCards(dest, selector, count)  up to `count` matched els
- *   PhotoRotator.applyHomepage()                    index.html wiring
+ *   PhotoRotator.applyHero(dest, gradient)              hero background (single random)
+ *   PhotoRotator.startSlideshow(dest, gradient, secs)   hero auto-rotating slideshow
+ *   PhotoRotator.applyCards(dest, selector, count)      up to `count` matched els
+ *   PhotoRotator.applyHomepage()                        legacy index.html wiring
  *
- * Data sources: photos/<dest>/manifest.json, shape:
+ * Data sources: photos/<dest>/manifest.json:
  *   { "destination": "...", "photos": [ { "file": "x.avif", "focal": "center" } ] }
  *
- * Elements sharing a destination on one page get distinct random
- * photos where the pool allows (no repeat until pool exhausted).
- * A real photo is only swapped in after it successfully preloads,
- * so any pre-existing gradient stays as a graceful fallback.
+ * Photos are preloaded and only swapped in on success, so any
+ * pre-existing gradient stays as a graceful fallback. The hero
+ * uses a CSS custom property (--hero-photo) so a Ken Burns
+ * ::before layer can animate the image independently.
  */
 (function () {
   'use strict';
@@ -42,39 +43,50 @@
     return manifestCache[dest];
   }
 
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function fileOf(photo) { return typeof photo === 'string' ? photo : photo.file; }
+  function focalOf(photo) { return (photo && photo.focal) ? photo.focal : 'center'; }
+
   function pickPhoto(dest, photos) {
     if (!photos.length) return null;
     var used = usedByDest[dest] || (usedByDest[dest] = []);
     if (used.length >= photos.length) used.length = 0;
-    var available = photos.filter(function (p) { return used.indexOf(p.file) === -1; });
+    var available = photos.filter(function (p) { return used.indexOf(fileOf(p)) === -1; });
     var pool = available.length ? available : photos;
     var chosen = pool[Math.floor(Math.random() * pool.length)];
-    used.push(chosen.file);
+    used.push(fileOf(chosen));
     return chosen;
   }
 
-  // Preload, then swap the image in only on success (keeps fallback on error)
+  // Cards / generic elements: preload then swap on success (keeps gradient fallback)
   function applyToElement(el, dest) {
     if (!el) return;
     loadManifest(dest).then(function (photos) {
       var photo = pickPhoto(dest, photos);
       if (!photo) return;
-      var url = BASE + dest + '/' + encodeURIComponent(photo.file);
+      var url = BASE + dest + '/' + encodeURIComponent(fileOf(photo));
       var pre = new Image();
       pre.onload = function () {
         el.style.backgroundImage = "url('" + url + "')";
         el.style.backgroundSize = 'cover';
-        el.style.backgroundPosition = photo.focal || 'center';
+        el.style.backgroundPosition = focalOf(photo);
         el.style.backgroundRepeat = 'no-repeat';
         el.classList.add('photo-loaded');
-        // hide any "Photos Coming Soon" placeholder label inside the element
         if (el.querySelector) {
           var label = el.querySelector('.photo-label');
           if (label) label.style.display = 'none';
         }
-        el.setAttribute('data-photo-applied', photo.file);
+        el.setAttribute('data-photo-applied', fileOf(photo));
       };
-      pre.onerror = function () { /* keep existing gradient fallback */ };
+      pre.onerror = function () { /* keep fallback */ };
       pre.src = url;
     });
   }
@@ -86,10 +98,66 @@
   }
 
   function applyHero(dest, gradient) {
-    var el = heroElement();
-    if (!el) return;
-    if (gradient) el.style.background = gradient; // fallback until photo loads
-    applyToElement(el, dest);
+    var hero = heroElement();
+    if (!hero) return;
+    if (gradient) hero.style.background = gradient; // fallback until photo loads
+    loadManifest(dest).then(function (photos) {
+      var photo = pickPhoto(dest, photos);
+      if (!photo) return;
+      var url = BASE + dest + '/' + encodeURIComponent(fileOf(photo));
+      var focal = focalOf(photo);
+      var pre = new Image();
+      pre.onload = function () {
+        hero.style.setProperty('--hero-photo', "url('" + url + "')");
+        hero.style.backgroundImage = "url('" + url + "'), " + (gradient || 'none');
+        hero.style.backgroundSize = 'cover, cover';
+        hero.style.backgroundPosition = focal + ', center';
+        hero.classList.add('photo-loaded');
+        var label = hero.querySelector && hero.querySelector('.photo-label');
+        if (label) label.style.display = 'none';
+      };
+      pre.onerror = function () { /* keep gradient fallback */ };
+      pre.src = url;
+    });
+  }
+
+  function startSlideshow(dest, gradient, intervalSeconds) {
+    intervalSeconds = intervalSeconds || 7;
+    loadManifest(dest).then(function (photos) {
+      var hero = document.querySelector('.hero');
+      if (!hero) return;
+      // Only one (or zero) photo — apply statically, no slideshow needed
+      if (!photos || photos.length < 2) {
+        applyHero(dest, gradient);
+        return;
+      }
+      var shuffled = shuffle(photos);
+      var index = 0;
+
+      function showPhoto() {
+        var photo = shuffled[index % shuffled.length];
+        var focal = focalOf(photo);
+        var url = BASE + dest + '/' + encodeURIComponent(fileOf(photo));
+        var pre = new Image();
+        pre.onload = function () {
+          hero.style.opacity = '0.85';           // fade out
+          setTimeout(function () {
+            hero.style.setProperty('--hero-photo', "url('" + url + "')");
+            hero.style.backgroundImage = "url('" + url + "'), " + gradient;
+            hero.style.backgroundSize = 'cover, cover';
+            hero.style.backgroundPosition = focal + ', center';
+            hero.classList.add('photo-loaded');
+            hero.style.opacity = '1';            // fade back in
+          }, 400);
+        };
+        pre.onerror = function () { /* skip this frame, keep current */ };
+        pre.src = url;
+        index++;
+      }
+
+      showPhoto();                                // first photo immediately
+      setInterval(showPhoto, intervalSeconds * 1000);
+    });
   }
 
   function applyCards(dest, selector, count) {
@@ -99,13 +167,10 @@
   }
 
   function applyHomepage() {
-    // Hero uses the dedicated homepage photo set
-    applyHero('homepage', null);
-    // Destination cards: destination named directly on data-dest
+    startSlideshow('homepage', 'linear-gradient(135deg, #0a2a4a, #1a4a7a)', 7);
     Array.prototype.forEach.call(document.querySelectorAll('[data-dest]'), function (el) {
       applyToElement(el, el.getAttribute('data-dest'));
     });
-    // Package cards: destination is the prefix of data-pkg (e.g. "kashmir-honeymoon")
     Array.prototype.forEach.call(document.querySelectorAll('[data-pkg]'), function (el) {
       var dest = (el.getAttribute('data-pkg') || '').split('-')[0];
       if (!dest) return;
@@ -116,9 +181,9 @@
 
   window.PhotoRotator = {
     applyHero: applyHero,
+    startSlideshow: startSlideshow,
     applyCards: applyCards,
     applyHomepage: applyHomepage,
-    // low-level helpers, exposed for reuse
     applyToElement: applyToElement
   };
 })();

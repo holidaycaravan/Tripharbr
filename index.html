@@ -660,14 +660,60 @@ footer {
   background-repeat: no-repeat !important;
   overflow: hidden;
 }
-.hero.photo-loaded::after {
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.15) 0%,
-    rgba(0,0,0,0.5) 60%,
-    rgba(0,0,0,0.88) 100%
-  ) !important;
+/* Hero photo — Ken Burns slow zoom + cinematic overlay */
+.hero {
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.4s ease-in-out, background-image 0.5s ease-in-out;
 }
+/* Overrides the legacy decorative .hero::before glow, repurposed as the animated photo layer */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -10%;
+  top: auto; left: auto;
+  width: auto; height: auto;
+  border-radius: 0;
+  background: transparent;
+  background-image: var(--hero-photo, none);
+  background-size: cover;
+  background-position: center;
+  animation: kenBurns 18s ease-in-out infinite alternate;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+.hero.photo-loaded::before { opacity: 1; }
+
+@keyframes kenBurns {
+  0%   { transform: scale(1.0)  translate(0, 0); }
+  33%  { transform: scale(1.08) translate(-1%, 1%); }
+  66%  { transform: scale(1.05) translate(1%, -1%); }
+  100% { transform: scale(1.1)  translate(-0.5%, 0.5%); }
+}
+
+/* Hero direct background suppressed once a photo is applied — ::before handles it */
+.hero.photo-loaded { background-image: none !important; }
+
+/* Stronger dark overlay for text legibility (only when a photo is present) */
+.hero.photo-loaded::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.25) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.9) 100%);
+}
+
+/* All hero content sits above both pseudo layers */
+.hero > *,
+.hero-content,
+.hero-inner { position: relative; z-index: 2; }
+
+/* Switch hero text to light only when the dark photo hero is active (graceful fallback otherwise) */
+.hero.photo-loaded .hero-title { color: #ffffff; }
+.hero.photo-loaded .hero-sub { color: rgba(255,255,255,0.88); }
 </style>
 </head>
 <body class="lang-en">
@@ -1933,7 +1979,19 @@ function toggleMenu() {
 <script src="photos/photo-rotator.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    PhotoRotator.applyHomepage();
+    PhotoRotator.startSlideshow('homepage', 'linear-gradient(135deg, #0a2a4a, #1a4a7a)', 7);
+    PhotoRotator.applyCards('ladakh',    '[data-dest="ladakh"]',    1);
+    PhotoRotator.applyCards('kashmir',   '[data-dest="kashmir"]',   1);
+    PhotoRotator.applyCards('bali',      '[data-dest="bali"]',      1);
+    PhotoRotator.applyCards('kerala',    '[data-dest="kerala"]',    1);
+    PhotoRotator.applyCards('spiti',     '[data-dest="spiti"]',     1);
+    PhotoRotator.applyCards('thailand',  '[data-dest="thailand"]',  1);
+    PhotoRotator.applyCards('kashmir',   '[data-pkg="kashmir-honeymoon"] .pkg-img',  1);
+    PhotoRotator.applyCards('kerala',    '[data-pkg="kerala-family"] .pkg-img',      1);
+    PhotoRotator.applyCards('bali',      '[data-pkg="bali-honeymoon"] .pkg-img',     1);
+    PhotoRotator.applyCards('goa',       '[data-pkg="goa-offsite"] .pkg-img',        1);
+    PhotoRotator.applyCards('ladakh',    '[data-pkg="ladakh-family"] .pkg-img',      1);
+    PhotoRotator.applyCards('bali',      '[data-pkg="bali-corporate"] .pkg-img',     1);
   });
 </script>
 </body>
