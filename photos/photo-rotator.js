@@ -18,10 +18,18 @@
  * uses a CSS custom property (--hero-photo) so a Ken Burns
  * ::before layer can animate the image independently.
  */
+const PHOTOS_BASE = (() => {
+  try {
+    const s = document.querySelector('script[src*="photo-rotator"]');
+    if (s) return s.src.substring(0, s.src.lastIndexOf('photo-rotator.js'));
+  } catch(e) {}
+  return 'photos/';
+})();
+
 (function () {
   'use strict';
 
-  var BASE = 'photos/';
+  var BASE = PHOTOS_BASE;
   var manifestCache = {};   // dest -> Promise<photos[]>
   var usedByDest = {};      // dest -> [files assigned this load]
 
