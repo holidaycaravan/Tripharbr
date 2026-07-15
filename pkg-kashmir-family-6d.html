@@ -445,9 +445,9 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}
 <section style="background:var(--grey-light);padding:80px 4%;">
   <div style="max-width:1280px;margin:0 auto;"><div style="margin-bottom:2rem;"><div style="font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;">You Might Also Like</div><h2 style="font-family:var(--font-display);font-size:clamp(1.6rem,2.5vw,2rem);font-weight:700;">Similar Packages</h2></div>
   <div class="related-grid">
-    <a href="pkg-kashmir-honeymoon-7d.html" class="related-card"><div class="related-img" style="background:linear-gradient(135deg,#0a2a14,#1a5c2a);"></div><div class="related-body"><div class="related-name">7 Days Kashmir Honeymoon</div><div class="related-price">&#8377;28,999 <span>/ person</span></div></div></a>
-    <a href="pkg-bali-family-6d.html" class="related-card"><div class="related-img" style="background:linear-gradient(135deg,#1a3a0a,#4a9a2a);"></div><div class="related-body"><div class="related-name">6 Days Bali Family Package</div><div class="related-price">&#8377;28,999 <span>/ person</span></div></div></a>
-    <a href="pkg-kerala-family-7d.html" class="related-card"><div class="related-img" style="background:linear-gradient(135deg,#0a4a1e,#1a7a36);"></div><div class="related-body"><div class="related-name">7 Days Kerala Family Holiday</div><div class="related-price">&#8377;22,999 <span>/ person</span></div></div></a>
+    <a href="pkg-kashmir-honeymoon-7d.html" class="related-card"><div class="related-img" data-dest="kashmir" style="background:linear-gradient(135deg,#0a2a14,#1a5c2a);"></div><div class="related-body"><div class="related-name">7 Days Kashmir Honeymoon</div><div class="related-price">&#8377;28,999 <span>/ person</span></div></div></a>
+    <a href="pkg-bali-family-6d.html" class="related-card"><div class="related-img" data-dest="bali" style="background:linear-gradient(135deg,#1a3a0a,#4a9a2a);"></div><div class="related-body"><div class="related-name">6 Days Bali Family Package</div><div class="related-price">&#8377;28,999 <span>/ person</span></div></div></a>
+    <a href="pkg-kerala-family-7d.html" class="related-card"><div class="related-img" data-dest="kerala" style="background:linear-gradient(135deg,#0a4a1e,#1a7a36);"></div><div class="related-body"><div class="related-name">7 Days Kerala Family Holiday</div><div class="related-price">&#8377;22,999 <span>/ person</span></div></div></a>
   </div></div>
 </section>
 
@@ -542,7 +542,10 @@ function toggleItin(header){const item=header.parentElement;const isOpen=item.cl
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     PhotoRotator.applyHero('kashmir', 'linear-gradient(135deg,#0a2a14,#1a5c2a)');
-    PhotoRotator.applyCards('kashmir', '.related-img, .rimg', 3);
+    // Similar Packages — each card shows its OWN destination's photo
+    document.querySelectorAll('.related-img[data-dest], .rimg[data-dest]').forEach(el => {
+      PhotoRotator.applyToElement(el, el.getAttribute('data-dest'));
+    });
   });
 </script>
 </body>

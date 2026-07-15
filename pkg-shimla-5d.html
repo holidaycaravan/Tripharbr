@@ -350,7 +350,7 @@ footer{background:var(--charcoal);color:var(--white);padding:40px 4% 0;}.footer-
 
 <section style="background:var(--grey-light);padding:80px 4%;">
   <div style="max-width:1280px;margin:0 auto;"><div style="margin-bottom:2rem;"><div style="font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;">You Might Also Like</div><h2 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;">Similar Packages</h2></div>
-  <div class="related-grid"><a href="pkg-manali-6d.html" class="related-card"><div class="related-img" style="background:linear-gradient(135deg,#050d1a,#1a3a6b);"></div><div class="related-body"><div class="related-name">6 Days Manali &amp; Rohtang</div><div class="related-price">&#8377;15,999 <span>/ person</span></div></div></a><a href="pkg-mussoorie-4d.html" class="related-card"><div class="related-img" style="background:linear-gradient(135deg,#1a3060,#2d4a7a);"></div><div class="related-body"><div class="related-name">4 Days Mussoorie Package</div><div class="related-price">&#8377;13,999 <span>/ person</span></div></div></a><a href="pkg-uttarakhand-7d.html" class="related-card"><div class="related-img" style="background:linear-gradient(135deg,#0a2a14,#2d7a44);"></div><div class="related-body"><div class="related-name">7 Days Uttarakhand Spiritual</div><div class="related-price">&#8377;21,999 <span>/ person</span></div></div></a></div></div>
+  <div class="related-grid"><a href="pkg-manali-6d.html" class="related-card"><div class="related-img" data-dest="manali" style="background:linear-gradient(135deg,#050d1a,#1a3a6b);"></div><div class="related-body"><div class="related-name">6 Days Manali &amp; Rohtang</div><div class="related-price">&#8377;15,999 <span>/ person</span></div></div></a><a href="pkg-mussoorie-4d.html" class="related-card"><div class="related-img" data-dest="mussoorie" style="background:linear-gradient(135deg,#1a3060,#2d4a7a);"></div><div class="related-body"><div class="related-name">4 Days Mussoorie Package</div><div class="related-price">&#8377;13,999 <span>/ person</span></div></div></a><a href="pkg-uttarakhand-7d.html" class="related-card"><div class="related-img" data-dest="uttarakhand" style="background:linear-gradient(135deg,#0a2a14,#2d7a44);"></div><div class="related-body"><div class="related-name">7 Days Uttarakhand Spiritual</div><div class="related-price">&#8377;21,999 <span>/ person</span></div></div></a></div></div>
 </section>
 
 <footer>
@@ -444,7 +444,10 @@ function toggleItin(header){const item=header.parentElement;const isOpen=item.cl
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     PhotoRotator.applyHero('shimla', 'linear-gradient(135deg,#050a1a,#0a1a3a)');
-    PhotoRotator.applyCards('shimla', '.related-img, .rimg', 3);
+    // Similar Packages — each card shows its OWN destination's photo
+    document.querySelectorAll('.related-img[data-dest], .rimg[data-dest]').forEach(el => {
+      PhotoRotator.applyToElement(el, el.getAttribute('data-dest'));
+    });
   });
 </script>
 </body>
