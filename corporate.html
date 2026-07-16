@@ -551,39 +551,39 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
       <p class="section-sub hi" style="display:none">टीम बॉन्डिंग, आसान रसद और यादगार अनुभवों के लिए चुने गए</p>
     </div>
     <div class="dest-grid">
-      <div class="dest-card" style="background:linear-gradient(135deg,#1a5c6b,#2BBFB3)">
+      <div class="dest-card" data-dest="goa" style="background:linear-gradient(135deg,#1a5c6b,#2BBFB3)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Goa</div><div class="dest-tagline en">Beaches, nightlife & team parties</div></div><div class="dest-pax">10–500 pax</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(135deg,#1a3a5c,#2d6a8a)">
+      <div class="dest-card" data-dest="manali" style="background:linear-gradient(135deg,#1a3a5c,#2d6a8a)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Manali</div><div class="dest-tagline en">Mountain escapes & adventure</div></div><div class="dest-pax">10–200 pax</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(135deg,#1a6b3a,#2BBF70)">
+      <div class="dest-card" data-dest="uttarakhand" style="background:linear-gradient(135deg,#1a6b3a,#2BBF70)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Rishikesh</div><div class="dest-tagline en">Rafting, yoga & river camps</div></div><div class="dest-pax">10–150 pax</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(135deg,#3d1a6b,#7B2BBF)">
+      <div class="dest-card" data-dest="coorg" style="background:linear-gradient(135deg,#3d1a6b,#7B2BBF)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Coorg</div><div class="dest-tagline en">Coffee estates & misty hills</div></div><div class="dest-pax">10–100 pax</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(135deg,#6b3a1a,#BF7B2B)">
+      <div class="dest-card" data-dest="uttarakhand" style="background:linear-gradient(135deg,#6b3a1a,#BF7B2B)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Jim Corbett</div><div class="dest-tagline en">Wildlife safaris & jungle camps</div></div><div class="dest-pax">10–120 pax</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(135deg,#1a9e93,#0d6b63)">
+      <div class="dest-card" data-dest="bali" style="background:linear-gradient(135deg,#1a9e93,#0d6b63)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-left"><div class="dest-flag">International</div><div class="dest-name">Bali</div><div class="dest-tagline en">Temples, villas & team experiences</div></div><div class="dest-pax">10–200 pax</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(135deg,#1a3a6b,#2B5FBF)">
+      <div class="dest-card" data-dest="thailand" style="background:linear-gradient(135deg,#1a3a6b,#2B5FBF)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-left"><div class="dest-flag">International</div><div class="dest-name">Thailand</div><div class="dest-tagline en">Bangkok city meets Phuket beaches</div></div><div class="dest-pax">10–300 pax</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(135deg,#6b5a1a,#BFA82B)">
+      <div class="dest-card" data-dest="dubai" style="background:linear-gradient(135deg,#6b5a1a,#BFA82B)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-left"><div class="dest-flag">International</div><div class="dest-name">Dubai</div><div class="dest-tagline en">Luxury, desert safari & skyline</div></div><div class="dest-pax">10–500 pax</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(135deg,#3a1a6b,#6B2BBF)">
+      <div class="dest-card" data-dest="kasauli" style="background:linear-gradient(135deg,#3a1a6b,#6B2BBF)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-left"><div class="dest-flag">India</div><div class="dest-name">Kasauli</div><div class="dest-tagline en">Quiet hills & boutique resorts</div></div><div class="dest-pax">10–80 pax</div></div>
       </div>
@@ -990,6 +990,22 @@ function openPopup() { document.getElementById('popup').classList.add('open'); d
 function closePopup() { document.getElementById('popup').classList.remove('open'); document.body.style.overflow = ''; }
 document.getElementById('popup').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
 function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+<script src="photos/photo-rotator.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Destination cards
+  PhotoRotator.applyCards('goa',       '[data-dest="goa"] .dest-img, [data-dest="goa"]',           1);
+  PhotoRotator.applyCards('bali',      '[data-dest="bali"] .dest-img, [data-dest="bali"]',         1);
+  PhotoRotator.applyCards('thailand',  '[data-dest="thailand"] .dest-img, [data-dest="thailand"]', 1);
+  PhotoRotator.applyCards('singapore', '[data-dest="singapore"] .dest-img, [data-dest="singapore"]', 1);
+  PhotoRotator.applyCards('dubai',     '[data-dest="dubai"] .dest-img, [data-dest="dubai"]',       1);
+  PhotoRotator.applyCards('manali',    '[data-dest="manali"] .dest-img, [data-dest="manali"]',     1);
+  PhotoRotator.applyCards('coorg',     '[data-dest="coorg"] .dest-img, [data-dest="coorg"]',       1);
+  PhotoRotator.applyCards('uttarakhand','[data-dest="uttarakhand"] .dest-img, [data-dest="uttarakhand"]', 1);
+  // Package cards
+  PhotoRotator.applyCards('goa',       '.pkg-card .pkg-img, .pkg-card .pkg-top',  4);
+});
 </script>
 </body>
 </html>

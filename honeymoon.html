@@ -367,35 +367,35 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
       <p class="section-sub hi" style="display:none">हिमालय की बर्फ से लेकर उष्णकटिबंधीय सूर्यास्त तक</p>
     </div>
     <div class="dest-grid">
-      <div class="dest-card" style="background:linear-gradient(160deg,#1a9e93,#0d6b63)">
+      <div class="dest-card" data-dest="kashmir" style="background:linear-gradient(160deg,#1a9e93,#0d6b63)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Kashmir</div><div class="dest-tagline en">Heaven on Earth for two</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#2BBFB3,#1a9e93)">
+      <div class="dest-card" data-dest="kerala" style="background:linear-gradient(160deg,#2BBFB3,#1a9e93)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Kerala</div><div class="dest-tagline en">Backwaters & bliss</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#4dd4c8,#2BBFB3)">
+      <div class="dest-card" data-dest="bali" style="background:linear-gradient(160deg,#4dd4c8,#2BBFB3)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Bali</div><div class="dest-tagline en">Romance, temples & sunsets</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#0d6b63,#1a9e93)">
+      <div class="dest-card" data-dest="maldives" style="background:linear-gradient(160deg,#0d6b63,#1a9e93)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Maldives</div><div class="dest-tagline en">Overwater bungalows & crystal lagoons</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#3dccc0,#1a9e93)">
+      <div class="dest-card" data-dest="thailand" style="background:linear-gradient(160deg,#3dccc0,#1a9e93)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Thailand</div><div class="dest-tagline en">Exotic beaches, affordable luxury</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#2BBFB3,#0d6b63)">
+      <div class="dest-card" data-dest="andaman" style="background:linear-gradient(160deg,#2BBFB3,#0d6b63)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Andaman</div><div class="dest-tagline en">Pristine beaches, underwater world</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#1a9e93,#4dd4c8)">
+      <div class="dest-card" data-dest="mauritius" style="background:linear-gradient(160deg,#1a9e93,#4dd4c8)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Mauritius</div><div class="dest-tagline en">Island paradise, turquoise waters</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#0d6b63,#2BBFB3)">
+      <div class="dest-card" data-dest="switzerland" style="background:linear-gradient(160deg,#0d6b63,#2BBFB3)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Switzerland</div><div class="dest-tagline en">Snow-capped Alps & fairy-tale towns</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
@@ -614,6 +614,21 @@ function openPopup() { document.getElementById('popup').classList.add('open'); d
 function closePopup() { document.getElementById('popup').classList.remove('open'); document.body.style.overflow = ''; }
 document.getElementById('popup').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
 function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+<script src="photos/photo-rotator.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Destination cards
+  PhotoRotator.applyCards('kashmir',   '[data-dest="kashmir"] .dest-img, [data-dest="kashmir"]',   1);
+  PhotoRotator.applyCards('kerala',    '[data-dest="kerala"] .dest-img, [data-dest="kerala"]',     1);
+  PhotoRotator.applyCards('bali',      '[data-dest="bali"] .dest-img, [data-dest="bali"]',         1);
+  PhotoRotator.applyCards('goa',       '[data-dest="goa"] .dest-img, [data-dest="goa"]',           1);
+  PhotoRotator.applyCards('rajasthan', '[data-dest="rajasthan"] .dest-img, [data-dest="rajasthan"]', 1);
+  PhotoRotator.applyCards('andaman',   '[data-dest="andaman"] .dest-img, [data-dest="andaman"]',   1);
+  PhotoRotator.applyCards('maldives',  '[data-dest="maldives"] .dest-img, [data-dest="maldives"]', 1);
+  // Package cards
+  PhotoRotator.applyCards('kashmir',   '.pkg-card .pkg-img, .pkg-card .pkg-top',  3);
+});
 </script>
 </body>
 </html>

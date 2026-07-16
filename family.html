@@ -493,35 +493,35 @@ footer { background: var(--charcoal); color: var(--white); padding: 40px 4% 0; }
       <p class="section-sub hi" style="display:none">सुरक्षा, बच्चों के अनुकूल गतिविधियों और आराम के लिए सावधानी से चुने गए</p>
     </div>
     <div class="dest-grid">
-      <div class="dest-card" style="background:linear-gradient(160deg,#1a9e93,#0d6b63)">
+      <div class="dest-card" data-dest="kerala" style="background:linear-gradient(160deg,#1a9e93,#0d6b63)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Kerala</div><div class="dest-tagline en">Houseboats, spices & wildlife</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#c2410c,#f97316)">
+      <div class="dest-card" data-dest="rajasthan" style="background:linear-gradient(160deg,#c2410c,#f97316)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Rajasthan</div><div class="dest-tagline en">Forts, camels & colour</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#2BBFB3,#1a9e93)">
+      <div class="dest-card" data-dest="manali" style="background:linear-gradient(160deg,#2BBFB3,#1a9e93)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Himachal Pradesh</div><div class="dest-tagline en">Mountains, snow & adventure</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#4dd4c8,#2BBFB3)">
+      <div class="dest-card" data-dest="goa" style="background:linear-gradient(160deg,#4dd4c8,#2BBFB3)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Goa</div><div class="dest-tagline en">Beaches, churches & fun</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#0d6b63,#2BBFB3)">
+      <div class="dest-card" data-dest="singapore" style="background:linear-gradient(160deg,#0d6b63,#2BBFB3)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Singapore</div><div class="dest-tagline en">Universal Studios & Gardens by the Bay</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#3dccc0,#1a9e93)">
+      <div class="dest-card" data-dest="dubai" style="background:linear-gradient(160deg,#3dccc0,#1a9e93)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Dubai</div><div class="dest-tagline en">Theme parks, desert safari & more</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#1a9e93,#4dd4c8)">
+      <div class="dest-card" data-dest="andaman" style="background:linear-gradient(160deg,#1a9e93,#4dd4c8)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag">India</div><div class="dest-name">Andaman</div><div class="dest-tagline en">Pristine beaches & underwater world</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
-      <div class="dest-card" style="background:linear-gradient(160deg,#0d6b63,#3dccc0)">
+      <div class="dest-card" data-dest="bali" style="background:linear-gradient(160deg,#0d6b63,#3dccc0)">
         <div class="dest-overlay"></div>
         <div class="dest-info"><div class="dest-flag intl">International</div><div class="dest-name">Bali</div><div class="dest-tagline en">Temples, rice terraces & culture</div><div class="dest-explore en">View Packages &#8594;</div></div>
       </div>
@@ -861,6 +861,22 @@ function toggleFaq(el) {
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
 }
+</script>
+<script src="photos/photo-rotator.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Destination cards
+  PhotoRotator.applyCards('kerala',    '[data-dest="kerala"] .dest-img, [data-dest="kerala"]',     1);
+  PhotoRotator.applyCards('kashmir',   '[data-dest="kashmir"] .dest-img, [data-dest="kashmir"]',   1);
+  PhotoRotator.applyCards('rajasthan', '[data-dest="rajasthan"] .dest-img, [data-dest="rajasthan"]', 1);
+  PhotoRotator.applyCards('goa',       '[data-dest="goa"] .dest-img, [data-dest="goa"]',           1);
+  PhotoRotator.applyCards('andaman',   '[data-dest="andaman"] .dest-img, [data-dest="andaman"]',   1);
+  PhotoRotator.applyCards('bali',      '[data-dest="bali"] .dest-img, [data-dest="bali"]',         1);
+  PhotoRotator.applyCards('singapore', '[data-dest="singapore"] .dest-img, [data-dest="singapore"]', 1);
+  PhotoRotator.applyCards('ladakh',    '[data-dest="ladakh"] .dest-img, [data-dest="ladakh"]',     1);
+  // Package cards
+  PhotoRotator.applyCards('kerala',    '.pkg-card .pkg-img, .pkg-card .pkg-top',  4);
+});
 </script>
 </body>
 </html>
