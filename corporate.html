@@ -994,17 +994,11 @@ function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('
 <script src="photos/photo-rotator.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Destination cards
-  PhotoRotator.applyCards('goa',       '[data-dest="goa"] .dest-img, [data-dest="goa"]',           1);
-  PhotoRotator.applyCards('bali',      '[data-dest="bali"] .dest-img, [data-dest="bali"]',         1);
-  PhotoRotator.applyCards('thailand',  '[data-dest="thailand"] .dest-img, [data-dest="thailand"]', 1);
-  PhotoRotator.applyCards('singapore', '[data-dest="singapore"] .dest-img, [data-dest="singapore"]', 1);
-  PhotoRotator.applyCards('dubai',     '[data-dest="dubai"] .dest-img, [data-dest="dubai"]',       1);
-  PhotoRotator.applyCards('manali',    '[data-dest="manali"] .dest-img, [data-dest="manali"]',     1);
-  PhotoRotator.applyCards('coorg',     '[data-dest="coorg"] .dest-img, [data-dest="coorg"]',       1);
-  PhotoRotator.applyCards('uttarakhand','[data-dest="uttarakhand"] .dest-img, [data-dest="uttarakhand"]', 1);
-  // Package cards
-  PhotoRotator.applyCards('goa',       '.pkg-card .pkg-img, .pkg-card .pkg-top',  4);
+  document.querySelectorAll('.dest-card[data-dest]').forEach(card => {
+    const dest = card.getAttribute('data-dest');
+    PhotoRotator.applyCards(dest, `.dest-card[data-dest="${dest}"]`, 1);
+  });
+  PhotoRotator.applyCards('goa', '.pkg-card .pkg-img', 6);
 });
 </script>
 </body>

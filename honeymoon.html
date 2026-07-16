@@ -618,16 +618,13 @@ function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('
 <script src="photos/photo-rotator.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Destination cards
-  PhotoRotator.applyCards('kashmir',   '[data-dest="kashmir"] .dest-img, [data-dest="kashmir"]',   1);
-  PhotoRotator.applyCards('kerala',    '[data-dest="kerala"] .dest-img, [data-dest="kerala"]',     1);
-  PhotoRotator.applyCards('bali',      '[data-dest="bali"] .dest-img, [data-dest="bali"]',         1);
-  PhotoRotator.applyCards('goa',       '[data-dest="goa"] .dest-img, [data-dest="goa"]',           1);
-  PhotoRotator.applyCards('rajasthan', '[data-dest="rajasthan"] .dest-img, [data-dest="rajasthan"]', 1);
-  PhotoRotator.applyCards('andaman',   '[data-dest="andaman"] .dest-img, [data-dest="andaman"]',   1);
-  PhotoRotator.applyCards('maldives',  '[data-dest="maldives"] .dest-img, [data-dest="maldives"]', 1);
-  // Package cards
-  PhotoRotator.applyCards('kashmir',   '.pkg-card .pkg-img, .pkg-card .pkg-top',  3);
+  // Apply each destination card its own photo using data-dest
+  document.querySelectorAll('.dest-card[data-dest]').forEach(card => {
+    const dest = card.getAttribute('data-dest');
+    PhotoRotator.applyCards(dest, `.dest-card[data-dest="${dest}"]`, 1);
+  });
+  // Package cards — pull from kashmir as primary honeymoon destination
+  PhotoRotator.applyCards('kashmir', '.pkg-card .pkg-img', 6);
 });
 </script>
 </body>
