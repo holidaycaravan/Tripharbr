@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions — Tripharbr</title>
+<meta name="description" content="Tripharbr booking terms and conditions — payments, pricing, itinerary changes, and liability.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--teal:#2BBFB3;--teal-dark:#1a9e93;--teal-light:#e8faf9;--black:#111827;--charcoal:#1f2937;--grey:#6b7280;--grey-mid:#e5e7eb;--grey-light:#f9fafb;--white:#ffffff;--font-display:'Playfair Display',serif;--font-body:'DM Sans',sans-serif;--radius:16px;--radius-sm:8px;}
+body{font-family:var(--font-body);color:var(--black);background:var(--white);}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0.9rem 4%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--grey-mid);height:68px;}
+.nav-logo{font-family:var(--font-display);font-size:1.35rem;font-weight:900;}
+.nav-logo span{color:var(--teal);}
+.nav-links{display:flex;list-style:none;gap:0.2rem;}
+.nav-links a{font-size:0.875rem;font-weight:500;padding:0.5rem 0.75rem;border-radius:var(--radius-sm);}
+.nav-links a:hover{background:var(--teal-light);color:var(--teal-dark);}
+.btn-plan{padding:0.55rem 1.3rem;border-radius:24px;background:var(--teal);color:var(--white);border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:700;cursor:pointer;}
+.btn-plan:hover{background:var(--teal-dark);}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px;}
+.hamburger span{width:22px;height:2px;background:var(--black);}
+.mobile-menu{position:fixed;inset:0;top:68px;z-index:999;background:var(--white);padding:1.5rem 4%;display:none;flex-direction:column;gap:0.5rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{padding:0.75rem 1rem;border-radius:var(--radius-sm);font-size:1rem;font-weight:500;}
+.hero{margin-top:68px;padding:70px 4% 60px;background:linear-gradient(135deg,#0a1e14 0%,#1a3a2a 50%,#2a5a3a 100%);color:var(--white);text-align:center;position:relative;overflow:hidden;background-size:cover;background-position:center;}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.55) 100%);z-index:0;}
+.hero>*{position:relative;z-index:1;}
+.hero-label{font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem;}
+.hero-title{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;margin-bottom:1rem;}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.85);max-width:640px;margin:0 auto;line-height:1.7;}
+.filter-bar{position:sticky;top:68px;z-index:100;background:#fff;border-bottom:1px solid #e5e7eb;padding:1rem 4%;display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;}
+.filter-btn{padding:0.5rem 1.25rem;border-radius:24px;border:1.5px solid #e5e7eb;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;color:#6b7280;cursor:pointer;transition:all 0.2s;}
+.filter-btn.active,.filter-btn:hover{background:#2BBFB3;color:#fff;border-color:#2BBFB3;}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1280px;margin:0 auto;padding:60px 4%;}
+.pkg-card{border-radius:16px;overflow:hidden;border:1.5px solid #e5e7eb;background:#fff;transition:all 0.3s;}
+.pkg-card:hover{border-color:#2BBFB3;box-shadow:0 8px 32px rgba(0,0,0,0.12);transform:translateY(-3px);}
+.pkg-img{height:200px;background:linear-gradient(135deg,#0a2a14,#1a4a2a);background-size:cover;background-position:center;position:relative;}
+.pkg-badge{position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.92);border-radius:20px;padding:0.2rem 0.7rem;font-size:0.72rem;font-weight:700;color:#0a2a14;}
+.pkg-duration{position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.5);border-radius:20px;padding:0.2rem 0.7rem;font-size:0.72rem;font-weight:600;color:#fff;}
+.pkg-body{padding:1.25rem;}
+.pkg-name{font-weight:700;font-size:1rem;color:#111827;margin-bottom:0.35rem;line-height:1.4;}
+.pkg-dest{font-size:0.78rem;color:#2BBFB3;font-weight:600;margin-bottom:0.75rem;}
+.pkg-inclusions{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1rem;}
+.incl-tag{font-size:0.72rem;background:#e8faf9;color:#1a9e93;border-radius:12px;padding:0.2rem 0.6rem;font-weight:500;}
+.pkg-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.75rem;border-top:1px solid #e5e7eb;}
+.pkg-price{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#1a9e93;}
+.pkg-price span{font-family:'DM Sans',sans-serif;font-size:0.72rem;color:#6b7280;font-weight:400;}
+.pkg-btns{display:flex;gap:0.5rem;}
+.btn-outline{padding:0.45rem 0.9rem;border-radius:8px;border:1.5px solid #2BBFB3;color:#2BBFB3;background:none;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;}
+.btn-solid{padding:0.45rem 0.9rem;border-radius:8px;border:none;background:#2BBFB3;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;cursor:pointer;}
+.how-strip{background:var(--grey-light);padding:60px 4%;}
+.how-inner{max-width:1280px;margin:0 auto;}
+.how-title{font-family:var(--font-display);font-size:1.8rem;font-weight:700;text-align:center;margin-bottom:2.5rem;}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.how-card{background:var(--white);border:1.5px solid var(--grey-mid);border-radius:16px;padding:2rem;text-align:center;}
+.how-num{width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--white);font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}
+.how-head{font-weight:700;font-size:1rem;margin-bottom:0.5rem;}
+.how-text{font-size:0.85rem;color:var(--grey);line-height:1.6;}
+.popup{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.55);display:none;align-items:center;justify-content:center;padding:1rem;}
+.popup.open{display:flex;}
+.popup-card{background:var(--white);border-radius:16px;max-width:420px;width:100%;padding:2rem;position:relative;max-height:90vh;overflow-y:auto;}
+.popup-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--grey);}
+.popup-title{font-family:var(--font-display);font-size:1.3rem;font-weight:700;margin-bottom:0.35rem;}
+.popup-sub{font-size:0.85rem;color:var(--grey);margin-bottom:1.25rem;}
+.form-row{margin-bottom:0.9rem;}
+.form-row label{display:block;font-size:0.78rem;font-weight:600;margin-bottom:0.3rem;}
+.form-row input,.form-row select{width:100%;padding:0.6rem 0.8rem;border:1.5px solid var(--grey-mid);border-radius:8px;font-family:var(--font-body);font-size:0.85rem;}
+.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.btn-submit{width:100%;padding:0.8rem;border-radius:24px;border:none;background:var(--teal);color:var(--white);font-family:var(--font-body);font-size:0.9rem;font-weight:700;cursor:pointer;margin-top:0.25rem;}
+.btn-submit:hover{background:var(--teal-dark);}
+.float-wa{position:fixed;bottom:24px;right:24px;z-index:1500;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,0.25);}
+.footer{background:#0a1e14;color:#ffffff;padding-top:60px;}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 4% 48px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:3rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:#ffffff;margin-bottom:1rem;}
+.footer-logo span{color:#2BBFB3;}
+.footer-tagline{font-size:0.85rem;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:1.5rem;}
+.footer-social{display:flex;gap:0.6rem;}
+.footer-social-icon{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.55);text-decoration:none;transition:all 0.2s;}
+.footer-social-icon:hover{border-color:#2BBFB3;color:#2BBFB3;}
+.footer-col-title{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#2BBFB3;margin-bottom:1.25rem;}
+.footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;}
+.footer-links a{font-size:0.88rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.2s;line-height:1.4;}
+.footer-links a:hover{color:#ffffff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.25rem 4%;}
+.footer-bottom-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:rgba(255,255,255,0.35);gap:1rem;flex-wrap:wrap;}
+@media(max-width:1024px){.packages-grid{grid-template-columns:repeat(2,1fr);}.footer-inner{grid-template-columns:1fr 1fr 1fr;}.footer-brand{grid-column:1 / -1;}}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.packages-grid{grid-template-columns:1fr;}.how-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){.footer-inner{grid-template-columns:1fr 1fr;gap:2rem;}.footer-bottom-inner{flex-direction:column;text-align:center;}}
+
+
+.policy-body { max-width: 860px; margin: 0 auto; padding: 80px 4%; }
+.policy-section { margin-bottom: 3rem; }
+.policy-section h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #111827; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e8faf9; }
+.policy-section p { font-size: 0.95rem; color: #374151; line-height: 1.85; margin-bottom: 0.75rem; }
+.policy-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; border-radius: 12px; overflow: hidden; }
+.policy-table th { background: #0a1e14; color: #ffffff; padding: 0.9rem 1.25rem; font-size: 0.85rem; font-weight: 700; text-align: left; }
+.policy-table td { padding: 0.85rem 1.25rem; font-size: 0.88rem; border-bottom: 1px solid #e5e7eb; }
+.policy-table tr:last-child td { border-bottom: none; }
+.policy-table tr:nth-child(even) td { background: #f9fafb; }
+.policy-table td:last-child { font-weight: 700; color: #dc2626; }
+
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="/" class="nav-logo">Trip<span>Harbr</span></a>
+  <ul class="nav-links">
+  <li><a href="/">Home</a></li>
+  <li><a href="/#destinations">Destinations</a></li>
+  <li><a href="honeymoon.html">Honeymoon</a></li>
+  <li><a href="family.html">Family Tours</a></li>
+  <li><a href="corporate.html">Corporate</a></li>
+  <li><a href="about.html">About Us</a></li>
+  <li><a href="careers.html">Work With Us</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+  <div style="display:flex;align-items:center;gap:0.75rem;">
+    <a href="contact.html" class="btn-plan" style="text-decoration:none;display:inline-block;">Enquire Now</a>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Home</a>
+  <a href="/#destinations">Destinations</a>
+  <a href="honeymoon.html">Honeymoon</a>
+  <a href="family.html">Family Tours</a>
+  <a href="corporate.html">Corporate</a>
+  <a href="about.html">About Us</a>
+  <a href="careers.html">Work With Us</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="hero" style="background:linear-gradient(135deg, #0a1e14, #1a3a2a);">
+  <div class="hero-label">LEGAL</div>
+  <h1 class="hero-title">Terms &amp; Conditions</h1>
+  <p class="hero-sub">Please read these terms carefully before booking with us.</p>
+</section>
+<div class="policy-body">
+<div class="policy-section"><h2>Booking Confirmation</h2><p>A booking is confirmed only upon receipt of the advance payment as specified in your quote. Until payment is received, prices and availability are subject to change.</p></div>
+<div class="policy-section"><h2>Payments</h2><p>We accept payments via bank transfer, UPI, and major credit/debit cards. Full payment is required 15 days before the trip departure date. For bookings made within 15 days of departure, full payment is required at the time of booking.</p></div>
+<div class="policy-section"><h2>Pricing</h2><p>All prices are per person unless stated otherwise. Prices include the services listed in your package itinerary. Airfare is not included unless explicitly stated. Prices are subject to change due to fuel surcharges, government taxes, or currency fluctuations.</p></div>
+<div class="policy-section"><h2>Itinerary Changes</h2><p>Tripharbr reserves the right to modify itineraries due to weather conditions, natural events, political situations, or other circumstances beyond our control. We will always endeavour to provide an equivalent alternative. No refund is applicable for itinerary modifications caused by force majeure.</p></div>
+<div class="policy-section"><h2>Traveler Responsibilities</h2><p>Travelers are responsible for carrying valid photo ID at all times during the trip. For international travel, travelers are responsible for obtaining valid passports, visas, and travel insurance. Tripharbr is not responsible for visa rejections.</p></div>
+<div class="policy-section"><h2>Liability</h2><p>Tripharbr acts as an organiser and coordinator of travel services. We are not liable for any injury, loss, damage, accident, or expense arising from circumstances beyond our control including but not limited to natural disasters, strikes, or government actions.</p></div>
+<div class="policy-section"><h2>Governing Law</h2><p>These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in Noida, Uttar Pradesh.</p></div>
+<div class="policy-section"><h2>Contact</h2><p><a href="mailto:tripharbour@gmail.com" style="color:#1a9e93;">tripharbour@gmail.com</a> &nbsp;|&nbsp; <a href="tel:+919140826298" style="color:#1a9e93;">+91 9140826298</a> &nbsp;|&nbsp; First Floor, A24, Sector 63, Noida 201309</p></div>
+</div>
+
+<a href="https://wa.me/919140826298" target="_blank" class="float-wa" aria-label="WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Trip<span>Harbr</span></div>
+      <p class="footer-tagline">Handcrafted itineraries for families, couples & corporate teams — with a dedicated tour manager on every trip.</p>
+      <div class="footer-social">
+        <a href="#" class="footer-social-icon" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="footer-social-icon" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="#" class="footer-social-icon" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="mailto:tripharbour@gmail.com" class="footer-social-icon" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">INDIAN DESTINATIONS</div>
+      <ul class="footer-links">
+        <li><a href="kashmir.html">Kashmir</a></li>
+        <li><a href="ladakh.html">Ladakh</a></li>
+        <li><a href="manali.html">Himachal Pradesh</a></li>
+        <li><a href="uttarakhand.html">Uttarakhand</a></li>
+        <li><a href="rajasthan.html">Rajasthan</a></li>
+        <li><a href="kerala.html">Kerala</a></li>
+        <li><a href="goa.html">Goa</a></li>
+        <li><a href="andaman.html">Andaman</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">INTERNATIONAL</div>
+      <ul class="footer-links">
+        <li><a href="bali.html">Bali</a></li>
+        <li><a href="thailand.html">Thailand</a></li>
+        <li><a href="dubai.html">Dubai</a></li>
+        <li><a href="singapore.html">Singapore</a></li>
+        <li><a href="srilanka.html">Sri Lanka</a></li>
+        <li><a href="maldives.html">Maldives</a></li>
+        <li><a href="vietnam.html">Vietnam</a></li>
+        <li><a href="#">Switzerland</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">TOUR PACKAGES</div>
+      <ul class="footer-links">
+        <li><a href="honeymoon.html">Honeymoon Packages</a></li>
+        <li><a href="family.html">Family Tour Packages</a></li>
+        <li><a href="corporate.html">Team Offsites</a></li>
+        <li><a href="corporate.html">Corporate Retreats</a></li>
+        <li><a href="#">Hill Station Packages</a></li>
+        <li><a href="#">Beach Packages</a></li>
+        <li><a href="#">Adventure Packages</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">COMPANY</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="careers.html">Work With Us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2026 Tripharbr. All rights reserved.</span>
+      <span>Made with ❤️ in India · First Floor, A24, Sector 63, Noida 201309</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+</script>
+</body>
+</html>
