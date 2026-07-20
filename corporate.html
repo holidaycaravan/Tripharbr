@@ -66,13 +66,23 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 .breadcrumb span { margin: 0 0.4rem; }
 
 /* HERO — dark navy corporate feel */
-.hero {
+.hero {/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
   min-height: 90vh; padding: 60px 4% 60px;
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0d2137 100%);
   display: flex; align-items: center; position: relative; overflow: hidden;
 }
 /* grid pattern overlay */
-.hero::before {
+.hero::before {/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   content: '';
   position: absolute; inset: 0;
   background-image: linear-gradient(rgba(43,191,179,0.04) 1px, transparent 1px),
@@ -154,7 +164,10 @@ section { padding: 80px 4%; }
 .pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .pkg-card { border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-mid); background: var(--white); transition: all 0.3s; }
 .pkg-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.pkg-img { height: 200px; position: relative; display: flex; align-items: flex-end; }
+.pkg-img {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0); height: 200px; position: relative; display: flex; align-items: flex-end; }
 .pkg-badge { position: absolute; top: 12px; left: 12px; background: var(--navy); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.72rem; font-weight: 700; color: var(--teal); }
 .pkg-type { position: absolute; top: 12px; right: 12px; background: var(--teal); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.72rem; font-weight: 700; color: var(--white); }
 .pkg-body { padding: 1.25rem; }
@@ -319,7 +332,10 @@ section { padding: 80px 4%; }
 .pkg-thumb,
 .dest-card-img,
 .related-card,
-.blog-cover {
+.blog-cover {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;

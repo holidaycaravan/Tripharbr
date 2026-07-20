@@ -58,12 +58,22 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 .mobile-menu a:hover { background: var(--teal-light); color: var(--teal-dark); }
 
 /* HERO */
-.hero {
+.hero {/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
   min-height: 85vh; padding: 100px 4% 60px;
   background: linear-gradient(135deg, #fff0f6 0%, #fce4f0 40%, #e8faf9 100%);
   display: flex; align-items: center; position: relative; overflow: hidden;
 }
-.hero::before {
+.hero::before {/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   content: ''; position: absolute; top: -80px; right: -80px;
   width: 500px; height: 500px;
   background: radial-gradient(circle, rgba(255,126,179,0.12) 0%, transparent 70%);
@@ -132,7 +142,10 @@ section { padding: 80px 4%; }
 .pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .pkg-card { border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-mid); background: var(--white); transition: all 0.3s; }
 .pkg-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.pkg-img { height: 200px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.pkg-img {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0); height: 200px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .pkg-badge { position: absolute; top: 12px; left: 12px; background: var(--white); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; color: var(--teal-dark); }
 .pkg-badge.rose { color: #c0488a; }
 .pkg-body { padding: 1.25rem; }
@@ -206,7 +219,10 @@ section { padding: 80px 4%; }
 .pkg-thumb,
 .dest-card-img,
 .related-card,
-.blog-cover {
+.blog-cover {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;

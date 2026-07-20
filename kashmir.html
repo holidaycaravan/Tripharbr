@@ -57,7 +57,13 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 .breadcrumb span { margin: 0 0.4rem; }
 
 /* HERO — Kashmir green gradient */
-.hero {
+.hero {/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
   min-height: 90vh;
   /* PHOTO: Replace with: background: url('photos/kashmir-hero.jpg') center/cover no-repeat;
      Recommended: Dal Lake with shikaras or Gulmarg meadow wide shot. Under 500KB. */
@@ -65,7 +71,11 @@ nav.scrolled { box-shadow: var(--shadow-md); }
   display: flex; align-items: flex-end; padding: 0 4% 60px;
   position: relative; overflow: hidden; margin-top: 68px;
 }
-.hero::before {
+.hero::before {/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(ellipse at 70% 30%, rgba(43,191,179,0.08) 0%, transparent 60%);
 }
@@ -144,7 +154,10 @@ section { padding: 80px 4%; }
 .pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .pkg-card { border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-mid); background: var(--white); transition: all 0.3s; }
 .pkg-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.pkg-img { height: 200px; position: relative; }
+.pkg-img {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0); height: 200px; position: relative; }
 .pkg-badge { position: absolute; top: 12px; left: 12px; background: var(--white); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.72rem; font-weight: 700; color: var(--accent); }
 .pkg-duration { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.5); border-radius: 20px; padding: 0.25rem 0.7rem; font-size: 0.72rem; font-weight: 600; color: var(--white); }
 .pkg-body { padding: 1.25rem; }
@@ -240,7 +253,10 @@ section { padding: 80px 4%; }
 .pkg-thumb,
 .dest-card-img,
 .related-card,
-.blog-cover {
+.blog-cover {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;

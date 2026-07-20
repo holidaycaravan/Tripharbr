@@ -59,7 +59,13 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 .breadcrumb span { margin: 0 0.4rem; }
 
 /* ============ HERO ============ */
-.hero {
+.hero {/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
   min-height: 90vh;
   /* PHOTO: Replace background below with:
      background: url('photos/ladakh-hero.jpg') center/cover no-repeat;
@@ -70,7 +76,11 @@ nav.scrolled { box-shadow: var(--shadow-md); }
   margin-top: 68px;
 }
 /* Star-field decoration */
-.hero::before {
+.hero::before {/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   content: '';
   position: absolute; inset: 0;
   background-image:
@@ -175,7 +185,10 @@ section { padding: 80px 4%; }
 .pkg-card { border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--grey-mid); background: var(--white); transition: all 0.3s; }
 .pkg-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-3px); }
 /* PHOTO: Replace .pkg-img background gradient with actual package photo when available */
-.pkg-img { height: 200px; position: relative; display: flex; align-items: flex-end; }
+.pkg-img {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0); height: 200px; position: relative; display: flex; align-items: flex-end; }
 .pkg-badge { position: absolute; top: 12px; left: 12px; background: var(--white); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.72rem; font-weight: 700; color: var(--accent); }
 .pkg-duration { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.5); border-radius: 20px; padding: 0.25rem 0.7rem; font-size: 0.72rem; font-weight: 600; color: var(--white); }
 .pkg-body { padding: 1.25rem; }
@@ -279,7 +292,10 @@ section { padding: 80px 4%; }
 .pkg-thumb,
 .dest-card-img,
 .related-card,
-.blog-cover {
+.blog-cover {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;

@@ -106,12 +106,24 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 .hamburger span { width: 24px; height: 2px; background: var(--black); border-radius: 2px; transition: all 0.3s; display: block; }
 
 /* ===== HERO ===== */
-.hero {
+.hero {/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
   min-height: 100vh;
   display: flex; align-items: center;
   padding: 100px 4% 60px;
   background: linear-gradient(135deg, #f0fffe 0%, #e8faf9 40%, #f8fcfb 100%);
   position: relative; overflow: hidden;
+}
+.hero::before {/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 /* legacy decorative .hero::before glow removed — conflicted with the photo layer */
 .hero-inner {
@@ -322,7 +334,10 @@ section { padding: 80px 4%; }
   background: var(--white); transition: all 0.3s;
 }
 .pkg-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.pkg-img {
+.pkg-img {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   height: 200px;
   background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
   position: relative; overflow: hidden;
@@ -554,7 +569,10 @@ section { padding: 80px 4%; }
 .pkg-thumb,
 .dest-card-img,
 .related-card,
-.blog-cover {
+.blog-cover {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -668,7 +686,10 @@ section { padding: 80px 4%; }
 .dest-grid-small { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1rem; height: 100%; }
 .dest-card { position: relative; border-radius: 16px; overflow: hidden; display: block; text-decoration: none; cursor: pointer; transition: transform 0.3s ease; }
 .dest-card:hover { transform: scale(1.02); }
-.dest-card-img { position: absolute; inset: 0; background-size: cover; background-position: center; background-repeat: no-repeat; transition: transform 0.6s ease; background-color: #1a3a2a; }
+.dest-card-img {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0); position: absolute; inset: 0; background-size: cover; background-position: center; background-repeat: no-repeat; transition: transform 0.6s ease; background-color: #1a3a2a; }
 .dest-card:hover .dest-card-img { transform: scale(1.05); }
 .dest-card-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.82) 100%); border-radius: 16px; }
 .dest-card-badge { position: absolute; top: 16px; left: 16px; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 0.3rem 0.9rem; font-size: 0.72rem; font-weight: 700; color: #ffffff; letter-spacing: 0.08em; z-index: 2; }
@@ -693,7 +714,10 @@ section { padding: 80px 4%; }
 .cta-btn-whatsapp:hover { background: #1a9e93; }
 .cta-btn-call { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #ffffff; color: #111827; border: 1.5px solid #d1d5db; border-radius: 28px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: border-color 0.2s; }
 .cta-btn-call:hover { border-color: #2BBFB3; color: #2BBFB3; }
-.cta-photo-banner { position: relative; height: 260px; border-radius: 20px; overflow: hidden; background: #1a3a2a; background-size: cover; background-position: center; }
+.cta-photo-banner {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0); position: relative; height: 260px; border-radius: 20px; overflow: hidden; background: #1a3a2a; background-size: cover; background-position: center; }
 .cta-photo-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.05) 100%); }
 .cta-photo-content { position: relative; z-index: 2; padding: 2.5rem 3rem; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 0.75rem; }
 .cta-photo-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #2BBFB3; }

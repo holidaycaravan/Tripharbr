@@ -50,13 +50,23 @@ nav.scrolled{box-shadow:var(--shadow-md);}
 .breadcrumb span{margin:0 0.4rem;}
 
 /* HERO — warm amber/gold Bali */
-.hero{
+.hero{/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
   min-height:90vh;
   /* PHOTO: Replace with url('photos/bali-hero.jpg') center/cover — Tanah Lot or Tegalalang rice terrace recommended */
   background:linear-gradient(160deg,#2a1a05 0%,#4a3010 35%,#7a5a1a 65%,#5a3a0a 100%);
   display:flex;align-items:flex-end;padding:0 4% 60px;position:relative;overflow:hidden;margin-top:68px;
 }
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 30%,rgba(196,154,42,0.12) 0%,transparent 60%);}
+.hero::before{/*crisp*/
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 30%,rgba(196,154,42,0.12) 0%,transparent 60%);}
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(to top,rgba(42,26,5,0.95) 0%,transparent 100%);}
 .hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 380px;gap:3rem;align-items:flex-end;}
 .dest-breadcrumb{font-size:0.78rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;}
@@ -122,7 +132,10 @@ section{padding:80px 4%;}
 .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
 .pkg-card{border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--grey-mid);background:var(--white);transition:all 0.3s;}
 .pkg-card:hover{border-color:var(--teal);box-shadow:var(--shadow-md);transform:translateY(-3px);}
-.pkg-img{height:200px;position:relative;}
+.pkg-img{/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);height:200px;position:relative;}
 .pkg-badge{position:absolute;top:12px;left:12px;background:var(--white);border-radius:20px;padding:0.25rem 0.75rem;font-size:0.72rem;font-weight:700;color:var(--accent);}
 .pkg-duration{position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.5);border-radius:20px;padding:0.25rem 0.7rem;font-size:0.72rem;font-weight:600;color:var(--white);}
 .pkg-body{padding:1.25rem;}
@@ -220,7 +233,10 @@ section{padding:80px 4%;}
 .pkg-thumb,
 .dest-card-img,
 .related-card,
-.blog-cover {
+.blog-cover {/*crisp*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
