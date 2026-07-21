@@ -365,7 +365,10 @@ function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('op
 </script>
 <script src="photos/photo-rotator.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => { PhotoRotator.applyHero('bali', 'linear-gradient(135deg,#2a1a05, #7a5a1a)'); });
+document.addEventListener('DOMContentLoaded', () => {
+  PhotoRotator.applyHero('blog/bali-thailand', 'linear-gradient(135deg, #2a1a05, #7a5a1a)');
+  PhotoRotator.applyCards('blog/bali-thailand', '.article-section-img', 7);
+});
 </script>
 </body>
 </html>

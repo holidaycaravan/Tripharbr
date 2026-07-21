@@ -364,7 +364,10 @@ function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('op
 </script>
 <script src="photos/photo-rotator.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => { PhotoRotator.applyHero('kashmir', 'linear-gradient(135deg,#0a2a14, #1a5c2a)'); });
+document.addEventListener('DOMContentLoaded', () => {
+  PhotoRotator.applyHero('blog/kashmir-family', 'linear-gradient(135deg, #0a2a14, #1a5c2a)');
+  PhotoRotator.applyCards('blog/kashmir-family', '.article-section-img', 6);
+});
 </script>
 </body>
 </html>

@@ -365,7 +365,10 @@ function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('op
 </script>
 <script src="photos/photo-rotator.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => { PhotoRotator.applyHero('goa', 'linear-gradient(135deg,#001a35, #0d4a7a)'); });
+document.addEventListener('DOMContentLoaded', () => {
+  PhotoRotator.applyHero('blog/goa-corporate', 'linear-gradient(135deg, #001a35, #0d4a7a)');
+  PhotoRotator.applyCards('blog/goa-corporate', '.article-section-img', 5);
+});
 </script>
 </body>
 </html>

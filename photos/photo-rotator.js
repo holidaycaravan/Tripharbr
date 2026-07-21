@@ -18,6 +18,10 @@
  * uses a CSS custom property (--hero-photo) so a Ken Burns
  * ::before layer can animate the image independently.
  */
+// Base path to the photos/ directory, derived from this script's own src so
+// it resolves under any subdirectory deploy (e.g. /Tripharbr/). A `dest` may
+// itself be a nested path such as 'blog/kashmir-family' — it is concatenated
+// after BASE, so fetches resolve to photos/blog/kashmir-family/manifest.json.
 const PHOTOS_BASE = (() => {
   try {
     const s = document.querySelector('script[src*="photo-rotator"]');
