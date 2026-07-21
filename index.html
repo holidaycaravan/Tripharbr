@@ -777,6 +777,19 @@ section { padding: 80px 4%; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
 }
 
+.field-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.15) !important;
+}
+.field-error-msg {
+  color: #ef4444;
+  font-size: 0.78rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: 'DM Sans', sans-serif;
+}
 </style>
 </head>
 <body class="lang-en">
@@ -928,8 +941,8 @@ section { padding: 80px 4%; }
         <!-- Explore Tab -->
         <div class="tab-panel active" id="tab-explore">
           <div class="form-row">
-            <label class="en">Where do you want to go?</label>
-            <label class="hi" style="display:none">आप कहाँ जाना चाहते हैं?</label>
+            <label class="en">Where do you want to go?<span style="color:#ef4444;margin-left:2px;">*</span></label>
+            <label class="hi" style="display:none">आप कहाँ जाना चाहते हैं?<span style="color:#ef4444;margin-left:2px;">*</span></label>
             <select id="hero-destination">
               <option value="">Select destination</option>
               <option value="ladakh">Ladakh</option><option value="kashmir">Kashmir</option><option value="bali">Bali</option>
@@ -938,8 +951,8 @@ section { padding: 80px 4%; }
             </select>
           </div>
           <div class="form-row">
-            <label class="en">Trip Type</label>
-            <label class="hi" style="display:none">यात्रा प्रकार</label>
+            <label class="en">Trip Type<span style="color:#ef4444;margin-left:2px;">*</span></label>
+            <label class="hi" style="display:none">यात्रा प्रकार<span style="color:#ef4444;margin-left:2px;">*</span></label>
             <select id="hero-trip-type">
               <option>Honeymoon</option><option>Family Tour</option>
               <option>Team Offsite</option><option>Corporate Retreat</option>
@@ -2001,11 +2014,31 @@ document.getElementById('popup').addEventListener('click', function(e) {
   if (e.target === this) closePopup();
 });
 
-// HERO — Find Packages: route to the chosen destination page, else packages.html
+// HERO — Find Packages: validate destination, then route to its page (else packages.html)
 function findPackages() {
-  const dest = document.getElementById('hero-destination').value;
-  const type = document.getElementById('hero-trip-type').value;
+  // Clear previous errors
+  document.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
+  document.querySelectorAll('.field-error-msg').forEach(el => el.remove());
 
+  const destSelect = document.getElementById('hero-destination');
+  const dest = destSelect ? destSelect.value : '';
+  let hasError = false;
+
+  // Validate destination
+  if (!dest || dest === '' || dest === 'select' || dest === 'null') {
+    hasError = true;
+    if (destSelect) {
+      destSelect.classList.add('field-error');
+      const errMsg = document.createElement('div');
+      errMsg.className = 'field-error-msg';
+      errMsg.innerHTML = '<span>*</span> Please select a destination';
+      destSelect.parentNode.insertBefore(errMsg, destSelect.nextSibling);
+    }
+  }
+
+  if (hasError) return;
+
+  // Navigate to correct page
   const destMap = {
     'ladakh': 'ladakh.html',
     'kashmir': 'kashmir.html',
@@ -2028,7 +2061,7 @@ function findPackages() {
     'mussoorie': 'mussoorie.html'
   };
 
-  if (dest && destMap[dest]) {
+  if (destMap[dest]) {
     window.location.href = destMap[dest];
   } else {
     window.location.href = 'packages.html';
