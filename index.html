@@ -930,17 +930,17 @@ section { padding: 80px 4%; }
           <div class="form-row">
             <label class="en">Where do you want to go?</label>
             <label class="hi" style="display:none">आप कहाँ जाना चाहते हैं?</label>
-            <select>
+            <select id="hero-destination">
               <option value="">Select destination</option>
-              <option>Ladakh</option><option>Kashmir</option><option>Bali</option>
-              <option>Kerala</option><option>Spiti Valley</option><option>Thailand</option>
-              <option>Goa</option><option>Rajasthan</option><option>Andaman</option>
+              <option value="ladakh">Ladakh</option><option value="kashmir">Kashmir</option><option value="bali">Bali</option>
+              <option value="kerala">Kerala</option><option value="spiti">Spiti Valley</option><option value="thailand">Thailand</option>
+              <option value="goa">Goa</option><option value="rajasthan">Rajasthan</option><option value="andaman">Andaman</option>
             </select>
           </div>
           <div class="form-row">
             <label class="en">Trip Type</label>
             <label class="hi" style="display:none">यात्रा प्रकार</label>
-            <select>
+            <select id="hero-trip-type">
               <option>Honeymoon</option><option>Family Tour</option>
               <option>Team Offsite</option><option>Corporate Retreat</option>
             </select>
@@ -965,7 +965,7 @@ section { padding: 80px 4%; }
               </select>
             </div>
           </div>
-          <button class="btn-submit">
+          <button type="button" onclick="findPackages()" class="btn-submit">
             <span class="en">Find Packages</span>
             <span class="hi" style="display:none">पैकेज खोजें</span>
           </button>
@@ -2000,6 +2000,40 @@ function closePopup() {
 document.getElementById('popup').addEventListener('click', function(e) {
   if (e.target === this) closePopup();
 });
+
+// HERO — Find Packages: route to the chosen destination page, else packages.html
+function findPackages() {
+  const dest = document.getElementById('hero-destination').value;
+  const type = document.getElementById('hero-trip-type').value;
+
+  const destMap = {
+    'ladakh': 'ladakh.html',
+    'kashmir': 'kashmir.html',
+    'bali': 'bali.html',
+    'kerala': 'kerala.html',
+    'spiti': 'spiti.html',
+    'thailand': 'thailand.html',
+    'goa': 'goa.html',
+    'rajasthan': 'rajasthan.html',
+    'andaman': 'andaman.html',
+    'manali': 'manali.html',
+    'uttarakhand': 'uttarakhand.html',
+    'singapore': 'singapore.html',
+    'dubai': 'dubai.html',
+    'maldives': 'maldives.html',
+    'srilanka': 'srilanka.html',
+    'vietnam': 'vietnam.html',
+    'coorg': 'coorg.html',
+    'shimla': 'shimla.html',
+    'mussoorie': 'mussoorie.html'
+  };
+
+  if (dest && destMap[dest]) {
+    window.location.href = destMap[dest];
+  } else {
+    window.location.href = 'packages.html';
+  }
+}
 
 // HERO TABS
 function switchTab(tab) {
