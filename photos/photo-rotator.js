@@ -63,6 +63,20 @@ const PHOTOS_BASE = (() => {
   function fileOf(photo) { return typeof photo === 'string' ? photo : photo.file; }
   function focalOf(photo) { return (photo && photo.focal) ? photo.focal : 'center'; }
 
+  // Reorder so JPG/JPEG photos come first (keeps original order within groups).
+  // Used for the homepage hero so the new high-quality JPGs show before AVIFs.
+  function prioritiseJpg(photos) {
+    var jpgs = photos.filter(function (p) {
+      var f = fileOf(p).toLowerCase();
+      return f.endsWith('.jpg') || f.endsWith('.jpeg');
+    });
+    var others = photos.filter(function (p) {
+      var f = fileOf(p).toLowerCase();
+      return !(f.endsWith('.jpg') || f.endsWith('.jpeg'));
+    });
+    return jpgs.concat(others);
+  }
+
   function pickPhoto(dest, photos) {
     if (!photos.length) return null;
     var used = usedByDest[dest] || (usedByDest[dest] = []);
@@ -134,12 +148,18 @@ const PHOTOS_BASE = (() => {
     loadManifest(dest).then(function (photos) {
       var hero = document.querySelector('.hero');
       if (!hero) return;
+      // Homepage: float the new high-quality JPGs ahead of the AVIFs
+      if (dest === 'homepage') {
+        photos = prioritiseJpg(photos);
+      }
       // Only one (or zero) photo — apply statically, no slideshow needed
       if (!photos || photos.length < 2) {
         applyHero(dest, gradient);
         return;
       }
-      var shuffled = shuffle(photos);
+      // Shuffle for variety, but keep JPGs first on the homepage so a
+      // high-quality JPG is always the opening frame of the rotation.
+      var shuffled = (dest === 'homepage') ? prioritiseJpg(shuffle(photos)) : shuffle(photos);
       var index = 0;
 
       function showPhoto() {
@@ -192,6 +212,7 @@ const PHOTOS_BASE = (() => {
     startSlideshow: startSlideshow,
     applyCards: applyCards,
     applyHomepage: applyHomepage,
-    applyToElement: applyToElement
+    applyToElement: applyToElement,
+    prioritiseJpg: prioritiseJpg
   };
 })();
