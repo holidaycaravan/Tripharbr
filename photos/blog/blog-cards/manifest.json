@@ -1,0 +1,17 @@
+{
+  "destination": "Blog Cards",
+  "photos": [
+    {
+      "file": "abhinand-venugopal-RO53pY8MkgU-unsplash.jpg",
+      "focal": "center"
+    },
+    {
+      "file": "arty-gg0KaRAZ4pQ-unsplash.jpg",
+      "focal": "center"
+    },
+    {
+      "file": "tiachen-aier-tBzGG6IHaQQ-unsplash.jpg",
+      "focal": "center"
+    }
+  ]
+}

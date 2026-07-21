@@ -1,0 +1,33 @@
+{
+  "destination": "Kashmir Family",
+  "photos": [
+    {
+      "file": "Kashmir.jpeg",
+      "focal": "center"
+    },
+    {
+      "file": "Kashmiri kids.jpeg",
+      "focal": "center"
+    },
+    {
+      "file": "amit-jain-SVMS7i2wKho-unsplash.jpg",
+      "focal": "center"
+    },
+    {
+      "file": "ankur-khandelwal-uoka7S7PUP4-unsplash.jpg",
+      "focal": "center"
+    },
+    {
+      "file": "arghya-banerjee-lt489GECHZc-unsplash.jpg",
+      "focal": "center"
+    },
+    {
+      "file": "divya-agrawal-qa8VhqvJGIo-unsplash.jpg",
+      "focal": "center"
+    },
+    {
+      "file": "isa-72GwiojCwoI-unsplash.jpg",
+      "focal": "center"
+    }
+  ]
+}
