@@ -1617,7 +1617,7 @@ section { padding: 80px 4%; }
     </div>
     <div class="blog-grid">
       <div class="blog-card">
-        <div class="blog-img" style="background:linear-gradient(135deg,#1a9e93,#4dd4c8)"></div>
+        <div class="blog-img" data-blog="1" style="background:linear-gradient(135deg,#1a9e93,#4dd4c8)"></div>
         <div class="blog-body">
           <span class="blog-cat en">Family</span>
           <span class="blog-cat hi" style="display:none">परिवार</span>
@@ -1630,7 +1630,7 @@ section { padding: 80px 4%; }
         </div>
       </div>
       <div class="blog-card">
-        <div class="blog-img" style="background:linear-gradient(135deg,#2BBFB3,#0d6b63)"></div>
+        <div class="blog-img" data-blog="2" style="background:linear-gradient(135deg,#2BBFB3,#0d6b63)"></div>
         <div class="blog-body">
           <span class="blog-cat en">Honeymoon</span>
           <span class="blog-cat hi" style="display:none">हनीमून</span>
@@ -1643,7 +1643,7 @@ section { padding: 80px 4%; }
         </div>
       </div>
       <div class="blog-card">
-        <div class="blog-img" style="background:linear-gradient(135deg,#4dd4c8,#2BBFB3)"></div>
+        <div class="blog-img" data-blog="3" style="background:linear-gradient(135deg,#4dd4c8,#2BBFB3)"></div>
         <div class="blog-body">
           <span class="blog-cat en">Corporate</span>
           <span class="blog-cat hi" style="display:none">कॉर्पोरेट</span>
@@ -2078,6 +2078,10 @@ function toggleMenu() {
     PhotoRotator.applyCards('goa',       '[data-pkg="goa-offsite"] .pkg-img',        1);
     PhotoRotator.applyCards('ladakh',    '[data-pkg="ladakh-family"] .pkg-img',      1);
     PhotoRotator.applyCards('bali',      '[data-pkg="bali-corporate"] .pkg-img',     1);
+    // Blog card photos
+    PhotoRotator.applyCards('blog/kashmir-family', '[data-blog="1"]', 1);
+    PhotoRotator.applyCards('blog/bali-thailand', '[data-blog="2"]', 1);
+    PhotoRotator.applyCards('blog/goa-corporate', '[data-blog="3"]', 1);
   });
 </script>
 </body>
