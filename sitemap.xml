@@ -732,4 +732,34 @@
     <priority>0.3</priority>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://tripharbr.com/ladakh-vs-spiti.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tripharbr.com/goa-vs-kerala-family.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tripharbr.com/dubai-vs-singapore-family.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tripharbr.com/maldives-vs-andaman.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://tripharbr.com/shimla-vs-manali.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>
